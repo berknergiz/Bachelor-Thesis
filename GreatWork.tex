@@ -17,15 +17,19 @@ First, a short inside to the physiological background of blood flow and oxygen t
 \section{Blood Flow and Oxygen Delivery}
 %How does this work physiologically ?
 
-In this section the physiological aspects will be discussed, and the main goal of computations and simulations in this field will be explained. This part is mainly about the physiological points in blood flow and oxygen transport, as well as oxygen consumption in tissue and further outlook in this field (i.e. EPO and tumor oxygen delivery etc.)
+In this section the physiological aspects will be discussed, and the main goal of computations and simulations in this field will be explained. This part is mainly about the physiological points in blood flow and oxygen transport, as well as oxygen consumption in tissue and further outlook in this field. (i.e. EPO and tumor oxygen delivery etc.)
+\\Blood is pumped through the heart into the whole body. This results in pressure gradients, accelerating the fluid through the arteries.
+\\In this thesis, the flow and transport through micro-vessels in the capillary range is the main concern, where generally the time-dependent velocity of blood will be neglected. The main approximation is a steady-state flow rate. This means that there is no variation of velocity depending on time for a given point in the network
 
 \subsection{Blood Flow}
 %Purely physiological Blood Flow part (with mathematical formulas to describe processes)
+%Discuss General Hemodynamics
 
 Blood flow in the body can be approximated by the Navier-Stokes equations.
 \\But rather talk about purely physiological things first.
 \\Put some papers and references in and explain some values and parameters.
 \\Use mathematics paper for blood flow calculations
+\\Papers to cite: \cite{pittman2011regulation}
 
 \subsection{Oxygen Transport and Delivery}
 %Purely physiological Oxygen part (with mathematical formulas to describe processes)
@@ -34,13 +38,38 @@ How does this physically and physiologically work ?
 \\Again put some papers and references in and explain some physical diffusion equations, values and parameters.
 \\Why do we care about this etc. ?
 \\Diffusion, Parameters, etc. etc.
-\\Use Vasomotion paper for oxygen delivery
+\\Use Vasomotion paper for oxygen delivery \cite{goldman2001computational}
+
+\subsubsection*{Oxygen Transport in the Blood}
+%Transport with the flow
+%Binding of Oxygen to Red Blood Cells
+%Oxygen Concentration etc.
+
+-Plasma and Red Blood Cells
+\\-Hemoglobin
+\\-Myoglobin
+\\Blood is basically composed of two phases: liquid and cells, which is the plasma and the red blood cells. The red blood cells build nearly half of the total blood volume, and are the main carriers of Oxygen in the blood \cite{pittman2011regulation}.
+\\Papers to cite: \cite{hellums1977resistance}.
+
+\subsubsection*{Oxygen Diffusion Into the Tissue}
+%Diffusion out of the Vessels
+%Diffusion Process - Transport in the Tissue
+%Delivery of Oxygen to the Cells
+
+-What is Diffusion ?
+\\-Fick's Law of Diffusion and Concentration Gradients
+\\-Diffusion Properties and some general Parameters
+\\Papers to cite: \cite{hellums1977resistance}, \cite{fletcher1980facilitated}
+\\
+\\
 
 \subsection{Current Trends in Modeling}
 %Use a few papers to give examples for previous and actual approaches
 
 Do link to modeling and models in this field in general, than link this to computational models in this field and their use. Actual trends and what people hope for in the future (in terms of computational power, computational methods but also from a medical perspective) is also interesting.
 \\Generally Blood Flow in the body can be approximated by the Navier-Stokes equations. The Transport of Oxygen in the Blood can then be linked to this by the Transport Equations. These physical equations are quite straightforward to implement and solve numerically. The next task remains the biggest problem in actual research: Link this transport to the diffusion process out of the vessels and into the tissue. The biggest problems here seem to be in choosing the right/appropriate boundary conditions to get exact results. Also, many numerical methods fail or more specifically become unstable when the vessel network becomes complicated and heterogeneous.
+\\Steady-State approximation for simulations.
+\\Papers to cite: \cite{rahman2012mathematical}, \cite{goldman2001computational}, \cite{kuzmin2010guide}, \cite{lee2017accounting}, \cite{hoofd1992updating}, \cite{beard2001modeling}, \cite{Secomb2004}
 
 %In each of your categories (or subcategories if your topic is
 %broad), we would like the following three points to be developed:
@@ -76,63 +105,11 @@ General explanation about Green's Method code and how it works, especially mathe
 \\- Find a cheap solution in terms of computational cost (when compared to implicit methods)
 \\- Green's function method is computationally less expensive than implicit methods, due to the fact that there is a lower number of unknowns
 
-\subsubsection*{Mathematics Behind Green's Function Method}
-%Mathematical Background to this Method. What's so special about it ? Is there any advantage at first sight ?
-%Very useful to use Green's Function Formulation section of Secomb here
-
-This part strongly relies on the description by Secomb et al. \cite{Secomb2004}. In this subsection, the Green's Function Method, its equations and application to the given problem/field will be explained.
-\\In this section, I will focus on giving a good and understandable insight to the Green's Function Method and its specific application, instead of getting lost in details. More specific low-level informations about the code and its implementation will follow later.
-\\The main idea of the Green's Function Method approach is to model blood vessels as discrete Oxygen sources. This 
-%Explain Equation and variables
-\begin{equation}
-\\D\alpha\nabla^2G = - \delta_3 
-( \textbf{x} - \textbf{x*} )
-\label{eq:Greens1}
-\end{equation}
-\ref{eq:Greens1} is obtained by putting G(\textbf{x}; \textbf{x*}) as the Green's Function, and saying that it is defined as the potential at \textbf{x} resulting from a source at \textbf{x*}.
-%Explain Equation and variables
-\begin{equation}
-\textbf{P(x)} = \int_{Sources} G(\textbf{x; x*})q(\textbf{x*})d\textbf{x*}
-\label{eq:Potential}
-\end{equation}
-\ref{eq:Potential} gives the potential, with q(x) representing the distribution of source strengths.
-%Explain Equation and variables
-\begin{equation}
-\\G = G_1 = \frac{1}{(4 \Pi D \alpha |( \textbf{x} - \textbf{x*} )|)}
-\label{eq:InfDomain}
-\end{equation}
-\ref{eq:InfDomain} gives the solution on an infinite domain, which is the singular function.
-%Explain Equation and variables
-\begin{equation}
-\\q_v(s) = \int_{0}^L F(s-s^*)q_0(s^*)ds*
-\label{eq:DiffFlux}
-\end{equation}
-\ref{eq:DiffFlux} gives the actual diffusive flux at the blood–tissue boundary.
-\\The distribution of radial flux across the cylindrical surface is obtained by the function F(s), where s is the distance along the vessel.
-%Explain Equation and variables
-\begin{equation}
-\\F(s) = \frac{1}{2} \delta_1 (s) + \frac{k (K(k) - E(k)}{4 \Pi r_0}
-\label{eq:DiffFluxUni}
-\end{equation}
-\ref{eq:DiffFluxUni} for sources that are uniformly distributed around the circumference.
-%Explain Equation and variables
-\\Where K(k) \ref{eq:EllipInt1} and E(k) \ref{eq:EllipInt2} represent the complete elliptic integrals of the first and second kind respectively :
-\begin{equation}
-\\K(k) = \int_{0}^{\frac{\Pi}{2}} (1 - k^2 sin^2 \Theta)^ \frac{-1}{2} d \Theta
-\label{eq:EllipInt1}
-\end{equation}
-%Explain Equation and variables
-\begin{equation}
-\\E(k) = \int_{0}^{\frac{\Pi}{2}} (1 - k^2 sin^2 \Theta)^ \frac{1}{2} d \Theta
-\label{eq:EllipInt2}
-\end{equation}
-
-
 \subsubsection*{The Computational Model}
 %Methods and physiological assumptions used in this model.
 %Very useful to use Governing Equations section of Secomb here
 
-In this subsection, the used physical quantities, the assumptions and governing equations will briefly be explained. The equations cited here are, in my opinion, the most important ones to describe the physical background for the treated problem. Similar to the previous section, this section will strongly rely on \cite{Secomb2004}.
+In this subsection, the used physical quantities, the assumptions and governing equations will briefly be explained. The equations cited here are, in my opinion, the most important ones to describe the physical background for the treated problem. This part strongly relies on the description by Secomb et al. \cite{Secomb2004}.
 \\When looking at the code of the Green's Function Method, and especially at the inputs \ref{Inputs}, one can see that the tissue is modeled as a homogeneous medium. This results in constant Oxygen diffusivity and solubility coefficients D and $\alpha$ respectively. These quantities usually have to be specified in the SoluteParams.dat-file. A more detailed explanation to the Inputs can be found in the Inputs section \ref{Inputs}.
 \\The governing equations are listed here, with a short explanation for each of them:
 \\As previously described, diffusion will play an important role in Oxygen transport in the body, as Oxygen is reaching the tissue by diffusing out of the vessels. This physical phenomenon is described by Fick's Law of Diffusion:
@@ -205,6 +182,65 @@ In Hill's equation \ref{eq:Hill}, $P_b$ ist the previously mentioned partial pre
 \end{equation}
 In \ref{eq:Myoglob}, $D_{Mb}$, $C_{Mb}$, $V_m$ and $S_{Mb}$ are the diffusion coefficient, the concentration, the molar volume and the Oxygen saturation of Myoglobin respectively. D and $\alpha$ are the same constants mentioned previously, which were the diffusivity and the solubility coefficients of Oxygen.
 
+\subsubsection*{Mathematics Behind Green's Function Method}
+%Mathematical Background to this Method. What's so special about it ? Is there any advantage at first sight ?
+%Very useful to use Green's Function Formulation section of Secomb here
+
+ Similar to the previous section, this section will strongly rely on \cite{Secomb2004}. In this subsection, the Green's Function Method, its equations and the application to the given problem/field will be explained.
+\\In this section, I will focus on giving a good and understandable insight to the Green's Function Method and its specific application, instead of getting lost in details. More specific low-level informations about the code and its implementation will follow later.
+\\The main idea of the Green's Function Method approach is to model blood vessels as discrete Oxygen sources. The Oxygen consumption is then modeled by a set of discrete Oxygen sinks. As previously described, our goal is to simulate the Oxygen transport to finally obtain the Oxygen concentration for every node in our tissue and vessel network. In general terms, the Oxygen field is computed by a superposition of the fields resulting from each of the sources and sinks.
+\\The strengths of the sources are unknowns in this problem. The sinks are unknowns as well, due to the fact that the Oxygen consumption depends on the local partial pressure of Oxygen, as one can see in \ref{eq:MichaelisMenten}.
+%
+\\When defining the Green's Function G as the potential at a point $\textbf{x}$ and putting this potential equal to the local Oxygen concentration or equivalently to the partial pressure of Oxygen P, we get:
+\begin{equation}
+\\D\alpha\nabla^2G = - \delta_3 
+( \textbf{x} - \textbf{x*} )
+\label{eq:Greens1}
+\end{equation}
+\\The equation \ref{eq:Greens1} is basically the same as \ref{eq:DiffusionEq}, where G(\textbf{x}; \textbf{x*}) is the partial pressure of Oxygen at $\textbf{x}$, resulting from a unit point source at $\textbf{x*}$.
+%
+\\The superposition of the fields gives the overall potential P(\textbf{x}) in each point \textbf{x}, which can be computed by integrating the distribution multiplied the local potential over all the sources:
+\begin{equation}
+\textbf{P(x)} = \int_{Sources} G(\textbf{x; x*})q(\textbf{x*})d\textbf{x*}
+\label{eq:Potential}
+\end{equation}
+\ref{eq:Potential} gives the general potential (here the partial pressure of Oxygen) in a point \textbf{x}, with $q(\textbf{x})$ representing the distribution of source strengths.
+%
+\\The solution computed in an infinite domain is the singular function as defined in the following equation:
+\begin{equation}
+\\G = G_1 = \frac{1}{(4 \Pi D \alpha |( \textbf{x} - \textbf{x*} )|)}
+\label{eq:InfDomainSol}
+\end{equation}
+%
+\\Coming back to the finite domain that we are looking at, boundary conditions on the domain boundaries have to be taken into account and thus the solution will be different depending on the boundary conditions that we choose. In this part I would like to mention the fact that choosing boundary conditions has a substantial consequence on the results, and there is not yet one type of boundary condition that can produce overall exact results in terms of hypoxic tissue estimation (this should be mentioned somewhere again, as it is a big deal in this field of research). For the boundary conditions that were used in the research until now (put some references in), the computed hypoxic tissue areas were either way too small or way too big compared to what seems to be physiologically realistic. Again I would like to mention the fact that no good measurements can be made about the specific size and the distribution of hypoxic regions in tissue surrounding micro-sized capillaries.
+\\The general approximation that is used uses a distribution of point sources along the centerline of each vessel segment. The field resulting from these sources can then be computed, but has a small error due to the mentioned approximation (give more detail about this error either here or later in the discussion part about Green's Method).
+\\The diffusive flux at the blood-tissue boundary can generally be expressed by the following equation:
+%
+\begin{equation}
+\\q_v(s) = \int_{0}^L F(s-s^*)q_0(s^*)ds*
+\label{eq:DiffFlux}
+\end{equation}
+%
+\\In \ref{eq:DiffFlux}, the distribution of radial flux across the cylindrical surface is obtained by the function F(s), and $q_0(s)$ represents the distribution of source strength per unit length, s being the distance along the vessel.
+\\The main case is a uniform distribution of sources around the circumference, where we get the following formula for F(s):
+%
+\begin{equation}
+\\F(s) = \frac{1}{2} \delta_1 (s) + \frac{k (K(k) - E(k)}{4 \Pi r_0}
+\label{eq:DiffFluxUni}
+\end{equation}
+\\In \ref{eq:DiffFluxUni}, K(k) and E(k) are the following functions, also called elliptic integrals:
+%
+\begin{equation}
+\\K(k) = \int_{0}^{\frac{\Pi}{2}} (1 - k^2 sin^2 \Theta)^ \frac{-1}{2} d \Theta
+\label{eq:EllipInt1}
+\end{equation}
+\\K(k) \ref{eq:EllipInt1} and E(k) \ref{eq:EllipInt2} represent the complete elliptic integrals of the first and second kind respectively.
+%
+\begin{equation}
+\\E(k) = \int_{0}^{\frac{\Pi}{2}} (1 - k^2 sin^2 \Theta)^ \frac{1}{2} d \Theta
+\label{eq:EllipInt2}
+\end{equation}
+
 \subsubsection{General Structure of the Used Code}
 %Explain everything about the code
 
@@ -250,6 +286,7 @@ The general outputs of the code can be classified into two categories:
 
 \subsubsection*{Organization of the Code}
 %Briefly talk about each part of the code and explain how it all works together
+%Might keep this part more general and mention each of the parts of the code like a puzzle in the Appendix
 
 The code provided by Secomb et al. \cite{Secomb2004} consists of a few .cpp-files, so that tasks like input read-ins, calculations and output-file generations are separated. Each file has a specific role, which will be explained in detail in this section. As one can think, the most important part of this code is the implementation of the Green's Function Method and its application to the given data.
 \\
@@ -269,7 +306,7 @@ The code provided by Secomb et al. \cite{Secomb2004} consists of a few .cpp-file
 \\The eval.cpp-part of the code does the evaluation of the solute field depending on the source strengths provided.
 \\
 %numerical methods (gaussj and ludcmp)
-\\There are some numerical methods and mathematical calculations behind the simluation, as for example the Gauss-Jordan elimination or the Lower-Upper decomposition, which is implemented in the gaussj.cpp-part and the ludcmp.cpp-part of the code.
+\\There are some numerical methods and mathematical calculations behind the simulation, as for example the Gauss-Jordan elimination or the Lower-Upper decomposition, which is implemented in the gaussj.cpp-part and the ludcmp.cpp-part of the code.
 \\
 %greens
 \\The main implementation of the Green's Function Method is in the greens.cpp-part of the code, where Green's Function approach for multiple reacting species is implemented. (Talk more about this, heart of the code)
