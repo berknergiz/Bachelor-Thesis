@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=pdflatex 2018.6.13)  28 JUN 2018 11:20
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=pdflatex 2018.6.13)  30 JUN 2018 14:31
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -410,14 +410,7 @@ File: pppdftex.def 2017/10/31 v0.5l Pdfpages driver for pdfTeX (AM)
 
 LaTeX Warning: Label `eq:DiffFlux' multiply defined.
 
-(./Appendix.aux
-
-LaTeX Warning: Label `fig:nephron_velocity' multiply defined.
-
-
-LaTeX Warning: Label `fig:nephron_pressure' multiply defined.
-
-))
+(./Appendix.aux))
 \openout1 = `article.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 63.
@@ -440,7 +433,6 @@ File: ts1cmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 LaTeX Font Info:    ... okay on input line 63.
 LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 63.
 LaTeX Font Info:    ... okay on input line 63.
-
 (/usr/local/texlive/2018/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count118
@@ -527,466 +519,444 @@ FACElogo.png> <./ETHlogo.png> <./DMAVTlogo.png>] (./article.toc)
 me{page.1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.29 
+l.23 
       [1
 
-] [2] [3] [4] [5] [6]
-Underfull \hbox (badness 10000) in paragraph at lines 218--231
+]
+Underfull \hbox (badness 10000) in paragraph at lines 28--35
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 218--231
+Underfull \hbox (badness 10000) in paragraph at lines 28--35
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 218--231
+Underfull \hbox (badness 10000) in paragraph at lines 61--66
+
+ []
+
+[2]
+Underfull \hbox (badness 10000) in paragraph at lines 70--76
+
+ []
+
+[3] [4] [5] [6] [7]
+Underfull \hbox (badness 10000) in paragraph at lines 257--270
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 235--250
+Underfull \hbox (badness 10000) in paragraph at lines 257--270
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 235--250
+Underfull \hbox (badness 10000) in paragraph at lines 257--270
+
+ []
+
+[8]
+Underfull \hbox (badness 10000) in paragraph at lines 274--289
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 235--250
+Underfull \hbox (badness 10000) in paragraph at lines 274--289
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 235--250
-
- []
-
-[7]
-Underfull \hbox (badness 10000) in paragraph at lines 254--322
+Underfull \hbox (badness 10000) in paragraph at lines 274--289
 
  []
 
 
-Overfull \hbox (3.74977pt too wide) in paragraph at lines 254--322
+Underfull \hbox (badness 10000) in paragraph at lines 274--289
+
+ []
+
+[9]
+Underfull \hbox (badness 10000) in paragraph at lines 294--362
+
+ []
+
+
+Overfull \hbox (3.74977pt too wide) in paragraph at lines 294--362
 \OT1/cmr/m/n/12 The bicgstab.cpp-part of the code is the im-ple-men-ta-tion of 
 a solver based on the Parameter-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 254--322
+Underfull \hbox (badness 10000) in paragraph at lines 294--362
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 254--322
+Underfull \hbox (badness 10000) in paragraph at lines 294--362
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 254--322
+Underfull \hbox (badness 10000) in paragraph at lines 294--362
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 254--322
+Underfull \hbox (badness 10000) in paragraph at lines 294--362
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 254--322
+Underfull \hbox (badness 10000) in paragraph at lines 294--362
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 254--322
+Underfull \hbox (badness 10000) in paragraph at lines 294--362
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 254--322
+Underfull \hbox (badness 10000) in paragraph at lines 294--362
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 254--322
+Underfull \hbox (badness 10000) in paragraph at lines 294--362
 
  []
 
 
-Overfull \hbox (9.98164pt too wide) in paragraph at lines 254--322
+Overfull \hbox (9.98164pt too wide) in paragraph at lines 294--362
 \OT1/cmr/m/n/12 Initial tis-sue source strengths (given uni-form so-lute field)
  are com-puted in the initgreens.cpp-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 254--322
+Underfull \hbox (badness 10000) in paragraph at lines 294--362
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 254--322
+Underfull \hbox (badness 10000) in paragraph at lines 294--362
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 254--322
+Underfull \hbox (badness 10000) in paragraph at lines 294--362
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 254--322
+Underfull \hbox (badness 10000) in paragraph at lines 294--362
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 254--322
+Underfull \hbox (badness 10000) in paragraph at lines 294--362
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 254--322
+Underfull \hbox (badness 10000) in paragraph at lines 294--362
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 254--322
+Underfull \hbox (badness 10000) in paragraph at lines 294--362
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 254--322
+Underfull \hbox (badness 10000) in paragraph at lines 294--362
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 254--322
+Underfull \hbox (badness 10000) in paragraph at lines 294--362
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 254--322
+Underfull \hbox (badness 10000) in paragraph at lines 294--362
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 254--322
+Underfull \hbox (badness 10000) in paragraph at lines 294--362
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 254--322
+Underfull \hbox (badness 10000) in paragraph at lines 294--362
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 254--322
+Underfull \hbox (badness 10000) in paragraph at lines 294--362
 
  []
 
-[8] [9]
-<Contour_Krogh.png, id=223, 750.805pt x 701.62125pt>
+[10] [11]
+<Contour_Krogh.png, id=260, 750.805pt x 701.62125pt>
 File: Contour_Krogh.png Graphic file (type png)
 <use Contour_Krogh.png>
-Package pdftex.def Info: Contour_Krogh.png  used on input line 338.
+Package pdftex.def Info: Contour_Krogh.png  used on input line 378.
 (pdftex.def)             Requested size: 341.43306pt x 319.06686pt.
-<Contour_Cardiac.png, id=225, 666.49pt x 665.48625pt>
+<Contour_Cardiac.png, id=262, 666.49pt x 665.48625pt>
 File: Contour_Cardiac.png Graphic file (type png)
 <use Contour_Cardiac.png>
-Package pdftex.def Info: Contour_Cardiac.png  used on input line 355.
+Package pdftex.def Info: Contour_Cardiac.png  used on input line 395.
 (pdftex.def)             Requested size: 241.84842pt x 241.4839pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 351--359
+Underfull \hbox (badness 10000) in paragraph at lines 391--399
 
  []
 
-[10 <./Contour_Krogh.png>]
-<Contour_Mescent1.png, id=236, 666.49pt x 655.44875pt>
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+<Contour_Mescent1.png, id=264, 666.49pt x 655.44875pt>
 File: Contour_Mescent1.png Graphic file (type png)
 <use Contour_Mescent1.png>
-Package pdftex.def Info: Contour_Mescent1.png  used on input line 367.
+Package pdftex.def Info: Contour_Mescent1.png  used on input line 407.
 (pdftex.def)             Requested size: 241.84842pt x 237.84161pt.
-<Contour_Mescent2.png, id=238, 670.505pt x 655.44875pt>
+<Contour_Mescent2.png, id=266, 670.505pt x 655.44875pt>
 File: Contour_Mescent2.png Graphic file (type png)
 <use Contour_Mescent2.png>
-Package pdftex.def Info: Contour_Mescent2.png  used on input line 375.
+Package pdftex.def Info: Contour_Mescent2.png  used on input line 415.
 (pdftex.def)             Requested size: 241.84842pt x 236.41142pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 363--379
+Underfull \hbox (badness 10000) in paragraph at lines 403--419
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 363--379
+Underfull \hbox (badness 10000) in paragraph at lines 403--419
 
  []
 
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-<Contour_Tumor.png, id=240, 779.91376pt x 705.63625pt>
+[12 <./Contour_Krogh.png>] [13 <./Contour_Cardiac.png> <./Contour_Mescent1.png>
+]
+<Contour_Tumor.png, id=285, 779.91376pt x 705.63625pt>
 File: Contour_Tumor.png Graphic file (type png)
 <use Contour_Tumor.png>
-Package pdftex.def Info: Contour_Tumor.png  used on input line 387.
+Package pdftex.def Info: Contour_Tumor.png  used on input line 427.
 (pdftex.def)             Requested size: 213.39566pt x 193.06537pt.
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-[11 <./Contour_Cardiac.png>]
+ [14 <./Contour_Mescent2.png> <./Contour_Tumor.png>]
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 402.
+(hyperref)                removing `math shift' on input line 442.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `superscript' on input line 402.
+(hyperref)                removing `superscript' on input line 442.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 402.
+(hyperref)                removing `math shift' on input line 442.
 
-<dumux_structure.png, id=256, 616.3025pt x 706.64pt>
+<dumux_structure.png, id=300, 616.3025pt x 706.64pt>
 File: dumux_structure.png Graphic file (type png)
 <use dumux_structure.png>
-Package pdftex.def Info: dumux_structure.png  used on input line 415.
+Package pdftex.def Info: dumux_structure.png  used on input line 455.
 (pdftex.def)             Requested size: 471.4981pt x 540.60236pt.
 
-Overfull \hbox (16.25401pt too wide) in paragraph at lines 415--416
+Overfull \hbox (16.25401pt too wide) in paragraph at lines 455--456
  [][] 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 410--419
+Underfull \hbox (badness 10000) in paragraph at lines 450--459
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 410--419
+Underfull \hbox (badness 10000) in paragraph at lines 450--459
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 410--419
+Underfull \hbox (badness 10000) in paragraph at lines 450--459
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 410--419
+Underfull \hbox (badness 10000) in paragraph at lines 450--459
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 410--419
+Underfull \hbox (badness 10000) in paragraph at lines 450--459
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 410--419
+Underfull \hbox (badness 10000) in paragraph at lines 450--459
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 410--419
+Underfull \hbox (badness 10000) in paragraph at lines 450--459
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 410--419
+Underfull \hbox (badness 10000) in paragraph at lines 450--459
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 410--419
+Underfull \hbox (badness 10000) in paragraph at lines 450--459
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 410--419
+Underfull \hbox (badness 10000) in paragraph at lines 450--459
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 410--419
+Underfull \hbox (badness 10000) in paragraph at lines 450--459
 
  []
 
-[12 <./Contour_Mescent1.png>] [13 <./Contour_Mescent2.png>]
-<nord_pressure.png, id=276, 2639.8625pt x 1011.78pt>
-File: nord_pressure.png Graphic file (type png)
-<use nord_pressure.png>
-Package pdftex.def Info: nord_pressure.png  used on input line 445.
-(pdftex.def)             Requested size: 512.1496pt x 196.28508pt.
+[15] [16 <./dumux_structure.png>]
+<nephron2_pressure.png, id=319, 839.135pt x 514.92375pt>
+File: nephron2_pressure.png Graphic file (type png)
+<use nephron2_pressure.png>
+Package pdftex.def Info: nephron2_pressure.png  used on input line 483.
+(pdftex.def)             Requested size: 460.93463pt x 282.8475pt.
 
-Overfull \hbox (56.90552pt too wide) in paragraph at lines 445--446
+Overfull \hbox (5.69055pt too wide) in paragraph at lines 483--484
  [][] 
  []
 
-<nord_velocity.png, id=278, 2639.8625pt x 1011.78pt>
-File: nord_velocity.png Graphic file (type png)
-<use nord_velocity.png>
-Package pdftex.def Info: nord_velocity.png  used on input line 453.
-(pdftex.def)             Requested size: 512.1496pt x 196.28508pt.
+<nephron2_velocity.png, id=321, 844.15375pt x 466.74374pt>
+File: nephron2_velocity.png Graphic file (type png)
+<use nephron2_velocity.png>
+Package pdftex.def Info: nephron2_velocity.png  used on input line 491.
+(pdftex.def)             Requested size: 460.93463pt x 254.85814pt.
 
-Overfull \hbox (56.90552pt too wide) in paragraph at lines 453--454
+Overfull \hbox (5.69055pt too wide) in paragraph at lines 491--492
  [][] 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 442--457
+Underfull \hbox (badness 10000) in paragraph at lines 480--495
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 442--457
+Underfull \hbox (badness 10000) in paragraph at lines 480--495
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 442--457
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 442--457
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 442--457
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 442--457
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 442--457
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 442--457
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 442--457
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 442--457
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 442--457
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 442--457
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 442--457
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 442--457
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 442--457
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 442--457
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 442--457
+Underfull \hbox (badness 10000) in paragraph at lines 480--495
 
  []
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[14 <./Contour_Tumor.png>] [15 <./dumux_structure.png>] [16 <./nord_pressure.pn
-g (PNG copy)> <./nord_velocity.png (PNG copy)>]
-<nephron_pressure.png, id=302, 2639.8625pt x 1011.78pt>
-File: nephron_pressure.png Graphic file (type png)
-<use nephron_pressure.png>
-Package pdftex.def Info: nephron_pressure.png  used on input line 463.
-(pdftex.def)             Requested size: 512.1496pt x 196.28508pt.
 
-Overfull \hbox (56.90552pt too wide) in paragraph at lines 463--464
- [][] 
- []
+LaTeX Warning: `h' float specifier changed to `ht'.
 
-<nephron_velocity.png, id=304, 2639.8625pt x 1011.78pt>
-File: nephron_velocity.png Graphic file (type png)
-<use nephron_velocity.png>
-Package pdftex.def Info: nephron_velocity.png  used on input line 471.
-(pdftex.def)             Requested size: 512.1496pt x 196.28508pt.
+<tracer_1.png, id=322, 2639.8625pt x 1011.78pt>
+File: tracer_1.png Graphic file (type png)
+<use tracer_1.png>
+Package pdftex.def Info: tracer_1.png  used on input line 507.
+(pdftex.def)             Requested size: 460.93463pt x 176.66275pt.
 
-Overfull \hbox (56.90552pt too wide) in paragraph at lines 471--472
+Overfull \hbox (5.69055pt too wide) in paragraph at lines 507--508
  [][] 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 460--475
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 511--512
+
+ []
+
+[17] [18 <./nephron2_pressure.png>]
+<nord_pressure.png, id=348, 861.2175pt x 482.80376pt>
+File: nord_pressure.png Graphic file (type png)
+<use nord_pressure.png>
+Package pdftex.def Info: nord_pressure.png  used on input line 540.
+(pdftex.def)             Requested size: 460.93463pt x 258.40428pt.
+
+Overfull \hbox (5.69055pt too wide) in paragraph at lines 540--541
+ [][] 
+ []
+
+<nord_velocity.png, id=350, 829.0975pt x 455.7025pt>
+File: nord_velocity.png Graphic file (type png)
+<use nord_velocity.png>
+Package pdftex.def Info: nord_velocity.png  used on input line 548.
+(pdftex.def)             Requested size: 460.93463pt x 253.34203pt.
+
+Overfull \hbox (5.69055pt too wide) in paragraph at lines 548--549
+ [][] 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 537--552
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 460--475
+Underfull \hbox (badness 10000) in paragraph at lines 537--552
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 460--475
-
- []
-
-[17 <./nephron_pressure.png (PNG copy)> <./nephron_velocity.png (PNG copy)>]
-Underfull \hbox (badness 10000) in paragraph at lines 487--492
+Underfull \hbox (badness 10000) in paragraph at lines 537--552
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 487--492
+Underfull \hbox (badness 10000) in paragraph at lines 537--552
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 515--519
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 560--565
 
  []
 
-[18]) [19] (./article.bbl [20]) [21]
+
+Underfull \hbox (badness 10000) in paragraph at lines 560--565
+
+ []
+
+[19 <./nephron2_velocity.png>] [20 <./tracer_1.png (PNG copy)>]
+Underfull \hbox (badness 10000) in paragraph at lines 591--595
+
+ []
+
+) [21 <./nord_pressure.png>] [22 <./nord_velocity.png>] (./article.bbl [23])
+[24]
 \openout2 = `Appendix.aux'.
 
  (./Appendix.tex
+<nephron_velocity.png, id=387, 888.31876pt x 591.20876pt>
 File: nephron_velocity.png Graphic file (type png)
 <use nephron_velocity.png>
 Package pdftex.def Info: nephron_velocity.png  used on input line 11.
-(pdftex.def)             Requested size: 460.25078pt x 176.40707pt.
+(pdftex.def)             Requested size: 460.93463pt x 306.76276pt.
 
-Overfull \hbox (5.0067pt too wide) in paragraph at lines 11--12
+Overfull \hbox (5.69055pt too wide) in paragraph at lines 11--12
  [][] 
  []
 
@@ -995,14 +965,18 @@ Underfull \hbox (badness 10000) in paragraph at lines 15--16
 
  []
 
+<nephron_pressure.png, id=389, 1072.005pt x 582.175pt>
 File: nephron_pressure.png Graphic file (type png)
 <use nephron_pressure.png>
 Package pdftex.def Info: nephron_pressure.png  used on input line 19.
-(pdftex.def)             Requested size: 460.25078pt x 176.40707pt.
+(pdftex.def)             Requested size: 460.93463pt x 250.3126pt.
 
-Overfull \hbox (5.0067pt too wide) in paragraph at lines 19--20
+Overfull \hbox (5.69055pt too wide) in paragraph at lines 19--20
  [][] 
  []
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
 
 
 Underfull \hbox (badness 10000) in paragraph at lines 23--24
@@ -1018,16 +992,20 @@ Overfull \hbox (28.45276pt too wide) in paragraph at lines 31--32
  [][] 
  []
 
-) [22
+)
 
-] [23]
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[25
+
+ <./nephron_velocity.png>] [26 <./nephron_pressure.png>] [27]
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 126.
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 126.
  (./article.aux (./Appendix.aux))
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 126.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 126.
 Package rerunfilecheck Info: File `article.out' has not changed.
-(rerunfilecheck)             Checksum: 59C3C9CCC4827BF6B33C9A2818CDB315;1297.
+(rerunfilecheck)             Checksum: 09B111E732CCF7409E8DF958FF491A5A;1287.
 
 
 LaTeX Warning: There were multiply-defined labels.
@@ -1035,31 +1013,32 @@ LaTeX Warning: There were multiply-defined labels.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 126.
  ) 
 Here is how much of TeX's memory you used:
- 7917 strings out of 492649
- 113712 string characters out of 6129622
- 216150 words of memory out of 5000000
- 11559 multiletter control sequences out of 15000+600000
- 13416 words of font info for 48 fonts, out of 8000000 for 9000
+ 7949 strings out of 492649
+ 114237 string characters out of 6129622
+ 215398 words of memory out of 5000000
+ 11575 multiletter control sequences out of 15000+600000
+ 13724 words of font info for 49 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 37i,14n,45p,730b,445s stack positions out of 5000i,500n,10000p,200000b,80000s
-</usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb
-></usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb>
-</usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb><
-/usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></
-usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></us
-r/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/
-local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/lo
-cal/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/loca
-l/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/local/t
-exlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texl
-ive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texli
-ve/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/local/texlive
-/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2
-018/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb>
-Output written on article.pdf (25 pages, 4669480 bytes).
+ 37i,12n,45p,1018b,445s stack positions out of 5000i,500n,10000p,200000b,80000s
+</usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb
+></usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb>
+</usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb><
+/usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></
+usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></u
+sr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr
+/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/l
+ocal/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/loc
+al/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local
+/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/local/te
+xlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texli
+ve/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texliv
+e/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/local/texlive/
+2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/20
+18/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb>
+Output written on article.pdf (29 pages, 6878901 bytes).
 PDF statistics:
- 427 PDF objects out of 1000 (max. 8388607)
- 362 compressed objects within 4 object streams
- 112 named destinations out of 1000 (max. 500000)
- 226 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 487 PDF objects out of 1000 (max. 8388607)
+ 407 compressed objects within 5 object streams
+ 124 named destinations out of 1000 (max. 500000)
+ 241 words of extra memory for PDF output out of 10000 (max. 10000000)
 
