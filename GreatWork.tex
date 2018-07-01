@@ -22,16 +22,26 @@ In this section the physiological aspects will be discussed, and the main goal o
 \\In this thesis, the flow and transport through micro-vessels in the capillary range is the main concern, where generally the time-dependency of the velocity of blood will be neglected. We use a steady-state approximation for the flow rate, and thus assume a constant velocity. This means that there is no variation of velocity depending on time for any given point in the network.
 
 \subsection{Blood Flow}
+\label{Blood Flow}
 %Purely physiological Blood Flow part (with mathematical formulas to describe processes)
 %Discuss General Hemodynamics
+%Put some papers and references in and explain some values and parameters.
 
-Blood flow in the body can be approximated by the Navier-Stokes equations.
-\\But rather talk about purely physiological things first.
-\\Put some papers and references in and explain some values and parameters.
-\\Use mathematics paper for blood flow calculations \cite{rahman2012mathematical}.
+Use mathematics paper for blood flow calculations \cite{rahman2012mathematical}.
 \\Papers to cite: \cite{pittman2011regulation}
 \\
-\\
+\\Blood is basically composed of two phases: liquid and cells. The liquid phase is called plasma, and the cells that are our main concern are the red blood cells. This will later play an important role when considering the oxygen transport in blood. For computational models, blood is generally modeled as an incompressible Newtonian fluid \cite{rahman2012mathematical}. This basically means that the viscous stress is linearly proportional to the strain rate. This assumption generally holds, even though the particles in the blood, which are the cells, start playing a more important role for the smallest vessels.
+This leads to the Navier-Stokes equations \ref{eq:NavierStokes1}, \ref{eq:NavierStokes2}, which basically describe the flow dynamics of an incompressible Newtonian (?) fluid:
+\begin{equation}
+\\ \rho \frac{\delta \textbf{v}}{\delta t} + \rho \textbf{v} \nabla \textbf{v} + \nabla p - \eta \nabla ( \nabla \textbf{v} + \nabla \textbf{v}^T ) = \textbf{f}
+\label{eq:NavierStokes1}
+\end{equation}
+\begin{equation}
+\\ \nabla \textbf{v} = 0
+\label{eq:NavierStokes2}
+\end{equation}
+In the Navier-Stokes equations, $\textbf{v}$ is the velocity vector, $p$ is the pressure, and $\rho$ and $\eta$ are the blood density and viscosity respectively.
+\\The external forces acting on the fluid are represented by the vector $\textbf{f} = (f_x f_y f_z)^T$.
 
 \subsection{Oxygen Transport and Delivery}
 %Purely physiological Oxygen part (with mathematical formulas to describe processes)
@@ -41,38 +51,43 @@ How does this oxygen related stuff physically and physiologically work ?
 \\Why do we care about this etc. ?
 \\Diffusion, Parameters, etc. etc.
 \\Use Vasomotion paper for oxygen delivery \cite{goldman2001computational}
+\\Papers to cite: \cite{rogersupdate}
 
 \subsubsection*{Oxygen Transport in the Blood}
 %Transport with the flow
 %Binding of Oxygen to Red Blood Cells
 %Oxygen Concentration etc.
+%Papers to cite: \cite{hellums1977resistance}.
 
 -Plasma and Red Blood Cells
 \\-Hemoglobin
-\\-Myoglobin
 \\Blood is basically composed of two phases: liquid and cells, which is the plasma and the red blood cells. The red blood cells build nearly half of the total blood volume, and are the main carriers of oxygen in the blood \cite{pittman2011regulation}.
-\\Papers to cite: \cite{hellums1977resistance}.
 
 \subsubsection*{Oxygen Diffusion Into the Tissue}
-%Diffusion out of the Vessels
-%Diffusion Process - Transport in the Tissue
+%Diffusion out of the Vessels - Fick's Law of Diffusion
+%Diffusion Process - Transport in the Tissue - Properties and some general Parameters
 %Delivery of Oxygen to the Cells
+%Papers to cite: \cite{hellums1977resistance}, \cite{fletcher1980facilitated}
 
--What is Diffusion ?
-\\-Fick's Law of Diffusion and Concentration Gradients
-\\-Diffusion Properties and some general Parameters
-\\Papers to cite: \cite{hellums1977resistance}, \cite{fletcher1980facilitated}
-\\
+As previously described, diffusion will play an important role in oxygen transport in the body, as oxygen is reaching the tissue by diffusing out of the vessels. This physical phenomenon is described by Fick's Law of Diffusion:
+\begin{equation}
+\\J = - D \frac{dc}{dx}
+\label{Fick}
+\end{equation}
+Where J is the diffusive flux, D is the previously mentioned diffusivity coefficient, and $\frac{dc}{dx}$ is the derivative of the concentration with respect to the distance x, which is the concentration gradient \cite{pittman2011regulation}, \cite{lee2017accounting}.
+\\The diffusion process can be helped and enhanced by a substance (molecule?) called Myoglobin. This substance can be found in some tissues in the body, especially muscle tissue (?) and enhances the diffusivity of oxygen through the tissue. The enhancement effect can obviously depends on the Myoglobin concentration in the given tissue, and these effects can be taken into account by (?).
+
 
 \subsection{Current Trends in Modeling}
 %Use a few papers to give examples for previous and actual approaches
+%Do link to modeling and models in this field in general, then link this to computational models in this field and their use. Actual trends and what people hope for in the future (in terms of computational power, computational methods but also from a medical perspective) is also interesting.
+%Papers to cite: \cite{rahman2012mathematical}, \cite{goldman2001computational}, \cite{kuzmin2010guide}, \cite{lee2017accounting}, \cite{hoofd1992updating}, \cite{beard2001modeling}, \cite{Secomb2004}
 
-Do link to modeling and models in this field in general, then link this to computational models in this field and their use. Actual trends and what people hope for in the future (in terms of computational power, computational methods but also from a medical perspective) is also interesting.
-\\In order to simulate flows, Computational Fluid Dynamics (CFD) is a tool that can be used to produce results which can not be obtained through in vitro or in vivo experiments. For this reason and because the computational capabilities available are growing everyday, modeling and simulating processes in the body is taking an increasingly important role in biological and medical sciences.
+In order to simulate flows, Computational Fluid Dynamics (CFD) is a tool that can be used to produce results which can not be obtained through in vitro or in vivo experiments  \cite{rahman2012mathematical}. For this reason and because the computational capabilities available are growing everyday, modeling and simulating processes in the body is taking an increasingly important role in biological and medical sciences.
 \\In our case, the focus will lie on oxygen transport simulations and their computational implementation.\\
-\\Generally Blood Flow in the body can be approximated by the Navier-Stokes equations. The Transport of oxygen in the Blood can then be linked to this by the Transport Equations. These physical equations are quite straightforward to implement and solve numerically. The next task remains the biggest problem in actual research: Link this transport to the diffusion process out of the vessels and into the tissue. The biggest problems here seem to be in choosing the right/appropriate boundary conditions to get exact results. Also, many numerical methods fail or more specifically become unstable when the vessel network becomes complicated and heterogeneous. There are already good methods to produce results for the Krogh model, but to compute oxygen fields in very complex networks like in the kidney, these models do not provide the desired results.
+\\As already mentioned in \ref{Blood Flow}, blood flow in the body can be approximated by the Navier-Stokes equations \ref{eq:NavierStokes1}, \ref{eq:NavierStokes2}. The transport of oxygen in the blood can then be linked to this by the transport equations. These physical equations are quite straightforward to implement and solve numerically. The next task remains the biggest problem in actual research: Link this transport to the diffusion process out of the vessels and into the tissue. The biggest problems here seem to be in choosing the right/appropriate boundary conditions to get exact results. Also, many numerical methods fail or more specifically become unstable when the vessel network becomes complicated and heterogeneous. There are already good methods to produce results for the Krogh model, but to compute oxygen fields in very complex networks like in the kidney, these models do not provide the desired results.
 \\Steady-State approximation for simulations: Need this assumption for Michaelis-Menten relation.
-\\Papers to cite: \cite{rahman2012mathematical}, \cite{goldman2001computational}, \cite{kuzmin2010guide}, \cite{lee2017accounting}, \cite{hoofd1992updating}, \cite{beard2001modeling}, \cite{Secomb2004}
+
 
 %In each of your categories (or subcategories if your topic is
 %broad), we would like the following three points to be developed:
@@ -95,7 +110,7 @@ As mentioned previously, this thesis is focussing on the analysis of simulation 
 \subsection{Green's Function Method Code}
 %Here I will talk about everything concerning the Green's Method Code.
 
-The Green's Function Method was first used for numerical computations of oxygen delivery in the tissue by Secomb et al. \cite{Secomb2004}. It can deliver accurate results with lower computational cost, due to the fact that the number of unknowns is reduced. For simple networks like the examples specified in the next chapter, the method seems to be stable and produce accurate results. However, using new and more complex networks, the Green's Function Method seems to produce bad results and shows characteristics of unstability (at least we think so for now). Obviously as the results get bad, the computational advantages of this method are not of any use (bad formulation?).
+The Green's Function Method was first used for numerical computations of oxygen delivery in the tissue by Secomb et al. \cite{Secomb2004}. It can deliver accurate results with lower computational cost when compared to implicit methods, due to the fact that the number of unknowns is reduced. For simple networks like the examples specified in the next chapter, the method seems to be stable and produce accurate results. However, using new and more complex networks, the Green's Function Method seems to produce bad results and shows characteristics of unstability (at least we think so for now). Obviously as the results get bad, the computational advantages of this method are not of any use (bad formulation?).
 \\The mathematical background behind the Green's Function Method and the numerical method derived from it will be discussed in the upcoming section. The accuracy of produced results as well as the physiological meaning behind these results will be the main subject in this chapter.
 
 \subsubsection{Green's Function Model}
@@ -115,13 +130,9 @@ General explanation about Green's Method code and how it works, especially mathe
 In this subsection, the used physical quantities, the assumptions and governing equations will briefly be explained. The equations cited here are, in my opinion, the most important ones to describe the physical background for the treated problem. This part strongly relies on the description by Secomb et al. \cite{Secomb2004}.
 \\When looking at the code of the Green's Function Method, and especially at the inputs \ref{Inputs}, one can see that the tissue is modeled as a homogeneous medium. This results in constant oxygen diffusivity and solubility coefficients D and $\alpha$ respectively. These quantities usually have to be specified in the SoluteParams.dat-file. A more detailed explanation to the Inputs can be found in the Inputs section \ref{Inputs}.
 \\The governing equations are listed here, with a short explanation for each of them:
-\\As previously described, diffusion will play an important role in oxygen transport in the body, as oxygen is reaching the tissue by diffusing out of the vessels. This physical phenomenon is described by Fick's Law of Diffusion:
-\begin{equation}
-\\J = - D \frac{dc}{dx}
-\label{Fick}
-\end{equation}
+\\As previously described, diffusion will play an important role in oxygen transport in the body, as oxygen is reaching the tissue by diffusing out of the vessels. This physical phenomenon is described by Fick's Law of Diffusion \ref{Fick}.
 %
-Where J is the diffusive flux, D is the previously mentioned diffusivity coefficient, and dc/dx is the derivative of the concentration with respect to the distance x.
+As a reminder, I want to mention that Fick's first Law gives the diffusive flux, which we are interested in, as a function of the diffusivity and the concentration gradient in the tissue.
 \\In addition to this, the principle of conservation of mass applies to oxygen, and we have:
 \begin{equation}
 \frac{\delta \rho} {\delta t} + \nabla (\rho v) = 0
@@ -189,7 +200,7 @@ In \ref{eq:Myoglob}, $D_{Mb}$, $C_{Mb}$, $V_m$ and $S_{Mb}$ are the diffusion co
 %Mathematical Background to this Method. What's so special about it ? Is there any advantage at first sight ?
 %Very useful to use Green's Function Formulation section of Secomb here
 
- Similar to the previous section, this section will strongly rely on \cite{Secomb2004}. In this subsection, the Green's Function Method, its equations and the application to the given problem/field will be explained.
+Similar to the previous section, this section will strongly rely on \cite{Secomb2004}. In this subsection, the Green's Function Method, its equations and the application to the given problem/field will be explained.
 \\In this section, I will focus on giving a good and understandable insight to the Green's Function Method and its specific application, instead of getting lost in details. More specific low-level informations about the code and its implementation will follow later.
 \\The main idea of the Green's Function Method approach is to model blood vessels as discrete oxygen sources. The oxygen consumption is then modeled by a set of discrete oxygen sinks. As previously described, our goal is to simulate the oxygen transport to finally obtain the oxygen concentration for every node in our tissue and vessel network. In general terms, the oxygen field is computed by a superposition of the fields resulting from each of the sources and sinks.
 \\The strengths of the sources are unknowns in this problem. The sinks are unknowns as well, due to the fact that the oxygen consumption depends on the local partial pressure of oxygen, as one can see in \ref{eq:MichaelisMenten}.
