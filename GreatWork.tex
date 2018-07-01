@@ -14,6 +14,7 @@ This thesis aims to understand and specify how blood flow and oxygen transport h
 First, a short insight to the physiological background of blood flow and oxygen transport in the body will be given.The general process of oxygen delivery to the tissue and oxygen consumption by the tissue will be explained. The main subject will be the transport of oxygen in the body, starting in the blood flow and ending in the diffusion into the tissue through a general diffusion process.
 \\The results of oxygen transport simulation methods, especially the Green's Function Method, will later be discussed and evaluated for different networks. In addition to this, a new oxygen delivery model was implemented using an open source software called $DuMu^x$. The focus of this thesis is to understand when and why the Green's Function Method produces physiologically accurate results, how it can perform on new networks and compare these results to alternatives such as the implemented method on $DuMu^x$.
 
+\newpage
 \section{Blood Flow and Oxygen Delivery}
 %How does this work physiologically ?
 
@@ -85,7 +86,7 @@ Where J is the diffusive flux, D is the previously mentioned diffusivity coeffic
 
 In order to simulate flows, Computational Fluid Dynamics (CFD) is a tool that can be used to produce results which can not be obtained through in vitro or in vivo experiments  \cite{rahman2012mathematical}. For this reason and because the computational capabilities available are growing everyday, modeling and simulating processes in the body is taking an increasingly important role in biological and medical sciences.
 \\In our case, the focus will lie on oxygen transport simulations and their computational implementation.\\
-\\As already mentioned in \ref{Blood Flow}, blood flow in the body can be approximated by the Navier-Stokes equations \ref{eq:NavierStokes1}, \ref{eq:NavierStokes2}. The transport of oxygen in the blood can then be linked to this by the transport equations. These physical equations are quite straightforward to implement and solve numerically. The next task remains the biggest problem in actual research: Link this transport to the diffusion process out of the vessels and into the tissue. The biggest problems here seem to be in choosing the right/appropriate boundary conditions to get exact results. Also, many numerical methods fail or more specifically become unstable when the vessel network becomes complicated and heterogeneous. There are already good methods to produce results for the Krogh model, but to compute oxygen fields in very complex networks like in the kidney, these models do not provide the desired results.
+\\As already mentioned in the section \ref{Blood Flow}, blood flow in the body can be approximated by the Navier-Stokes equations \ref{eq:NavierStokes1}, \ref{eq:NavierStokes2}. The transport of oxygen in the blood can then be linked to this by the transport equations. These physical equations are quite straightforward to implement and solve numerically. The next task remains the biggest problem in actual research: Link this transport to the diffusion process out of the vessels and into the tissue. The biggest problems here seem to be in choosing the right/appropriate boundary conditions to get exact results. Also, many numerical methods fail or more specifically become unstable when the vessel network becomes complicated and heterogeneous. There are already good methods to produce results for the Krogh model, but to compute oxygen fields in very complex networks like in the kidney, these models do not provide the desired results.
 \\Steady-State approximation for simulations: Need this assumption for Michaelis-Menten relation.
 
 
@@ -102,6 +103,7 @@ In order to simulate flows, Computational Fluid Dynamics (CFD) is a tool that ca
   %  topic?
 %\end{enumerate}
 
+\newpage
 \section{Simulation Methods}
 %Everything about the computations behind the simulations and all I did.
 
@@ -113,7 +115,7 @@ As mentioned previously, this thesis is focussing on the analysis of simulation 
 The Green's Function Method was first used for numerical computations of oxygen delivery in the tissue by Secomb et al. \cite{Secomb2004}. It can deliver accurate results with lower computational cost when compared to implicit methods, due to the fact that the number of unknowns is reduced. For simple networks like the examples specified in the next chapter, the method seems to be stable and produce accurate results. However, using new and more complex networks, the Green's Function Method seems to produce bad results and shows characteristics of unstability (at least we think so for now). Obviously as the results get bad, the computational advantages of this method are not of any use (bad formulation?).
 \\The mathematical background behind the Green's Function Method and the numerical method derived from it will be discussed in the upcoming section. The accuracy of produced results as well as the physiological meaning behind these results will be the main subject in this chapter.
 
-\subsubsection{Green's Function Model}
+\subsubsection{The Computational Model}
 %Just mathematical theory behind this method
 
 General explanation about Green's Method code and how it works, especially mathematics behind the Green's Function Method (many mathematical formulas) and why it makes sense to use this. Also especially why is this interesting in physiological applications and oxygen delivery/consumption simulations ?
@@ -123,7 +125,7 @@ General explanation about Green's Method code and how it works, especially mathe
 \\- Find a cheap solution in terms of computational cost (when compared to implicit methods)
 \\- Green's function method is computationally less expensive than implicit methods, due to the fact that there is a lower number of unknowns
 
-\subsubsection*{The Computational Model}
+%\subsubsection*{The Computational Model}
 %Methods and physiological assumptions used in this model.
 %Very useful to use Governing Equations section of Secomb here
 
@@ -196,7 +198,7 @@ In Hill's equation \ref{eq:Hill}, $P_b$ ist the previously mentioned partial pre
 \end{equation}
 In \ref{eq:Myoglob}, $D_{Mb}$, $C_{Mb}$, $V_m$ and $S_{Mb}$ are the diffusion coefficient, the concentration, the molar volume and the oxygen saturation of Myoglobin respectively. D and $\alpha$ are the same constants mentioned previously, which were the diffusivity and the solubility coefficients of oxygen.
 
-\subsubsection*{Mathematics Behind Green's Function Method}
+\subsubsection{The Mathematics Behind Green's Function Method}
 %Mathematical Background to this Method. What's so special about it ? Is there any advantage at first sight ?
 %Very useful to use Green's Function Formulation section of Secomb here
 
@@ -396,7 +398,8 @@ Figure \ref{fig:Contour_Krogh}  is the result of a Green's Method blood flow sim
 
 %The Brain network provided by Secomb (?) was used for further simulations and to validate the produced data.
 
-\subsubsection*{Cardiac Model}
+\newpage
+\subsubsection*{The Cardiac Model}
 %Explain relevance of this model and the produced results (many plots here)
 
 The Cardiac network provided by Secomb (?) was used for further simulations and to validate the produced data.\\
@@ -408,7 +411,8 @@ The Cardiac network provided by Secomb (?) was used for further simulations and 
 \label{fig:Contour_Cardiac1}
 \end{figure}
 
-\subsubsection*{Mescent Model}
+\newpage
+\subsubsection*{The Mescent Model}
 %Explain relevance of this model and the produced results (many plots here)
 
 The Mescent network provided by Secomb (?) was used for further simulations and to validate the produced data.\\
@@ -428,7 +432,8 @@ The Mescent network provided by Secomb (?) was used for further simulations and 
 \label{fig:Contour_Mescent2}
 \end{figure}
 
-\subsubsection*{Tumor Model}
+\newpage
+\subsubsection*{The Tumor Model}
 %Explain relevance of this model and the produced results (many plots here)
 
 The Tumor network provided by Secomb (?) was used for further simulations and to validate the produced data.
@@ -440,6 +445,7 @@ Figure \ref{fig:Contour_Tumor}  is the result of a Green's Method blood flow sim
 \label{fig:Contour_Tumor}
 \end{figure}
 
+\newpage
 \subsubsection*{Further Outlook for New Networks}
 %Explain relevance of the new models and the produced results (many plots here)
 
@@ -457,7 +463,9 @@ Figure \ref{fig:NetNodesSegs_Glom}  is the result of a Green's Method blood flow
 %Discussion part of Green's
 
 Final thoughts about Green's Method for physiological applications and oxygen delivery simulations/computations.
+%Compare the results with physiological measured values and check if the results make sense in general.
 
+\newpage
 \subsection{$DuMu^x$}
 %Explain DuMuX in general and explain the implemented method.
 
@@ -476,6 +484,7 @@ Figure \ref{fig:dumux_structure}  is the Structure of $DuMu^x$ given from the $D
 \label{fig:dumux_structure}
 \end{figure}\\\\
 
+\newpage
 \subsubsection*{Available Numerical Solvers}
 %What solvers can we use ?
 %What can DuMuX offer ?
@@ -550,6 +559,7 @@ The networks that were used for the simulations are extracted from real organs c
 \\-Quality of results
 \\-Paraview Visualization of results
 
+\newpage
 \subsubsection*{Some Nord Network Simulations}
 %I will hopefully put 1p_1p_tracer results here later
 
@@ -569,6 +579,7 @@ Figure \ref{fig:nord_pressure}  is the result of a $DuMu^x$ blood flow simulatio
 \label{fig:nord_velocity}
 \end{figure}\\\\
 
+\newpage
 \subsubsection*{Some Nephron Network Simulations}
 %I will hopefully put 1p_1p_tracer results here later
 
@@ -588,7 +599,7 @@ The figure \ref{fig:nephron_velocity} is the result of a DuMuX 1p-1p blood flow 
 \end{figure}
 The figure \ref{fig:nephron_pressure} is the result of a DuMuX 1p-1p blood flow simulation computed on a nephron network. The pressure field of the flow is visualized.\\
 
-
+\newpage
 \section{Comparison of the Different Methods Behind the Simulations}
 %Compare DuMuX to Green's Method in general
 In this section the main differences between these two simulation methods described previously will be discussed.
@@ -619,6 +630,7 @@ In this section the main differences in the produced results for the same input 
 
 %I already did this previously, so might delete this part ...
 
+\newpage
 \section{Conclusion}
 %Summary of both methods in general and Outlook for the research field
 %What this review was about: short summary. Main points
