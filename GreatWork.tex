@@ -435,7 +435,7 @@ Figure \ref{fig:Contour_Krogh} is the result of a Green's Method blood flow simu
 \caption{\footnotesize Green's Contour Output for Krogh Network}
 \label{fig:Contour_Krogh}
 \end{figure}
-One can very clearly see that the results produced are absolutely realistic. On \ref{fig:Contour_Krogh} the blood flow goes from left to right. The $O_2$ concentration in mmHg accordingly goes down in flow direction. The concentrations as well as the diffusive distance in the tissue also decrease in flow direction, which can be explained by the fact that a lower concentration gradient goes with a lower Diffusive Flux \ref{Fick}.
+One can very clearly see that the results produced are physically very realistic. On \ref{fig:Contour_Krogh} the blood flow goes from left to right. The $O_2$ concentration in mmHg accordingly goes down in flow direction. The concentrations as well as the diffusive distance in the tissue also decrease in flow direction, which can be explained by the fact that a lower concentration gradient goes with a lower Diffusive Flux. This is makes sense when looking at Fick's Law of Diffusion \ref{Fick}.
 
 %\subsubsection*{Brain Model}
 %Explain relevance of this model and the produced results (many plots here)
@@ -446,23 +446,23 @@ One can very clearly see that the results produced are absolutely realistic. On 
 \subsubsection*{The Cardiac Model}
 %Explain relevance of this model and the produced results (many plots here)
 
-The Cardiac network provided by Secomb was used for further simulations and to validate the produced data.\\
+The Cardiac network provided by Secomb was used for further simulations and to analyze results in more complex networks.\\
 %Where does this come from Kartik ?
-\\This network is obviously more complicated then the previously presented Krogh model. The result is visualized on Figure \ref{fig:Contour_Cardiac1}. Here one can see the result of a Green's Method blood flow simulation computed on a Cardiac network. As for the Krogh model, the Oxygen Concentration in the network and in the tissue is visualized in the form of a slice (See Output Section \ref{Outputs} for more information). Again the illustration shows a virtual cut into the tissue and gives local oxygen concentrations in mmHg.\\
+\\This network is obviously more complicated than the previously presented Krogh model. The result is visualized on Figure \ref{fig:Contour_Cardiac1}. Here one can see the result of a Green's Method blood flow simulation computed on a Cardiac network. As for the Krogh model, the Oxygen Concentration in the network and in the tissue is visualized in the form of a slice (See Output Section \ref{Outputs} for more information). Again the illustration shows a virtual cut into the tissue and gives local oxygen concentrations in mmHg.\\
 \begin{figure}[h]
 \centering
 \includegraphics[width=120mm]{Contour_Cardiac}
 \caption{\footnotesize Green's Contour Output for Cardiac Network}
 \label{fig:Contour_Cardiac1}
 \end{figure}
-\\Obviously looking at the Contour plot doesn't make much sense here, as the high number of vessels makes an analysis of the $PO_2$ impossible. For this reason, other files must be used what which ones ?
+\\Obviously looking at the Contour plot doesn't make much sense here, as the high number of vessels makes an analysis of the $PO_2$ impossible. For this reason, other files must be used but which ones ?
 
 \newpage
 \subsubsection*{The Mesentery Artery Model}
 %Explain relevance of this model and the produced results (many plots here)
 
-The Mesentery Artery network provided by Secomb was used for further simulations and to validate the produced data.\\
-\\This network is obviously more complicated then the previously presented Krogh model. The result is visualized on Figure \ref{fig:Contour_Mesent1}. Here on can see the result of a Green's Method blood flow simulation computed on a Mesentery Artery network. As for the previous models, the Oxygen Concentration in the network and in the tissue is visualized in the form of a slice (See Output Section \ref{Outputs} for more information).\\
+The Mesentery Artery network provided by Secomb was used for further simulations and to get more computational results.\\
+\\This network is obviously more complicated than the previously presented Krogh model but luckily gives a way better insight to the results than the Cardiac Network simulation, due to the much lower vessel density. The result is visualized on Figure \ref{fig:Contour_Mesent1}. Here on can see the result of a Green's Method blood flow simulation computed on a Mesentery Artery network. As for the previous models, the Oxygen Concentration in the network and in the tissue is visualized in the form of a slice (See Output Section \ref{Outputs} for more information). Again the illustration shows a virtual cut into the tissue and gives local oxygen concentrations in mmHg.\\\\
 \begin{figure}[h]
 \centering
 \includegraphics[width=85mm]{Contour_Mesent1}
@@ -477,7 +477,7 @@ The Mesentery Artery network provided by Secomb was used for further simulations
 %\caption{\footnotesize Green's Contour Output for a Mesentery Artery Network (Solute 2)}
 %\label{fig:Contour_Mesent2}
 %\end{figure}
-\\Due to the low density of capillaries for this network, this figure can give a good insight to the values computed by the Green's Model. As for the previous models, the illustration shows a virtual cut into the tissue and gives local oxygen concentrations in mmHg.
+\\Due to the low density of capillaries for this network, this figure can give a good insight to the values computed by the Green's Model. One can clearly see that partial pressure of $O_2$ goes down in radial direction with growing distance from the vessels. At hotspots where the capillary density is higher due to branching and ramification, the diffusion comes from two vessels and the superposition of two close source elements obviously leads to peaks in $PO_2$ values.
 
 \newpage
 \subsubsection*{A First Tumor Model}
