@@ -2,32 +2,36 @@
 \contentsline {section}{\numberline {}{Abstract}}{1}{section*.1}
 \contentsline {section}{\numberline {1}Introduction}{1}{section.1}
 \contentsline {subsection}{\numberline {1.1}Motivation}{1}{subsection.1.1}
-\contentsline {subsection}{\numberline {1.2}Structure of the Thesis}{1}{subsection.1.2}
-\contentsline {section}{\numberline {2}Blood Flow and Oxygen Delivery}{1}{section.2}
-\contentsline {subsection}{\numberline {2.1}Blood Flow}{2}{subsection.2.1}
-\contentsline {subsection}{\numberline {2.2}Oxygen Transport and Delivery}{2}{subsection.2.2}
-\contentsline {subsection}{\numberline {2.3}Current Trends in Modeling}{3}{subsection.2.3}
-\contentsline {section}{\numberline {3}Simulation Methods}{3}{section.3}
-\contentsline {subsection}{\numberline {3.1}Green's Function Method Code}{4}{subsection.3.1}
-\contentsline {subsubsection}{\numberline {3.1.1}Green's Function Model}{4}{subsubsection.3.1.1}
-\contentsline {subsubsection}{\numberline {3.1.2}General Structure of the Used Code}{8}{subsubsection.3.1.2}
+\contentsline {subsection}{\numberline {1.2}Structure of the Thesis}{2}{subsection.1.2}
+\contentsline {section}{\numberline {2}Blood Flow and Oxygen Delivery}{3}{section.2}
+\contentsline {subsection}{\numberline {2.1}Blood Flow}{3}{subsection.2.1}
+\contentsline {subsection}{\numberline {2.2}Oxygen Transport and Delivery}{4}{subsection.2.2}
+\contentsline {subsection}{\numberline {2.3}Current Trends in Modeling}{4}{subsection.2.3}
+\contentsline {section}{\numberline {3}Simulation Methods}{6}{section.3}
+\contentsline {subsection}{\numberline {3.1}Green's Function Method}{6}{subsection.3.1}
+\contentsline {subsubsection}{\numberline {3.1.1}The Computational Model}{6}{subsubsection.3.1.1}
+\contentsline {subsubsection}{\numberline {3.1.2}Mathematical Details of the Green's Function Method}{9}{subsubsection.3.1.2}
 \contentsline {subsubsection}{\numberline {3.1.3}Results on Different Networks}{11}{subsubsection.3.1.3}
 \contentsline {subsubsection}{\numberline {3.1.4}Discussion of Green's Method and the Produced Results}{15}{subsubsection.3.1.4}
-\contentsline {subsection}{\numberline {3.2}$DuMu^x$}{15}{subsection.3.2}
-\contentsline {subsubsection}{\numberline {3.2.1}General Structure of $DuMu^x$}{15}{subsubsection.3.2.1}
-\contentsline {subsubsection}{\numberline {3.2.2}Implemented Model}{17}{subsubsection.3.2.2}
-\contentsline {subsubsection}{\numberline {3.2.3}Input Data for the Simulations}{18}{subsubsection.3.2.3}
-\contentsline {subsubsection}{\numberline {3.2.4}Results}{18}{subsubsection.3.2.4}
-\contentsline {section}{\numberline {4}Comparison of the Different Methods Behind the Simulations}{19}{section.4}
-\contentsline {subsection}{\numberline {4.1}Comparison of the Methods}{20}{subsection.4.1}
-\contentsline {subsubsection}{\numberline {4.1.1}Comparison of the Numerical Methods}{20}{subsubsection.4.1.1}
-\contentsline {subsubsection}{\numberline {4.1.2}Stability Questions and Computational Cost}{20}{subsubsection.4.1.2}
-\contentsline {subsection}{\numberline {4.2}Comparison of the Results}{21}{subsection.4.2}
-\contentsline {section}{\numberline {5}Conclusion}{21}{section.5}
-\contentsline {section}{\numberline {6}Acknowledgements}{22}{section.6}
+\contentsline {subsection}{\numberline {3.2}$DuMu^x$}{16}{subsection.3.2}
+\contentsline {subsubsection}{\numberline {3.2.1}General Structure of $DuMu^x$}{16}{subsubsection.3.2.1}
+\contentsline {subsubsection}{\numberline {3.2.2}Implemented Model}{18}{subsubsection.3.2.2}
+\contentsline {subsubsection}{\numberline {3.2.3}Input Data for the Simulations}{19}{subsubsection.3.2.3}
+\contentsline {subsubsection}{\numberline {3.2.4}Results}{20}{subsubsection.3.2.4}
+\contentsline {section}{\numberline {4}Comparison of the Different Methods Behind the Simulations}{22}{section.4}
+\contentsline {subsection}{\numberline {4.1}Comparison of the Methods}{22}{subsection.4.1}
+\contentsline {subsubsection}{\numberline {4.1.1}Comparison of the Numerical Methods}{23}{subsubsection.4.1.1}
+\contentsline {subsubsection}{\numberline {4.1.2}Stability Questions and Computational Cost}{23}{subsubsection.4.1.2}
+\contentsline {subsection}{\numberline {4.2}Comparison of the Results}{23}{subsection.4.2}
+\contentsline {section}{\numberline {5}Conclusion}{24}{section.5}
+\contentsline {section}{\numberline {6}Acknowledgements}{25}{section.6}
 \vspace {.5\baselineskip }
-\contentsline {section}{\numberline {}{References}}{23}{section.6}
+\contentsline {section}{\numberline {}{References}}{26}{section.6}
 \vspace {.5\baselineskip }
-\contentsline {section}{\numberline {A}Appendix}{25}{appendix.A}
-\contentsline {subsection}{\numberline {A.1}DuMuX Results Visualized with ParaView}{25}{subsection.A.1}
-\contentsline {subsection}{\numberline {A.2}Green's Function Code Results}{25}{subsection.A.2}
+\contentsline {section}{\numberline {A}Appendix}{28}{appendix.A}
+\contentsline {subsection}{\numberline {A.1}Additional Material for the Green's Function Method}{28}{subsection.A.1}
+\contentsline {subsubsection}{\numberline {A.1.1}General Structure of the Used Code}{28}{subsubsection.A.1.1}
+\contentsline {subsubsection}{\numberline {A.1.2}Some More Green's Results}{31}{subsubsection.A.1.2}
+\contentsline {subsection}{\numberline {A.2}Additional Material for DuMuX}{31}{subsection.A.2}
+\contentsline {subsubsection}{\numberline {A.2.1}Some Nord Network Simulation Results}{32}{subsubsection.A.2.1}
+\contentsline {subsubsection}{\numberline {A.2.2}Some Glomerulus Network Simulation Results}{33}{subsubsection.A.2.2}
