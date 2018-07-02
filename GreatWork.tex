@@ -426,7 +426,8 @@ The Green's Function Method is providing many outputs which are specified in mor
 \subsubsection*{Krogh Model as an Introduction}
 %Explain relevance of this model and the produced results (many plots here)
 
-The Krogh model has been a standard simulation network used as an initial point for developments as it has a very easy and simple structure.\\
+The Krogh model describes the tissue as a cylinder around the vessels and assumes that the capillaries are straight and parallel. The blood flow in all the capillaries is assumed to be unidirectional, and the distribution of capillaries is assumed to be homogeneous \cite{kreuzer1982oxygen}. Obviously this model has a few unrealistic assumptions, but as it is a straightforward network, it is the most basic model to start with.
+\\The Krogh model has been a standard simulation network used as an initial point for developments as it has a very easy and simple structure.
 Figure \ref{fig:Contour_Krogh}  is the result of a Green's Method blood flow simulation computed on a Krogh network. The Solute Concentration in the network is visualized.\\
 \begin{figure}[h]
 \centering
@@ -434,6 +435,7 @@ Figure \ref{fig:Contour_Krogh}  is the result of a Green's Method blood flow sim
 \caption{\footnotesize Green's Contour Output for Krogh Network}
 \label{fig:Contour_Krogh}
 \end{figure}
+One can very clearly see that the results produced are absolutely realistic. On \ref{fig:Contour_Krogh} the blood flow goes from left to right. The $O_2$ concentration (in what unit?) accordingly goes down in flow direction. The concentrations as well as the diffusive distance in the tissue also decrease in flow direction, which can be explained by the fact that a lower concentration gradient goes with a lower Diffusive Flux \ref{Fick}.
 
 %\subsubsection*{Brain Model}
 %Explain relevance of this model and the produced results (many plots here)
