@@ -9,12 +9,17 @@
 \BOOKMARK [1][-]{section.3}{Simulation Methods}{}% 9
 \BOOKMARK [2][-]{subsection.3.1}{Green's Function Method}{section.3}% 10
 \BOOKMARK [2][-]{subsection.3.2}{DuMux}{section.3}% 11
-\BOOKMARK [1][-]{section.4}{Comparison of the Different Methods Behind the Simulations}{}% 12
-\BOOKMARK [2][-]{subsection.4.1}{Comparison of the Methods}{section.4}% 13
-\BOOKMARK [2][-]{subsection.4.2}{Comparison of the Results}{section.4}% 14
-\BOOKMARK [1][-]{section.5}{Conclusion}{}% 15
-\BOOKMARK [1][-]{section.6}{Acknowledgements}{}% 16
-\BOOKMARK [1][-]{section.6}{References}{}% 17
-\BOOKMARK [1][-]{appendix.A}{Appendix}{}% 18
-\BOOKMARK [2][-]{subsection.A.1}{Additional Material for the Green's Function Method}{appendix.A}% 19
-\BOOKMARK [2][-]{subsection.A.2}{Additional Material for DuMuX}{appendix.A}% 20
+\BOOKMARK [1][-]{section.4}{Simulation Results and Analysis}{}% 12
+\BOOKMARK [2][-]{subsection.4.1}{Results of the Green's Function Method}{section.4}% 13
+\BOOKMARK [2][-]{subsection.4.2}{Discussion of the Green's Method and the Produced Results}{section.4}% 14
+\BOOKMARK [2][-]{subsection.4.3}{Results of DuMux}{section.4}% 15
+\BOOKMARK [2][-]{subsection.4.4}{Comparison of the Results}{section.4}% 16
+\BOOKMARK [1][-]{section.5}{Comparison of the Different Methods Behind the Simulations}{}% 17
+\BOOKMARK [2][-]{subsection.5.1}{Comparison of the Numerical Methods}{section.5}% 18
+\BOOKMARK [2][-]{subsection.5.2}{Stability Questions and Computational Cost}{section.5}% 19
+\BOOKMARK [1][-]{section.6}{Conclusion}{}% 20
+\BOOKMARK [1][-]{section.7}{Acknowledgements}{}% 21
+\BOOKMARK [1][-]{section.7}{References}{}% 22
+\BOOKMARK [1][-]{appendix.A}{Appendix}{}% 23
+\BOOKMARK [2][-]{subsection.A.1}{Additional Material for the Green's Function Method}{appendix.A}% 24
+\BOOKMARK [2][-]{subsection.A.2}{Additional Material for DuMuX}{appendix.A}% 25
