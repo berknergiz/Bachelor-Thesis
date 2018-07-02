@@ -1,5 +1,6 @@
 %!TEX root = article.tex
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Introduction}
 \label{s:Introduction}
 
@@ -33,6 +34,7 @@ A simplified approach for the simulation of $O_2$ transport was implemented in
 First, a short insight to the physiological background of blood flow and oxygen transport in the body will be given.The general process of oxygen delivery to the tissue and oxygen consumption by the tissue will be explained. The main subject will be the transport of oxygen in the body, starting in the blood flow and ending in the diffusion into the tissue through a general diffusion process.
 \\The results of oxygen transport simulation methods, especially the Green's Function Method, will later be discussed and evaluated for different networks. In addition to this, a new oxygen delivery model was implemented using an open source software called $DuMu^x$. The focus of this thesis is to understand when and why the Green's Function Method produces physiologically accurate results, how it can perform on new networks and compare these results to alternatives such as the implemented method on $DuMu^x$.
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \newpage
 \section{Blood Flow and Oxygen Delivery}
 %How does this work physiologically ?
@@ -136,6 +138,8 @@ In order to simulate flows, Computational Fluid Dynamics (CFD) is a tool that ca
   %  topic?
 %\end{enumerate}
 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \newpage
 \section{Simulation Methods}
 %Everything about the computations behind the simulations and all I did.
@@ -403,6 +407,7 @@ The networks that were used for the simulations are extracted from real organs c
 \\3)Three dimensional captions of the organ are build by many virtual two dimensional slices
 \\4)Transformation of the recognized artery/vein data into networks that can be used for the simulations.
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \newpage
 \section{Simulation Results and Analysis}
 %Put all the results here - Should be easier to understand things
@@ -411,10 +416,12 @@ In this section, the produced results using the two introduced methods will be p
 \subsection{Results of the Green's Function Method}
 %Main part of the Thesis
 %Results part of Green's
+%-Present some results on different networks
+%- Plots and Results (maybe 3 I already have + 2 new ones)
+%-Explanation of plots
+%-Explaining inputs/outputs and meanings is in Appendix
 
--Present some results on different networks - Plots and Results (maybe 3 I already have + 2 new ones)
-\\-Explanation of plots
-\\-Explaining inputs/outputs and meanings
+The Green's Function Method is providing many outputs which are specified in more detail in the Appendix \ref{Outputs}. In this section, some of these outputs will be presented and explained. The physiological meaning will be described and finally the results will be discussed.
 
 \subsubsection*{Krogh Model as an Introduction}
 %Explain relevance of this model and the produced results (many plots here)
@@ -533,6 +540,7 @@ The figure \ref{fig:nephron_pressure} is the result of a DuMuX 1p-1p blood flow 
 %Compare the produced results
 In this section the main differences in the produced results for the same input files/same networks will be discussed.
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \newpage
 \section{Comparison of the Different Methods Behind the Simulations}
 %Compare DuMuX to Green's Method in general
