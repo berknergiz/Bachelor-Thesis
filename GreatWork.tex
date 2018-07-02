@@ -367,30 +367,6 @@ The tracer model can trace substances in networks of different geometries, and a
 \\To briefly show what is meant by tracing a solute, a visualization for the first and last time of a tracing simulation is pictured in the following figures.\\
 \\This simulation is a simple diffusion of Groundwater in a porous rock. The velocity field of the solute is assumed to be constant.
 
-\subsubsection*{\footnotesize Some Tracer Simulations}
-
-\begin{figure}[h]
-\centering
-\includegraphics[width=162mm]{tracer_1}
-\caption{\footnotesize $DuMu^x$ Tracer Concentration Simulation for a Rectangular Geometry (Time Step 1)}
-\label{fig:tracer_1}
-\end{figure}
-Figure \ref{fig:tracer_1} is the result of a $DuMu^x$ tracer simulation computed on a rectangular geometry. The solute field in the network for the first time step is visualized.\\
-\begin{figure}[h]
-\centering
-\includegraphics[width=162mm]{tracer_2}
-\caption{\footnotesize $DuMu^x$ Tracer Concentration Simulation for a Rectangular Geometry (Time Step 10)}
-\label{fig:tracer_2}
-\end{figure}
-Figure \ref{fig:tracer_2} is the solute field for the same simulation for the last time step is visualized.\\
-\begin{figure}[h]
-\centering
-\includegraphics[width=162mm]{tracer_velocity}
-\caption{\footnotesize $DuMu^x$ Tracer Velocity Simulation for a Rectangular Geometry}
-\label{fig:tracer_velocity}
-\end{figure}
-Figure \ref{fig:tracer_velocity} is the constant velocity field of the solute.\\
-
 \subsubsection*{The Coupled Model}
 %Briefly explain what coupling is and how code is supposed to work
 %Hopefully put some results of the coupled model here or explain why the results are wrong
@@ -482,7 +458,7 @@ The Mesentery Artery network provided by Secomb was used for further simulations
 \\Due to the low density of capillaries for this network, this figure can give a good insight to the values computed by the Green's Model. One can clearly see that partial pressure of $O_2$ goes down in radial direction with growing distance from the vessels. At hotspots where the capillary density is higher due to branching and ramification, the diffusion comes from two vessels and the superposition of two close source elements obviously leads to peaks in $PO_2$ values.
 
 \newpage
-\subsubsection*{A First Tumor Model}
+\subsubsection*{First Tumor Model}
 %Explain relevance of this model and the produced results (many plots here)
 
 The Tumor network provided by Secomb was used for further simulations and to validate the produced data.
@@ -495,7 +471,7 @@ Figure \ref{fig:Contour_Tumor1998}  is the result of a Green's Method blood flow
 \end{figure}
 
 \newpage
-\subsubsection*{A Second Tumor Model}
+\subsubsection*{Second Tumor Model}
 %Explain relevance of this model and the produced results (many plots here)
 
 The Tumor network provided by Secomb was used for further simulations and to validate the produced data.
@@ -544,19 +520,19 @@ Final thoughts about Green's Method for physiological applications and oxygen de
 
 \begin{figure}[h]
 \centering
-\includegraphics[width=162mm]{nephron_velocity}
-\caption{Velocity Field in a Glomerulus}
-\label{fig:nephron_velocity}
-\end{figure}
-The figure \ref{fig:nephron_velocity} is the result of a DuMuX 1p-1p blood flow simulation computed on a glomerulus network. The velocity field of the flow is visualized.\\
-
-\begin{figure}[h]
-\centering
 \includegraphics[width=162mm]{nephron_pressure}
 \caption{Pressure Field in a Glomerulus}
 \label{fig:nephron_pressure}
 \end{figure}
 The figure \ref{fig:nephron_pressure} is the result of a DuMuX 1p-1p blood flow simulation computed on a glomerulus network. The pressure field of the flow is visualized.\\
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=162mm]{nephron2_pressure}
+\caption{Pressure Field in a Glomerulus}
+\label{fig:nephron2_pressure}
+\end{figure}
+The figure \ref{fig:nephron2_pressure} is the result of a DuMuX 1p-1p blood flow simulation computed on a Glomerulus network. The pressure field of the flow is visualized.\\
 
 \subsection{Comparison of the Results}
 %Compare the produced results
@@ -565,28 +541,24 @@ In this section the main differences in the produced results by Green's Function
 \\I might include the whole next section here, as this might be more compact.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\newpage
-\section{Comparison of the Different Methods Behind the Simulations}
+%\newpage
+%\section{Comparison of the Different Methods Behind the Simulations}
 %Compare DuMuX to Green's Method in general
-In this section the main differences between these two simulation methods described previously will be discussed.
-\\
-\\\textbf{Kartik do you think I need this 5th chapter at all ? I think I would rather delete it. I could include the subsections into the Simulation Methods part as well, and discuss some of these in the Conclusion as well ?}\\
+%In this section the main differences between these two simulation methods described previously will be discussed.
+%\\
+%\\\textbf{Kartik do you think I need this 5th chapter at all ? I think I would rather delete it. I could include the subsections into the Simulation Methods part as well, and discuss some of these in the Conclusion as well ?}\\
 %Compare the Solvers behind the Methods
 %Very useful tu use Secomb Paper Numerical Methods section here
-\\In this section the main differences between the solvers and the associated numerical methods will be discussed.
-\\
-\\As mentioned previously, one of the huge advantages of $DuMu^x$ is the flexibility it provides in terms of solvers, and thus in terms of the numerical methods used for the computations. This means that it is often possible to pick a solver which is stable for the specific problem and the chosen discretization.
-\\
-\\This is obviously different for the Green's Method code, as there is no option of choosing a different solver than the one provided in the code. As discussed previously, this code is specifically implemented to solve and compute oxygen (or other Solute) concentrations in the blood and the surrounding tissue, and the implemented method strongly relies on the stability of the Green's Method and the numerical methods behind the solver.
+%\\In this section the main differences between the solvers and the associated numerical methods will be discussed.
 
-\subsection{Comparison of the Numerical Methods}
+%\subsection{Comparison of the Numerical Methods}
 %Explain the Methods and differences between methods
 %Very useful tu use Secomb Paper Numerical Methods section here
-In this section, the focus will be on comparing the numerical methods behind the Green's Method code and $DuMu^x$ and the differences in their implementation.
+%In this section, the focus will be on comparing the numerical methods behind the Green's Method code and $DuMu^x$ and the differences in their implementation.
 
-\subsection{Stability Questions and Computational Cost}
+%\subsection{Stability Questions and Computational Cost}
 %Explain when and why which the numerical methods are stable
-In this section, the consequences of the previously described differences will be discussed. The focus lies on the differences in terms of stability and computational cost for similar simulations.
+%In this section, the consequences of the previously described differences will be discussed. The focus lies on the differences in terms of stability and computational cost for similar simulations.
 
 %\section{Discussion}
 
@@ -604,8 +576,8 @@ In this section, the consequences of the previously described differences will b
 As seen previously, both the Green's Function Method and the implemented $DuMu^x$-based method can offer very interesting options. While the Green's Function Method is presenting a specifically created C++ based software for oxygen Transport and Diffusion simulations, the results show that the obtained outputs are not always satisfying (eventually will happen for new networks?). The reasons for this have been discussed previously (maybe repeat them shortly here).
 Compared to this, the $DuMu^x$ based model is still in its very initial phase and cannot produce correct results yet (very probably). Still, the fact that it is $DuMu^x$ based offers both a large flexibility to the user in terms of further development, as well as in terms of computational flexibility when choosing a time- and space-discretization through choosing discretization modules and different grid creators. The solvers can also be chosen by the user, which doesn't guarantee an overall stable numerical solver, but can provide great flexibility when adapting the model to specific networks.
 \\
+\\As mentioned previously, one of the huge advantages of $DuMu^x$ is the flexibility it provides in terms of solvers, and thus in terms of the numerical methods used for the computations. This means that it is often possible to pick a solver which is stable for the specific problem and the chosen discretization.
+\\
+\\This is obviously different for the Green's Method code, as there is no option of choosing a different solver than the one provided in the code. As discussed previously, this code is specifically implemented to solve and compute oxygen (or other Solute) concentrations in the blood and the surrounding tissue, and the implemented method strongly relies on the stability of the Green's Method and the numerical methods behind the solver.
+\\
 \\Main conclusions and final remarks.
-
-\newpage
-\section{Acknowledgements}
-Thank you all for the support blabla...

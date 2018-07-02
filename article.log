@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=pdflatex 2018.6.13)  2 JUL 2018 17:25
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=pdflatex 2018.6.13)  2 JUL 2018 18:05
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -710,12 +710,12 @@ Package: float 2001/11/08 v1.3d Float enhancements (AL)
 
 LaTeX Warning: Label `eq:DiffFlux' multiply defined.
 
-(./Appendix.aux
 
-LaTeX Warning: Label `fig:nephron_velocity' multiply defined.
+LaTeX Warning: Label `fig:nephron2_pressure' multiply defined.
 
+(./Acknowledgements.aux) (./Appendix.aux
 
-LaTeX Warning: Label `fig:nephron_pressure' multiply defined.
+LaTeX Warning: Label `fig:nephron2_velocity' multiply defined.
 
 ))
 \openout1 = `article.aux'.
@@ -799,17 +799,17 @@ Package: lscape 2000/10/22 v3.01 Landscape Pages (DPC)
 Package pdflscape Info: Auto-detected driver: pdftex on input line 81.
 )
 ABD: EveryShipout initializing macros
-<INTERFACElogo.png, id=106, 267.399pt x 42.80608pt>
+<INTERFACElogo.png, id=94, 267.399pt x 42.80608pt>
 File: INTERFACElogo.png Graphic file (type png)
 <use INTERFACElogo.png>
 Package pdftex.def Info: INTERFACElogo.png  used on input line 75.
 (pdftex.def)             Requested size: 355.48523pt x 56.9055pt.
-<ETHlogo.png, id=107, 1027.84pt x 266.9975pt>
+<ETHlogo.png, id=95, 1027.84pt x 266.9975pt>
 File: ETHlogo.png Graphic file (type png)
 <use ETHlogo.png>
 Package pdftex.def Info: ETHlogo.png  used on input line 75.
 (pdftex.def)             Requested size: 219.05222pt x 56.9055pt.
-<DMAVTlogo.png, id=109, 177.49213pt x 42.68797pt>
+<DMAVTlogo.png, id=97, 177.49213pt x 42.68797pt>
 File: DMAVTlogo.png Graphic file (type png)
 <use DMAVTlogo.png>
 Package pdftex.def Info: DMAVTlogo.png  used on input line 75.
@@ -868,7 +868,7 @@ Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 (hyperref)                removing `math shift' on input line 300.
 
-<dumux_structure.png, id=275, 616.3025pt x 706.64pt>
+<dumux_structure.png, id=260, 616.3025pt x 706.64pt>
 File: dumux_structure.png Graphic file (type png)
 <use dumux_structure.png>
 Package pdftex.def Info: dumux_structure.png  used on input line 318.
@@ -900,7 +900,7 @@ e.1}) has been already used, duplicate ignored
                                                   \fi \fi 
 l.323 \newpage
                <./dumux_structure.png>]
-<nephron2_pressure.png, id=294, 839.135pt x 514.92375pt>
+<nephron2_pressure.png, id=278, 839.135pt x 514.92375pt>
 File: nephron2_pressure.png Graphic file (type png)
 <use nephron2_pressure.png>
 Package pdftex.def Info: nephron2_pressure.png  used on input line 347.
@@ -910,7 +910,7 @@ Overfull \hbox (5.69055pt too wide) in paragraph at lines 347--348
  [][] 
  []
 
-<nephron2_velocity.png, id=296, 844.15375pt x 466.74374pt>
+<nephron2_velocity.png, id=280, 844.15375pt x 466.74374pt>
 File: nephron2_velocity.png Graphic file (type png)
 <use nephron2_velocity.png>
 Package pdftex.def Info: nephron2_velocity.png  used on input line 355.
@@ -957,52 +957,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 364--369
  []
 
 [13]
-<tracer_1.png, id=309, 722.7pt x 515.9275pt>
-File: tracer_1.png Graphic file (type png)
-<use tracer_1.png>
-Package pdftex.def Info: tracer_1.png  used on input line 374.
-(pdftex.def)             Requested size: 460.93463pt x 329.05884pt.
-
-Overfull \hbox (5.69055pt too wide) in paragraph at lines 374--375
- [][] 
- []
-
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-<tracer_2.png, id=311, 773.89125pt x 540.0175pt>
-File: tracer_2.png Graphic file (type png)
-<use tracer_2.png>
-Package pdftex.def Info: tracer_2.png  used on input line 381.
-(pdftex.def)             Requested size: 460.93463pt x 321.63988pt.
-
-Overfull \hbox (5.69055pt too wide) in paragraph at lines 381--382
- [][] 
- []
-
-<tracer_velocity.png, id=313, 785.93625pt x 522.95375pt>
-File: tracer_velocity.png Graphic file (type png)
-<use tracer_velocity.png>
-Package pdftex.def Info: tracer_velocity.png  used on input line 388.
-(pdftex.def)             Requested size: 460.93463pt x 306.70473pt.
-
-Overfull \hbox (5.69055pt too wide) in paragraph at lines 388--389
- [][] 
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 378--393
-
- []
-
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 404--410
+Underfull \hbox (badness 10000) in paragraph at lines 380--386
 
  []
 
@@ -1011,157 +966,138 @@ Underfull \hbox (badness 10000) in paragraph at lines 404--410
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.410 
+l.386 
        <./nephron2_pressure.png>] [15pdfTeX warning (ext4): destination with th
 e same identifier (name{figure.3}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.412 \newpage
+l.388 \newpage
                <./nephron2_velocity.png>]
-<Contour_Krogh.png, id=335, 750.805pt x 701.62125pt>
+<Contour_Krogh.png, id=312, 750.805pt x 701.62125pt>
 File: Contour_Krogh.png Graphic file (type png)
 <use Contour_Krogh.png>
-Package pdftex.def Info: Contour_Krogh.png  used on input line 435.
+Package pdftex.def Info: Contour_Krogh.png  used on input line 411.
 (pdftex.def)             Requested size: 341.43306pt x 319.06686pt.
- [16pdfTeX warning (ext4): destination with the same identifier (name{figure.4}
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[16]
+<Contour_Cardiac.png, id=326, 666.49pt x 665.48625pt>
+File: Contour_Cardiac.png Graphic file (type png)
+<use Contour_Cardiac.png>
+Package pdftex.def Info: Contour_Cardiac.png  used on input line 432.
+(pdftex.def)             Requested size: 341.43306pt x 340.92682pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 427--437
+
+ []
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[17pdfTeX warning (ext4): destination with the same identifier (name{figure.4})
+ has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.438 \newpage
+               <./Contour_Krogh.png>]
+<Contour_Mesent1.png, id=337, 666.49pt x 655.44875pt>
+File: Contour_Mesent1.png Graphic file (type png)
+<use Contour_Mesent1.png>
+Package pdftex.def Info: Contour_Mesent1.png  used on input line 446.
+(pdftex.def)             Requested size: 341.43306pt x 335.78464pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 442--459
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 442--459
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 442--459
+
+ []
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[18pdfTeX warning (ext4): destination with the same identifier (name{figure.5})
+ has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.459 
+       <./Contour_Cardiac.png>] [19pdfTeX warning (ext4): destination with the 
+same identifier (name{figure.6}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.460 \newpage
+               <./Contour_Mesent1.png>]
+<Contour_Tumor1998.png, id=351, 779.91376pt x 705.63625pt>
+File: Contour_Tumor1998.png Graphic file (type png)
+<use Contour_Tumor1998.png>
+Package pdftex.def Info: Contour_Tumor1998.png  used on input line 468.
+(pdftex.def)             Requested size: 341.43306pt x 308.9089pt.
+ [20pdfTeX warning (ext4): destination with the same identifier (name{figure.7}
 ) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.441 
-       <./tracer_1.png>]
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-[17pdfTeX warning (ext4): destination with the same identifier (name{figure.5})
- has been already used, duplicate ignored
-
-\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
-                                                  \fi \fi 
-l.441 
-       <./tracer_2.png>] [18pdfTeX warning (ext4): destination with the same id
-entifier (name{figure.6}) has been already used, duplicate ignored
-
-\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
-                                                  \fi \fi 
-l.447 \newpage
-               <./tracer_velocity.png>]
-<Contour_Cardiac.png, id=361, 666.49pt x 665.48625pt>
-File: Contour_Cardiac.png Graphic file (type png)
-<use Contour_Cardiac.png>
-Package pdftex.def Info: Contour_Cardiac.png  used on input line 456.
-(pdftex.def)             Requested size: 341.43306pt x 340.92682pt.
-
-Underfull \hbox (badness 10000) in paragraph at lines 451--461
-
- []
-
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-[19pdfTeX warning (ext4): destination with the same identifier (name{figure.7})
- has been already used, duplicate ignored
-
-\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
-                                                  \fi \fi 
-l.462 \newpage
-               <./Contour_Krogh.png>]
-<Contour_Mesent1.png, id=371, 666.49pt x 655.44875pt>
-File: Contour_Mesent1.png Graphic file (type png)
-<use Contour_Mesent1.png>
-Package pdftex.def Info: Contour_Mesent1.png  used on input line 470.
-(pdftex.def)             Requested size: 341.43306pt x 335.78464pt.
-
-Underfull \hbox (badness 10000) in paragraph at lines 466--483
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 466--483
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 466--483
-
- []
-
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-[20pdfTeX warning (ext4): destination with the same identifier (name{figure.8})
- has been already used, duplicate ignored
-
-\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
-                                                  \fi \fi 
-l.483 
-       <./Contour_Cardiac.png>] [21pdfTeX warning (ext4): destination with the 
-same identifier (name{figure.9}) has been already used, duplicate ignored
-
-\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
-                                                  \fi \fi 
-l.484 \newpage
-               <./Contour_Mesent1.png>]
-<Contour_Tumor1998.png, id=385, 779.91376pt x 705.63625pt>
-File: Contour_Tumor1998.png Graphic file (type png)
-<use Contour_Tumor1998.png>
-Package pdftex.def Info: Contour_Tumor1998.png  used on input line 492.
-(pdftex.def)             Requested size: 341.43306pt x 308.9089pt.
- [22pdfTeX warning (ext4): destination with the same identifier (name{figure.10
-}) has been already used, duplicate ignored
-
-\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
-                                                  \fi \fi 
-l.497 \newpage
+l.473 \newpage
                <./Contour_Tumor1998.png>]
-<Contour_TumorDuke.png, id=394, 737.75626pt x 600.2425pt>
+<Contour_TumorDuke.png, id=360, 737.75626pt x 600.2425pt>
 File: Contour_TumorDuke.png Graphic file (type png)
 <use Contour_TumorDuke.png>
-Package pdftex.def Info: Contour_TumorDuke.png  used on input line 505.
+Package pdftex.def Info: Contour_TumorDuke.png  used on input line 481.
 (pdftex.def)             Requested size: 341.43306pt x 277.79099pt.
- [23pdfTeX warning (ext4): destination with the same identifier (name{figure.11
-}) has been already used, duplicate ignored
+ [21pdfTeX warning (ext4): destination with the same identifier (name{figure.8}
+) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.510 \newpage
+l.486 \newpage
                <./Contour_TumorDuke.png>]
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 534.
+(hyperref)                removing `math shift' on input line 510.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `superscript' on input line 534.
+(hyperref)                removing `superscript' on input line 510.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 534.
+(hyperref)                removing `math shift' on input line 510.
 
-[24]
-<nephron_velocity.png, id=408, 888.31876pt x 591.20876pt>
-File: nephron_velocity.png Graphic file (type png)
-<use nephron_velocity.png>
-Package pdftex.def Info: nephron_velocity.png  used on input line 547.
-(pdftex.def)             Requested size: 460.93463pt x 306.76276pt.
+[22]
+<nephron_pressure.png, id=373, 1072.005pt x 582.175pt>
+File: nephron_pressure.png Graphic file (type png)
+<use nephron_pressure.png>
+Package pdftex.def Info: nephron_pressure.png  used on input line 523.
+(pdftex.def)             Requested size: 460.93463pt x 250.3126pt.
 
-Overfull \hbox (5.69055pt too wide) in paragraph at lines 547--548
+Overfull \hbox (5.69055pt too wide) in paragraph at lines 523--524
  [][] 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 551--552
+Underfull \hbox (badness 10000) in paragraph at lines 527--528
 
  []
 
-<nephron_pressure.png, id=410, 1072.005pt x 582.175pt>
-File: nephron_pressure.png Graphic file (type png)
-<use nephron_pressure.png>
-Package pdftex.def Info: nephron_pressure.png  used on input line 555.
-(pdftex.def)             Requested size: 460.93463pt x 250.3126pt.
+File: nephron2_pressure.png Graphic file (type png)
+<use nephron2_pressure.png>
+Package pdftex.def Info: nephron2_pressure.png  used on input line 531.
+(pdftex.def)             Requested size: 460.93463pt x 282.8475pt.
 
-Overfull \hbox (5.69055pt too wide) in paragraph at lines 555--556
+Overfull \hbox (5.69055pt too wide) in paragraph at lines 531--532
  [][] 
  []
 
@@ -1169,52 +1105,47 @@ Overfull \hbox (5.69055pt too wide) in paragraph at lines 555--556
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 559--560
+Underfull \hbox (badness 10000) in paragraph at lines 535--536
 
  []
 
-[25pdfTeX warning (ext4): destination with the same identifier (name{figure.12}
+[23pdfTeX warning (ext4): destination with the same identifier (name{figure.9})
+ has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.567 \newpage
+               <./nephron_pressure.png>])
+Underfull \hbox (badness 10000) in paragraph at lines 576--111
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 576--111
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 576--111
+
+ []
+
+[24pdfTeX warning (ext4): destination with the same identifier (name{figure.10}
 ) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.568 \newpage
-               <./nephron_velocity.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 571--581
+l.111 
+      ] [25] (./article.bbl [26]) [27]
+\openout2 = `Acknowledgements.aux'.
 
- []
+ (./Acknowledgements.tex) [28
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 571--581
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 571--581
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 571--581
-
- []
-
-[26pdfTeX warning (ext4): destination with the same identifier (name{figure.13}
-) has been already used, duplicate ignored
-
-\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
-                                                  \fi \fi 
-l.582 \subsection
-                 {Comparison of the Numerical Methods} <./nephron_pressure.png>
-] [27]
-Underfull \hbox (badness 10000) in paragraph at lines 604--608
-
- []
-
-[28]) [29] (./article.bbl [30]) [31]
+]
 \openout2 = `Appendix.aux'.
 
- (./Appendix.tex
+
+(./Appendix.tex
 Underfull \hbox (badness 10000) in paragraph at lines 21--34
 
  []
@@ -1249,7 +1180,8 @@ Underfull \hbox (badness 10000) in paragraph at lines 39--54
 
  []
 
-[32
+[29
+
 
 ]
 Underfull \hbox (badness 10000) in paragraph at lines 59--127
@@ -1373,7 +1305,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 59--127
 
  []
 
-[33] [34]
+[30] [31]
 File: Contour_Cardiac.png Graphic file (type png)
 <use Contour_Cardiac.png>
 Package pdftex.def Info: Contour_Cardiac.png  used on input line 133.
@@ -1386,60 +1318,14 @@ Overfull \hbox (28.45276pt too wide) in paragraph at lines 133--134
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[35]
-<nord_pressure.png, id=483, 861.2175pt x 482.80376pt>
-File: nord_pressure.png Graphic file (type png)
-<use nord_pressure.png>
-Package pdftex.def Info: nord_pressure.png  used on input line 148.
-(pdftex.def)             Requested size: 460.93463pt x 258.40428pt.
-
-Overfull \hbox (5.69055pt too wide) in paragraph at lines 148--149
- [][] 
- []
-
-<nord_velocity.png, id=485, 829.0975pt x 455.7025pt>
-File: nord_velocity.png Graphic file (type png)
-<use nord_velocity.png>
-Package pdftex.def Info: nord_velocity.png  used on input line 156.
-(pdftex.def)             Requested size: 460.93463pt x 253.34203pt.
-
-Overfull \hbox (5.69055pt too wide) in paragraph at lines 156--157
- [][] 
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 145--160
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 145--160
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 145--160
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 145--160
-
- []
-
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-[36]
+[32]
+<nephron_velocity.png, id=438, 888.31876pt x 591.20876pt>
 File: nephron_velocity.png Graphic file (type png)
 <use nephron_velocity.png>
-Package pdftex.def Info: nephron_velocity.png  used on input line 167.
+Package pdftex.def Info: nephron_velocity.png  used on input line 147.
 (pdftex.def)             Requested size: 460.93463pt x 306.76276pt.
 
-Overfull \hbox (5.69055pt too wide) in paragraph at lines 167--168
+Overfull \hbox (5.69055pt too wide) in paragraph at lines 147--148
  [][] 
  []
 
@@ -1447,77 +1333,130 @@ Overfull \hbox (5.69055pt too wide) in paragraph at lines 167--168
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 171--172
+Underfull \hbox (badness 10000) in paragraph at lines 151--152
 
  []
 
-File: nephron_pressure.png Graphic file (type png)
-<use nephron_pressure.png>
-Package pdftex.def Info: nephron_pressure.png  used on input line 175.
-(pdftex.def)             Requested size: 460.93463pt x 250.3126pt.
+File: nephron2_velocity.png Graphic file (type png)
+<use nephron2_velocity.png>
+Package pdftex.def Info: nephron2_velocity.png  used on input line 155.
+(pdftex.def)             Requested size: 460.93463pt x 254.85814pt.
 
-Overfull \hbox (5.69055pt too wide) in paragraph at lines 175--176
+Overfull \hbox (5.69055pt too wide) in paragraph at lines 155--156
  [][] 
  []
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 159--160
+
+ []
+
+<tracer_1.png, id=441, 722.7pt x 515.9275pt>
+File: tracer_1.png Graphic file (type png)
+<use tracer_1.png>
+Package pdftex.def Info: tracer_1.png  used on input line 165.
+(pdftex.def)             Requested size: 460.93463pt x 329.05884pt.
+
+Overfull \hbox (5.69055pt too wide) in paragraph at lines 165--166
+ [][] 
+ []
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+<tracer_2.png, id=443, 773.89125pt x 540.0175pt>
+File: tracer_2.png Graphic file (type png)
+<use tracer_2.png>
+Package pdftex.def Info: tracer_2.png  used on input line 172.
+(pdftex.def)             Requested size: 460.93463pt x 321.63988pt.
+
+Overfull \hbox (5.69055pt too wide) in paragraph at lines 172--173
+ [][] 
+ []
+
+<tracer_velocity.png, id=445, 785.93625pt x 522.95375pt>
+File: tracer_velocity.png Graphic file (type png)
+<use tracer_velocity.png>
+Package pdftex.def Info: tracer_velocity.png  used on input line 179.
+(pdftex.def)             Requested size: 460.93463pt x 306.70473pt.
+
+Overfull \hbox (5.69055pt too wide) in paragraph at lines 179--180
+ [][] 
+ []
 
 )
-Underfull \hbox (badness 10000) in paragraph at lines 179--124
+Underfull \hbox (badness 10000) in paragraph at lines 169--125
 
  []
 
-[37] [38pdfTeX warning (ext4): destination with the same identifier (name{figur
-e.14}) has been already used, duplicate ignored
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[33] [34pdfTeX warning (ext4): destination with the same identifier (name{figur
+e.11}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.124 \include{Appendix}
-                        ] [39pdfTeX warning (ext4): destination with the same i
-dentifier (name{figure.15}) has been already used, duplicate ignored
+l.125 \include{Appendix}
+                        ] [35pdfTeX warning (ext4): destination with the same i
+dentifier (name{figure.12}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.124 \include{Appendix}
+l.125 \include{Appendix}
                         pdfTeX warning (ext4): destination with the same identi
-fier (name{figure.16}) has been already used, duplicate ignored
+fier (name{figure.13}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.124 \include{Appendix}
-                         <./nord_pressure.png> <./nord_velocity.png>] [40pdfTeX
- warning (ext4): destination with the same identifier (name{figure.17}) has bee
-n already used, duplicate ignored
+l.125 \include{Appendix}
+                         <./nephron_velocity.png>] [36pdfTeX warning (ext4): de
+stination with the same identifier (name{figure.14}) has been already used, dup
+licate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.124 \include{Appendix}
-                        pdfTeX warning (ext4): destination with the same identi
-fier (name{figure.18}) has been already used, duplicate ignored
+l.125 \include{Appendix}
+                         <./tracer_1.png>] [37pdfTeX warning (ext4): destinatio
+n with the same identifier (name{figure.15}) has been already used, duplicate i
+gnored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.124 \include{Appendix}
-                        ]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 128.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 128.
- (./article.aux (./Appendix.aux))
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 128.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 128.
+l.125 \include{Appendix}
+                         <./tracer_2.png>] [38pdfTeX warning (ext4): destinatio
+n with the same identifier (name{figure.16}) has been already used, duplicate i
+gnored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.125 \include{Appendix}
+                         <./tracer_velocity.png>]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 129.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 129.
+ (./article.aux
+(./Acknowledgements.aux) (./Appendix.aux))
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 129.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 129.
 Package rerunfilecheck Info: File `article.out' has not changed.
-(rerunfilecheck)             Checksum: 0B83A878C8382AFB3574FA10EB558077;1725.
+(rerunfilecheck)             Checksum: 952324CBCF0DFC737E21F717425741DD;1455.
 
 
 LaTeX Warning: There were multiply-defined labels.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 128.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 129.
  ) 
 Here is how much of TeX's memory you used:
- 17859 strings out of 492649
- 330463 string characters out of 6129622
- 403973 words of memory out of 5000000
- 21236 multiletter control sequences out of 15000+600000
+ 17845 strings out of 492649
+ 330269 string characters out of 6129622
+ 404292 words of memory out of 5000000
+ 21225 multiletter control sequences out of 15000+600000
  13724 words of font info for 49 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  62i,14n,56p,1018b,447s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -1536,10 +1475,10 @@ ve/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texliv
 e/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/local/texlive/
 2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/20
 18/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb>
-Output written on article.pdf (42 pages, 8012603 bytes).
+Output written on article.pdf (40 pages, 6963552 bytes).
 PDF statistics:
- 598 PDF objects out of 1000 (max. 8388607)
- 500 compressed objects within 5 object streams
- 148 named destinations out of 1000 (max. 500000)
- 303 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 564 PDF objects out of 1000 (max. 8388607)
+ 472 compressed objects within 5 object streams
+ 140 named destinations out of 1000 (max. 500000)
+ 269 words of extra memory for PDF output out of 10000 (max. 10000000)
 

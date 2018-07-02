@@ -14,24 +14,20 @@
 \contentsline {subsection}{\numberline {3.2}$DuMu^x$}{11}{subsection.3.2}
 \contentsline {subsubsection}{\numberline {3.2.1}General Structure of $DuMu^x$}{11}{subsubsection.3.2.1}
 \contentsline {subsubsection}{\numberline {3.2.2}Implemented Model}{13}{subsubsection.3.2.2}
-\contentsline {subsubsection}{\numberline {3.2.3}Input Data for the Simulations}{15}{subsubsection.3.2.3}
+\contentsline {subsubsection}{\numberline {3.2.3}Input Data for the Simulations}{14}{subsubsection.3.2.3}
 \contentsline {section}{\numberline {4}Simulation Results and Analysis}{16}{section.4}
 \contentsline {subsection}{\numberline {4.1}Results of the Green's Function Method}{16}{subsection.4.1}
-\contentsline {subsection}{\numberline {4.2}Discussion of the Green's Method and the Produced Results}{24}{subsection.4.2}
-\contentsline {subsection}{\numberline {4.3}Results of $DuMu^x$}{24}{subsection.4.3}
-\contentsline {subsection}{\numberline {4.4}Comparison of the Results}{25}{subsection.4.4}
-\contentsline {section}{\numberline {5}Comparison of the Different Methods Behind the Simulations}{26}{section.5}
-\contentsline {subsection}{\numberline {5.1}Comparison of the Numerical Methods}{27}{subsection.5.1}
-\contentsline {subsection}{\numberline {5.2}Stability Questions and Computational Cost}{27}{subsection.5.2}
-\contentsline {section}{\numberline {6}Conclusion}{28}{section.6}
-\contentsline {section}{\numberline {7}Acknowledgements}{29}{section.7}
+\contentsline {subsection}{\numberline {4.2}Discussion of the Green's Method and the Produced Results}{22}{subsection.4.2}
+\contentsline {subsection}{\numberline {4.3}Results of $DuMu^x$}{22}{subsection.4.3}
+\contentsline {subsection}{\numberline {4.4}Comparison of the Results}{23}{subsection.4.4}
+\contentsline {section}{\numberline {5}Conclusion}{24}{section.5}
 \vspace {.5\baselineskip }
-\contentsline {section}{\numberline {}{References}}{30}{section.7}
+\contentsline {section}{\numberline {}{References}}{26}{section.5}
 \vspace {.5\baselineskip }
-\contentsline {section}{\numberline {A}Appendix}{32}{appendix.A}
-\contentsline {subsection}{\numberline {A.1}Additional Material for the Green's Function Method}{32}{subsection.A.1}
-\contentsline {subsubsection}{\numberline {A.1.1}General Structure of the Used Code}{32}{subsubsection.A.1.1}
-\contentsline {subsubsection}{\numberline {A.1.2}Some More Green's Results}{35}{subsubsection.A.1.2}
-\contentsline {subsection}{\numberline {A.2}Additional Material for DuMuX}{35}{subsection.A.2}
-\contentsline {subsubsection}{\numberline {A.2.1}Some Nord Network Simulation Results}{36}{subsubsection.A.2.1}
-\contentsline {subsubsection}{\numberline {A.2.2}Some Glomerulus Network Simulation Results}{37}{subsubsection.A.2.2}
+\contentsline {section}{\numberline {A}Acknowledgements}{28}{appendix.A}
+\contentsline {section}{\numberline {B}Appendix}{29}{appendix.B}
+\contentsline {subsection}{\numberline {B.1}Additional Material for the Green's Function Method}{29}{subsection.B.1}
+\contentsline {subsubsection}{\numberline {B.1.1}General Structure of the Used Code}{29}{subsubsection.B.1.1}
+\contentsline {subsubsection}{\numberline {B.1.2}Some More Green's Results}{32}{subsubsection.B.1.2}
+\contentsline {subsection}{\numberline {B.2}Additional Material for DuMuX}{32}{subsection.B.2}
+\contentsline {subsubsection}{\numberline {B.2.1}Some Glomerulus Network Simulation Results}{33}{subsubsection.B.2.1}
