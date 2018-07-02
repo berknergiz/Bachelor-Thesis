@@ -454,8 +454,11 @@ Figure \ref{fig:nephron2_pressure}  is the result of a $DuMu^x$ blood flow simul
 %Briefly explain the Tracer Model
 %Maybe put some results of the Tracer Model here
 
-The tracer model can trace substances in networks and different geometries, and accordingly can compute concentrations/concentration fields of solutes in dynamic systems.
-\\This is why I decided to choose the Tracer model to simulate the oxygen transport and diffusion in the given networks...
+The tracer model can trace substances in networks of different geometries, and accordingly compute concentrations and concentration fields of solutes in dynamic systems.\\
+\\This is the reason I decided to choose the Tracer model to simulate the oxygen transport and diffusion in the given networks.\\
+\\Generally, the tracer model is computing the distribution of a solute for every time step. It can either take velocities or flows as inputs, and gives the concentration of the traced solute as an output.
+\\To briefly show what is meant by tracing a solute, a visualization for the first and last time of a tracing simulation is pictured in the following figures.\\
+\\This simulation is a simple diffusion of Groundwater in a porous rock. The velocity field of the solute is assumed to be constant.
 
 \subsubsection*{\footnotesize Some Tracer Simulations}
 
@@ -465,27 +468,28 @@ The tracer model can trace substances in networks and different geometries, and 
 \caption{\footnotesize $DuMu^x$ Tracer Concentration Simulation for a Rectangular Geometry (Time Step 1)}
 \label{fig:tracer_1}
 \end{figure}
-Figure \ref{fig:tracer_1}  is the result of a $DuMu^x$ tracer simulation computed on a rectangular geometry. The solute field in the network for the first time step is visualized.\\
+Figure \ref{fig:tracer_1} is the result of a $DuMu^x$ tracer simulation computed on a rectangular geometry. The solute field in the network for the first time step is visualized.\\
 \begin{figure}[h]
 \centering
 \includegraphics[width=162mm]{tracer_2}
 \caption{\footnotesize $DuMu^x$ Tracer Concentration Simulation for a Rectangular Geometry (Time Step 10)}
 \label{fig:tracer_2}
 \end{figure}
-Figure \ref{fig:tracer_2}  is the result of a $DuMu^x$ tracer simulation computed on a rectangular geometry. The solute field in the network for the last time step is visualized.\\
+Figure \ref{fig:tracer_2} is the solute field for the same simulation for the last time step is visualized.\\
 \begin{figure}[h]
 \centering
 \includegraphics[width=162mm]{tracer_velocity}
 \caption{\footnotesize $DuMu^x$ Tracer Velocity Simulation for a Rectangular Geometry}
 \label{fig:tracer_velocity}
 \end{figure}
-Figure \ref{fig:tracer_velocity}  is the result of a $DuMu^x$ tracer simulation computed on a rectangular geometry. The velocity field of the solute, which is constant, in the network for all time steps is visualized.\\
+Figure \ref{fig:tracer_velocity} is the constant velocity field of the solute.\\
 
 \subsubsection*{The Coupled Model}
 %Briefly explain what coupling is and how code is supposed to work
 %Hopefully put some results of the coupled model here or explain why the results are wrong
 
 To achieve the goal of tracing oxygen in the given vessel-networks, I coupled the previously described models to obtain a 1p-1p-tracer model...
+\\Using the velocity output of my previous 1p-1p model as an inpute for the tracer model, I wanted to get the concentration of my solute of interest, which is oxygen, for every time step.
 
 \subsubsection{Input Data for the Simulations}
 %Explain where the networks come from: CT by Willy and Artery/Vein recognition by Diego
