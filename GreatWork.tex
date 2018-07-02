@@ -293,103 +293,6 @@ Similar to the previous section, this section will strongly rely on \cite{Secomb
 \end{equation}
 
 \newpage
-\subsubsection{Results on Different Networks}
-%Results part of Green's
-
-{\color{brown} This is basically the most important part of your whole thesis.
-Why not make it a separate section, instead of subsubsection? 
-Also, the title of the section may be changed to: Simulation results and analysis.
-}\\
--Present some results on different networks - Plots and Results (maybe 3 I already have + 2 new ones)
-\\-Explanation of plots
-\\-Explaining inputs/outputs and meanings
-
-\subsubsection*{Krogh Model as an Introduction}
-%Explain relevance of this model and the produced results (many plots here)
-
-The Krogh model has been a standard simulation network used as an initial point for developments as it has a very easy and simple structure.\\
-Figure \ref{fig:Contour_Krogh}  is the result of a Green's Method blood flow simulation computed on a Krogh network. The Solute Concentration in the network is visualized.\\
-\begin{figure}[h]
-\centering
-\includegraphics[width=120mm]{Contour_Krogh}
-\caption{\footnotesize Green's Contour Output for Krogh Network}
-\label{fig:Contour_Krogh}
-\end{figure}
-
-%\subsubsection*{Brain Model}
-%Explain relevance of this model and the produced results (many plots here)
-
-%The Brain network provided by Secomb (?) was used for further simulations and to validate the produced data.
-
-\newpage
-\subsubsection*{The Cardiac Model}
-%Explain relevance of this model and the produced results (many plots here)
-
-The Cardiac network provided by Secomb was used for further simulations and to validate the produced data.\\
-\\Figure \ref{fig:Contour_Cardiac1}  is the result of a Green's Method blood flow simulation computed on a Cardiac network. The Solute Concentration in the network is visualized.\\
-\begin{figure}[h]
-\centering
-\includegraphics[width=85mm]{Contour_Cardiac}
-\caption{\footnotesize Green's Contour Output for Cardiac Network}
-\label{fig:Contour_Cardiac1}
-\end{figure}
-
-\newpage
-\subsubsection*{The Mesentery Arterty Model}
-%Explain relevance of this model and the produced results (many plots here)
-
-The Mesentery Artery network provided by Secomb was used for further simulations and to validate the produced data.\\
-\\Figure \ref{fig:Contour_Mesent1}  is the result of a Green's Method blood flow simulation computed on a Mesentery Artery network. The Solute Concentration of Solute 1 in the network is visualized.\\
-\begin{figure}[h]
-\centering
-\includegraphics[width=85mm]{Contour_Mesent1}
-\caption{\footnotesize Green's Contour Output for a Mesentery Artery Network (Solute 1)}
-\label{fig:Contour_Mesent1}
-\end{figure}\\
-%
-\\Figure \ref{fig:Contour_Mesent2}  is the result of a Green's Method blood flow simulation computed on a Mesentery Artery network. The Solute Concentration of Solute 2 in the network is visualized.\\
-\begin{figure}[h]
-\centering
-\includegraphics[width=85mm]{Contour_Mesent2}
-\caption{\footnotesize Green's Contour Output for a Mesentery Artery Network (Solute 2)}
-\label{fig:Contour_Mesent2}
-\end{figure}
-
-\newpage
-\subsubsection*{The Tumor Model}
-%Explain relevance of this model and the produced results (many plots here)
-
-The Tumor network provided by Secomb was used for further simulations and to validate the produced data.
-Figure \ref{fig:Contour_Tumor}  is the result of a Green's Method blood flow simulation computed on a Tumor network. The Solute Concentration in the network is visualized.\\
-\begin{figure}[h]
-\centering
-\includegraphics[width=75mm]{Contour_Tumor}
-\caption{\footnotesize Green's Contour Output for Tumor Network}
-\label{fig:Contour_Tumor}
-\end{figure}
-
-\newpage
-\subsubsection*{Further Outlook for New Networks}
-%Explain relevance of the new models and the produced results (many plots here)
-%These results are wrong !!! why ?
-
-The results provided by the Green's Method Code were previously discussed for a few networks provided by Secomb. In this section the goal is to see how this method can perform in general when it is applied to new networks and to discuss the produced results in detail.
-\\A glomerulus network was used for further simulations and to validate the produced data.
-Figure \ref{fig:NetNodesSegs_Glom}  is the result of a Green's Method blood flow simulation computed on a Tumor network. The Solute Concentration in the network is visualized.\\
-\begin{figure}[h]
-\centering
-\includegraphics[width=100mm]{NetNodesSegs_Glom}
-\caption{\footnotesize Green's Net Nodes Output for a Glomerulus Network}
-\label{fig:NetNodesSegs_Glom}
-\end{figure}
-
-\subsubsection{Discussion of Green's Method and the Produced Results}
-%Discussion part of Green's
-
-Final thoughts about Green's Method for physiological applications and oxygen delivery simulations/computations.
-%Compare the results with physiological measured values and check if the results make sense in general.
-
-\newpage
 \subsection{$DuMu^x$}
 %Explain DuMuX in general and explain the implemented method.
 
@@ -500,7 +403,107 @@ The networks that were used for the simulations are extracted from real organs c
 \\3)Three dimensional captions of the organ are build by many virtual two dimensional slices
 \\4)Transformation of the recognized artery/vein data into networks that can be used for the simulations.
 
-\subsubsection{Results}
+\newpage
+\section{Simulation Results and Analysis}
+%Put all the results here - Should be easier to understand things
+In this section, the produced results using the two introduced methods will be presented and analyzed for a few different networks. Finally the results will be discussed and the methods will be compared.
+
+\subsection{Results of the Green's Function Method}
+%Main part of the Thesis
+%Results part of Green's
+
+-Present some results on different networks - Plots and Results (maybe 3 I already have + 2 new ones)
+\\-Explanation of plots
+\\-Explaining inputs/outputs and meanings
+
+\subsubsection*{Krogh Model as an Introduction}
+%Explain relevance of this model and the produced results (many plots here)
+
+The Krogh model has been a standard simulation network used as an initial point for developments as it has a very easy and simple structure.\\
+Figure \ref{fig:Contour_Krogh}  is the result of a Green's Method blood flow simulation computed on a Krogh network. The Solute Concentration in the network is visualized.\\
+\begin{figure}[h]
+\centering
+\includegraphics[width=120mm]{Contour_Krogh}
+\caption{\footnotesize Green's Contour Output for Krogh Network}
+\label{fig:Contour_Krogh}
+\end{figure}
+
+%\subsubsection*{Brain Model}
+%Explain relevance of this model and the produced results (many plots here)
+
+%The Brain network provided by Secomb (?) was used for further simulations and to validate the produced data.
+
+\newpage
+\subsubsection*{The Cardiac Model}
+%Explain relevance of this model and the produced results (many plots here)
+
+The Cardiac network provided by Secomb was used for further simulations and to validate the produced data.\\
+\\Figure \ref{fig:Contour_Cardiac1}  is the result of a Green's Method blood flow simulation computed on a Cardiac network. The Solute Concentration in the network is visualized.\\
+\begin{figure}[h]
+\centering
+\includegraphics[width=85mm]{Contour_Cardiac}
+\caption{\footnotesize Green's Contour Output for Cardiac Network}
+\label{fig:Contour_Cardiac1}
+\end{figure}
+
+\newpage
+\subsubsection*{The Mesentery Arterty Model}
+%Explain relevance of this model and the produced results (many plots here)
+
+The Mesentery Artery network provided by Secomb was used for further simulations and to validate the produced data.\\
+\\Figure \ref{fig:Contour_Mesent1}  is the result of a Green's Method blood flow simulation computed on a Mesentery Artery network. The Solute Concentration of Solute 1 in the network is visualized.\\
+\begin{figure}[h]
+\centering
+\includegraphics[width=85mm]{Contour_Mesent1}
+\caption{\footnotesize Green's Contour Output for a Mesentery Artery Network (Solute 1)}
+\label{fig:Contour_Mesent1}
+\end{figure}\\
+%
+\\Figure \ref{fig:Contour_Mesent2}  is the result of a Green's Method blood flow simulation computed on a Mesentery Artery network. The Solute Concentration of Solute 2 in the network is visualized.\\
+\begin{figure}[h]
+\centering
+\includegraphics[width=85mm]{Contour_Mesent2}
+\caption{\footnotesize Green's Contour Output for a Mesentery Artery Network (Solute 2)}
+\label{fig:Contour_Mesent2}
+\end{figure}
+
+\newpage
+\subsubsection*{The Tumor Model}
+%Explain relevance of this model and the produced results (many plots here)
+
+The Tumor network provided by Secomb was used for further simulations and to validate the produced data.
+Figure \ref{fig:Contour_Tumor}  is the result of a Green's Method blood flow simulation computed on a Tumor network. The Solute Concentration in the network is visualized.\\
+\begin{figure}[h]
+\centering
+\includegraphics[width=75mm]{Contour_Tumor}
+\caption{\footnotesize Green's Contour Output for Tumor Network}
+\label{fig:Contour_Tumor}
+\end{figure}
+
+\newpage
+\subsubsection*{Further Outlook for New Networks}
+%Explain relevance of the new models and the produced results (many plots here)
+%These results are wrong !!! why ?
+
+The results provided by the Green's Method Code were previously discussed for a few networks provided by Secomb. In this section the goal is to see how this method can perform in general when it is applied to new networks and to discuss the produced results in detail.
+\\A glomerulus network was used for further simulations and to validate the produced data.
+Figure \ref{fig:NetNodesSegs_Glom}  is the result of a Green's Method blood flow simulation computed on a Tumor network. The Solute Concentration in the network is visualized.\\
+\begin{figure}[h]
+\centering
+\includegraphics[width=100mm]{NetNodesSegs_Glom}
+\caption{\footnotesize Green's Net Nodes Output for a Glomerulus Network}
+\label{fig:NetNodesSegs_Glom}
+\end{figure}
+
+\subsection{Discussion of the Green's Method and the Produced Results}
+%Discussion part of Green's
+
+Final thoughts about Green's Method for physiological applications and oxygen delivery simulations/computations.
+%Compare the results with physiological measured values and check if the results make sense in general.
+
+
+\subsection{Results of $DuMu^x$} 
+%Interesting but shorter part, due to the fact that DuMuX is not really producing anything yet
 %Results part of DuMuX
 -Pros/Cons
 \\-Quality of results
@@ -526,32 +529,32 @@ The figure \ref{fig:nephron_velocity} is the result of a DuMuX 1p-1p blood flow 
 \end{figure}
 The figure \ref{fig:nephron_pressure} is the result of a DuMuX 1p-1p blood flow simulation computed on a glomerulus network. The pressure field of the flow is visualized.\\
 
+\subsection{Comparison of the Results}
+%Compare the produced results
+In this section the main differences in the produced results for the same input files/same networks will be discussed.
+
 \newpage
 \section{Comparison of the Different Methods Behind the Simulations}
 %Compare DuMuX to Green's Method in general
 In this section the main differences between these two simulation methods described previously will be discussed.
-
-\subsection{Comparison of the Methods}
+\\
+\\\textbf{Kartik do you think I need this 5th chapter at all ? I think I would rather delete it. I could include the subsections into the Simulation Methods part as well, and discuss some of these in the Conclusion as well ?}\\
 %Compare the Solvers behind the Methods
 %Very useful tu use Secomb Paper Numerical Methods section here
-In this section the main differences between the solvers and the associated numerical methods will be discussed.
+\\In this section the main differences between the solvers and the associated numerical methods will be discussed.
 \\
 \\As mentioned previously, one of the huge advantages of $DuMu^x$ is the flexibility it provides in terms of solvers, and thus in terms of the numerical methods used for the computations. This means that it is often possible to pick a solver which is stable for the specific problem and the chosen discretization.
 \\
 \\This is obviously different for the Green's Method code, as there is no option of choosing a different solver than the one provided in the code. As discussed previously, this code is specifically implemented to solve and compute oxygen (or other Solute) concentrations in the blood and the surrounding tissue, and the implemented method strongly relies on the stability of the Green's Method and the numerical methods behind the solver.
 
-\subsubsection{Comparison of the Numerical Methods}
+\subsection{Comparison of the Numerical Methods}
 %Explain the Methods and differences between methods
 %Very useful tu use Secomb Paper Numerical Methods section here
 In this section, the focus will be on comparing the numerical methods behind the Green's Method code and $DuMu^x$ and the differences in their implementation.
 
-\subsubsection{Stability Questions and Computational Cost}
+\subsection{Stability Questions and Computational Cost}
 %Explain when and why which the numerical methods are stable
 In this section, the consequences of the previously described differences will be discussed. The focus lies on the differences in terms of stability and computational cost for similar simulations.
-
-\subsection{Comparison of the Results}
-%Compare the produced results
-In this section the main differences in the produced results for the same input files/same networks will be discussed.
 
 %\section{Discussion}
 
