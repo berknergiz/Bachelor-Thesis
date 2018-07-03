@@ -39,15 +39,8 @@ First, a short insight to the physiological background of blood flow and oxygen 
 \section{Blood Flow and Oxygen Delivery}
 %How does this work physiologically ?
 
-{\color{brown}
-In this section the physiological aspects of O2 transport through vessels into
-the tissue will be discussed.  
-This part is mainly dedicated to the understanding of physiological processes
-that are involved in the transport of oxygen through capillaries into the
-tissue, and its consumption therein.
-}\\
-\\In this section the physiological aspects will be discussed, and the main goal of computations and simulations in this field will be explained. This part is mainly about the physiological points in blood flow and oxygen transport, as well as oxygen consumption in tissue and further outlook in this field. (i.e. EPO and tumor oxygen delivery etc.)
-\\Blood is pumped through the heart into the whole body. This results in pressure gradients, accelerating the fluid through the arteries.
+In this section the physiological aspects of $O_2$ transport through vessels into the tissue will be discussed. This part is mainly dedicated to the understanding of physiological processes that are involved in the transport of oxygen through capillaries into the tissue, and its consumption therein. The ultimate goal of this research topic in the Interface Group is to understand the production of EPO and the physiologic phenomenon behind an increased EPO production. The main idea is to compute oxygen concentration fields in the kidney, where local hypoxia generally leads to an EPO emission. (mention this or rather not?)
+\\To get give the reader a short overview, I will start at the beginning and give a short overview of how blood travels through the body. It is pumped through the heart into the whole body. This results in pressure gradients, accelerating the fluid through the arteries.
 \\In this thesis, the flow and transport through micro-vessels in the capillary range is the main concern, where generally the time-dependency of the velocity of blood will be neglected. We use a steady-state approximation for the flow rate, and thus assume a constant velocity. This means that there is no variation of velocity depending on time for any given point in the network.
 
 \subsection{Blood Flow}
@@ -55,7 +48,7 @@ tissue, and its consumption therein.
 %Purely physiological Blood Flow part (with mathematical formulas to describe processes)
 %Discuss General Hemodynamics
 %Put some papers and references in and explain some values and parameters.
-%Use mathematics paper for blood flow calculations \cite{rahman2012mathematical}.
+%Use mathematics paper for blood flow calculations \cite{mathmodeling}
 %Papers to cite: \cite{pittman2011regulation}
 
 {\color{brown}
@@ -65,8 +58,9 @@ tissue, and its consumption therein.
   Also mention that why it is extremely inappropriate for us to model it like that.
 }
 \\
-\\Blood is basically composed of two phases: liquid and cells. The liquid phase is called plasma, and the cells that are our main concern are the red blood cells. This will later play an important role when considering the oxygen transport in blood. For computational models, blood is generally modeled as an incompressible Newtonian fluid \cite{rahman2012mathematical}. This basically means that the viscous stress is linearly proportional to the strain rate. This assumption generally holds, even though the particles in the blood, which are the cells, start playing a more important role for the smallest vessels.
-This leads to the Navier-Stokes equations \ref{eq:NavierStokes1}, \ref{eq:NavierStokes2}, which basically describe the flow dynamics of an incompressible Newtonian fluid:
+\\Blood is basically composed of two phases: liquid and cells. The liquid phase is called plasma, and the cells that play the most important role for our concern are the red blood cells. This will later be important when considering the oxygen transport in the blood. For computational models, blood is generally modeled as an incompressible Newtonian fluid \cite{mathmodeling}. This basically means that the viscous stress is linearly proportional to the strain rate. This assumption generally holds, even though the particles in the blood, which are the cells, start playing a more important role when the vessel diameter approaches the red blood cell size. It is also important to mention that the cells, making up 40-45\$ of the blood volume, are basically not incompressible. They can be compressed and shrink in order to facilitate the blood flow in small vessels.
+\\While our model of blood uses big assumptions and turns a two phase medium into an incompressible Newtonian liquid, this facilitates computations from an engineering point of view and can produce fairly good results.
+Using this model for blood leads to the Navier-Stokes equations \ref{eq:NavierStokes1}, \ref{eq:NavierStokes2}, which basically describe the flow dynamics of an incompressible Newtonian fluid:
 \begin{equation}
 \\ \rho \frac{\delta \textbf{v}}{\delta t} + \rho \textbf{v} \nabla \textbf{v} + \nabla p - \eta \nabla ( \nabla \textbf{v} + \nabla \textbf{v}^T ) = \textbf{f}
 \label{eq:NavierStokes1}
@@ -77,7 +71,7 @@ This leads to the Navier-Stokes equations \ref{eq:NavierStokes1}, \ref{eq:Navier
 \end{equation}
 In the Navier-Stokes equations, $\textbf{v}$ is the velocity vector, $p$ is the pressure, and $\rho$ and $\eta$ are the blood density and viscosity respectively.
 \\The external forces acting on the fluid are represented by the vector $\textbf{f} = (f_x f_y f_z)^T$.
-\\Finish this chapter using the Rahman paper...
+\\Finish this chapter using the Caiazzo paper \cite{mathmodeling}...
 
 \subsection{Oxygen Transport and Delivery}
 %Purely physiological Oxygen part (with mathematical formulas to describe processes)
@@ -87,7 +81,7 @@ How does this oxygen related stuff physically and physiologically work ?
 \\Why do we care about this etc. ?
 \\Diffusion, Parameters, etc. etc.
 \\Use Vasomotion paper for oxygen delivery \cite{goldman2001computational}
-\\Papers to cite: \cite{rogersupdate}
+\\Papers to cite: \cite{bukwirwa}
 
 \subsubsection*{Oxygen Transport in the Blood}
 %Transport with the flow
@@ -103,7 +97,7 @@ How does this oxygen related stuff physically and physiologically work ?
 %Diffusion out of the Vessels - Fick's Law of Diffusion
 %Diffusion Process - Transport in the Tissue - Properties and some general Parameters
 %Delivery of Oxygen to the Cells
-%Papers to cite: \cite{hellums1977resistance}, \cite{fletcher1980facilitated}
+%Papers to cite: \cite{hellums1977resistance}, \cite{bukwirwa}
 
 As previously described, diffusion will play an important role in oxygen transport in the body, as oxygen is reaching the tissue by diffusing out of the vessels. This physical phenomenon is described by Fick's Law of Diffusion:
 \begin{equation}
@@ -111,15 +105,15 @@ As previously described, diffusion will play an important role in oxygen transpo
 \label{Fick}
 \end{equation}
 Where J is the diffusive flux, D is the previously mentioned diffusivity coefficient, and $\frac{dc}{dx}$ is the derivative of the concentration with respect to the distance x, which is the concentration gradient \cite{pittman2011regulation}, \cite{lee2017accounting}.
-\\The diffusion process can be helped and enhanced by a substance (molecule?) called Myoglobin. This substance can be found in some tissues in the body, especially muscle tissue (?) and enhances the diffusivity of oxygen through the tissue. The enhancement effect can obviously depends on the Myoglobin concentration in the given tissue, and these effects can be taken into account by (?).
+\\The diffusion process can be helped and enhanced by a substance (molecule?) called Myoglobin. This substance can be found in some tissues in the body, especially muscle tissue (?) and enhances the diffusivity of oxygen through the tissue. The enhancement effect can obviously depends on the Myoglobin concentration in the given tissue, and these effects can be taken into account by (?). \cite{wittenberg1970myoglobin}
 
 
 \subsection{Current Trends in Modeling}
 %Use a few papers to give examples for previous and actual approaches
 %Do link to modeling and models in this field in general, then link this to computational models in this field and their use. Actual trends and what people hope for in the future (in terms of computational power, computational methods but also from a medical perspective) is also interesting.
-%Papers to cite: \cite{rahman2012mathematical}, \cite{goldman2001computational}, \cite{kuzmin2010guide}, \cite{lee2017accounting}, \cite{hoofd1992updating}, \cite{beard2001modeling}, \cite{Secomb2004}
+%Papers to cite: \cite{mathmodeling}, \cite{goldman2001computational}, \cite{kuzmin2010guide}, \cite{lee2017accounting}, \cite{beard2001modeling}, \cite{Secomb2004}
 
-In order to simulate flows, Computational Fluid Dynamics (CFD) is a tool that can be used to produce results which can not be obtained through in vitro or in vivo experiments  \cite{rahman2012mathematical}. For this reason and because the computational capabilities available are growing everyday, modeling and simulating processes in the body is taking an increasingly important role in biological and medical sciences.
+In order to simulate flows, Computational Fluid Dynamics (CFD) is a tool that can be used to produce results which can not be obtained through in vitro or in vivo experiments  \cite{mathmodeling}. For this reason and because the computational capabilities available are growing everyday, modeling and simulating processes in the body is taking an increasingly important role in biological and medical sciences.
 \\In our case, the focus will lie on oxygen transport simulations and their computational implementation.\\
 \\As already mentioned in the section \ref{Blood Flow}, blood flow in the body can be approximated by the Navier-Stokes equations \ref{eq:NavierStokes1}, \ref{eq:NavierStokes2}. The transport of oxygen in the blood can then be linked to this by the transport equations. These physical equations are quite straightforward to implement and solve numerically. The next task remains the biggest problem in actual research: Link this transport to the diffusion process out of the vessels and into the tissue. The biggest problems here seem to be in choosing the right/appropriate boundary conditions to get exact results. Also, many numerical methods fail or more specifically become unstable when the vessel network becomes complicated and heterogeneous. There are already good methods to produce results for the Krogh model, but to compute oxygen fields in very complex networks like in the kidney, these models do not provide the desired results.
 \\Steady-State approximation for simulations: Need this assumption for Michaelis-Menten relation.
@@ -302,7 +296,7 @@ Similar to the previous section, this section will strongly rely on \cite{Secomb
 
 As my intention was to implement a simple simulation for oxygen transport, I had to decide which solver I want to use. At first sight, the decision had to be made between OpenFOAM, FEniCs and $DuMu^x$. 
 \\When starting this project, we knew that the biggest limitations and challenges to face will be the given time, which was quite short to get into such a complex subject and understand the methodology behind it. When researching which solvers might produce the best results, FEniCS seemed like a very good option.
-\\(Paper to cite here:https://arxiv.org/pdf/1803.04896.pdf)
+\\(Paper to cite here:\cite{holter2018sub})
 \\However, getting a good understanding of this software to be able to implement a new method seemed unrealistic for the short time of a Bachelor Thesis, which is limited to a few months.
 \\For this reason I decided to use $DuMu^x$, as it already has a few models which compute blood flow simulations. This helped me get a quick insight to how $DuMu^x$ works, and how I can use it for my purposes.
 

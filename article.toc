@@ -6,7 +6,7 @@
 \contentsline {section}{\numberline {2}Blood Flow and Oxygen Delivery}{3}{section.2}
 \contentsline {subsection}{\numberline {2.1}Blood Flow}{3}{subsection.2.1}
 \contentsline {subsection}{\numberline {2.2}Oxygen Transport and Delivery}{4}{subsection.2.2}
-\contentsline {subsection}{\numberline {2.3}Current Trends in Modeling}{4}{subsection.2.3}
+\contentsline {subsection}{\numberline {2.3}Current Trends in Modeling}{5}{subsection.2.3}
 \contentsline {section}{\numberline {3}Simulation Methods}{6}{section.3}
 \contentsline {subsection}{\numberline {3.1}Green's Function Method}{6}{subsection.3.1}
 \contentsline {subsubsection}{\numberline {3.1.1}The Computational Model}{6}{subsubsection.3.1.1}

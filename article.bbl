@@ -10,17 +10,25 @@ D.~A. Beard and J.~B. Bassingthwaighte.
   networks.
 \newblock {\em Annals of biomedical engineering}, 29(4):298--310, 2001.
 
+\bibitem{mathmodeling}
+A.~Caiazzo and I.~E. Vignon-Clementel.
+\newblock Mathematical modeling of blood flow in the cardiovascular system.
+\newblock In {\em Quantification of Biophysical Parameters in Medical Imaging},
+  pages 45--70. IEEE, 2018.
+
+\bibitem{flemisch2011dumux}
+B.~Flemisch, M.~Darcis, K.~Erbertseder, B.~Faigle, A.~Lauser, K.~Mosthaf,
+  S.~M{\"u}thing, P.~Nuske, A.~Tatomir, M.~Wolff, et~al.
+\newblock Dumux: Dune for multi-$\{$phase, component, scale,
+  physics,{\ldots}$\}$ flow and transport in porous media.
+\newblock {\em Advances in Water Resources}, 34(9):1102--1112, 2011.
+
 \bibitem{flemisch2007dumux}
 B.~Flemisch, J.~Fritz, R.~Helmig, J.~Niessner, and B.~Wohlmuth.
 \newblock Dumux: a multi-scale multi-physics toolbox for flow and transport
   processes in porous media.
 \newblock In {\em ECCOMAS Thematic Conference on Multiscale Computational
   Methods for Solids and Fluids}, pages 82--87, 2007.
-
-\bibitem{fletcher1980facilitated}
-J.~Fletcher.
-\newblock On facilitated oxygen diffusion in muscle tissues.
-\newblock {\em Biophysical journal}, 29(3):437--458, 1980.
 
 \bibitem{goldman2001computational}
 D.~Goldman and A.~S. Popel.
@@ -34,11 +42,10 @@ J.~Hellums.
   that in the surrounding tissue.
 \newblock {\em Microvascular research}, 13(1):131--136, 1977.
 
-\bibitem{hoofd1992updating}
-L.~Hoofd.
-\newblock Updating the krogh model-assumptions and extensions.
-\newblock In {\em SEMINAR SERIES-SOCIETY FOR EXPERIMENTAL BIOLOGY}, volume~51,
-  pages 197--197. Cambridge University Press, 1992.
+\bibitem{holter2018sub}
+K.~E. Holter, M.~Kuchta, and K.-A. Mardal.
+\newblock Sub-voxel perfusion modeling in terms of coupled 3d-1d problem.
+\newblock {\em arXiv preprint arXiv:1803.04896}, 2018.
 
 \bibitem{kreuzer1982oxygen}
 F.~Kreuzer.
@@ -50,7 +57,7 @@ D.~Kuzmin.
 \newblock A guide to numerical methods for transport equations.
 \newblock {\em University Erlangen-Nuremberg}, 2010.
 
-\bibitem{rogersupdate}
+\bibitem{bukwirwa}
 R.~Law and H.~Bukwirwa.
 \newblock The physiology of oxygen delivery.
 \newblock {\em Update in Anaesthesia}, 10:6, 1999.
@@ -69,12 +76,6 @@ R.~N. Pittman.
   molecule to function}, volume~3, pages 1--100. Morgan \& Claypool Life
   Sciences, 2011.
 
-\bibitem{rahman2012mathematical}
-M.~S. Rahman and M.~A. Haque.
-\newblock Mathematical modeling of blood flow.
-\newblock In {\em Informatics, Electronics \& Vision (ICIEV), 2012
-  International Conference on}, pages 672--676. IEEE, 2012.
-
 \bibitem{secomb1993analysis}
 T.~Secomb, R.~Hsu, M.~Dewhirst, B.~Klitzman, and J.~Gross.
 \newblock Analysis of oxygen transport to tumor tissue by microvascular
@@ -92,5 +93,11 @@ T.~W. Secomb, R.~Hsu, E.~Y.~H. Park, and M.~W. Dewhirst.
 R.~Weiss.
 \newblock Parameter-free iterative linear solvers.
 \newblock {\em Mathematical Research}, 97, 1996.
+
+\bibitem{wittenberg1970myoglobin}
+J.~B. Wittenberg.
+\newblock Myoglobin-facilitated oxygen diffusion: role of myoglobin in oxygen
+  entry into muscle.
+\newblock {\em Physiological Reviews}, 50(4):559--636, 1970.
 
 \end{thebibliography}
