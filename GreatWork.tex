@@ -398,8 +398,9 @@ The Green's Function Method is providing many outputs which are specified in mor
 \label{Krogh}
 %Explain relevance of this model and the produced results (many plots here)
 
+%Present Network
 The Krogh model describes the vessels as cylinders and the tissue as concentric cylinders surrounding the vessels. In this model, it is assumed that the capillaries are straight and parallel. The blood flow in all the capillaries is assumed to be unidirectional, and the distribution of capillaries is assumed to be homogeneous \cite{kreuzer1982oxygen}. As one might expect, this model has a few unrealistic assumptions, but as it is a straightforward network, it is the most basic model to start with to validate a computational method.\\
-%
+%Explain Plot
 \\The Krogh model has been a standard simulation network used as an initial point for developments as it has a very easy and simple structure.
 Figure \ref{fig:Contour_Krogh} is the result of a Green's Method blood flow simulation computed on a Krogh network. The Solute Concentration in the network and in the tissue is visualized in the form of a slice (See Output Section \ref{Outputs} for more information). The illustration basically shows a virtual cut into the tissue and gives local oxygen concentrations in mmHg.\\
 \begin{figure}[h]
@@ -408,9 +409,31 @@ Figure \ref{fig:Contour_Krogh} is the result of a Green's Method blood flow simu
 \caption{\footnotesize Green's Contour Output for Krogh Network}
 \label{fig:Contour_Krogh}
 \end{figure}
-\\One can clearly see that the results produced are physically realistic. On \ref{fig:Contour_Krogh} the blood flow goes from left to right. The $O_2$ concentration in mmHg accordingly goes down in flow direction. The concentrations as well as the diffusive distance in the tissue also decrease in flow direction, which can be explained by the fact that a lower concentration gradient goes with a lower Diffusive Flux. This is in accordance with Fick's Law of Diffusion \ref{Fick}. As one can see from the Input files \ref{Inputs}, the Diffusivity constant $\alpha$ is constant for homogeneous tissue. Due to the fact that the diameter of the vessels is constant as well when considering the Krogh Model, the intravascular resistance to radial oxygen transport K for each diameter/vessel is also constant. Differences in diffusive fluxes and Oxygen penetration distances into the tissue therefore mainly depend on the $PO_2$ gradients themselves.\\
-\\Eventually, one can see that the results computed on the Krogh Network show that the Green's Function method performs well and produces physically accurate results on simplified and perfectly homogeneous networks as this one.
-\\It is further remarked that analytical solutions of the Krogh cylinder Model have been derived before and the results shown in this figure correspond well to the  analytical results. This validates that the Green's Function Method and the corresponding implementation can produce physically accurate results, and suggests that it is a suitable method to conduct further studies.
+%Explain Results
+\\One can clearly see that the results produced are physically realistic. On \ref{fig:Contour_Krogh} the blood flow goes from left to right. The $O_2$ concentration in mmHg accordingly goes down in flow direction. The concentrations as well as the diffusive distance in the tissue also decrease in flow direction, which can be explained by the fact that a lower concentration gradient goes with a lower diffusive flux. This is in accordance with Fick's Law of Diffusion \ref{Fick}. As one can see from the input files \ref{Inputs}, the diffusivity constant $\alpha$ is constant for homogeneous tissue. Due to the fact that the diameter of the vessels is constant as well when considering the Krogh model, the intravascular resistance to radial oxygen transport K for each diameter/vessel is also constant. Differences in diffusive fluxes and oxygen penetration distances into the tissue therefore mainly depend on the $PO_2$ gradients themselves.\\
+\\Eventually, one can see that the results computed on the Krogh network show that the Green's function method performs well and produces physically accurate results on simplified and perfectly homogeneous networks as this one.
+\\It is further remarked that analytical solutions of the Krogh cylinder model have been derived before and the results shown in this figure correspond well to the  analytical results. This validates that the Green's function method and the corresponding implementation can produce physically accurate results, and suggests that it is a suitable method to conduct further studies.
+
+\newpage
+\subsubsection*{A First Tumor Network}
+%Explain relevance of this model and the produced results (many plots here)
+
+%Present Network
+The Green's function code provided by Prof. Secomb contains a few microvasculature networks as examples, which can be studied and extended. In this thesis, I executed many of those models to get a good understanding of physiological phenomena concerning $O_2$ transport in various organs and different networks.
+\\Two of these example networks provided by Prof. Secomb are the tumor networks. I will first present the results obtained for the first network, and later get to the more complex and relevant second example.
+\\The Tumor 1 network is more complicated than the previously presented Krogh model but generally gives a way better insight to the results than the Cardiac Network simulation, due to the much lower vessel density. The result is visualized on Figure \ref{fig:Contour_Tumor1998}. One can see the result of a Green's method blood flow simulation computed on a simple tumor network. As for the previous network, the oxygen concentration in the network and in the tissue is visualized in the form of a two dimensional slice (See output section \ref{Outputs} for more information). Again the illustration shows a virtual cut into the tissue and gives local oxygen concentrations in mmHg.\\\\
+%Explain Plot
+The Tumor network provided by Secomb was used for further simulations and to validate the produced data.
+Figure \ref{fig:Contour_Tumor1998}  is the result of a Green's method blood flow simulation computed on a tumor network. The solute concentration in the network is visualized.\\
+\begin{figure}[h]
+\centering
+\includegraphics[width=120mm]{Contour_Tumor1998}
+\caption{\footnotesize Green's Contour Output for Tumor 1}
+\label{fig:Contour_Tumor1998}
+\end{figure}\\
+%Explain Results
+\\As contour-plots generally show a \emph{compressed} picture of a three dimensional network, many vessels that are \emph{above} each other are shown as if they were intersecting. This can be hard to differentiate for the output files of some complex networks. In this case, this tumor network doesn't have many vessels, but is rather supplied by a few thicker vessels. The red color corresponds to oxygen enriched blood, and clearly oxygen in tissue regions proximal to these vessels is higher. There is no information given about the exact origin of this particular image segmentation and it can be observed that the length of segments within vessels is quite large. This is a limitation in order to obtain a precise resolution of the computed oxygen field, as $PO_2$ is always computed for each node and segment. Eventually a $PO_2$ value is assigned to each segment. This means that a lower resolution for the oxygen field is obtained.
+\\In this case, $PO_2$ levels reach up to about $40$ mmHg which lies within the physiological range.
 
 %\subsubsection*{Brain Model}
 %Explain relevance of this model and the produced results (many plots here)
@@ -418,12 +441,14 @@ Figure \ref{fig:Contour_Krogh} is the result of a Green's Method blood flow simu
 %The Brain network provided by Secomb (?) was used for further simulations and to validate the produced data.
 
 \newpage
-\subsubsection*{The Cardiac Model}
+\subsubsection*{The Cardiac Network}
 %Explain relevance of this model and the produced results (many plots here)
 %The Cardiac network provided by Secomb was used for further simulations and to analyze results in more complex networks.\\
 
-The Green's function code provided by Prof. Secomb contains a few microvasculature networks as examples, which can be studied and extended. In this thesis, I executed many of those models to get a good understanding of physiological phenomena concerning $O_2$ transport in various organs and different networks.
-\\In this section, the Oxygen distribution in a Cardiac network will be presented. This network is more complicated than the previously presented Krogh model \ref{Krogh}. The result is visualized on Figure~\ref{fig:Contour_Cardiac1}. Here one can see the result of a Green's Method blood flow simulation computed on a Cardiac network. As for the Krogh model, the Oxygen Concentration in the network and in the tissue is visualized in the form of a slice (See Output Section \ref{Outputs} for more information). Again the illustration shows a virtual cut into the tissue and gives local oxygen concentrations in mmHg.\\
+%Present Network
+Another interesting example network is the cardiac network. Even though there is no information given about how this particular image segmentation was obtained, knowing that it is a cardiac network, one might expect an especially high density of vessels for this network.
+\\In this section, the oxygen distribution in a cardiac network will be presented. This network is more complicated than the previously presented Krogh model \ref{Krogh}. The result is visualized on Figure~\ref{fig:Contour_Cardiac1}. Here one can see the result of a Green's method blood flow simulation computed on a cardiac network. As for the Krogh model, the oxygen concentration in the network and in the tissue is visualized in the form of a slice (See output section \ref{Outputs} for more information). Again the illustration shows a virtual cut into the tissue and gives local oxygen concentrations in mmHg.\\
+%Explain Plot
 \begin{figure}[h]
 \centering
 \includegraphics[width=120mm]{Contour_Cardiac}
@@ -431,24 +456,27 @@ The Green's function code provided by Prof. Secomb contains a few microvasculatu
 \label{fig:Contour_Cardiac1}
 \end{figure}
 \\Figure~\ref{fig:Contour_Cardiac1} shows the distribution of Oxygen in a small
-network of vessels. 
+network of vessels.
+%Explain Results
 \\The three dimensional network of vessels is \emph{compressed} to a two
-dimensional representation for simplicity.  The red color corresponds to oxygen enriched blood, and clearly oxygen in tissue regions proximal to these vessels is higher. It is unknown at the time of writing this thesis that how this particular image segmentation was obtained and it can be observed that the length of segments within vessl is quite large (or coarse).
-\\The PO2 levels reach up to about $87$ mmHg within a physiological range. 
+dimensional representation for simplicity.  The red color corresponds to oxygen enriched blood, and clearly oxygen in tissue regions proximal to these vessels is higher. It is unknown at the time of writing this thesis that how this particular image segmentation was obtained and it can be observed that the length of segments within vessels is quite large/coarse.
+\\The $PO_2$ levels reach up to about $87$ mmHg within a physiological range.
 
 \newpage
-\subsubsection*{The Mesentery Artery Model}
+\subsubsection*{The Mesentery Artery Network}
 %Explain relevance of this model and the produced results (many plots here)
 %The Mesentery Artery network provided by Secomb was used for further simulations and to get more computational results.\\
 
-Another example network provided by Prof. Secomb is the Mesentery Artery Network.
-\\This network is more complicated than the previously presented Krogh model but generally gives a way better insight to the results than the Cardiac Network simulation, due to the much lower vessel density. The result is visualized on Figure \ref{fig:Contour_Mesent1}. Here on can see the result of a Green's Method blood flow simulation computed on a Mesentery Artery network. As for the previous models, the Oxygen Concentration in the network and in the tissue is visualized in the form of a slice (See Output Section \ref{Outputs} for more information). Again the illustration shows a virtual cut into the tissue and gives local oxygen concentrations in mmHg.\\\\
+%Present Network
+Another example network provided by Prof. Secomb is the mesentery artery network.
+\\This network is more complicated than the previously presented networks but generally gives a way better insight to the results than the cardiac network simulation, due to the much lower vessel density. The result is visualized on Figure \ref{fig:Contour_Mesent1}. Here one can see the result of a Green's method blood flow simulation computed on a mesentery artery network. As for the previous networks, the oxygen concentration in the network and in the tissue is visualized in the form of a slice (See output section \ref{Outputs} for more information). Again the illustration shows a virtual cut into the tissue and gives local oxygen concentrations in mmHg.\\\\
+%Explain Plot
 \begin{figure}[h]
 \centering
 \includegraphics[width=120mm]{Contour_Mesent1}
 \caption{\footnotesize Green's Contour Output for a Mesentery Artery Network (Solute 1)}
 \label{fig:Contour_Mesent1}
-\end{figure}\\
+\end{figure}
 %
 %\\Figure \ref{fig:Contour_Mesent2}  is the result of a Green's Method blood flow simulation computed on a Mesentery Artery network. The Solute Concentration of Solute 2 in the network is visualized.\\
 %\begin{figure}[h]
@@ -457,25 +485,19 @@ Another example network provided by Prof. Secomb is the Mesentery Artery Network
 %\caption{\footnotesize Green's Contour Output for a Mesentery Artery Network (Solute 2)}
 %\label{fig:Contour_Mesent2}
 %\end{figure}
-\\Due to the low density of capillaries for this network, this figure can give a good insight to the values computed by the Green's Model. One can clearly see that partial pressure of $O_2$ goes down in radial direction with growing distance from the vessels. At hotspots where the capillary density is higher due to branching and ramification, the diffusion comes from two vessels and the superposition of two close source elements leads to peaks in $PO_2$ values.
+\\
+%Explain Results
+\\Due to the low density of capillaries for this network, this figure can give a good insight to the values computed by the Green's Model. One can clearly see that partial pressure of $O_2$ goes down in radial direction with growing distance from the vessels. At hotspots where the capillary density is higher due to branching and ramification, the diffusion comes from two vessels and the superposition of two close source elements leads to peaks in $PO_2$ values.\\
+\\The oxygen field clearly shows that some hypoxic regions can be found at spots without vessel or where the vessels themselves have a very low $PO_2$ concentration. With $PO_2$ values ranging from $0$ mmHg (hypoxic region) to 87 mmHg, the results lie once more in the physiological range.
 
 \newpage
-\subsubsection*{First Tumor Model}
+\subsubsection*{A Second Tumor Network}
 %Explain relevance of this model and the produced results (many plots here)
 
-The Tumor network provided by Secomb was used for further simulations and to validate the produced data.
-Figure \ref{fig:Contour_Tumor1998}  is the result of a Green's Method blood flow simulation computed on a Tumor network. The Solute Concentration in the network is visualized.\\
-\begin{figure}[h]
-\centering
-\includegraphics[width=120mm]{Contour_Tumor1998}
-\caption{\footnotesize Green's Contour Output for Tumor 1}
-\label{fig:Contour_Tumor1998}
-\end{figure}
-
-\newpage
-\subsubsection*{Second Tumor Model}
-%Explain relevance of this model and the produced results (many plots here)
-
+%Present Network
+The other Tumor example network provided by Prof. Secomb is the Tumor 2 network.
+\\The Tumor 1 network is more complicated than the previously presented Tumor 1 network but generally gives a way better insight to the results than the Cardiac Network simulation, due to the much lower vessel density. The result is visualized on Figure \ref{fig:Contour_TumorDuke}. Here one can see the result of a Green's Method blood flow simulation computed on a simple Tumor network. As for the previous models, the Oxygen Concentration in the network and in the tissue is visualized in the form of a slice (See Output Section \ref{Outputs} for more information). Again the illustration shows a virtual cut into the tissue and gives local oxygen concentrations in mmHg.\\\\
+%Explain Plot
 The Tumor network provided by Secomb was used for further simulations and to validate the produced data.
 Figure \ref{fig:Contour_TumorDuke}  is the result of a Green's Method blood flow simulation computed on a Tumor network. The Solute Concentration in the network is visualized.\\
 \begin{figure}[h]
@@ -483,7 +505,11 @@ Figure \ref{fig:Contour_TumorDuke}  is the result of a Green's Method blood flow
 \includegraphics[width=120mm]{Contour_TumorDuke}
 \caption{\footnotesize Green's Contour Output for Tumor 2}
 \label{fig:Contour_TumorDuke}
-\end{figure}
+\end{figure}\\
+%Explain Results
+\\The three dimensional network of vessels is \emph{compressed} to a two
+dimensional representation for simplicity.  The red color corresponds to oxygen enriched blood, and clearly oxygen in tissue regions proximal to these vessels is higher. It is unknown at the time of writing this thesis that how this particular image segmentation was obtained and it can be observed that the length of segments within vessels is quite large (or coarse).
+\\The PO2 levels reach up to about $87$ mmHg within a physiological range. 
 
 \newpage
 \subsubsection*{Further Outlook for New Networks}
@@ -562,12 +588,9 @@ In this section the main differences in the produced results by Green's Function
 %Explain when and why which the numerical methods are stable
 %In this section, the consequences of the previously described differences will be discussed. The focus lies on the differences in terms of stability and computational cost for similar simulations.
 
-%\section{Discussion}
-
-%I already did this previously, so might delete this part ...
 
 \newpage
-\section{Conclusion}
+\section{Discussion}
 %Summary of both methods in general and Outlook for the research field
 %What this review was about: short summary. Main points
 %highlighted. Perhaps a graph regrouping together elements.
