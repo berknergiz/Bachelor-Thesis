@@ -105,7 +105,7 @@ As previously described, diffusion will play an important role in oxygen transpo
 \label{Fick}
 \end{equation}
 Where J is the diffusive flux, D is the previously mentioned diffusivity coefficient, and $\frac{dc}{dx}$ is the derivative of the concentration with respect to the distance x, which is the concentration gradient \cite{pittman2011regulation}, \cite{lee2017accounting}.
-\\The diffusion process can be helped and enhanced by a substance (molecule?) called Myoglobin. This substance can be found in some tissues in the body, especially muscle tissue (?) and enhances the diffusivity of oxygen through the tissue. The enhancement effect can obviously depends on the Myoglobin concentration in the given tissue, and these effects can be taken into account by (?). \cite{wittenberg1970myoglobin}
+\\The diffusion process can be helped and enhanced by a substance (molecule?) called Myoglobin. This substance can be found in some tissues in the body, especially muscle tissue (?) and enhances the diffusivity of oxygen through the tissue. The enhancement effect can depend on the Myoglobin concentration in the given tissue, and these effects can be taken into account by (?). \cite{wittenberg1970myoglobin}
 
 
 \subsection{Current Trends in Modeling}
@@ -145,7 +145,7 @@ and applies them to several vasculature morphologies from various organs. In thi
 \subsection{Green's Function Method}
 %Here I will talk about everything concerning the Green's Method Code.
 
-The Green's Function Method was first used for numerical computations of oxygen delivery in the tissue by Secomb et al. \cite{Secomb2004}. It can deliver accurate results with lower computational cost when compared to implicit methods, due to the fact that the number of unknowns is reduced. For simple networks like the examples specified in the next chapter, the method seems to be stable and produce accurate results. However, using new and more complex networks, the Green's Function Method seems to produce bad results and shows characteristics of unstability (at least we think so for now). Obviously as the results get bad, the computational advantages of this method are not of any use (bad formulation?).
+The Green's Function Method was first used for numerical computations of oxygen delivery in the tissue by Secomb et al. \cite{Secomb2004}. It can deliver accurate results with lower computational cost when compared to implicit methods, due to the fact that the number of unknowns is reduced. For simple networks like the examples specified in the next chapter, the method seems to be stable and produce accurate results. However, using new and more complex networks, the Green's Function Method seems to produce bad results and shows characteristics of unstability (at least we think so for now). As the results get bad, the computational advantages of this method are not of any use (bad formulation?).
 \\The mathematical background behind the Green's Function Method and the numerical method derived from it will be discussed in the upcoming section. The accuracy of produced results as well as the physiological meaning behind these results will be the main subject in this chapter.
 
 \subsubsection{The Computational Model}
@@ -395,9 +395,11 @@ In this section, the produced results using the two introduced methods will be p
 The Green's Function Method is providing many outputs which are specified in more detail in the Appendix \ref{Outputs}. In this section, some of these outputs will be presented and explained. The physiological meaning will be described and finally the results will be discussed.
 
 \subsubsection*{Krogh Model as an Introduction}
+\label{Krogh}
 %Explain relevance of this model and the produced results (many plots here)
 
-The Krogh model describes the tissue as a cylinder around the vessels and assumes that the capillaries are straight and parallel. The blood flow in all the capillaries is assumed to be unidirectional, and the distribution of capillaries is assumed to be homogeneous \cite{kreuzer1982oxygen}. Obviously this model has a few unrealistic assumptions, but as it is a straightforward network, it is the most basic model to start with.
+The Krogh model describes the vessels as cylinders and the tissue as concentric cylinders surrounding the vessels. In this model, it is assumed that the capillaries are straight and parallel. The blood flow in all the capillaries is assumed to be unidirectional, and the distribution of capillaries is assumed to be homogeneous \cite{kreuzer1982oxygen}. As one might expect, this model has a few unrealistic assumptions, but as it is a straightforward network, it is the most basic model to start with to validate a computational method.\\
+%
 \\The Krogh model has been a standard simulation network used as an initial point for developments as it has a very easy and simple structure.
 Figure \ref{fig:Contour_Krogh} is the result of a Green's Method blood flow simulation computed on a Krogh network. The Solute Concentration in the network and in the tissue is visualized in the form of a slice (See Output Section \ref{Outputs} for more information). The illustration basically shows a virtual cut into the tissue and gives local oxygen concentrations in mmHg.\\
 \begin{figure}[h]
@@ -406,8 +408,9 @@ Figure \ref{fig:Contour_Krogh} is the result of a Green's Method blood flow simu
 \caption{\footnotesize Green's Contour Output for Krogh Network}
 \label{fig:Contour_Krogh}
 \end{figure}
-One can very clearly see that the results produced are physically very realistic. On \ref{fig:Contour_Krogh} the blood flow goes from left to right. The $O_2$ concentration in mmHg accordingly goes down in flow direction. The concentrations as well as the diffusive distance in the tissue also decrease in flow direction, which can be explained by the fact that a lower concentration gradient goes with a lower Diffusive Flux. This is makes sense when looking at Fick's Law of Diffusion \ref{Fick}. As one can see from the Input files \ref{Inputs}, the Diffusivity constant $\alpha$ is constant for homogeneous tissue. Due to the fact that the diameter of the vessels is constant as well when considering the Krogh Model, the intravascular resistance to radial oxygen transport K for each diameter/vessel is also constant. Differences in diffusive fluxes and Oxygen penetration distances into the tissue therefore mainly depend on the $PO_2$ gradients themselves.
+\\One can clearly see that the results produced are physically realistic. On \ref{fig:Contour_Krogh} the blood flow goes from left to right. The $O_2$ concentration in mmHg accordingly goes down in flow direction. The concentrations as well as the diffusive distance in the tissue also decrease in flow direction, which can be explained by the fact that a lower concentration gradient goes with a lower Diffusive Flux. This is in accordance with Fick's Law of Diffusion \ref{Fick}. As one can see from the Input files \ref{Inputs}, the Diffusivity constant $\alpha$ is constant for homogeneous tissue. Due to the fact that the diameter of the vessels is constant as well when considering the Krogh Model, the intravascular resistance to radial oxygen transport K for each diameter/vessel is also constant. Differences in diffusive fluxes and Oxygen penetration distances into the tissue therefore mainly depend on the $PO_2$ gradients themselves.\\
 \\Eventually, one can see that the results computed on the Krogh Network show that the Green's Function method performs well and produces physically accurate results on simplified and perfectly homogeneous networks as this one.
+\\It is further remarked that analytical solutions of the Krogh cylinder Model have been derived before and the results shown in this figure correspond well to the  analytical results. This validates that the Green's Function Method and the corresponding implementation can produce physically accurate results, and suggests that it is a suitable method to conduct further studies.
 
 %\subsubsection*{Brain Model}
 %Explain relevance of this model and the produced results (many plots here)
@@ -417,24 +420,29 @@ One can very clearly see that the results produced are physically very realistic
 \newpage
 \subsubsection*{The Cardiac Model}
 %Explain relevance of this model and the produced results (many plots here)
+%The Cardiac network provided by Secomb was used for further simulations and to analyze results in more complex networks.\\
 
-The Cardiac network provided by Secomb was used for further simulations and to analyze results in more complex networks.\\
-%Where does this come from Kartik ?
-\\This network is obviously more complicated than the previously presented Krogh model. The result is visualized on Figure \ref{fig:Contour_Cardiac1}. Here one can see the result of a Green's Method blood flow simulation computed on a Cardiac network. As for the Krogh model, the Oxygen Concentration in the network and in the tissue is visualized in the form of a slice (See Output Section \ref{Outputs} for more information). Again the illustration shows a virtual cut into the tissue and gives local oxygen concentrations in mmHg.\\
+The Green's function code provided by Prof. Secomb contains a few microvasculature networks as examples, which can be studied and extended. In this thesis, I executed many of those models to get a good understanding of physiological phenomena concerning $O_2$ transport in various organs and different networks.
+\\In this section, the Oxygen distribution in a Cardiac network will be presented. This network is more complicated than the previously presented Krogh model \ref{Krogh}. The result is visualized on Figure~\ref{fig:Contour_Cardiac1}. Here one can see the result of a Green's Method blood flow simulation computed on a Cardiac network. As for the Krogh model, the Oxygen Concentration in the network and in the tissue is visualized in the form of a slice (See Output Section \ref{Outputs} for more information). Again the illustration shows a virtual cut into the tissue and gives local oxygen concentrations in mmHg.\\
 \begin{figure}[h]
 \centering
 \includegraphics[width=120mm]{Contour_Cardiac}
 \caption{\footnotesize Green's Contour Output for Cardiac Network}
 \label{fig:Contour_Cardiac1}
 \end{figure}
-\\Obviously looking at the Contour plot doesn't make much sense here, as the high number of vessels makes an analysis of the $PO_2$ distribution in the tissue impossible. For this reason, other files must be used but which ones ?
+\\Figure~\ref{fig:Contour_Cardiac1} shows the distribution of Oxygen in a small
+network of vessels. 
+\\The three dimensional network of vessels is \emph{compressed} to a two
+dimensional representation for simplicity.  The red color corresponds to oxygen enriched blood, and clearly oxygen in tissue regions proximal to these vessels is higher. It is unknown at the time of writing this thesis that how this particular image segmentation was obtained and it can be observed that the length of segments within vessl is quite large (or coarse).
+\\The PO2 levels reach up to about $87$ mmHg within a physiological range. 
 
 \newpage
 \subsubsection*{The Mesentery Artery Model}
 %Explain relevance of this model and the produced results (many plots here)
+%The Mesentery Artery network provided by Secomb was used for further simulations and to get more computational results.\\
 
-The Mesentery Artery network provided by Secomb was used for further simulations and to get more computational results.\\
-\\This network is obviously more complicated than the previously presented Krogh model but luckily gives a way better insight to the results than the Cardiac Network simulation, due to the much lower vessel density. The result is visualized on Figure \ref{fig:Contour_Mesent1}. Here on can see the result of a Green's Method blood flow simulation computed on a Mesentery Artery network. As for the previous models, the Oxygen Concentration in the network and in the tissue is visualized in the form of a slice (See Output Section \ref{Outputs} for more information). Again the illustration shows a virtual cut into the tissue and gives local oxygen concentrations in mmHg.\\\\
+Another example network provided by Prof. Secomb is the Mesentery Artery Network.
+\\This network is more complicated than the previously presented Krogh model but generally gives a way better insight to the results than the Cardiac Network simulation, due to the much lower vessel density. The result is visualized on Figure \ref{fig:Contour_Mesent1}. Here on can see the result of a Green's Method blood flow simulation computed on a Mesentery Artery network. As for the previous models, the Oxygen Concentration in the network and in the tissue is visualized in the form of a slice (See Output Section \ref{Outputs} for more information). Again the illustration shows a virtual cut into the tissue and gives local oxygen concentrations in mmHg.\\\\
 \begin{figure}[h]
 \centering
 \includegraphics[width=120mm]{Contour_Mesent1}
@@ -449,7 +457,7 @@ The Mesentery Artery network provided by Secomb was used for further simulations
 %\caption{\footnotesize Green's Contour Output for a Mesentery Artery Network (Solute 2)}
 %\label{fig:Contour_Mesent2}
 %\end{figure}
-\\Due to the low density of capillaries for this network, this figure can give a good insight to the values computed by the Green's Model. One can clearly see that partial pressure of $O_2$ goes down in radial direction with growing distance from the vessels. At hotspots where the capillary density is higher due to branching and ramification, the diffusion comes from two vessels and the superposition of two close source elements obviously leads to peaks in $PO_2$ values.
+\\Due to the low density of capillaries for this network, this figure can give a good insight to the values computed by the Green's Model. One can clearly see that partial pressure of $O_2$ goes down in radial direction with growing distance from the vessels. At hotspots where the capillary density is higher due to branching and ramification, the diffusion comes from two vessels and the superposition of two close source elements leads to peaks in $PO_2$ values.
 
 \newpage
 \subsubsection*{First Tumor Model}
@@ -572,6 +580,6 @@ Compared to this, the $DuMu^x$ based model is still in its very initial phase an
 \\
 \\As mentioned previously, one of the huge advantages of $DuMu^x$ is the flexibility it provides in terms of solvers, and thus in terms of the numerical methods used for the computations. This means that it is often possible to pick a solver which is stable for the specific problem and the chosen discretization.
 \\
-\\This is obviously different for the Green's Method code, as there is no option of choosing a different solver than the one provided in the code. As discussed previously, this code is specifically implemented to solve and compute oxygen (or other Solute) concentrations in the blood and the surrounding tissue, and the implemented method strongly relies on the stability of the Green's Method and the numerical methods behind the solver.
+\\This is different for the Green's Method code, as there is no option of choosing a different solver than the one provided in the code. As discussed previously, this code is specifically implemented to solve and compute oxygen (or other Solute) concentrations in the blood and the surrounding tissue, and the implemented method strongly relies on the stability of the Green's Method and the numerical methods behind the solver.
 \\
 \\Main conclusions and final remarks.
