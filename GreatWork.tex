@@ -506,8 +506,7 @@ Another interesting tumor example network provided by Prof. Secomb is the Tumor 
 \\Even though there is no information given about how this particular image segmentation was obtained, knowing that it is a tumor network, one might expect a random ramification and distribution of vessels. In fact, this network is build by vessels of different sizes and the oxygen concentrations within the vessels is largely varying.
 \\The Tumor 2 network is more complicated than the previously presented Tumor 1 network and the computational simulation produces a very interesting output. The result is visualized on Figure \ref{fig:Contour_TumorDuke}. Here one can see the result of a Green's Method blood flow simulation computed on a simple Tumor network. As for the previous models, the Oxygen Concentration in the network and in the tissue is visualized in the form of a slice (see output section \ref{Outputs} for more information). Again the illustration shows a virtual cut into the tissue and gives local oxygen concentrations in mmHg.\\\\
 %Explain Plot
-The Tumor network provided by Secomb was used for further simulations and to validate the produced data.
-Figure \ref{fig:Contour_TumorDuke}  is the result of a Green's Method blood flow simulation computed on a Tumor network. The Solute Concentration in the network is visualized.\\
+Figure \ref{fig:Contour_TumorDuke}  is the result of a Green's method blood flow simulation computed on a tumor network. The oxygen concentration in the network and the tissue is visualized.\\
 \begin{figure}[h]
 \centering
 \includegraphics[width=120mm]{Contour_TumorDuke}
@@ -515,9 +514,9 @@ Figure \ref{fig:Contour_TumorDuke}  is the result of a Green's Method blood flow
 \label{fig:Contour_TumorDuke}
 \end{figure}\\
 %Explain Results
-\\The three dimensional network of vessels is \emph{compressed} to a two
-dimensional representation for simplicity.  The red color corresponds to oxygen enriched blood, and clearly oxygen in tissue regions proximal to these vessels is higher. It is unknown at the time of writing this thesis that how this particular image segmentation was obtained and it can be observed that the length of segments within vessels is quite large (or coarse).
-\\The PO2 levels reach up to about $87$ mmHg within a physiological range. 
+\\The overlapping of the vessels with different oxygen concetrations is due to the fact that three the dimensional network of vessels is \emph{compressed} as for the previous examples. The red color corresponds to oxygen enriched blood which is in this case carried by the thicker vessels supplying this sample of tissue. The oxygen partial pressure in the tissue regions proximal to these bigger vessels is higher with peaks around $40$ mmHg. The segmentation resolution depends on the vessel, but is overall rather high, which induces/entails {\color{red} (which expression is better ?)} a high resolution for the oxygen field in the tissue.
+\\Generally the highest $PO_2$ levels can be found surrounding the big vessels and especially in regions where many sources are overlapping. This is due to the fact that the source terms are superpositioned when calculating the oxygen field during the computational iterations, and makes sense from a physiological point of view, as a lot of oxygen is supplied to these areas.
+\\The $PO_2$ levels range between around $3$ and $40$ mmHg within a physiological range. Generally the average $PO_2$ in this sample is quite high, due to the equally distributed and well oxygenated big vessels.
 
 \newpage
 \subsubsection*{Further Outlook for New Networks}
@@ -538,6 +537,7 @@ An overview to simulation results of the Green's method were presented for diffe
 \\In this part I would to mention that the code did not run as expected, and thus didn't produce a sink field. As the Green's method iteratively computes a source and a sink field, which are used to obtain the oxygen distribution field by superposition, no oxygen field could be computed. The numbers written on the output file \ref{fig:NetNodesSegs_Glom} are the numerations of the segments and the nodes (see output section \ref{Outputs} for more information).
 \\This network could thus be segmented, but no computations in terms of oxygen field could be made, neither in vessels, nor in the virtual tissue - real glomeruli are not surrounded by tissue. The reasons for this failing are not clear, as the network is so complex, that no correct explanation can be given without doubts. There might also be a problem with the chosen parameters concerning the solute or the intravascular resistance (see Input Section \ref{Inputs} for more information).
 
+\newpage
 \subsection{Discussion of the Green's Method and the Produced Results}
 %Discussion part of Green's
 %Final thoughts about Green's Method for physiological applications and oxygen delivery simulations/computations.
