@@ -18,7 +18,7 @@
 \contentsline {section}{\numberline {4}Simulation Results and Analysis}{16}{section.4}
 \contentsline {subsection}{\numberline {4.1}Results of the Green's Function Method}{16}{subsection.4.1}
 \contentsline {subsection}{\numberline {4.2}Discussion of the Green's Method and the Produced Results}{25}{subsection.4.2}
-\contentsline {subsection}{\numberline {4.3}Results of $DuMu^x$}{26}{subsection.4.3}
+\contentsline {subsection}{\numberline {4.3}Results of $DuMu^x$}{27}{subsection.4.3}
 \contentsline {subsection}{\numberline {4.4}Comparison of the Results}{28}{subsection.4.4}
 \contentsline {section}{\numberline {5}Discussion}{29}{section.5}
 \vspace {.5\baselineskip }

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=pdflatex 2018.6.13)  4 JUL 2018 14:01
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=pdflatex 2018.6.13)  4 JUL 2018 14:43
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -711,11 +711,11 @@ Package: float 2001/11/08 v1.3d Float enhancements (AL)
 LaTeX Warning: Label `eq:DiffFlux' multiply defined.
 
 
-LaTeX Warning: Label `fig:nephron2_pressure' multiply defined.
+LaTeX Warning: Label `fig:glom2_pressure' multiply defined.
 
 (./Acknowledgements.aux) (./Appendix.aux
 
-LaTeX Warning: Label `fig:nephron2_velocity' multiply defined.
+LaTeX Warning: Label `fig:glom2_velocity' multiply defined.
 
 ))
 \openout1 = `article.aux'.
@@ -866,25 +866,25 @@ Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 <dumux_structure.png, id=264, 616.3025pt x 706.64pt>
 File: dumux_structure.png Graphic file (type png)
 <use dumux_structure.png>
-Package pdftex.def Info: dumux_structure.png  used on input line 312.
+Package pdftex.def Info: dumux_structure.png  used on input line 313.
 (pdftex.def)             Requested size: 471.4981pt x 540.60236pt.
 
-Overfull \hbox (16.25401pt too wide) in paragraph at lines 312--313
+Overfull \hbox (16.25401pt too wide) in paragraph at lines 313--314
  [][] 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 306--316
+Underfull \hbox (badness 10000) in paragraph at lines 307--317
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 306--316
+Underfull \hbox (badness 10000) in paragraph at lines 307--317
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 306--316
+Underfull \hbox (badness 10000) in paragraph at lines 307--317
 
  []
 
@@ -893,40 +893,40 @@ e.1}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.317 \newpage
+l.318 \newpage
                <./dumux_structure.png>]
-<nephron2_pressure.png, id=283, 839.135pt x 514.92375pt>
-File: nephron2_pressure.png Graphic file (type png)
-<use nephron2_pressure.png>
-Package pdftex.def Info: nephron2_pressure.png  used on input line 341.
+<glom2_pressure.png, id=283, 839.135pt x 514.92375pt>
+File: glom2_pressure.png Graphic file (type png)
+<use glom2_pressure.png>
+Package pdftex.def Info: glom2_pressure.png  used on input line 342.
 (pdftex.def)             Requested size: 460.93463pt x 282.8475pt.
 
-Overfull \hbox (5.69055pt too wide) in paragraph at lines 341--342
+Overfull \hbox (5.69055pt too wide) in paragraph at lines 342--343
  [][] 
  []
 
-<nephron2_velocity.png, id=285, 844.15375pt x 466.74374pt>
-File: nephron2_velocity.png Graphic file (type png)
-<use nephron2_velocity.png>
-Package pdftex.def Info: nephron2_velocity.png  used on input line 349.
+<glom2_velocity.png, id=285, 844.15375pt x 466.74374pt>
+File: glom2_velocity.png Graphic file (type png)
+<use glom2_velocity.png>
+Package pdftex.def Info: glom2_velocity.png  used on input line 350.
 (pdftex.def)             Requested size: 460.93463pt x 254.85814pt.
 
-Overfull \hbox (5.69055pt too wide) in paragraph at lines 349--350
+Overfull \hbox (5.69055pt too wide) in paragraph at lines 350--351
  [][] 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 338--353
+Underfull \hbox (badness 10000) in paragraph at lines 339--354
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 338--353
+Underfull \hbox (badness 10000) in paragraph at lines 339--354
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 338--353
+Underfull \hbox (badness 10000) in paragraph at lines 339--354
 
  []
 
@@ -937,22 +937,22 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 358--363
+Underfull \hbox (badness 10000) in paragraph at lines 359--364
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 358--363
+Underfull \hbox (badness 10000) in paragraph at lines 359--364
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 358--363
+Underfull \hbox (badness 10000) in paragraph at lines 359--364
 
  []
 
 [13]
-Underfull \hbox (badness 10000) in paragraph at lines 374--380
+Underfull \hbox (badness 10000) in paragraph at lines 375--381
 
  []
 
@@ -961,31 +961,31 @@ Underfull \hbox (badness 10000) in paragraph at lines 374--380
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.380 
-       <./nephron2_pressure.png>] [15pdfTeX warning (ext4): destination with th
-e same identifier (name{figure.3}) has been already used, duplicate ignored
+l.381 
+       <./glom2_pressure.png>] [15pdfTeX warning (ext4): destination with the s
+ame identifier (name{figure.3}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.382 \newpage
-               <./nephron2_velocity.png>]
+l.383 \newpage
+               <./glom2_velocity.png>]
 <Contour_Krogh.png, id=317, 750.805pt x 701.62125pt>
 File: Contour_Krogh.png Graphic file (type png)
 <use Contour_Krogh.png>
-Package pdftex.def Info: Contour_Krogh.png  used on input line 408.
+Package pdftex.def Info: Contour_Krogh.png  used on input line 409.
 (pdftex.def)             Requested size: 341.43306pt x 319.06686pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 402--416
+Underfull \hbox (badness 10000) in paragraph at lines 403--417
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 402--416
+Underfull \hbox (badness 10000) in paragraph at lines 403--417
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 402--416
+Underfull \hbox (badness 10000) in paragraph at lines 403--417
 
  []
 
@@ -997,20 +997,20 @@ e.4}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.417 \newpage
+l.418 \newpage
                <./Contour_Krogh.png>]
 <Contour_Tumor1998.png, id=338, 779.91376pt x 705.63625pt>
 File: Contour_Tumor1998.png Graphic file (type png)
 <use Contour_Tumor1998.png>
-Package pdftex.def Info: Contour_Tumor1998.png  used on input line 430.
+Package pdftex.def Info: Contour_Tumor1998.png  used on input line 431.
 (pdftex.def)             Requested size: 341.43306pt x 308.9089pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 422--437
+Underfull \hbox (badness 10000) in paragraph at lines 423--438
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 422--437
+Underfull \hbox (badness 10000) in paragraph at lines 423--438
 
  []
 
@@ -1021,7 +1021,7 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 <Contour_Cardiac.png, id=349, 666.49pt x 665.48625pt>
 File: Contour_Cardiac.png Graphic file (type png)
 <use Contour_Cardiac.png>
-Package pdftex.def Info: Contour_Cardiac.png  used on input line 454.
+Package pdftex.def Info: Contour_Cardiac.png  used on input line 455.
 (pdftex.def)             Requested size: 341.43306pt x 340.92682pt.
 
 
@@ -1032,26 +1032,26 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.465 
+l.466 
        <./Contour_Tumor1998.png>] [20pdfTeX warning (ext4): destination with th
 e same identifier (name{figure.6}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.466 \newpage
+l.467 \newpage
                <./Contour_Cardiac.png>]
 <Contour_Mesent1.png, id=365, 666.49pt x 655.44875pt>
 File: Contour_Mesent1.png Graphic file (type png)
 <use Contour_Mesent1.png>
-Package pdftex.def Info: Contour_Mesent1.png  used on input line 477.
+Package pdftex.def Info: Contour_Mesent1.png  used on input line 479.
 (pdftex.def)             Requested size: 341.43306pt x 335.78464pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 472--493
+Underfull \hbox (badness 10000) in paragraph at lines 473--495
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 472--493
+Underfull \hbox (badness 10000) in paragraph at lines 473--495
 
  []
 
@@ -1060,20 +1060,20 @@ Underfull \hbox (badness 10000) in paragraph at lines 472--493
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.493 
+l.495 
        <./Contour_Mesent1.png>] [22]
 <Contour_TumorDuke.png, id=380, 737.75626pt x 600.2425pt>
 File: Contour_TumorDuke.png Graphic file (type png)
 <use Contour_TumorDuke.png>
-Package pdftex.def Info: Contour_TumorDuke.png  used on input line 506.
+Package pdftex.def Info: Contour_TumorDuke.png  used on input line 509.
 (pdftex.def)             Requested size: 341.43306pt x 277.79099pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 499--514
+Underfull \hbox (badness 10000) in paragraph at lines 501--517
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 499--514
+Underfull \hbox (badness 10000) in paragraph at lines 501--517
 
  []
 
@@ -1082,57 +1082,58 @@ Underfull \hbox (badness 10000) in paragraph at lines 499--514
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.515 \newpage
-               <./Contour_TumorDuke.png>] [24]
+l.517 
+       <./Contour_TumorDuke.png>] [24]
 <NetNodesSegs_Glom.png, id=394, 645.41125pt x 944.52875pt>
 File: NetNodesSegs_Glom.png Graphic file (type png)
 <use NetNodesSegs_Glom.png>
-Package pdftex.def Info: NetNodesSegs_Glom.png  used on input line 526.
+Package pdftex.def Info: NetNodesSegs_Glom.png  used on input line 529.
 (pdftex.def)             Requested size: 284.52756pt x 416.38661pt.
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
+[25]
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 541.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `superscript' on input line 541.
+(hyperref)                removing `math shift' on input line 547.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 541.
+(hyperref)                removing `superscript' on input line 547.
 
-[25] [26pdfTeX warning (ext4): destination with the same identifier (name{figur
-e.9}) has been already used, duplicate ignored
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `math shift' on input line 547.
+
+[26pdfTeX warning (ext4): destination with the same identifier (name{figure.9})
+ has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.548 \newpage
-               <./NetNodesSegs_Glom.png>]
-<nephron_pressure.png, id=409, 698.61pt x 575.14874pt>
-File: nephron_pressure.png Graphic file (type png)
-<use nephron_pressure.png>
-Package pdftex.def Info: nephron_pressure.png  used on input line 554.
+l.555 
+       <./NetNodesSegs_Glom.png>]
+<glom_pressure.png, id=410, 698.61pt x 575.14874pt>
+File: glom_pressure.png Graphic file (type png)
+<use glom_pressure.png>
+Package pdftex.def Info: glom_pressure.png  used on input line 563.
 (pdftex.def)             Requested size: 460.93463pt x 379.47647pt.
 
-Overfull \hbox (5.69055pt too wide) in paragraph at lines 554--555
+Overfull \hbox (5.69055pt too wide) in paragraph at lines 563--564
  [][] 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 558--559
+Underfull \hbox (badness 10000) in paragraph at lines 567--568
 
  []
 
-File: nephron2_pressure.png Graphic file (type png)
-<use nephron2_pressure.png>
-Package pdftex.def Info: nephron2_pressure.png  used on input line 562.
+File: glom2_pressure.png Graphic file (type png)
+<use glom2_pressure.png>
+Package pdftex.def Info: glom2_pressure.png  used on input line 571.
 (pdftex.def)             Requested size: 460.93463pt x 282.8475pt.
 
-Overfull \hbox (5.69055pt too wide) in paragraph at lines 562--563
+Overfull \hbox (5.69055pt too wide) in paragraph at lines 571--572
  [][] 
  []
 
@@ -1140,17 +1141,17 @@ Overfull \hbox (5.69055pt too wide) in paragraph at lines 562--563
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 566--567
+Underfull \hbox (badness 10000) in paragraph at lines 575--576
 
  []
 
-<nephron3_pressure.png, id=412, 703.62875pt x 565.11125pt>
-File: nephron3_pressure.png Graphic file (type png)
-<use nephron3_pressure.png>
-Package pdftex.def Info: nephron3_pressure.png  used on input line 570.
+<glom3_pressure.png, id=413, 703.62875pt x 565.11125pt>
+File: glom3_pressure.png Graphic file (type png)
+<use glom3_pressure.png>
+Package pdftex.def Info: glom3_pressure.png  used on input line 579.
 (pdftex.def)             Requested size: 460.93463pt x 370.18938pt.
 
-Overfull \hbox (5.69055pt too wide) in paragraph at lines 570--571
+Overfull \hbox (5.69055pt too wide) in paragraph at lines 579--580
  [][] 
  []
 
@@ -1158,25 +1159,7 @@ Overfull \hbox (5.69055pt too wide) in paragraph at lines 570--571
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 574--575
-
- []
-
-<nephron4_pressure.png, id=414, 690.58pt x 588.1975pt>
-File: nephron4_pressure.png Graphic file (type png)
-<use nephron4_pressure.png>
-Package pdftex.def Info: nephron4_pressure.png  used on input line 578.
-(pdftex.def)             Requested size: 460.93463pt x 392.6004pt.
-
-Overfull \hbox (5.69055pt too wide) in paragraph at lines 578--579
- [][] 
- []
-
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 582--583
+Underfull \hbox (badness 10000) in paragraph at lines 583--584
 
  []
 
@@ -1185,25 +1168,44 @@ Underfull \hbox (badness 10000) in paragraph at lines 582--583
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.589 
-       <./nephron_pressure.png>] [28pdfTeX warning (ext4): destination with the
- same identifier (name{figure.11}) has been already used, duplicate ignored
+l.584 
+       <./glom_pressure.png>]
+<glom4_pressure.png, id=422, 690.58pt x 588.1975pt>
+File: glom4_pressure.png Graphic file (type png)
+<use glom4_pressure.png>
+Package pdftex.def Info: glom4_pressure.png  used on input line 587.
+(pdftex.def)             Requested size: 460.93463pt x 392.6004pt.
+
+Overfull \hbox (5.69055pt too wide) in paragraph at lines 587--588
+ [][] 
+ []
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 591--592
+
+ []
+
+[28pdfTeX warning (ext4): destination with the same identifier (name{figure.11}
+) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.611 \newpage
+l.620 \newpage
               ])
-Underfull \hbox (badness 10000) in paragraph at lines 620--111
+Underfull \hbox (badness 10000) in paragraph at lines 629--111
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 620--111
+Underfull \hbox (badness 10000) in paragraph at lines 629--111
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 620--111
+Underfull \hbox (badness 10000) in paragraph at lines 629--111
 
  []
 
@@ -1213,13 +1215,13 @@ Underfull \hbox (badness 10000) in paragraph at lines 620--111
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
 l.111 
-       <./nephron3_pressure.png>] [30pdfTeX warning (ext4): destination with th
-e same identifier (name{figure.13}) has been already used, duplicate ignored
+       <./glom3_pressure.png>] [30pdfTeX warning (ext4): destination with the s
+ame identifier (name{figure.13}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
 l.115 \newpage
-               <./nephron4_pressure.png>] (./article.bbl [31]) [32]
+               <./glom4_pressure.png>] (./article.bbl [31]) [32]
 \openout2 = `Acknowledgements.aux'.
 
 
@@ -1402,10 +1404,10 @@ Overfull \hbox (28.45276pt too wide) in paragraph at lines 133--134
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 [37]
-<nephron_velocity.png, id=484, 888.31876pt x 591.20876pt>
-File: nephron_velocity.png Graphic file (type png)
-<use nephron_velocity.png>
-Package pdftex.def Info: nephron_velocity.png  used on input line 147.
+<glom_velocity.png, id=485, 888.31876pt x 591.20876pt>
+File: glom_velocity.png Graphic file (type png)
+<use glom_velocity.png>
+Package pdftex.def Info: glom_velocity.png  used on input line 147.
 (pdftex.def)             Requested size: 460.93463pt x 306.76276pt.
 
 Overfull \hbox (5.69055pt too wide) in paragraph at lines 147--148
@@ -1420,9 +1422,9 @@ Underfull \hbox (badness 10000) in paragraph at lines 151--152
 
  []
 
-File: nephron2_velocity.png Graphic file (type png)
-<use nephron2_velocity.png>
-Package pdftex.def Info: nephron2_velocity.png  used on input line 155.
+File: glom2_velocity.png Graphic file (type png)
+<use glom2_velocity.png>
+Package pdftex.def Info: glom2_velocity.png  used on input line 155.
 (pdftex.def)             Requested size: 460.93463pt x 254.85814pt.
 
 Overfull \hbox (5.69055pt too wide) in paragraph at lines 155--156
@@ -1437,7 +1439,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 159--160
 
  []
 
-<tracer_1.png, id=487, 722.7pt x 515.9275pt>
+<tracer_1.png, id=488, 722.7pt x 515.9275pt>
 File: tracer_1.png Graphic file (type png)
 <use tracer_1.png>
 Package pdftex.def Info: tracer_1.png  used on input line 165.
@@ -1450,7 +1452,7 @@ Overfull \hbox (5.69055pt too wide) in paragraph at lines 165--166
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<tracer_2.png, id=489, 773.89125pt x 540.0175pt>
+<tracer_2.png, id=490, 773.89125pt x 540.0175pt>
 File: tracer_2.png Graphic file (type png)
 <use tracer_2.png>
 Package pdftex.def Info: tracer_2.png  used on input line 172.
@@ -1460,7 +1462,7 @@ Overfull \hbox (5.69055pt too wide) in paragraph at lines 172--173
  [][] 
  []
 
-<tracer_velocity.png, id=491, 785.93625pt x 522.95375pt>
+<tracer_velocity.png, id=492, 785.93625pt x 522.95375pt>
 File: tracer_velocity.png Graphic file (type png)
 <use tracer_velocity.png>
 Package pdftex.def Info: tracer_velocity.png  used on input line 179.
@@ -1499,9 +1501,9 @@ fier (name{figure.16}) has been already used, duplicate ignored
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
 l.125 \include{Appendix}
-                         <./nephron_velocity.png>] [41pdfTeX warning (ext4): de
-stination with the same identifier (name{figure.17}) has been already used, dup
-licate ignored
+                         <./glom_velocity.png>] [41pdfTeX warning (ext4): desti
+nation with the same identifier (name{figure.17}) has been already used, duplic
+ate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
@@ -1536,10 +1538,10 @@ LaTeX Warning: There were multiply-defined labels.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 129.
  ) 
 Here is how much of TeX's memory you used:
- 17876 strings out of 492649
- 330808 string characters out of 6129622
- 404559 words of memory out of 5000000
- 21244 multiletter control sequences out of 15000+600000
+ 17877 strings out of 492649
+ 330710 string characters out of 6129622
+ 404599 words of memory out of 5000000
+ 21245 multiletter control sequences out of 15000+600000
  13724 words of font info for 49 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  62i,14n,56p,1018b,447s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -1558,10 +1560,10 @@ ve/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texliv
 e/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/local/texlive/
 2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/20
 18/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb>
-Output written on article.pdf (45 pages, 8553444 bytes).
+Output written on article.pdf (45 pages, 8555140 bytes).
 PDF statistics:
- 613 PDF objects out of 1000 (max. 8388607)
- 509 compressed objects within 6 object streams
+ 614 PDF objects out of 1000 (max. 8388607)
+ 510 compressed objects within 6 object streams
  149 named destinations out of 1000 (max. 500000)
  284 words of extra memory for PDF output out of 10000 (max. 10000000)
 
