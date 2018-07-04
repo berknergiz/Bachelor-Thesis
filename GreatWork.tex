@@ -335,20 +335,20 @@ The 1p-1p model can compute pressure fields and velocities in vessel networks. T
 
 \subsubsection*{\footnotesize 1p-1p Model Impressions}
 
-Figure \ref{fig:nephron2_pressure}  is the result of a $DuMu^x$ blood flow simulation computed on a Nephron network. The pressure field in the network is visualized.\\
+Figure \ref{fig:glom2_pressure}  is the result of a $DuMu^x$ blood flow simulation computed on a glomerulus network. The pressure field in the network is visualized.\\
 \begin{figure}[h]
 \centering{
-\includegraphics[width=162mm]{nephron2_pressure}}
-\caption{\footnotesize $DuMu^x$ Pressure Computations for Nephron Network}
-\label{fig:nephron2_pressure}
+\includegraphics[width=162mm]{glom2_pressure}}
+\caption{\footnotesize $DuMu^x$ Pressure Computations for Glomerulus Network}
+\label{fig:glom2_pressure}
 \end{figure}\\
 %
-\\Figure \ref{fig:nephron2_velocity}  is the result of a $DuMu^x$ blood flow simulation computed on a Nephron network. The velocity field in the network is visualized.\\
+\\Figure \ref{fig:glom2_velocity}  is the result of a $DuMu^x$ blood flow simulation computed on a glomerulus network. The velocity field in the network is visualized.\\
 \begin{figure}[h]
 \centering{
-\includegraphics[width=162mm]{nephron2_velocity}}
-\caption{\footnotesize $DuMu^x$ Velocity Computations for Nephron Network}
-\label{fig:nephron2_velocity}
+\includegraphics[width=162mm]{glom2_velocity}}
+\caption{\footnotesize $DuMu^x$ Velocity Computations for Glomerulus Network}
+\label{fig:glom2_velocity}
 \end{figure}\\\\
 
 \subsubsection*{The Tracer Model}
@@ -464,26 +464,27 @@ But still the oxygen in tissue regions proximal to the bigger oxygen-supplying v
 \\The $PO_2$ levels reach up to about $84$ mmHg within a physiological range.
 
 \newpage
-\subsubsection*{The Mesentery Artery Network}
+\subsubsection*{The Mesenteric Artery Network}
 %Explain relevance of this model and the produced results (many plots here)
-%The Mesentery Artery network provided by Secomb was used for further simulations and to get more computational results.\\
+%The Mesenteric Artery network provided by Secomb was used for further simulations and to get more computational results.\\
 
 %Present Network
-Another example network provided by Prof. Secomb is the mesentery artery network.
-\\This network is more complicated than the previously presented networks but generally gives a better insight to the results than the cardiac network simulation, due to the much lower vessel density. Especially the tissue concentrations can be seen very well. The result is visualized on Figure \ref{fig:Contour_Mesent1}. The output shows the result of a Green's method blood flow simulation computed on a mesentery artery network. As for the previous networks, the oxygen concentration in the network and in the tissue is visualized in the form of a slice (see output section \ref{Outputs} for more information). Again the illustration shows an impression of oxygen levels in the tissue and the vessel segments, and generally gives the local oxygen concentrations in mmHg.
+Another example network provided by Prof. Secomb is the mesenteric artery network.
+\\Even though there is no information given about how this particular image segmentation was obtained, knowing that it is a mesenteric artery network, one might expect...
+\\This network is more complicated than the previously presented networks but generally gives a better insight to the results than the cardiac network simulation, due to the much lower vessel density. Especially the tissue concentrations can be seen very well. The result is visualized on Figure \ref{fig:Contour_Mesent1}. The output shows the result of a Green's method blood flow simulation computed on a mesenteric artery network. As for the previous networks, the oxygen concentration in the network and in the tissue is visualized in the form of a slice (see output section \ref{Outputs} for more information). Again the illustration shows an impression of oxygen levels in the tissue and the vessel segments, and generally gives the local oxygen concentrations in mmHg.
 %Explain Plot
 \begin{figure}[h]
 \centering
 \includegraphics[width=120mm]{Contour_Mesent1}
-\caption{\footnotesize Green's Contour Output for a Mesentery Artery Network (Solute 1)}
+\caption{\footnotesize Green's Contour Output for a Mesenteric Artery Network (Solute 1)}
 \label{fig:Contour_Mesent1}
 \end{figure}
 %
-%\\Figure \ref{fig:Contour_Mesent2}  is the result of a Green's Method blood flow simulation computed on a Mesentery Artery network. The Solute Concentration of Solute 2 in the network is visualized.\\
+%\\Figure \ref{fig:Contour_Mesent2}  is the result of a Green's Method blood flow simulation computed on a Mesenteric Artery network. The Solute Concentration of Solute 2 in the network is visualized.\\
 %\begin{figure}[h]
 %\centering
 %\includegraphics[width=85mm]{Contour_Mesent2}
-%\caption{\footnotesize Green's Contour Output for a Mesentery Artery Network (Solute 2)}
+%\caption{\footnotesize Green's Contour Output for a Mesenteric Artery Network (Solute 2)}
 %\label{fig:Contour_Mesent2}
 %\end{figure}
 \\
@@ -497,6 +498,7 @@ Another example network provided by Prof. Secomb is the mesentery artery network
 
 %Present Network
 The other Tumor example network provided by Prof. Secomb is the Tumor 2 network.
+\\Even though there is no information given about how this particular image segmentation was obtained, knowing that it is a tumor network, one might expect...
 \\The Tumor 1 network is more complicated than the previously presented Tumor 1 network but generally gives a way better insight to the results than the Cardiac Network simulation, due to the much lower vessel density. The result is visualized on Figure \ref{fig:Contour_TumorDuke}. Here one can see the result of a Green's Method blood flow simulation computed on a simple Tumor network. As for the previous models, the Oxygen Concentration in the network and in the tissue is visualized in the form of a slice (see output section \ref{Outputs} for more information). Again the illustration shows a virtual cut into the tissue and gives local oxygen concentrations in mmHg.\\\\
 %Explain Plot
 The Tumor network provided by Secomb was used for further simulations and to validate the produced data.
@@ -533,9 +535,12 @@ An overview to simulation results of the Green's method were presented for diffe
 
 \subsection{Discussion of the Green's Method and the Produced Results}
 %Discussion part of Green's
-
-Final thoughts about Green's Method for physiological applications and oxygen delivery simulations/computations.
+%Final thoughts about Green's Method for physiological applications and oxygen delivery simulations/computations.
 %Compare the results with physiological measured values and check if the results make sense in general.
+
+As the presented examples show, the Green's method and its implementation can produce some excellent results in terms of physical oxygen field simulations in networks.
+\\The results are in accord with the previously described physical laws, which describe the oxygen transport from the vessel to the tissue. Moreover, the results are physiologically accurate. The computed values generally range between $0$ mmHg (hypoxic tissue) and $87$ mmHg (very well oxygenated tissue) and seem to be in the physiological range.
+\\Even though these computations have been made on networks that were derived from real organic networks, no information was given about how the particular image segmentations were obtained. This also makes it hard to compare the results with real world values {\color{red} or how should I call this ? experimental values? another important question I might have is: do we have know if these network come from organs coming from mice/rats or whatever? as we don't know this, I would especially point out that the computed values cannot be compared to any specific values that we could expect or was measured in the past. we can only say that the values are in the physiological range and that the physical properties of oxygen transport and diffusion are well respected and in accord with the simulation results}, as we don't know anything in particular about the provenance of the networks.
 
 
 \subsection{Results of $DuMu^x$} 
@@ -551,35 +556,35 @@ Final thoughts about Green's Method for physiological applications and oxygen de
 
 \begin{figure}[h]
 \centering
-\includegraphics[width=162mm]{nephron_pressure}
+\includegraphics[width=162mm]{glom_pressure}
 \caption{Pressure Field in Glomerulus 1}
-\label{fig:nephron_pressure}
+\label{fig:glom_pressure}
 \end{figure}
-The figure \ref{fig:nephron_pressure} is the result of a DuMuX 1p-1p blood flow simulation computed on a glomerulus network. The pressure field of the flow is visualized.\\
+The figure \ref{fig:glom_pressure} is the result of a DuMuX 1p-1p blood flow simulation computed on a glomerulus network. The pressure field of the flow is visualized.\\
 
 \begin{figure}[h]
 \centering
-\includegraphics[width=162mm]{nephron2_pressure}
+\includegraphics[width=162mm]{glom2_pressure}
 \caption{Pressure Field in Glomerulus 2}
-\label{fig:nephron2_pressure}
+\label{fig:glom2_pressure}
 \end{figure}
-The figure \ref{fig:nephron2_pressure} is the result of a DuMuX 1p-1p blood flow simulation computed on a Glomerulus network. The pressure field of the flow is visualized.\\
+The figure \ref{fig:glom2_pressure} is the result of a DuMuX 1p-1p blood flow simulation computed on a Glomerulus network. The pressure field of the flow is visualized.\\
 
 \begin{figure}[h]
 \centering
-\includegraphics[width=162mm]{nephron3_pressure}
+\includegraphics[width=162mm]{glom3_pressure}
 \caption{Pressure Field in Glomerulus 3}
-\label{fig:nephron3_pressure}
+\label{fig:glom3_pressure}
 \end{figure}
-The figure \ref{fig:nephron3_pressure} is the result of a DuMuX 1p-1p blood flow simulation computed on a Glomerulus network. The pressure field of the flow is visualized.\\
+The figure \ref{fig:glom3_pressure} is the result of a DuMuX 1p-1p blood flow simulation computed on a Glomerulus network. The pressure field of the flow is visualized.\\
 
 \begin{figure}[h]
 \centering
-\includegraphics[width=162mm]{nephron4_pressure}
+\includegraphics[width=162mm]{glom4_pressure}
 \caption{Pressure Field in a Glomerulus 4}
-\label{fig:nephron4_pressure}
+\label{fig:glom4_pressure}
 \end{figure}
-The figure \ref{fig:nephron4_pressure} is the result of a DuMuX 1p-1p blood flow simulation computed on a Glomerulus network. The pressure field of the flow is visualized.\\
+The figure \ref{fig:glom4_pressure} is the result of a DuMuX 1p-1p blood flow simulation computed on a Glomerulus network. The pressure field of the flow is visualized.\\
 
 \subsection{Comparison of the Results}
 %Compare the produced results
