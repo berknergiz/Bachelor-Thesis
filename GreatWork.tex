@@ -321,12 +321,13 @@ At first sight, the decision had to be made between $OpenFOAM$, $FEniCS$ and $Du
 \subsubsection{General Structure of $DuMu^x$}
 %Explain how DuMuX works and what is interesting about it.
 
-$DuMu^x$ is an open source software developed by a strong user community everywhere in the world. The software was basically developed by the University of Stuttgart, and provides a C++ based library of numerical methods and implemented test models, to simulate and solve transport and flow processes in porous media \cite{flemisch2007dumux}.
-\\$DuMu^x$ is a multi-scale multi-physics toolbox that aims to describe the physical properties of a specific problem as correct as possible, by focussing on minimizing the computational cost.\\
-\\
+$DuMu^x$ is an open source software developed by a strong user community everywhere in the world. The software was basically developed by the University of Stuttgart, and provides a C++ based library of numerical methods and implemented test models, to simulate and solve transport and flow processes in porous media.
+\\$DuMu^x$ is a "multi-scale multi-physics toolbox" that aims to describe the physical properties of a specific problem as correct as possible, by focussing on minimizing the computational cost  \cite{flemisch2007dumux}.\\
+\\As $DuMu^x$ is based on the principle of $DUNE$, which is a modular toolbox that can be used to solve partial differential equations with grid-based methods \cite{flemischdumux}, the core modules of $DUNE$ have to be downloaded and installed together with the $DuMu^x$ module itself.
+\\$DUNE$ basically consists of a few modules that can be downloaded from GitHub in the form of separate packages. The modules contain for example the generally used classes, discretization algorithms and solvers that are used in order to describe and run the physical simulations.
+\\$DuMu^x$ itself is an additional $DUNE$ module, that uses classes, functions and solvers implemented in the other $DUNE$ modules. It provides the user a few very interesting test examples which can be changed, merged or completely rewritten in order to get a new physical problem.
 \\The structure of $DuMu^x$ is specified in this chapter and illustrated with some figures.
 Figure \ref{fig:dumux_structure}  is the Structure of $DuMu^x$ given from the $DuMu^x$ Version 2.12 Documentation \cite{flemischdumux}.\\
-\\ EXPLAIN SOME MORE STUFF ABOUT $DuMu^x$
 \\
 \begin{figure}[p]
 \centering
@@ -336,13 +337,21 @@ Figure \ref{fig:dumux_structure}  is the Structure of $DuMu^x$ given from the $D
 \end{figure}
 
 \newpage
-\subsubsection*{Available Models}
+\subsubsection*{Available Numerical Models}
 %What solvers can we use ?
 %What can DuMuX offer ?
+%List all the models here and explain briefly what can be done, and for what kind of problems this can be used.
 
-$DuMu^x$ offers a large variety of models that can be used to solve a specific problem. This provides large flexibility in terms of computational cost and stability questions \cite{flemischdumux}, \cite{flemisch2007dumux}.
-\\One has to take care to choose a solver that is compatible with the given problem...
-\\List all the models here and explain briefly what can be done, and for what kind of problems this can be used.
+As I mentioned, $DuMu^x$ offers a large variety of models that can be used to solve a specific problem. This provides large flexibility in terms of computational cost and stability questions \cite{flemischdumux}, \cite{flemisch2007dumux}.
+\\One has to take care to choose a solver that is compatible with the given problem. To develop a better feeling for this, the test cases can be studied in detail. A good overview to the user will be given when checking which solver, grid-creator or discretization is used for each type of problem.
+\\Nevertheless, using my personal experience, I can say that some information is hard extract, and the incompatibility of some modular pieces inside the $DUNE$ modules, like for example grid creators, can be the cause for some serious errors which were hard to understand and debug without a deep understanding of $DuMu^x$, which again takes time to aquire.
+\\I will briefly present some of the numerical models that can be used with $DuMu^x$, so that the reader can later get a better understanding of the model I worked on.\\
+\\There are two types of numerical models: \emph{coupled fully-implicit} and \emph{decoupled semi-implicit}.
+\\1p = one phase, 2p = two phases
+\\1p1c = one phase on component, 1p2c = one phase two components etc. explain all this briefly
+\\Explain what 1p-1p coupling is, then get to next chapter.
+\\ {\color{red} What do you think about this ? You said that I should avoid writing too much about what $DuMu^x$ is so I tried to keep it short, is this a good overview ?}
+
 
 \subsubsection{Implemented Model}
 %Explain what I tried to do.
