@@ -323,6 +323,7 @@ At first sight, the decision had to be made between $OpenFOAM$, $FEniCS$ and $Du
 
 $DuMu^x$ is an open source software developed by a strong user community everywhere in the world. The software was basically developed by the University of Stuttgart, and provides a C++ based library of numerical methods and implemented test models, to simulate and solve transport and flow processes in porous media \cite{flemisch2007dumux}.
 \\$DuMu^x$ is a multi-scale multi-physics toolbox that aims to describe the physical properties of a specific problem as correct as possible, by focussing on minimizing the computational cost.\\
+\\
 \\The structure of $DuMu^x$ is specified in this chapter and illustrated with some figures.
 Figure \ref{fig:dumux_structure}  is the Structure of $DuMu^x$ given from the $DuMu^x$ Version 2.12 Documentation \cite{flemischdumux}.\\
 \\ EXPLAIN SOME MORE STUFF ABOUT $DuMu^x$
@@ -388,17 +389,16 @@ The tracer model can trace substances in networks of different geometries, and a
 %Hopefully put some results of the coupled model here or explain why the results are wrong
 
 To achieve the goal of tracing oxygen in the given vessel-networks, I coupled the previously described models to obtain a 1p-1p-tracer model...
-\\Using the velocity output of my previous 1p-1p model as an inpute for the tracer model, I wanted to get the concentration of my solute of interest, which is oxygen, for every time step.
+\\Using the velocity output of my previous 1p-1p model as an input for the tracer model, I wanted to get the concentration of my solute of interest, which is oxygen, for every time step.
 
 \subsubsection{Input Data for the Simulations}
 %Explain where the networks come from: CT by Willy and Artery/Vein recognition by Diego
 
-The networks that were used for the simulations are extracted from real organs coming from mice. This process is done by scientists from different areas of expertise and is usually performed in the following order:
-\\1)CT of the kidneys
-\\2)Recognition of fat, tissue, arteries and veins by machine learning algorithms
-\\3)Three dimensional captions of the organ are build by many virtual two dimensional slices
-\\4)Transformation of the recognized artery/vein data into networks that can be used for the simulations.\\
-\\The previously described tasks can be all be done by Interface Group members, which makes the working environment very special in terms independent research capabilities in this partially unchartered/unexplored field. %Can I say something like this or is it unnecessary/kind of bragging ?
+The networks that were used for the simulations are extracted from real ex vivo organs coming from mice. This process is done in collaboration by scientists from different areas of expertise.\\
+\\In the first step, a multidomain 3-D image of a tissue has to be taken. This can be done using a micro-computer-tomography (micro-CT) machine, and for especially high resolution imaging, it is performed at the European Synchrotron Radiation Facility.
+\\In order to extract the vessel-networks from those images, a second scientist has to recognize the different tissues surrounding the vessels, and differentiate between arteries and veins. For this task, pattern recognition algorithms and specifically machine learning algorithms are used. The incoming data from the micro-CT machine is in the form of many two dimensional captions. This can be seen as many virtual cuts into the tissue. The algorithms then have to detect the vessels on each of this captions and mark them. This data can then be discretized and transformed in order to get a three dimensional network of vessels. The three dimensional network of vessels is our main input for the $DuMu^x$ simulations, and can basically also be used for Green's method simulations.
+\\The previously described tasks can be all be done by Interface Group members, which makes the working environment very special in terms of independent research capabilities in this partially unchartered and unexplored field.
+\\{\color{red}Can I say something like this or is it unnecessary/kind of bragging ?}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \newpage
@@ -645,7 +645,7 @@ In this section the main differences in the produced results by Green's Function
 %Explain when and why which the numerical methods are stable
 %In this section, the consequences of the previously described differences will be discussed. The focus lies on the differences in terms of stability and computational cost for similar simulations.
 
-
+\newpage
 \newpage
 \section{Discussion}
 %Summary of both methods in general and Outlook for the research field
