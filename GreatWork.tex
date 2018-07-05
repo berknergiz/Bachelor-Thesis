@@ -308,41 +308,49 @@ In this subsection, the Green's function method, its equations and the applicati
 \label{$DuMu^x$}
 %Explain DuMuX in general and explain the implemented method.
 
-As my intention was to implement a simple simulation for oxygen transport, I had to decide which solver I want to use. At first sight, the decision had to be made between OpenFOAM, FEniCs and $DuMu^x$. 
-\\When starting this project, we knew that the biggest limitations and challenges to face will be the given time, which was quite short to get into such a complex subject and understand the methodology behind it. When researching which solvers might produce the best results, FEniCS seemed like a very good option.
-\\(Paper to cite here:\cite{holter2018sub})
-\\However, getting a good understanding of this software to be able to implement a new method seemed unrealistic for the short time of a Bachelor Thesis, which is limited to a few months.
-\\For this reason I decided to use $DuMu^x$, as it already has a few models which compute blood flow simulations. This helped me get a quick insight to how $DuMu^x$ works, and how I can use it for my purposes.
+During this project, my intention was to implement a simple simulation for oxygen transport myself. For this purpose, I had to decide which solver I want to use.\\
+At first sight, the decision had to be made between $OpenFOAM$, $FEniCS$ and $DuMu^x$.
+\\When starting this project, we knew that the biggest limitation and challenge to face will be the given time, which was quite short to get into such a complex subject and understand the methodology behind it.
+\\For this reason, I had to do some research to see which solvers might produce the best results and will allow me to construct a model as fast as possible. As $OpenFOAM$ is a prominent software for CFD simulations, this seemed like an interesting idea. $FEniCS$ seemed like a very good option to implement a 1D-3D coupled problem, but was finally rejected as it rather uses the finite element method (FEM) and the finite volume method (FVM) than finite differences, and the computational disadvantages linked to this were considered as a major limitation. I would like to mention that I personally wanted to avoid working with FEM and FVM, but in the present the work done by Holter et al. \cite {holter2018sub} has shown that good results can be produced using these methods.
+\\Finally, as $DuMu^x$ provided some interesting blood flow simulations models that were already implemented, and thus seemed to be a very attractive alternative, I finally decided to use $DuMu^x$ to implement an oxygen transport model.\\
+\\However, getting a good understanding of this software to be able to implement a new method was a challenging task, especially for the short time of a Bachelor Thesis, which is limited to a few months.
+\\
+\\ {\color{red}Please let me know if this introduction to $DuMu^x$ is nice or if anything is missing ?}
 
+\newpage
 \subsubsection{General Structure of $DuMu^x$}
 %Explain how DuMuX works and what is interesting about it.
 
 $DuMu^x$ is an open source software developed by a strong user community everywhere in the world. The software was basically developed by the University of Stuttgart, and provides a C++ based library of numerical methods and implemented test models, to simulate and solve transport and flow processes in porous media \cite{flemisch2007dumux}.
-\\$DuMu^x$ is a multi-scale multi-physics toolbox that aims to describe the physical properties of a specific problem as correct as possible, by focussing on minimizing the computational cost \cite{flemisch2007dumux}.\\
+\\$DuMu^x$ is a multi-scale multi-physics toolbox that aims to describe the physical properties of a specific problem as correct as possible, by focussing on minimizing the computational cost.\\
 \\The structure of $DuMu^x$ is specified in this chapter and illustrated with some figures.
 Figure \ref{fig:dumux_structure}  is the Structure of $DuMu^x$ given from the $DuMu^x$ Version 2.12 Documentation \cite{flemischdumux}.\\
+\\ EXPLAIN SOME MORE STUFF ABOUT $DuMu^x$
+\\
 \begin{figure}[p]
 \centering
 \includegraphics[height=190mm]{dumux_structure}
 \caption{\footnotesize The $DuMu^x$ Structure}
 \label{fig:dumux_structure}
-\end{figure}\\\\
+\end{figure}
 
 \newpage
-\subsubsection*{Available Numerical Solvers}
+\subsubsection*{Available Models}
 %What solvers can we use ?
 %What can DuMuX offer ?
 
-$DuMu^x$ offers a large variety of numerical solvers that be implemented when defining the problem-file. This provides large flexibility in terms of computational cost and stability questions. \cite{flemischdumux}
+$DuMu^x$ offers a large variety of models that can be used to solve a specific problem. This provides large flexibility in terms of computational cost and stability questions \cite{flemischdumux}, \cite{flemisch2007dumux}.
 \\One has to take care to choose a solver that is compatible with the given problem...
+\\List all the models here and explain briefly what can be done, and for what kind of problems this can be used.
 
 \subsubsection{Implemented Model}
-%Explain Coupling of Tracer.
+%Explain what I tried to do.
 
 While $DuMu^x$ has a modular structure, some of the existing test cases can be combined to solve a more sophisticated and specific problem. In our case, this refers to the coupling of the existing tracer model to the 1p-1p model. While the 1p-1p model can simulate the flow of a solute in a network by convection and the diffusion of this solute into tissue, the tracer model can literally trace the path of this solute into the tissue, which can be used to obtain oxygen transport and diffusion into the tissue.
 
 \subsubsection*{The 1p-1p Model}
 %Briefly explain the 1p_1p Model
+%Explain how tissue and bloodflow are coupled
 %Maybe put some results of the 1p_1p Model here
 
 The 1p-1p model can compute pressure fields and velocities in vessel networks. The velocity outputs can then be used for the tracer model.
