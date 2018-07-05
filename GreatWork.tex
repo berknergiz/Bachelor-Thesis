@@ -117,16 +117,18 @@ Where J is the diffusive flux, D is the previously mentioned diffusivity coeffic
 \\For our problem, it is sufficient to say that the diffusive flux of oxygen into the tissue can be computed as the sum of a normal diffusive flux, depending on the concentration gradient and described by Fick's Law \ref{Fick}, and a myoglobin facilitated oxygen flux.
 \\The way this phenomenon is mathematically included in our computational models will later be described in the computational model section \ref{CompMod}.
 
-
+\newpage
 \subsection{Current Trends in Modeling}
 %Use a few papers to give examples for previous and actual approaches
 %Do link to modeling and models in this field in general, then link this to computational models in this field and their use. Actual trends and what people hope for in the future (in terms of computational power, computational methods but also from a medical perspective) is also interesting.
-%Papers to cite: \cite{mathmodeling}, \cite{goldman2001computational}, \cite{kuzmin2010guide}, \cite{lee2017accounting}, \cite{beard2001modeling}, \cite{Secomb2004}
+%Papers to cite: \cite{lee2017accounting}
 
-In order to simulate flows, Computational Fluid Dynamics (CFD) is a tool that can be used to produce results which cannot be obtained through in vitro or in vivo experiments  \cite{mathmodeling}. For this reason and because the computational capabilities available are growing everyday, modeling and simulating processes in the body is taking an increasingly important role in biological and medical sciences.
-\\In our case, the focus will lie on oxygen transport simulations and their computational implementation.\\
-\\As already mentioned in the section \ref{Blood Flow}, blood flow in the body can be approximated by the Navier-Stokes equations \ref{eq:NavierStokes1}, \ref{eq:NavierStokes2}. The transport of oxygen in the blood can then be linked to this by the transport equations. These physical equations are quite straightforward to implement and solve numerically. The next task remains the biggest problem in actual research: Link this transport to the diffusion process out of the vessels and into the tissue. The biggest problems here seem to be in choosing the right/appropriate boundary conditions to get exact results. Also, many numerical methods fail or more specifically become unstable when the vessel network becomes complicated and heterogeneous. There are already good methods to produce results for the Krogh model, but to compute oxygen fields in very complex networks like in the kidney, these models do not provide the desired results.
-\\Steady-State approximation for simulations: Need this assumption for Michaelis-Menten relation.
+In order to simulate flows, Computational Fluid Dynamics (CFD) is a tool that can be used to produce results which cannot be obtained through in vitro or in vivo experiments  \cite{mathmodeling}. For this reason, and because the computational capabilities available are growing everyday, modeling and simulating processes in the body is taking an increasingly important role in biological and medical sciences. In our case, the focus will lie on oxygen transport simulations and their computational implementation.\\
+\\As already mentioned in the section \ref{Blood Flow}, blood flow in the body can be approximated by the Navier-Stokes equations \ref{eq:NavierStokes1}, \ref{eq:NavierStokes2}. Many solvers have already been implemented to solve the Navier-Stokes equations, and thus an appropriate solver can be chosen to compute the blood flow in the body. The transport of oxygen in the blood can then be linked to this by the transport equations \cite{kuzmin2010guide}. These physical equations are quite straightforward to implement and solve numerically. The next task remains the biggest problem in actual research: to link the blood flow induced transport of oxygen, described by the Navier-Stokes equations, to the diffusion process out of the vessels and into the tissue. The toughest challenge here seems to be in choosing and especially finding physiologically appropriate boundary conditions to get exact results.
+\\This is due to the fact that often samples of vessel networks are considered, that are embedded in virtual tissue. To compute the oxygen field in the vessels and in the tissue, initial and boundary conditions have to be found for the borders of the sample. The incoming oxygen flux through the vessels will have the form of a Neumann Boundary condition, whereas no-flux boundary conditions may be used on the boundary of the given control volume, which will be the border of the used tissue sample. When using these boundary conditions, the assumption is made that all the incoming oxygen is consumed inside the sample. This often leads to exaggerated estimates of hypoxic region, and thus might be physically problematic.
+\\Secomb et. al \cite{Secomb2004} offered some alternatives in terms of boundary conditions to solve this problem, as the estimation of hypoxic region is considered to be an essential output many researchers aim to understand.\\
+\\In general, an other important challenge is to develop methods that are stable for many different shapes of networks, and thus can compute physically accurate oxygen fields for different types of network inputs. Many numerical methods fail or more specifically become unstable when the vessel network becomes complicated and heterogeneous. There are already approaches which produce physically accurate results for the Krogh model, but in order to compute oxygen fields in very complex networks like in the kidney, these models might not provide the desired results.\\\\
+\\Similar to other methods used in this field by Goldman and Popel \cite{goldman2001computational} or Beard and Bassingthwaighte \cite{beard2001modeling}, the methods used for this thesis will treat the problem of steady-state oxygen delivery and accordingly will compute oxygen fields for steady-state conditions. This approximation is anyways needed in order to apply the Michaelis-Menten kinetics to get a relation between the oxygen consumption rate and the local oxygen concentration. The equations behind this will be explained in the Computational Methods \ref{CompMod} section.
 
 
 %In each of your categories (or subcategories if your topic is
@@ -191,7 +193,7 @@ These two fundamental equations can be combined to finally get:
 \end{equation}
 %
 \ref{eq:DiffusionEq} describes the dependency between the oxygen partial pressure P and the consumption rate M(P). Here I would like to mention the fact that partial pressure is physically nothing else than the concentration used in \ref{Fick}.
-For the consumption, a Michaelis-Menten relationship applied to the problem is used:
+For the consumption, a Michaelis-Menten relation applied to the problem is used:
 \begin{equation}
 \\M(P) = \frac{M_0P}{(P_0 + P)}
 \label{eq:MichaelisMenten}
@@ -559,7 +561,7 @@ As the presented examples show, the Green's method and its implementation can pr
 \\The results are in accord with the previously described physical laws, which describe the oxygen transport from the vessel to the tissue. Moreover, the results are physiologically accurate. The computed values generally range between $0$ mmHg (hypoxic tissue) and $87$ mmHg (very well oxygenated tissue) and seem to be in the physiological range.
 \\Even though these computations have been made on networks that were derived from real organic networks, no information was given about how the particular image segmentations were obtained. This also makes it hard to compare the results with real world values {\color{red} or how should I call this ? experimental values? another important question I might have is: do we have know if these network come from organs coming from mice/rats or whatever? as we don't know this, I would especially point out that the computed values cannot be compared to any specific values that we could expect or was measured in the past. we can only say that the values are in the physiological range and that the physical properties of oxygen transport and diffusion are well respected and in accord with the simulation results}, as we don't know anything in particular about the provenance of the networks.
 
-
+\newpage
 \subsection{Results of $DuMu^x$} 
 %Interesting but shorter part, due to the fact that DuMuX is not really producing anything yet
 %Results part of DuMuX
