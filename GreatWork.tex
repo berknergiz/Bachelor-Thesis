@@ -107,13 +107,15 @@ As mentioned in the previous chapter, blood is composed of plasma and red blood 
 %Delivery of Oxygen to the Cells
 %Papers to cite: \cite{hellums1977resistance}, \cite{bukwirwa}
 
-As previously mentioned, diffusion will play an important role for oxygen transport in the body. This is due to the fact that diffusion is the principle physical mechanism of how oxygen from the vessels is reaching the tissue. Without diffusion, oxygen would basically never penetrate the tissue and would only travel the body like in a closed loop circuit. This physical phenomenon is described by Fick's Law of Diffusion:
+Clearly, diffusion will play an important role for oxygen transport in the body. This is due to the fact that diffusion is the principle physical mechanism of how oxygen from the vessels is reaching the tissue. Without diffusion, oxygen would basically never penetrate the tissue and would only travel through the body like in a closed loop circuit. This physical phenomenon is described by Fick's Law of Diffusion:
 \begin{equation}
 \\J = - D \frac{dc}{dx}
 \label{Fick}
 \end{equation}
-Where J is the diffusive flux, D is the previously mentioned diffusivity coefficient, and $\frac{dc}{dx}$ is the derivative of the concentration with respect to the distance x, which is the concentration gradient \cite{pittman2011regulation}, \cite{lee2017accounting}.
-\\The diffusion process can be helped and enhanced by a substance (molecule?) called Myoglobin. This substance can be found in some tissues in the body, especially muscle tissue (?) and enhances the diffusivity of oxygen through the tissue. The enhancement effect can depend on the Myoglobin concentration in the given tissue, and these effects can be taken into account by (?). \cite{wittenberg1970myoglobin}
+Where J is the diffusive flux, D is the previously mentioned diffusivity coefficient, and $\frac{dc}{dx}$ is the concentration gradient and is basically the derivative of the concentration with respect to the distance $x$ \cite{lee2017accounting}, \cite{pittman2011regulation}.\\
+\\The diffusion process can be enhanced by a substance called myoglobin. Myoglobin is a protein that can be found in some tissues in the body, especially in muscle tissue, and enhances the diffusivity of oxygen through the tissue. The magnitude of the enhancement depends on the myoglobin concentration in the given tissue, and is seen as a \emph{moving-carrier-mediated transport mechanism} \cite{wittenberg1970myoglobin}.
+\\For our problem, it is sufficient to say that the diffusive flux of oxygen into the tissue can be computed as the sum of a normal diffusive flux, depending on the concentration gradient and described by Fick's Law \ref{Fick}, and a myoglobin facilitated oxygen flux.
+\\The way this phenomenon is mathematically included in our computational models will later be described in the computational model section \ref{CompMod}.
 
 
 \subsection{Current Trends in Modeling}
@@ -121,7 +123,7 @@ Where J is the diffusive flux, D is the previously mentioned diffusivity coeffic
 %Do link to modeling and models in this field in general, then link this to computational models in this field and their use. Actual trends and what people hope for in the future (in terms of computational power, computational methods but also from a medical perspective) is also interesting.
 %Papers to cite: \cite{mathmodeling}, \cite{goldman2001computational}, \cite{kuzmin2010guide}, \cite{lee2017accounting}, \cite{beard2001modeling}, \cite{Secomb2004}
 
-In order to simulate flows, Computational Fluid Dynamics (CFD) is a tool that can be used to produce results which can not be obtained through in vitro or in vivo experiments  \cite{mathmodeling}. For this reason and because the computational capabilities available are growing everyday, modeling and simulating processes in the body is taking an increasingly important role in biological and medical sciences.
+In order to simulate flows, Computational Fluid Dynamics (CFD) is a tool that can be used to produce results which cannot be obtained through in vitro or in vivo experiments  \cite{mathmodeling}. For this reason and because the computational capabilities available are growing everyday, modeling and simulating processes in the body is taking an increasingly important role in biological and medical sciences.
 \\In our case, the focus will lie on oxygen transport simulations and their computational implementation.\\
 \\As already mentioned in the section \ref{Blood Flow}, blood flow in the body can be approximated by the Navier-Stokes equations \ref{eq:NavierStokes1}, \ref{eq:NavierStokes2}. The transport of oxygen in the blood can then be linked to this by the transport equations. These physical equations are quite straightforward to implement and solve numerically. The next task remains the biggest problem in actual research: Link this transport to the diffusion process out of the vessels and into the tissue. The biggest problems here seem to be in choosing the right/appropriate boundary conditions to get exact results. Also, many numerical methods fail or more specifically become unstable when the vessel network becomes complicated and heterogeneous. There are already good methods to produce results for the Krogh model, but to compute oxygen fields in very complex networks like in the kidney, these models do not provide the desired results.
 \\Steady-State approximation for simulations: Need this assumption for Michaelis-Menten relation.
@@ -157,6 +159,7 @@ The Green's Function Method was first used for numerical computations of oxygen 
 \\The mathematical background behind the Green's Function Method and the numerical method derived from it will be discussed in the upcoming section. The accuracy of produced results as well as the physiological meaning behind these results will be the main subject in this chapter.
 
 \subsubsection{The Computational Model}
+\label{CompMod}
 %Just mathematical theory behind this method
 
 General explanation about Green's Method code and how it works, especially mathematics behind the Green's Function Method (many mathematical formulas) and why it makes sense to use this. Also especially why is this interesting in physiological applications and oxygen delivery/consumption simulations ?
