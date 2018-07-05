@@ -102,6 +102,7 @@ As mentioned in the previous chapter, blood is composed of plasma and red blood 
 \\In a very simplified way, one could see red blood cells as train driving in a closed loop circuit, picking up oxygen at one station, and then delivering it to every station in the body, which are the tissues and accordingly the cells. The hemoglobin would be the seat where oxygen sits on, as it has the role of binding the incoming oxygen from the lungs and release it to tissue so that it can diffuse out of the vessels and reach the cells.
 
 \subsubsection*{Oxygen Diffusion Into the Tissue}
+\label{Diffusion}
 %Diffusion out of the Vessels - Fick's Law of Diffusion
 %Diffusion Process - Transport in the Tissue - Properties and some general Parameters
 %Delivery of Oxygen to the Cells
@@ -128,7 +129,7 @@ In order to simulate flows, Computational Fluid Dynamics (CFD) is a tool that ca
 \\This is due to the fact that often samples of vessel networks are considered, that are embedded in virtual tissue. To compute the oxygen field in the vessels and in the tissue, initial and boundary conditions have to be found for the borders of the sample. The incoming oxygen flux through the vessels will have the form of a Neumann Boundary condition, whereas no-flux boundary conditions may be used on the boundary of the given control volume, which will be the border of the used tissue sample. When using these boundary conditions, the assumption is made that all the incoming oxygen is consumed inside the sample. This often leads to exaggerated estimates of hypoxic region, and thus might be physically problematic.
 \\Secomb et. al \cite{Secomb2004} offered some alternatives in terms of boundary conditions to solve this problem, as the estimation of hypoxic region is considered to be an essential output many researchers aim to understand.\\
 \\In general, an other important challenge is to develop methods that are stable for many different shapes of networks, and thus can compute physically accurate oxygen fields for different types of network inputs. Many numerical methods fail or more specifically become unstable when the vessel network becomes complicated and heterogeneous. There are already approaches which produce physically accurate results for the Krogh model, but in order to compute oxygen fields in very complex networks like in the kidney, these models might not provide the desired results.\\\\
-\\Similar to other methods used in this field by Goldman and Popel \cite{goldman2001computational} or Beard and Bassingthwaighte \cite{beard2001modeling}, the methods used for this thesis will treat the problem of steady-state oxygen delivery and accordingly will compute oxygen fields for steady-state conditions. This approximation is anyways needed in order to apply the Michaelis-Menten kinetics to get a relation between the oxygen consumption rate and the local oxygen concentration. The equations behind this will be explained in the Computational Methods \ref{CompMod} section.
+\\Similar to other methods used in this field by Goldman and Popel \cite{goldman2001computational} or by Beard and Bassingthwaighte \cite{beard2001modeling}, the methods used for this thesis will treat the problem of steady-state oxygen delivery and accordingly will compute oxygen fields for steady-state conditions. This approximation is anyways needed in order to apply the Michaelis-Menten kinetics to get a relation between the oxygen consumption rate and the local oxygen concentration. The equations behind this will be explained in the Computational Methods \ref{CompMod} section.
 
 
 %In each of your categories (or subcategories if your topic is
@@ -152,32 +153,33 @@ In order to simulate flows, Computational Fluid Dynamics (CFD) is a tool that ca
 
 As noted before, this thesis focuses on the evaluation of existing
 methods that simulate flow and oxygen transport in micro-vasculature networks
-and applies them to several vasculature morphologies from various organs. In this section I will try to give an overall understanding to the theoretical background to the Green's Function Method and accordingly the code developed by Secomb et al. \cite{Secomb2004}. Later on I will present a new model that I implemented using $DuMu^x$. Both the methods and the produced results will be discussed in the following sections.
+and applies them to several vasculature morphologies from various organs. In this section I will try to give an overall understanding to the theoretical background to the Green's Function Method and accordingly the code developed by Secomb et al. \cite{Secomb2004}. Later on I will present a new model that I implemented myself using $DuMu^x$ \cite{flemisch2007dumux}.\\
+\\The methods will be explained in this section and the results will be discussed separately in the following section.
 
 \subsection{Green's Function Method}
 %Here I will talk about everything concerning the Green's Method Code.
+%General explanation about Green's Method code and how it works, especially mathematics behind the Green's Function Method (many mathematical formulas) and why it makes sense to use this. Also especially why is this interesting in physiological applications and oxygen delivery/consumption simulations ?
+%Goals:
+%- Avoid no flux boundary condition
+%- Find a systematic method that can be applied to tissue domains of arbitrary shape
+%- Find a cheap solution in terms of computational cost (when compared to implicit methods)
+%- Green's function method is computationally less expensive than the implicit methods, due to the fact that there is a lower number of unknowns
 
-The Green's Function Method was first used for numerical computations of oxygen delivery in the tissue by Secomb et al. \cite{Secomb2004}. It can deliver accurate results with lower computational cost when compared to implicit methods, due to the fact that the number of unknowns is reduced. For simple networks like the examples specified in the next chapter, the method seems to be stable and produce accurate results. However, using new and more complex networks, the Green's Function Method seems to produce bad results and shows characteristics of unstability (at least we think so for now). As the results get bad, the computational advantages of this method are not of any use (bad formulation?).
-\\The mathematical background behind the Green's Function Method and the numerical method derived from it will be discussed in the upcoming section. The accuracy of produced results as well as the physiological meaning behind these results will be the main subject in this chapter.
+The Green's function method was first used for numerical computations of oxygen delivery in the tissue by Secomb et al. \cite{Secomb2004}. It was developed with the goal of offering a systematic method that can be applied to many tissue domains with arbitrary shape. Green's function method is computationally less expensive than the implicit methods, due to the fact that the number of unknowns is smaller.
+\\It was found that for many networks like the examples specified in the next chapter, the method seems to be stable and can produce accurate results. Even for complex networks like the ones presented in the Results section  \ref{Results}, the computed oxygen fields seem to be physically accurate which makes this method very interesting. However, using a new and even more complex network, the Green's function method couldn't compute an oxygen field and the outputs were not as expected. This will be discussed in the next sections \ref{DiscGreens} and at the end.\\
+\\The mathematical background behind the Green's Function Method and the numerical method derived from it will be explained here.
 
 \subsubsection{The Computational Model}
 \label{CompMod}
 %Just mathematical theory behind this method
 
-General explanation about Green's Method code and how it works, especially mathematics behind the Green's Function Method (many mathematical formulas) and why it makes sense to use this. Also especially why is this interesting in physiological applications and oxygen delivery/consumption simulations ?
-\\Goals:
-\\- Avoid no flux boundary condition
-\\- Find a systematic method that can be applied to tissue domains of arbitrary shape
-\\- Find a cheap solution in terms of computational cost (when compared to implicit methods)
-\\- Green's function method is computationally less expensive than the implicit methods, due to the fact that there is a lower number of unknowns
-
 %\subsubsection*{The Computational Model}
 %Methods and physiological assumptions used in this model.
 %Very useful to use Governing Equations section of Secomb here
 
-In this subsection, the used physical quantities, the assumptions and governing equations will briefly be explained. The equations cited here are, in my opinion, the most important ones to describe the physical background for the treated problem. This part strongly relies on the description by Secomb et al. \cite{Secomb2004}.
-\\When looking at the code of the Green's Function Method, and especially at the inputs \ref{Inputs}, one can see that the tissue is modeled as a homogeneous medium. This results in constant oxygen diffusivity and solubility coefficients D and $\alpha$ respectively. These quantities usually have to be specified in the SoluteParams.dat-file. A more detailed explanation to the Inputs can be found in the Inputs section \ref{Inputs}.
-\\The governing equations are listed here, with a short explanation for each of them:
+In this subsection, the used physical quantities, the assumptions and governing equations for the Green's method and for the given problem will briefly be explained. The equations cited here are in my opinion, the most important ones to describe the physical background for the treated problem. This part strongly relies on the description by Secomb et al. \cite{Secomb2004}.
+\\When looking at the code of the Green's function method, and especially at the inputs \ref{Inputs}, one can see that the tissue is modeled as a homogeneous medium. This results in constant oxygen diffusivity and solubility coefficients D and $\alpha$ respectively. These quantities usually have to be specified in the SoluteParams.dat-file. A more detailed explanation to the Inputs can be found in the Inputs section \ref{Inputs}.
+\\The governing equations are listed here, with a short explanation for each of them.
 \\As previously described, diffusion will play an important role in oxygen transport in the body, as oxygen is reaching the tissue by diffusing out of the vessels. This physical phenomenon is described by Fick's Law of Diffusion \ref{Fick}.
 %
 As a reminder, I want to mention that Fick's first Law gives the diffusive flux, which we are interested in, as a function of the diffusivity and the concentration gradient in the tissue.
@@ -186,35 +188,35 @@ As a reminder, I want to mention that Fick's first Law gives the diffusive flux,
 \frac{\delta \rho} {\delta t} + \nabla (\rho v) = 0
 \end{equation}
 %
-These two fundamental equations can be combined to finally get:
+Using Fick's Law, these two fundamental equations can be combined to finally get:
 \begin{equation}
 \\D\alpha\nabla^2P = M(P)
 \label{eq:DiffusionEq}
 \end{equation}
 %
-\ref{eq:DiffusionEq} describes the dependency between the oxygen partial pressure P and the consumption rate M(P). Here I would like to mention the fact that partial pressure is physically nothing else than the concentration used in \ref{Fick}.
-For the consumption, a Michaelis-Menten relation applied to the problem is used:
+Equation \ref{eq:DiffusionEq} describes the dependency between the oxygen partial pressure $P$ and the consumption rate $M(P)$. Here I would like to mention the fact that partial pressure is physically nothing else than the concentration used in \ref{Fick}.\\
+\\For the consumption, a Michaelis-Menten relation applied to the problem is used:
 \begin{equation}
 \\M(P) = \frac{M_0P}{(P_0 + P)}
 \label{eq:MichaelisMenten}
 \end{equation}
 %
-In \ref{eq:MichaelisMenten}, M(P) is the consumption, $M_0$ the demand and $P_0$ the partial pressure at half-maximal consumption.
+In equation \ref{eq:MichaelisMenten}, $M(P)$ is the consumption, $M_0$ the demand and $P_0$ the partial pressure at half-maximal consumption.
 \\As previously mentioned, the second important physical phenomenon to describe our transport problem is the convective transport in the blood flow. To model this, we need to know the rate of convective oxygen that is transported through a single vessel segment.
 \begin{equation}
 \\f(P_b) = Q(H_DC_0S(P_b) + \alpha_{eff}P_b)
 \label{eq:ConvTrans}
 \end{equation}
 %
-In \ref{eq:ConvTrans}, the flow rate of blood is Q, and $H_D$, S, $C_0$, $P_b$ and $\alpha_{eff}$ are parameters such as discharge hematocrit, oxyhemoglobin saturation or partial pressure of oxygen in the blood. (Here specify everything yes or no ? Maybe use a symbols table at beginning to make things easier).
+In equation \ref{eq:ConvTrans}, the flow rate of blood is $Q$, and $H_D$, S, $C_0$, $P_b$ and $\alpha_{eff}$ are parameters such as discharge hematocrit, oxyhemoglobin saturation or partial pressure of oxygen in the blood. {\color{red}(Here specify everything yes or no ? Maybe add a symbols table before submission to make things easier)}.
 \\The previously mentioned oxyhemoglobin saturation can be computed by Hill's equation:
 \begin{equation}
 \\S(P_b) = \frac{P_b^n}{(P_b^n+P_{50}^n)}
 \label{eq:Hill}
 \end{equation}
-In Hill's equation \ref{eq:Hill}, $P_b$ ist the previously mentioned partial pressure of oxygen in blood, $P_{50}$ is the partial pressure of oxygen at 50\% saturation and n is a constant.
+In Hill's equation \ref{eq:Hill}, $P_b$ is the previously mentioned partial pressure of oxygen in the blood, $P_{50}$ is the partial pressure of oxygen at 50\% saturation and $n$ is a constant.
 %
-\\Another important equation that we need to describe the given problem is the relationship describing the rate of of diffusive oxygen efflux per unit vessel length:
+\\Another important equation that we need in order to describe the given problem is the relationship describing the rate of of diffusive oxygen efflux per unit vessel length:
 \begin{equation}
 \\ \frac{df(P_b)}{ds} = -q_v(s)
 \label{eq:ConsOxygen}
@@ -229,44 +231,44 @@ In Hill's equation \ref{eq:Hill}, $P_b$ ist the previously mentioned partial pre
 \end{equation}
 \ref{eq:DiffFlux} is an integral form of the diffusive flux $q_v(s)$.
 %
-\\The relation between the partial pressure of oxygen in the tissue and the blood can be approximated with the following equation \cite{hellums1977resistance}:
+\\The relation between the partial pressure of oxygen in the tissue and the partial pressure of oxygen in the blood can be approximated with the following  Hellums relation \cite{hellums1977resistance}:
 \begin{equation}
 \\P_v(s) = P_b(s) - Kq_v(s)
 \label{eq:Hellums}
 \end{equation}
-\ref{eq:Hellums} is the Hellums relationship.
 \\Here $P_v(s)$ represents the partial pressure of oxygen averaged around the circumference of the vessel, K is the intravascular resistance to radial oxygen transport, which is assumed to be constant but depends on the vessel diameter. The value for K for each vessel can be found in the input file IntravascRes.dat \ref{Inputs} which has to be given to the code.
 %
-\\As discussed in the first part, myoglobin is a substance (molecule?) that supports the diffusion of oxygen in the tissue. The effects of myoglobin-facilitated diffusion can sometimes be neglected, when the myoglobin concentration is very low. For the case where the effects of myoglobin are relevant, one can simply replace the partial pressure P with the partial pressure $P^*$, given in the following equation \ref{eq:Myoglob}.
+\\As discussed in the first part, myoglobin is a protein that supports the diffusion of oxygen in the tissue. The effects of myoglobin-facilitated diffusion can sometimes be neglected, when the myoglobin concentration is very low. For the case where the effects of myoglobin are relevant, one can simply replace the partial pressure P with the partial pressure $P^*$, given in the following equation \ref{eq:Myoglob}.
 \begin{equation}
 \\P^* = P + \frac{D_{Mb}C_{Mb}V_mS_{Mb}(P)}{D \alpha}
 \label{eq:Myoglob}
 \end{equation}
-In \ref{eq:Myoglob}, $D_{Mb}$, $C_{Mb}$, $V_m$ and $S_{Mb}$ are the diffusion coefficient, the concentration, the molar volume and the oxygen saturation of Myoglobin respectively. D and $\alpha$ are the same constants mentioned previously, which were the diffusivity and the solubility coefficients of oxygen.
+In \ref{eq:Myoglob}, $D_{Mb}$, $C_{Mb}$, $V_m$ and $S_{Mb}$ are the diffusion coefficient, the concentration, the molar volume and the oxygen saturation of Myoglobin respectively. D and $\alpha$ are the same constants mentioned previously, which were the diffusivity and the solubility coefficients of oxygen. As I mentioned this in the Oxygen Diffusion section \ref{Diffusion}, effects of myoglobin can simply be taken into account by adding a term representing the myoglobin-facilitated-transport of oxygen.
 
+\newpage
 \subsubsection{Mathematical Details of the Green's Function Method}
 %Mathematical Background to this Method. What's so special about it ? Is there any advantage at first sight ?
 %Very useful to use Green's Function Formulation section of Secomb here
 
-In this subsection, the Green's Function Method, its equations and the application to the given field will be explained \cite{secomb1993analysis}.
-\\In this section, I will focus on giving a good and understandable insight to the Green's Function Method and its specific application, instead of getting lost in details. More specific low-level informations about the code and its implementation will follow later.
-\\The main idea of the Green's Function Method approach is to model blood vessels as discrete oxygen sources. The oxygen consumption is then modeled by a set of discrete oxygen sinks. As previously described, our goal is to simulate the oxygen transport to finally obtain the oxygen concentration for every node in our tissue and vessel network. In general terms, the oxygen field is computed by a superposition of the fields resulting from each of the sources and sinks.
+In this subsection, the Green's function method, its equations and the application to the given field will be explained \cite{secomb1993analysis}.
+\\In this section, I will focus on giving a good and understandable insight to the Green's function method and its specific application, instead of getting lost in details. More specific low-level informations about the code and its implementation can be found in the Appendix \ref{GreensCode}.
+\\The main idea of the Green's function method approach is to model blood vessels as discrete oxygen sources. The oxygen consumption is then modeled by a set of discrete oxygen sinks. As previously described, our goal is to simulate the oxygen transport to finally obtain the oxygen concentration for every node in our tissue and vessel network. In general terms, the oxygen field is computed by a superposition of the fields resulting from each of the sources and sinks.
 \\The strengths of the sources are unknowns in this problem. The sinks are unknowns as well, due to the fact that the oxygen consumption depends on the local partial pressure of oxygen, as one can see in \ref{eq:MichaelisMenten}.
 %
-\\When defining the Green's Function G as the potential at a point $\textbf{x}$ and putting this potential equal to the local oxygen concentration or equivalently to the partial pressure of oxygen P, we get:
+\\When defining the Green's Function $G$ as the potential at a point $\textbf{x}$ and putting this potential equal to the local oxygen concentration, or equivalently to the partial pressure of oxygen $P$, we get:
 \begin{equation}
 \\D\alpha\nabla^2G = - \delta_3 
 ( \textbf{x} - \textbf{x*} )
 \label{eq:Greens1}
 \end{equation}
-\\The equation \ref{eq:Greens1} is basically the same as \ref{eq:DiffusionEq}, where G(\textbf{x}; \textbf{x*}) is the partial pressure of oxygen at $\textbf{x}$, resulting from a unit point source at $\textbf{x*}$.
+\\The equation \ref{eq:Greens1} is basically the same as \ref{eq:DiffusionEq}, where $G(\textbf{x}; \textbf{x*})$ is the partial pressure of oxygen at $\textbf{x}$, resulting from a unit point source at $\textbf{x*}$.
 %
-\\The superposition of the fields gives the overall potential P(\textbf{x}) in each point \textbf{x}, which can be computed by integrating the distribution multiplied the local potential over all the sources:
+\\The superposition of the fields gives the overall potential $P(\textbf{x})$ in each point $\textbf{x}$, which can be computed by integrating the distribution multiplied by the local potential over all the sources:
 \begin{equation}
 \textbf{P(x)} = \int_{Sources} G(\textbf{x; x*})q(\textbf{x*})d\textbf{x*}
 \label{eq:Potential}
 \end{equation}
-\ref{eq:Potential} gives the general potential (here the partial pressure of oxygen) in a point \textbf{x}, with $q(\textbf{x})$ representing the distribution of source strengths.
+\\ Equation \ref{eq:Potential} gives the general potential (here the partial pressure of oxygen) in a point \textbf{x}, with $q(\textbf{x})$ representing the distribution of source strengths.
 %
 \\The solution computed in an infinite domain is the singular function as defined in the following equation:
 \begin{equation}
@@ -274,29 +276,27 @@ In this subsection, the Green's Function Method, its equations and the applicati
 \label{eq:InfDomainSol}
 \end{equation}
 %
-\\Coming back to the finite domain that we are looking at, boundary conditions on the domain boundaries have to be taken into account and thus the solution will be different depending on the boundary conditions that we choose. In this part I would like to mention the fact that choosing boundary conditions has a substantial consequence on the results, and there is not yet one type of boundary condition that can produce overall exact results in terms of hypoxic tissue estimation (this should be mentioned somewhere again, as it is a big deal in this field of research). For the boundary conditions that were used in the research until now (put some references in), the computed hypoxic tissue areas were either way too small or way too big compared to what seems to be physiologically realistic. Again I would like to mention the fact that no good measurements can be made about the specific size and the distribution of hypoxic regions in tissue surrounding micro-sized capillaries.
-\\The general approximation that is used uses a distribution of point sources along the centerline of each vessel segment. The field resulting from these sources can then be computed, but has a small error due to the mentioned approximation (give more detail about this error either here or later in the discussion part about Green's Method).
-\\The diffusive flux at the blood-tissue boundary can generally be expressed by the following equation:
+\\Coming back to the finite domain that we are looking at, boundary conditions on the domain boundaries have to be taken into account and thus the solution will be different depending on the boundary conditions that we choose. In this part I would like to repeat the fact that choosing boundary conditions has a substantial consequence on the results, and there is not yet one type of boundary condition that could physiologically be deducted and can produce overall exact results in terms of hypoxic tissue estimation. For the boundary conditions that were used in the research until now, the computed hypoxic tissue areas were either way too small or way too big compared to what seems to be physiologically realistic. Again I would like to mention the fact that no good measurements can be made about the specific size and the distribution of hypoxic regions in tissue surrounding micro-sized capillaries.\\
+\\The general approximation that is used puts a distribution of point sources along the centerline of each vessel segment. The field resulting from these sources can then be computed, but has a small error due to the mentioned approximation. The size of this error is computed in the code, but is rather irrelevant for the physical relevance of the resulting oxygen fields. To calculate this error, the diffusive flux at the blood-tissue boundary is obtained with the following equation:
 %
 \begin{equation}
 \\q_v(s) = \int_{0}^L F(s-s^*)q_0(s^*)ds*
 \label{eq:DiffFlux}
 \end{equation}
 %
-\\In \ref{eq:DiffFlux}, the distribution of radial flux across the cylindrical surface is obtained by the function F(s), and $q_0(s)$ represents the distribution of source strength per unit length, s being the distance along the vessel.
-\\The main case is a uniform distribution of sources around the circumference, where we get the following formula for F(s):
+\\In equation \ref{eq:DiffFlux}, the distribution of radial flux across the cylindrical surface is obtained by the function $F(s)$, and $q_0(s)$ represents the distribution of source strength per unit length, $s$ being the distance along the vessel.
+\\The main case is a uniform distribution of sources around the circumference, where we get the following formula for $F(s)$:
 %
 \begin{equation}
 \\F(s) = \frac{1}{2} \delta_1 (s) + \frac{k (K(k) - E(k)}{4 \Pi r_0}
 \label{eq:DiffFluxUni}
 \end{equation}
-\\In \ref{eq:DiffFluxUni}, K(k) and E(k) are the following functions, also called elliptic integrals:
+\\In \ref{eq:DiffFluxUni}, $K(k)$ and $E(k)$ are the following functions, also called elliptic integrals:
 %
 \begin{equation}
 \\K(k) = \int_{0}^{\frac{\Pi}{2}} (1 - k^2 sin^2 \Theta)^ \frac{-1}{2} d \Theta
 \label{eq:EllipInt1}
 \end{equation}
-\\K(k) \ref{eq:EllipInt1} and E(k) \ref{eq:EllipInt2} represent the complete elliptic integrals of the first and second kind respectively.
 %
 \begin{equation}
 \\E(k) = \int_{0}^{\frac{\Pi}{2}} (1 - k^2 sin^2 \Theta)^ \frac{1}{2} d \Theta
@@ -395,8 +395,9 @@ The networks that were used for the simulations are extracted from real organs c
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \newpage
 \section{Simulation Results and Analysis}
+\label{Results}
 %Put all the results here - Should be easier to understand things
-In this section, the produced results using the two introduced methods will be presented and analyzed for a few different networks. Finally the results will be discussed and the methods will be compared.
+In this section, the produced results using the two introduced methods will be presented and analyzed for a few different networks. Finally the results will be discussed and the methods will be compared. The accuracy of produced results as well as the physiological meaning behind these results will be the main subject in this chapter.
 
 \subsection{Results of the Green's Function Method}
 %Main part of the Thesis
@@ -533,6 +534,7 @@ Figure \ref{fig:Contour_TumorDuke}  is the result of a Green's method blood flow
 
 \newpage
 \subsubsection*{Further Outlook for New Networks}
+\label{Outlook}
 %Explain relevance of the new models and the produced results (many plots here)
 %These results are wrong !!! why ?
 %In this section the goal is to see how this method can perform in general when it is applied to new networks and to discuss the produced results in detail.
@@ -553,6 +555,7 @@ An overview to simulation results of the Green's method were presented for diffe
 
 \newpage
 \subsection{Discussion of the Green's Method and the Produced Results}
+\label{DiscGreens}
 %Discussion part of Green's
 %Final thoughts about Green's Method for physiological applications and oxygen delivery simulations/computations.
 %Compare the results with physiological measured values and check if the results make sense in general.
