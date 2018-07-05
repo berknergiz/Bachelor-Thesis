@@ -49,7 +49,6 @@ In this section the physiological aspects of $O_2$ transport through vessels int
 %Discuss General Hemodynamics
 %Put some papers and references in and explain some values and parameters.
 %Use mathematics paper for blood flow calculations \cite{mathmodeling}
-%Papers to cite: \cite{pittman2011regulation}
 %Explain this in a bit more detail. 
 %Also mention that blood is usually modeled as a homogeneous fluid using Navier Stokes equations despite that it is a mixture of plasma and cells etc.
 %Also mention that why it is extremely inappropriate for us to model it like that.
@@ -80,6 +79,7 @@ In the Navier-Stokes equations, $\textbf{v}$ is the velocity vector, $p$ is the 
 \\Here we put the velocity $\textbf{v}_{in}$ of the fluid entering our domain equal to a velocity vector $\textbf{v}_0$ and prescribe a non-slip condition on the vessel walls. Solving the Navier-Stokes equations \ref{eq:NavierStokes1}, \ref{eq:NavierStokes2} using appropriate initial conditions and making a few other assumptions will then lead to the Poiseuille-Flow which can generally be used to describe Newtonian fluid flows in pipes.
 \\ {\color{red} (hey kartik, are the explanations here good enough ? you said I should keep this part short, so please give me a feedback if this gives a good enough insight to the flow and if everything is correct)}
 
+\newpage
 \subsection{Oxygen Transport and Delivery}
 %Purely physiological Oxygen part (with mathematical formulas to describe processes)
 %How does this oxygen related stuff physically and physiologically work ?
@@ -87,20 +87,19 @@ In the Navier-Stokes equations, $\textbf{v}$ is the velocity vector, $p$ is the 
 %\\Why do we care about this etc. ?
 %\\Diffusion, Parameters, etc. etc.
 %\\Use Vasomotion paper for oxygen delivery \cite{goldman2001computational}
-%\\Papers to cite: \cite{bukwirwa}
 
-Through breathing, oxygen enters the body and fills the lungs. As gases tend to move from areas with higher concentrations towards areas with lower concentrations, oxygen moves from the oxygen rich air towards the alveoli and enters the blood \cite{bukwirwa}. This same concentration gradient will later transport the oxygen into the tissue during the diffusion process. The physical processes behind this will briefly be explained in this section.
+Through breathing, oxygen enters the body and fills the lungs. As gases tend to move from areas with higher concentrations towards areas with lower concentrations, oxygen moves from the oxygen rich air towards the alveoli and enters the blood \cite{bukwirwa}. This same concentration gradient will later transport the oxygen into the tissue during the diffusion process \cite{pittman2011regulation}. The physical processes behind this will briefly be explained in this section.
 
 \subsubsection*{Oxygen Transport in the Blood}
 %Transport with the flow
 %Binding of Oxygen to Red Blood Cells
 %Oxygen Concentration etc.
-%Papers to cite: \cite{hellums1977resistance}.
 %Plasma and Red Blood Cells
 %Hemoglobin
 
 As mentioned in the previous chapter, blood is composed of plasma and red blood cells. The red blood cells are the main carriers of oxygen in the blood \cite{pittman2011regulation}. In this section, we will mainly focus on the red blood cells, as these are the main oxygen carriers. As the general concern of this thesis is not the physiological oxygen-red blood cell interaction, I will just briefly explain the basic principle behind oxygen transport in the blood.
-\\The oxygen carrier contained in the red blood cells is called hemoglobin. Hemoglobin is a protein which can chemically bind oxygen molecules. This means that while our blood travels through the vessels, oxygen is supplied to every cell in the body by the hemoglobin which binds oxygen and transports it with the blood flow.
+\\The oxygen carrier contained in the red blood cells is called hemoglobin. Hemoglobin is a protein which can chemically bind oxygen molecules. This means that while our blood travels through the vessels, oxygen is supplied to every cell in the body by the hemoglobin which binds oxygen and transports it with the blood flow \cite{hellums1977resistance}.
+\\In a very simplified way, one could see red blood cells as train driving in a closed loop circuit, picking up oxygen at one station, and then delivering it to every station in the body, which are the tissues and accordingly the cells. The hemoglobin would be the seat where oxygen sits on, as it has the role of binding the incoming oxygen from the lungs and release it to tissue so that it can diffuse out of the vessels and reach the cells.
 
 \subsubsection*{Oxygen Diffusion Into the Tissue}
 %Diffusion out of the Vessels - Fick's Law of Diffusion
@@ -244,7 +243,7 @@ In \ref{eq:Myoglob}, $D_{Mb}$, $C_{Mb}$, $V_m$ and $S_{Mb}$ are the diffusion co
 %Mathematical Background to this Method. What's so special about it ? Is there any advantage at first sight ?
 %Very useful to use Green's Function Formulation section of Secomb here
 
-Similar to the previous section, this section will strongly rely on \cite{Secomb2004}. In this subsection, the Green's Function Method, its equations and the application to the given problem/field will be explained.
+In this subsection, the Green's Function Method, its equations and the application to the given field will be explained \cite{secomb1993analysis}.
 \\In this section, I will focus on giving a good and understandable insight to the Green's Function Method and its specific application, instead of getting lost in details. More specific low-level informations about the code and its implementation will follow later.
 \\The main idea of the Green's Function Method approach is to model blood vessels as discrete oxygen sources. The oxygen consumption is then modeled by a set of discrete oxygen sinks. As previously described, our goal is to simulate the oxygen transport to finally obtain the oxygen concentration for every node in our tissue and vessel network. In general terms, the oxygen field is computed by a superposition of the fields resulting from each of the sources and sinks.
 \\The strengths of the sources are unknowns in this problem. The sinks are unknowns as well, due to the fact that the oxygen consumption depends on the local partial pressure of oxygen, as one can see in \ref{eq:MichaelisMenten}.
