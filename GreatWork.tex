@@ -22,7 +22,7 @@ various organs using mathematical models.
 Specifically, the goal is to evaluate the efficacy of the existing numerical
 methods that simulate flow and transport of $O_2$ through capillaries.
 The Green's function method developed by Secomb is evaluated in detail and
-applied to various microvasculature networks.
+applied to various microvascular networks.
 Further, coupling of 1D network with a 3D surrounding tissue is evaluated in
 the open source package called $DuMu^x$.
 A simplified approach for the simulation of $O_2$ transport was implemented in
@@ -53,8 +53,8 @@ In this section the physiological aspects of $O_2$ transport through vessels int
 %Also mention that blood is usually modeled as a homogeneous fluid using Navier Stokes equations despite that it is a mixture of plasma and cells etc.
 %Also mention that why it is extremely inappropriate for us to model it like that.
 
-Blood is basically composed of two phases: liquid and cells. The liquid phase is called plasma, and the cells that play the most important role for our concern are the red blood cells. This will later be important when considering the oxygen transport in the blood. For computational models, blood is generally modeled as an incompressible Newtonian fluid \cite{mathmodeling}. This basically means that the viscous stress is linearly proportional to the strain rate. Modeling blood as a Newtonian fluid is basically a wrong assumption, due to the fact that only the plasma is a Newtonian fluid. Nevertheless, this model of blood is used a lot as it can produce fairly good results and for the fact that taking irrelevant details into account wouldn't be very interesting for oxygen transport simulations {\color{red} (can I say it like this ?)}. It is also important to mention that the cells, making up to 40-45\% of the blood volume, are basically not incompressible. They can be compressed and might even shrink in order to facilitate the blood flow in small vessels.
-\\While our model of blood uses big assumptions and turns a two phase medium into an incompressible Newtonian fluid, this immensely facilitates computations from an engineering point of view and can produce fairly good results.
+Blood is basically a mixture of two components: liquid and cells. The liquid phase is called plasma, and the cells that play the most important role for our concern are the red blood cells. This will later be important when considering the oxygen transport in the blood. For computational models, blood is generally modeled as an incompressible Newtonian fluid \cite{mathmodeling}. This basically means that the viscous stress is linearly proportional to the strain rate. Modeling blood as a Newtonian fluid is basically a wrong assumption, due to the fact that only the plasma is a Newtonian fluid. Nevertheless, this model of blood is used a lot as it can produce fairly good results and for the fact that taking irrelevant details into account wouldn't be very interesting for oxygen transport simulations {\color{red} (can I say it like this ?)}. It is also important to mention that the cells, making up to 40-45\% of the blood volume, are basically not incompressible. They can be compressed and might even shrink in order to facilitate the blood flow in small vessels.
+\\While our model of blood uses big assumptions and turns a two component medium into an incompressible Newtonian fluid, this immensely facilitates computations from an engineering point of view and can produce fairly good results.
 Using this model for blood leads to the Navier-Stokes equations \ref{eq:NavierStokes1}, \ref{eq:NavierStokes2}, which basically describe the flow dynamics of an incompressible Newtonian fluid:
 \begin{equation}
 \\ \rho \frac{\delta \textbf{v}}{\delta t} + \rho \textbf{v} \nabla \textbf{v} + \nabla p - \eta \nabla ( \nabla \textbf{v} + \nabla \textbf{v}^T ) = \textbf{f}
@@ -152,7 +152,7 @@ In order to simulate flows, Computational Fluid Dynamics (CFD) is a tool that ca
 %Everything about the computations behind the simulations and all I did.
 
 As noted before, this thesis focuses on the evaluation of existing
-methods that simulate flow and oxygen transport in micro-vasculature networks
+methods that simulate flow and oxygen transport in micro-vascular networks
 and applies them to several vasculature morphologies from various organs. In this section I will try to give an overall understanding to the theoretical background to the Green's Function Method and accordingly the code developed by Secomb et al. \cite{Secomb2004}. Later on I will present a new model that I implemented myself using $DuMu^x$ \cite{flemisch2007dumux}.\\
 \\The methods will be explained in this section and the results will be discussed separately in the following section.
 
@@ -342,69 +342,69 @@ Figure \ref{fig:dumux_structure}  is the Structure of $DuMu^x$ given from the $D
 %What can DuMuX offer ?
 %List all the models here and explain briefly what can be done, and for what kind of problems this can be used.
 
-As I mentioned, $DuMu^x$ offers a large variety of models that can be used to solve a specific problem. This provides large flexibility in terms of computational cost and stability questions \cite{flemischdumux}, \cite{flemisch2007dumux}.
+As I mentioned, $DuMu^x$ offers a large variety of models that can be used to solve a specific problem. This provides large flexibility in terms of computational cost and stability questions as explained by $DuMu^x$ developers Flemisch et al. \cite{flemischdumux}, \cite{flemisch2007dumux}.
 \\One has to take care to choose a solver that is compatible with the given problem. To develop a better feeling for this, the test cases can be studied in detail. A good overview to the user will be given when checking which solver, grid-creator or discretization is used for each type of problem.
 \\Nevertheless, using my personal experience, I can say that some information is hard extract, and the incompatibility of some modular pieces inside the $DUNE$ modules, like for example grid creators, can be the cause for some serious errors which were hard to understand and debug without a deep understanding of $DuMu^x$, which again takes time to aquire.
 \\I will briefly present some of the numerical models that can be used with $DuMu^x$, so that the reader can later get a better understanding of the model I worked on.\\
-\\There are two types of numerical models: \emph{coupled fully-implicit} and \emph{decoupled semi-implicit}.
-\\1p = one phase, 2p = two phases
-\\1p1c = one phase on component, 1p2c = one phase two components etc. explain all this briefly
-\\Explain what 1p-1p coupling is, then get to next chapter.
+\\In $DuMu^x$ there are two types of numerical models: \emph{coupled fully-implicit} and \emph{decoupled semi-implicit}. The difference lies simply in the fact that the so called \emph{coupled fully-implicit} models are strongly modularized, and the user can build a model only prescribing physical quantities like fluxes and source terms. For the \emph{decoupled semi-implicit} models, the user has to work with the actual physical equations, as for example the implementation of the transport equation. As I mainly used the 1p-model to build by oxygen transport model, I will shortly explain what this means and give a few other examples.\\
+\\1p basically means that the model is computing the flow for a one phase liquid. If the considered liquid is a mixture of two components, one should rather use the 1p2c model, which takes into account one phase (1p) and two components (2c). We can also consider a two phase liquid by using the two phase (2p) model. I will not go into further details concerning this, as it is rather irrelevant for oxygen computations, but still would like to mention the fact that thermal effects can also be taken into account for most of these models.
+\\A more interesting point for us is that some models, as for example the 1p model, can be computed in two separate problem-files describing two flow problems in different networks, and can then be coupled to produce a 1p-1p model computing results in an embedded network. In other words, this coupled model of two separate 1p models can be calculated together, to obtain the pressure in a vessel network, and the pressure in the tissue surrounding this network. This will be explained in more detail in the next section.
+\\Further general details concerning $DuMu^x$ and its structure can be found in the $DuMu^x$ reviews  \cite{flemischdumux}, \cite{flemisch2007dumux}.
 \\ {\color{red} What do you think about this ? You said that I should avoid writing too much about what $DuMu^x$ is so I tried to keep it short, is this a good overview ?}
-
 
 \subsubsection{Implemented Model}
 %Explain what I tried to do.
 
-While $DuMu^x$ has a modular structure, some of the existing test cases can be combined to solve a more sophisticated and specific problem. In our case, this refers to the coupling of the existing tracer model to the 1p-1p model. While the 1p-1p model can simulate the flow of a solute in a network by convection and the diffusion of this solute into tissue, the tracer model can literally trace the path of this solute into the tissue, which can be used to obtain oxygen transport and diffusion into the tissue.
+As mentioned previously, some of the existing test cases can be combined to solve a more sophisticated and specific problem. In our case, this refers to the coupling of the existing tracer model to the 1p-1p model.\\
 
 \subsubsection*{The 1p-1p Model}
 %Briefly explain the 1p_1p Model
 %Explain how tissue and bloodflow are coupled
 %Maybe put some results of the 1p_1p Model here
 
-The 1p-1p model can compute pressure fields and velocities in vessel networks. The velocity outputs can then be used for the tracer model.
+As I indicated, the 1p-1p model itself is the coupled version of a 1p simulation in a network, and a 1p simulation in the tissue surrounding it. It can simulate the flow of a solute in a network by convection and the diffusion of this solute into the tissue through the coupling. This coupled model was already a very useful tool, and helped me to compute pressure drops in interesting vascular networks as for example glomeruli. The computed pressures seemed physically correct, whereas the velocities seemed rather unrealistic. I will come back to presenting and discussing these results in the Results section \ref{Results}.\\
+My main idea was to use the computed velocities from the 1p-1p model, and feed the tracer with this as an input in order to obtain the oxygen transport and diffusion into the tissue and finally get the oxygen field in the tissue for steady-state conditions.\\
 
-\subsubsection*{\footnotesize 1p-1p Model Impressions}
+%\subsubsection*{\footnotesize 1p-1p Model Impressions}
 
-Figure \ref{fig:glom2_pressure}  is the result of a $DuMu^x$ blood flow simulation computed on a glomerulus network. The pressure field in the network is visualized.\\
-\begin{figure}[h]
-\centering{
-\includegraphics[width=162mm]{glom2_pressure}}
-\caption{\footnotesize $DuMu^x$ Pressure Computations for Glomerulus Network}
-\label{fig:glom2_pressure}
-\end{figure}\\
+%Figure \ref{fig:glom2_pressure}  is the result of a $DuMu^x$ blood flow simulation computed on a glomerulus network. The pressure field in the network is visualized.\\
+%\begin{figure}[h]
+%\centering{
+%\includegraphics[width=162mm]{glom2_pressure}}
+%\caption{\footnotesize $DuMu^x$ Pressure Computations for Glomerulus Network}
+%\label{fig:glom2_pressure}
+%\end{figure}\\
 %
-\\Figure \ref{fig:glom2_velocity}  is the result of a $DuMu^x$ blood flow simulation computed on a glomerulus network. The velocity field in the network is visualized.\\
-\begin{figure}[h]
-\centering{
-\includegraphics[width=162mm]{glom2_velocity}}
-\caption{\footnotesize $DuMu^x$ Velocity Computations for Glomerulus Network}
-\label{fig:glom2_velocity}
-\end{figure}\\\\
+%\\Figure \ref{fig:glom2_velocity}  is the result of a $DuMu^x$ blood flow simulation computed on a glomerulus network. The velocity field in the network is visualized.\\
+%\begin{figure}[h]
+%\centering{
+%\includegraphics[width=162mm]{glom2_velocity}}
+%\caption{\footnotesize $DuMu^x$ Velocity Computations for Glomerulus Network}
+%\label{fig:glom2_velocity}
+%\end{figure}\\\\
 
 \subsubsection*{The Tracer Model}
 %Briefly explain the Tracer Model
 %Maybe put some results of the Tracer Model here
 
-The tracer model can trace substances in networks of different geometries, and accordingly compute concentrations and concentration fields of solutes in dynamic systems.\\
-\\This is the reason I decided to choose the Tracer model to simulate the oxygen transport and diffusion in the given networks.\\
-\\Generally, the tracer model is computing the distribution of a solute for every time step. It can either take velocities or flows as inputs, and gives the concentration of the traced solute as an output.
-\\To briefly show what is meant by tracing a solute, a visualization for the first and last time of a tracing simulation is pictured in the following figures.\\
-\\This simulation is a simple diffusion of Groundwater in a porous rock. The velocity field of the solute is assumed to be constant.
+The second model I used to build my oxygen tracking model is the tracer. The tracer model can literally \emph{trace} the path of a solute when fluxes or velocities are given as input data. My main idea was to use the computed velocities from the 1p-1p model, and feed the tracer with this as an input in order to obtain the oxygen transport and diffusion into the tissue and finally get the oxygen field in the tissue for steady-state conditions.
+\\Generally, the tracer model is computing the distribution of a solute inside a control volume for every time step.
+\\As it can \emph{trace} substances in networks of different geometries, and accordingly compute concentrations and concentration fields of solutes in dynamic systems, it seemed like a very interesting option in order to compute the oxygen field in the tissue surrounding a given network.
+\\Even though it is hard to show the outputs of the tracer model, a visualization for the first and last time of a tracing simulation is pictured in the Appendix \ref{Tracer}.\\
 
 \subsubsection*{The Coupled Model}
 %Briefly explain what coupling is and how code is supposed to work
 %Hopefully put some results of the coupled model here or explain why the results are wrong
 
-To achieve the goal of tracing oxygen in the given vessel-networks, I coupled the previously described models to obtain a 1p-1p-tracer model...
-\\Using the velocity output of my previous 1p-1p model as an input for the tracer model, I wanted to get the concentration of my solute of interest, which is oxygen, for every time step.
+To achieve the goal of tracing oxygen in the given vessel-networks, I coupled the previously described models to obtain a 1p-1p-tracer model.\\
+\\I would like to repeat that the velocity output of my previous 1p-1p model is the input for the tracer model. This is important, as I will later explain the problems I had when trying to produce results with this model. I wanted to get the concentration of my solute of interest, which is oxygen, for every time step.
+\\As my goal was to compute oxygen fields not only in the network, but also in the tissue surrounding it, I had to create a 1p-1p-tracer-tracer model, in order to compute the oxygen concentration not only in the vessels (this is what a 1p-1p-tracer model would do) but also for the tissue. This was never done, as the 1p-1p-tracer model already didn't perform the way I expected. The reasons for this will be explained in the Results \ref{Results} section.
 
 \subsubsection{Input Data for the Simulations}
 %Explain where the networks come from: CT by Willy and Artery/Vein recognition by Diego
 
-The networks that were used for the simulations are extracted from real ex vivo organs coming from mice. This process is done in collaboration by scientists from different areas of expertise.\\
-\\In the first step, a multidomain 3-D image of a tissue has to be taken. This can be done using a micro-computer-tomography (micro-CT) machine, and for especially high resolution imaging, it is performed at the European Synchrotron Radiation Facility.
+Here I would like to mention the fact that the networks that were used for the simulations were previously extracted from real ex vivo mice organs. This fact personally fascinated me, and for this I wanted to give a short insight to how simulations can be made on real organ networks.\\
+\\This process is done in collaboration by scientists from different areas of expertise. In the first step, a multidomain 3-D image of a tissue has to be taken. This can be done using a micro-computer-tomography (micro-CT) machine, and for especially high resolution imaging, it is performed at the European Synchrotron Radiation Facility.
 \\In order to extract the vessel-networks from those images, a second scientist has to recognize the different tissues surrounding the vessels, and differentiate between arteries and veins. For this task, pattern recognition algorithms and specifically machine learning algorithms are used. The incoming data from the micro-CT machine is in the form of many two dimensional captions. This can be seen as many virtual cuts into the tissue. The algorithms then have to detect the vessels on each of this captions and mark them. This data can then be discretized and transformed in order to get a three dimensional network of vessels. The three dimensional network of vessels is our main input for the $DuMu^x$ simulations, and can basically also be used for Green's method simulations.
 \\The previously described tasks can be all be done by Interface Group members, which makes the working environment very special in terms of independent research capabilities in this partially unchartered and unexplored field.
 \\{\color{red}Can I say something like this or is it unnecessary/kind of bragging ?}
@@ -451,7 +451,7 @@ Figure \ref{fig:Contour_Krogh} is the result of a Green's Method blood flow simu
 %Explain relevance of this model and the produced results (many plots here)
 
 %Present Network
-The Green's function code provided by Prof. Secomb contains a few microvasculature networks as examples, which can be studied and extended. In this thesis, I executed many of those models to get a good understanding of physiological phenomena concerning $O_2$ transport in various organs and different networks.
+The Green's function code provided by Prof. Secomb contains a few microvascular networks as examples, which can be studied and extended. In this thesis, I executed many of those models to get a good understanding of physiological phenomena concerning $O_2$ transport in various organs and different networks.
 \\Two of these example networks provided by Prof. Secomb are the tumor networks. I will first present the results obtained for the first network, and later get to the more complex and relevant second example.
 \\The Tumor 1 network is more complicated than the previously presented Krogh model but generally gives a way better insight to the results than the Cardiac Network simulation, due to the much lower vessel density. The result is visualized on Figure \ref{fig:Contour_Tumor1998}. One can see the result of a Green's method blood flow simulation computed on a simple tumor network. As for the previous network, the oxygen concentration in the network and in the tissue is visualized in the form of a two dimensional slice (see output section \ref{Outputs} for more information). Again the illustration shows an impression of oxygen levels in the tissue and the vessel segments, and generally gives the local oxygen concentrations in mmHg.\\\\
 %Explain Plot
@@ -522,7 +522,7 @@ Another example network provided by Prof. Secomb is the mesenteric artery networ
 %\end{figure}
 \\
 %Explain Results
-\\This network is more complicated than the previously presented networks but generally gives a better insight to the results than the cardiac network simulation, due to the much lower vessel density {\color{red} are you okay with this ? do you think that this gives a better insight or should I remove this sentence ?}. Especially the tissue concentrations and the changing oxygen concentrations in longitudinal direction of the vessels can be seen very well.
+\\This network is more complicated than the previously presented networks but generally gives a better insight to the results than the cardiac network simulation, due to the much lower vessel density {\color{red} (are you okay with this ? do you think that this gives a better insight or should I remove this sentence ?)}. Especially the tissue concentrations and the changing oxygen concentrations in longitudinal direction of the vessels can be seen very well.
 \\Due to the low density of capillaries for this network, this figure can give a good insight to the values computed by the Green's Model. One can clearly see that the partial pressure of $O_2$ goes down in radial direction with growing distance from the vessels. At hotspots where the capillary density is higher due to branching and ramification, the diffusion comes from two vessels and the superposition of two close source elements leads to peaks in $PO_2$ values.\\
 \\From a physiological point of view, the computational result is correct when assuming that the oxygen consumption through the whole intestine is constant. The oxygen supply to the intestinal vessels surrounding the main arterial tree is constant, and the oxygen concentrations in the intestinal ares are slightly above 50 mmHg, which is in the physiological range.
 \\The general oxygen field clearly shows that some hypoxic regions can be found at spots without vessel or where the vessels themselves have a very low $PO_2$ concentration. With $PO_2$ values ranging from $0$ mmHg (hypoxic region) to 87 mmHg, the results for the whole sample lie once more in the physiological range.
@@ -557,8 +557,8 @@ Figure \ref{fig:Contour_TumorDuke}  is the result of a Green's method blood flow
 %In this section the goal is to see how this method can perform in general when it is applied to new networks and to discuss the produced results in detail.
 
 An overview to simulation results of the Green's method were presented for different networks, covering a range from homogeneous and simple network to rather complex, heterogeneous and physiologically interesting samples.
-\\Considering how well this method seems to perform for some complex networks I presented in the last section, I asked myself how well this method can perform for networks. For this reason I used did the simulation on a glomerulus network, which I already used for $DuMu^x$ simulations {\color{red} what do you think about this formulation ?}.
-\\Even though oxygen computations with diffusion into the tissue is physiologically meaningless for a glomerular network {\color{red} you asked me not to use words like no sense, but I think it's okay in this case?}, as glomeruli are not surrounding by normal tissue, I only used the glomerulus as basic network, as if the network was embedded anywhere else in homogeneous tissue.
+\\Considering how well this method seems to perform for some complex networks I presented in the last section, I asked myself how well this method can perform for networks. For this reason I used did the simulation on a glomerulus network, which I already used for $DuMu^x$ simulations {\color{red} (what do you think about this formulation ?)}.
+\\Even though oxygen computations with diffusion into the tissue is physiologically meaningless for a glomerular network {\color{red} (you asked me not to use words like no sense, but I think it's okay in this case?)}, as glomeruli are not surrounding by normal tissue, I only used the glomerulus as basic network, as if the network was embedded anywhere else in homogeneous tissue.
 \\Figure \ref{fig:NetNodesSegs_Glom}  is the result of a Green's Method blood flow simulation computed on a glomerulus network. The Solute Concentration in the network is visualized.\\
 \begin{figure}[h]
 \centering
