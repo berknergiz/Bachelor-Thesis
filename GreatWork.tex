@@ -39,9 +39,9 @@ First, a short insight to the physiological background of blood flow and oxygen 
 \section{Blood Flow and Oxygen Delivery}
 %How does this work physiologically ?
 
-In this section the physiological aspects of $O_2$ transport through vessels into the tissue will be discussed. This part is mainly dedicated to the understanding of physiological processes that are involved in the transport of oxygen through capillaries into the tissue, and its consumption therein. The ultimate goal of this research topic in the Interface Group is to understand the production of EPO and the physiologic phenomenon behind an increased EPO production. The main idea is to compute oxygen concentration fields in the kidney, where local hypoxia generally leads to an EPO emission. (mention this or rather not?)
-\\To get give the reader a short overview, I will start at the beginning and give a short overview of how blood travels through the body. It is pumped through the heart into the whole body. This results in pressure gradients, accelerating the fluid through the arteries.
-\\In this thesis, the flow and transport through micro-vessels in the capillary range is the main concern, where generally the time-dependency of the velocity of blood will be neglected. We use a steady-state approximation for the flow rate, and thus assume a constant velocity. This means that there is no variation of velocity depending on time for any given point in the network.
+In this section the physiological aspects of $O_2$ transport through vessels into the tissue will be discussed. This part is mainly dedicated to the understanding of physical processes that are involved in the transport of oxygen through capillaries into the tissue, and its consumption therein. The ultimate goal of this research topic in the Interface Group is to understand the production of EPO and the physiologic phenomenon behind an increased EPO production. The main idea is to compute oxygen concentration fields in the kidney, where local hypoxia generally leads to an EPO emission. ({\color{red}mention this or rather not?})
+\\To give the reader a short overview, I will start at the beginning and give a brief explanation of how blood travels through the body. How it is pumped through the heart into the whole body, carrying well oxygenated fresh blood from the heart to the tissues everywhere in the body, and then back from the tissues to the heart through the veins.
+\\In this thesis, the flow and transport through micro-vessels in the capillary range and in the tissue is the main concern, where generally the time-dependency of the blood-velocity will not be taken into account. The periodic beating of the heart causes the velocity to be inconstant, but this effect can be neglected for modeling purposes and computations, as it's rather irrelevant. For this, we will use a steady-state approximation for the flow rate, and thus assume a constant velocity. This means that there is no variation of velocity depending on time for any given point in the network.
 
 \subsection{Blood Flow}
 \label{Blood Flow}
@@ -50,16 +50,12 @@ In this section the physiological aspects of $O_2$ transport through vessels int
 %Put some papers and references in and explain some values and parameters.
 %Use mathematics paper for blood flow calculations \cite{mathmodeling}
 %Papers to cite: \cite{pittman2011regulation}
+%Explain this in a bit more detail. 
+%Also mention that blood is usually modeled as a homogeneous fluid using Navier Stokes equations despite that it is a mixture of plasma and cells etc.
+%Also mention that why it is extremely inappropriate for us to model it like that.
 
-{\color{brown}
-  Explain this in a bit more detail. 
-  Also mention that blood is usually modeled as a homogeneous fluid using Navier Stokes
-  equations despite that it is a mixture of plasma and cells etc.
-  Also mention that why it is extremely inappropriate for us to model it like that.
-}
-\\
-\\Blood is basically composed of two phases: liquid and cells. The liquid phase is called plasma, and the cells that play the most important role for our concern are the red blood cells. This will later be important when considering the oxygen transport in the blood. For computational models, blood is generally modeled as an incompressible Newtonian fluid \cite{mathmodeling}. This basically means that the viscous stress is linearly proportional to the strain rate. This assumption generally holds, even though the particles in the blood, which are the cells, start playing a more important role when the vessel diameter approaches the red blood cell size. It is also important to mention that the cells, making up 40-45\$ of the blood volume, are basically not incompressible. They can be compressed and shrink in order to facilitate the blood flow in small vessels.
-\\While our model of blood uses big assumptions and turns a two phase medium into an incompressible Newtonian liquid, this facilitates computations from an engineering point of view and can produce fairly good results.
+Blood is basically composed of two phases: liquid and cells. The liquid phase is called plasma, and the cells that play the most important role for our concern are the red blood cells. This will later be important when considering the oxygen transport in the blood. For computational models, blood is generally modeled as an incompressible Newtonian fluid \cite{mathmodeling}. This basically means that the viscous stress is linearly proportional to the strain rate. Modeling blood as a Newtonian fluid is basically a wrong assumption, due to the fact that only the plasma is a Newtonian fluid. Nevertheless, this model of blood is used a lot as it can produce fairly good results and for the fact that taking irrelevant details into account wouldn't be very interesting for oxygen transport simulations {\color{red} (can I say it like this ?)}. It is also important to mention that the cells, making up to 40-45\% of the blood volume, are basically not incompressible. They can be compressed and might even shrink in order to facilitate the blood flow in small vessels.
+\\While our model of blood uses big assumptions and turns a two phase medium into an incompressible Newtonian fluid, this immensely facilitates computations from an engineering point of view and can produce fairly good results.
 Using this model for blood leads to the Navier-Stokes equations \ref{eq:NavierStokes1}, \ref{eq:NavierStokes2}, which basically describe the flow dynamics of an incompressible Newtonian fluid:
 \begin{equation}
 \\ \rho \frac{\delta \textbf{v}}{\delta t} + \rho \textbf{v} \nabla \textbf{v} + \nabla p - \eta \nabla ( \nabla \textbf{v} + \nabla \textbf{v}^T ) = \textbf{f}
@@ -71,27 +67,40 @@ Using this model for blood leads to the Navier-Stokes equations \ref{eq:NavierSt
 \end{equation}
 In the Navier-Stokes equations, $\textbf{v}$ is the velocity vector, $p$ is the pressure, and $\rho$ and $\eta$ are the blood density and viscosity respectively.
 \\The external forces acting on the fluid are represented by the vector $\textbf{f} = (f_x f_y f_z)^T$.
-\\Finish this chapter using the Caiazzo paper \cite{mathmodeling}...
+\\The first and the second term on the left-hand side are corresponding to inertial forces, while the third term stands for the pressure force and the fourth term for the viscous force. The sum of these forces must be equal to the right-hand side, where we only have the external forces \textbf{f}.
+\\The next step in order to solve these equations for the blood flow in a given vessel is to put appropriate initial and boundary conditions. An example of useful boundary conditions is given here:
+\\\begin{equation}
+\\ \textbf{v}_{in} =  \textbf{v}_0
+\label{eq:Boundary1}
+\end{equation}
+\begin{equation}
+\\ \textbf{v}_{vessel wall} =  0
+\label{eq:Boundary2}
+\end{equation}
+\\Here we put the velocity $\textbf{v}_{in}$ of the fluid entering our domain equal to a velocity vector $\textbf{v}_0$ and prescribe a non-slip condition on the vessel walls. Solving the Navier-Stokes equations \ref{eq:NavierStokes1}, \ref{eq:NavierStokes2} using appropriate initial conditions and making a few other assumptions will then lead to the Poiseuille-Flow which can generally be used to describe Newtonian fluid flows in pipes.
+\\ {\color{red} (hey kartik, are the explanations here good enough ? you said I should keep this part short, so please give me a feedback if this gives a good enough insight to the flow and if everything is correct)}
 
 \subsection{Oxygen Transport and Delivery}
 %Purely physiological Oxygen part (with mathematical formulas to describe processes)
+%How does this oxygen related stuff physically and physiologically work ?
+%\\Again put some papers and references in and explain some physical diffusion equations, values and parameters.
+%\\Why do we care about this etc. ?
+%\\Diffusion, Parameters, etc. etc.
+%\\Use Vasomotion paper for oxygen delivery \cite{goldman2001computational}
+%\\Papers to cite: \cite{bukwirwa}
 
-How does this oxygen related stuff physically and physiologically work ?
-\\Again put some papers and references in and explain some physical diffusion equations, values and parameters.
-\\Why do we care about this etc. ?
-\\Diffusion, Parameters, etc. etc.
-\\Use Vasomotion paper for oxygen delivery \cite{goldman2001computational}
-\\Papers to cite: \cite{bukwirwa}
+Through breathing, oxygen enters the body and fills the lungs. As gases tend to move from areas with higher concentrations towards areas with lower concentrations, oxygen moves from the oxygen rich air towards the alveoli and enters the blood \cite{bukwirwa}. This same concentration gradient will later transport the oxygen into the tissue during the diffusion process. The physical processes behind this will briefly be explained in this section.
 
 \subsubsection*{Oxygen Transport in the Blood}
 %Transport with the flow
 %Binding of Oxygen to Red Blood Cells
 %Oxygen Concentration etc.
 %Papers to cite: \cite{hellums1977resistance}.
+%Plasma and Red Blood Cells
+%Hemoglobin
 
--Plasma and Red Blood Cells
-\\-Hemoglobin
-\\Blood is basically composed of two phases: liquid and cells, which is the plasma and the red blood cells. The red blood cells build nearly half of the total blood volume, and are the main carriers of oxygen in the blood \cite{pittman2011regulation}.
+As mentioned in the previous chapter, blood is composed of plasma and red blood cells. The red blood cells are the main carriers of oxygen in the blood \cite{pittman2011regulation}. In this section, we will mainly focus on the red blood cells, as these are the main oxygen carriers. As the general concern of this thesis is not the physiological oxygen-red blood cell interaction, I will just briefly explain the basic principle behind oxygen transport in the blood.
+\\The oxygen carrier contained in the red blood cells is called hemoglobin. Hemoglobin is a protein which can chemically bind oxygen molecules. This means that while our blood travels through the vessels, oxygen is supplied to every cell in the body by the hemoglobin which binds oxygen and transports it with the blood flow.
 
 \subsubsection*{Oxygen Diffusion Into the Tissue}
 %Diffusion out of the Vessels - Fick's Law of Diffusion
@@ -99,7 +108,7 @@ How does this oxygen related stuff physically and physiologically work ?
 %Delivery of Oxygen to the Cells
 %Papers to cite: \cite{hellums1977resistance}, \cite{bukwirwa}
 
-As previously described, diffusion will play an important role in oxygen transport in the body, as oxygen is reaching the tissue by diffusing out of the vessels. This physical phenomenon is described by Fick's Law of Diffusion:
+As previously mentioned, diffusion will play an important role for oxygen transport in the body. This is due to the fact that diffusion is the principle physical mechanism of how oxygen from the vessels is reaching the tissue. Without diffusion, oxygen would basically never penetrate the tissue and would only travel the body like in a closed loop circuit. This physical phenomenon is described by Fick's Law of Diffusion:
 \begin{equation}
 \\J = - D \frac{dc}{dx}
 \label{Fick}
