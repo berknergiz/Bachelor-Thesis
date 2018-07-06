@@ -497,6 +497,7 @@ But still the oxygen in tissue regions proximal to the bigger oxygen-supplying v
 
 \newpage
 \subsubsection*{The Mesenteric Artery Network}
+\label{Mesent}
 %Explain relevance of this model and the produced results (many plots here)
 %The Mesenteric Artery network provided by Secomb was used for further simulations and to get more computational results.\\
 
@@ -530,6 +531,7 @@ Another example network provided by Prof. Secomb is the mesenteric artery networ
 
 \newpage
 \subsubsection*{A Second Tumor Network}
+\label{Tumor}
 %Explain relevance of this model and the produced results (many plots here)
 
 %Present Network
@@ -577,9 +579,13 @@ An overview to simulation results of the Green's method were presented for diffe
 %Final thoughts about Green's Method for physiological applications and oxygen delivery simulations/computations.
 %Compare the results with physiological measured values and check if the results make sense in general.
 
-As the presented examples show, the Green's method and its implementation can produce some excellent results in terms of physical oxygen field simulations in networks.
-\\The results are in accord with the previously described physical laws, which describe the oxygen transport from the vessel to the tissue. Moreover, the results are physiologically accurate. The computed values generally range between $0$ mmHg (hypoxic tissue) and $87$ mmHg (very well oxygenated tissue) and seem to be in the physiological range.
-\\Even though these computations have been made on networks that were derived from real organic networks, no information was given about how the particular image segmentations were obtained. This also makes it hard to compare the results with real world values {\color{red} or how should I call this ? experimental values? another important question I might have is: do we have know if these network come from organs coming from mice/rats or whatever? as we don't know this, I would especially point out that the computed values cannot be compared to any specific values that we could expect or was measured in the past. we can only say that the values are in the physiological range and that the physical properties of oxygen transport and diffusion are well respected and in accord with the simulation results}, as we don't know anything in particular about the provenance of the networks.
+As the presented examples show, the Green's method and its implementation can produce some excellent results in terms of oxygen field simulations in networks.
+\\The results are in accord with the previously presented physical laws, which describe the oxygen transport from the vessel to the tissue. Moreover, the results are physiologically accurate. The computed values generally range between $0$ mmHg (hypoxic tissue) and $87$ mmHg (well oxygenated tissue) and seem to be in the physiological range.
+\\Even though these computations have been made on networks that were derived from real organic networks, no information was given about how the particular image segmentations were obtained. This also makes it hard to compare the results with experimental values, especially as we don't have physiological data available for these specific networks. In particular, I want to point out that the computed values cannot be compared to any specific values that we could expect or that were previously measured in the past. We can only say that the values are generally in the physiological range and that the physical properties of oxygen transport and diffusion are well respected and in accord with the simulation results, as we don't know anything in particular about the provenance of the networks.
+\\Particularly interesting results could be observed for the mesenteric artery network and the second tumor example, as the contour plots for these networks provided a vey good insight to the computed oxygen fields inside the tissue and around the vessels. Being able to compute oxygen fields for complex three dimensional networks on this level underlines the qualities of the used method and its ability to perform computations on complex vasculatures.
+\\However, using the glomerulus network in the last section \ref{Outlook}, we have seen that the Green's method cannot compute an oxygen field for any arbitrary vasculature. The reasons for this are not clear yet and will have to be understood in the future. The network data given to the code as an input was in the same form as the previous input files, but still might be an error source that couldn't be resolved. Other possible error sources might be in the values given in the other input files (see \ref{Inputs} for more information about the input files). It seems like the first guess for the oxygen source field and accordingly for the oxygen sink field couldn't be made, and thus the following iterations couldn't compute an oxygen field.
+\\For a deeper understanding of the performance of this method, further research has to be made using new networks. It would make sense to use networks for which the provenance is known, as for the presented glomerulus.\\
+\\{\color{red} An important question I might have is: do we know if the networks provided by Prof. Secomb come from organs coming from mice/rats or whatever?}
 
 \newpage
 \subsection{Results of $DuMu^x$} 
@@ -589,45 +595,48 @@ As the presented examples show, the Green's method and its implementation can pr
 %\\-Quality of results
 %\\-Paraview Visualization of results
 
-Using $DuMu^x$ \ref{$DuMu^x$} some blood flow simulations were run to evaluate the quality of results that can be produced using this software. This section will present and explain some results produced by $DuMu^x$, and some rather physical than physiological interpretations of simulation results will be discussed.
+Using $DuMu^x$ \ref{$DuMu^x$} some blood flow simulations were run to evaluate the quality of results that can be produced using this software. In this section I will present and explain some results produced by $DuMu^x$, and some rather physical than physiological interpretations of simulation results will be discussed. The results of the previously presented 1p-1p model will be shown, and some details about the implemented 1p-1p-tracer model will be given at the end.
 
 \subsubsection*{Some Glomerulus Network Simulations}
 %I will hopefully put 1p_1p_tracer results here later
-%Discuss the pressure drop from afferescent to effeverescent (?) vessel/artery
+%Discuss the pressure drop from afferent to efferent vessel/artery
 %Explain some physical things behind it and be creative
 
+In order to analyze the pressure differences and the pressure drop through a glomerulus network, the 1p-1p model was run on several different glomeruli. Coming from an engineering background, pressure variations and drops in simple pipes was a topic I had worked with. However complex networks like these were nothing I had seen until now, and the explanation behind the pressure distribution inside the glomerulus is quite an unknown field.\\
 \begin{figure}[h]
 \centering
 \includegraphics[width=162mm]{glom_pressure}
 \caption{Pressure Field in Glomerulus 1}
 \label{fig:glom_pressure}
 \end{figure}
-The figure \ref{fig:glom_pressure} is the result of a DuMuX 1p-1p blood flow simulation computed on a glomerulus network. The pressure field of the flow is visualized.\\
-
 \begin{figure}[h]
 \centering
 \includegraphics[width=162mm]{glom2_pressure}
 \caption{Pressure Field in Glomerulus 2}
 \label{fig:glom2_pressure}
 \end{figure}
-The figure \ref{fig:glom2_pressure} is the result of a DuMuX 1p-1p blood flow simulation computed on a Glomerulus network. The pressure field of the flow is visualized.\\
-
 \begin{figure}[h]
 \centering
 \includegraphics[width=162mm]{glom3_pressure}
 \caption{Pressure Field in Glomerulus 3}
 \label{fig:glom3_pressure}
 \end{figure}
-The figure \ref{fig:glom3_pressure} is the result of a DuMuX 1p-1p blood flow simulation computed on a Glomerulus network. The pressure field of the flow is visualized.\\
-
 \begin{figure}[h]
 \centering
 \includegraphics[width=162mm]{glom4_pressure}
 \caption{Pressure Field in a Glomerulus 4}
 \label{fig:glom4_pressure}
-\end{figure}
+\end{figure}\\
+The figures \ref{fig:glom_pressure},  \ref{fig:glom2_pressure},  \ref{fig:glom3_pressure} and  \ref{fig:glom4_pressure} are results of $DuMu^x$ blood flow simulations using the 1p-1p model in order to compute the pressure field inside the vessels of different a glomeruli networks. The pressure field of the flow is visualized, where red is a relatively high pressure, and blue a relatively low pressure.\\
+\\{\color{red} do you know how to normalize these values to be able to compare them to physiological values ? do we even have physiological values, as this is a rather unchartered research field ?}
+
+The figure \ref{fig:glom2_pressure} is the result of a DuMuX 1p-1p blood flow simulation computed on a Glomerulus network. The pressure field of the flow is visualized.\\
+
+The figure \ref{fig:glom3_pressure} is the result of a DuMuX 1p-1p blood flow simulation computed on a Glomerulus network. The pressure field of the flow is visualized.\\
+
 The figure \ref{fig:glom4_pressure} is the result of a DuMuX 1p-1p blood flow simulation computed on a Glomerulus network. The pressure field of the flow is visualized.\\
 
+\newpage
 \subsection{Comparison of the Results}
 %Compare the produced results
 In this section the main differences in the produced results by Green's Function Method and $DuMu^x$ for the same input files/same networks will be discussed.
