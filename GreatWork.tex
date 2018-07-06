@@ -647,18 +647,18 @@ As I already briefly mentioned this when describing this method, the 1p-1p-trace
 \newpage
 \subsection{Comparison of the Methods and Results}
 %Compare the produced results
-In this section the main differences in the produced results by the Green's function method and $DuMu^x$ for networks of similar complexity will be discussed.
+In this section the main differences in the produced results by the Green's function method and $DuMu^x$ for networks of similar complexity will be discussed.\\
 %\\General differences in terms of computational cost and implementation issues can be discussed here as well when explaining the differences in the results.
-\\Before starting, I would like to mention that oxygen fields computed on the same networks cannot directly be compared, as the $DuMu^x$ method (1p-1p-tracer-tracer) couldn't produce useful results yet, and thus no oxygen field in the tissue was computed. Additionally, the Green's function method didn't produce results on the Glomerulus 1 network either, which shows how hard it is to reproduce results using different methods.
+\\Before starting, I would like to mention that oxygen fields computed on the same networks cannot directly be compared, as the $DuMu^x$ method (1p-1p-tracer-tracer) couldn't produce useful results yet, and thus no oxygen field in the tissue was computed. Additionally, the Green's function method didn't produce results on the Glomerulus 1 network either, which shows how hard it is to reproduce results using different methods in general.\\
+While the Green's function method is presenting a specifically created C++ based software for oxygen transport and diffusion simulations, the results show that the obtained outputs can be very interesting for many heterogeneous and complicated networks. Unfortunately, oxygen fields could not be computed on any network that was used, which raises the question when and how the Green's method can produce results in general in terms of oxygen field computations in the tissue.\\
+\\Compared to this, the $DuMu^x$ based model is still in its very initial phase and cannot produce correct results yet. However, due to the fact that it is a $DuMu^x$ based model, it offers both a large flexibility to the user in terms of further development, as well as in terms of computational flexibility when choosing a time- and space-discretization through choosing discretization modules and different grid creators. The solvers can also be chosen by the user, which doesn't guarantee an overall stable numerical solver, but can provide great flexibility when adapting the model to specific networks.\\
+\\Both of the methods produced physically accurate results, which proved that they can be used to compute physiologically relevant results. Finally, the two methods currently compute entirely different entities, which is oxygen concentrations for the Green's method and overall pressure field for the $DuMu^x$ based 1p-1p method, and as the 1p-1p-tracer-tracer model is still in the build-up process, the results cannot directly be compared.
 \\
-While the Green's function method is presenting a specifically created C++ based software for oxygen Transport and Diffusion simulations, the results show that the obtained outputs are not always satisfying (eventually will happen for new networks?). The reasons for this have been discussed previously (maybe repeat them shortly here).
-Compared to this, the $DuMu^x$ based model is still in its very initial phase and cannot produce correct results yet (very probably). Still, the fact that it is $DuMu^x$ based offers both a large flexibility to the user in terms of further development, as well as in terms of computational flexibility when choosing a time- and space-discretization through choosing discretization modules and different grid creators. The solvers can also be chosen by the user, which doesn't guarantee an overall stable numerical solver, but can provide great flexibility when adapting the model to specific networks.
-\\
-\\EXPLAIN WHAT WAS COMPUTED WITH WHAT METHOD (PRESSURE VS. OXYGEN FIELD)
-\\EXPLAIN IF RESULTS RATHER GOOD OR BAD FOR EACH (DUMUX VS. GREENS)
-\\EXPLAIN THAT METHODS ARE VERY DIFFERENT, PRINCIPLES ARE COMPLETELY DIFFERENT, DUMUX MORE FLEXIBILITY AND THUS HAS MORE POTENTIAL FOR THE FUTURE, STILL HASN'T PRODUCED ANY OXYGEN COMPUTATION YET
-\\
-\\
+\\ {\color{red} I am not quite sure about this subsection as there is actually not much to compare. For this reason I shortly discussed the methods in general, do you think this part is good this way ?}
+
+%\\EXPLAIN WHAT WAS COMPUTED WITH WHAT METHOD (PRESSURE VS. OXYGEN FIELD)
+%\\EXPLAIN IF RESULTS RATHER GOOD OR BAD FOR EACH (DUMUX VS. GREENS)
+%\\EXPLAIN THAT METHODS ARE VERY DIFFERENT, PRINCIPLES ARE COMPLETELY DIFFERENT, DUMUX MORE FLEXIBILITY AND THUS HAS MORE POTENTIAL FOR THE FUTURE, STILL HASN'T PRODUCED ANY OXYGEN COMPUTATION YET
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %\newpage
@@ -697,6 +697,7 @@ As seen previously, the ideas behind the Green's function method and the impleme
 \\
 \\Main conclusions and final remarks.
 \\
+\\Split the Discussion these parts:
 \\- Technical/Numerical Stuff/Code
 \\- Physical/Engineering/Fluiddynamics
 \\- Physiological
