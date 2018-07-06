@@ -628,20 +628,32 @@ In order to analyze the pressure differences and the pressure drop through a glo
 \label{fig:glom4_pressure}
 \end{figure}\\
 The figures \ref{fig:glom_pressure},  \ref{fig:glom2_pressure},  \ref{fig:glom3_pressure} and  \ref{fig:glom4_pressure} are results of $DuMu^x$ blood flow simulations using the 1p-1p model in order to compute the pressure field inside the vessels of different a glomeruli networks. The pressure field of the flow is visualized, where red is a relatively high pressure, and blue a relatively low pressure.\\
-\\{\color{red} do you know how to normalize these values to be able to compare them to physiological values ? do we even have physiological values, as this is a rather unchartered research field ?}
+\\
+\\ WRITE SOME FLUIDDYNAMICS/PHYSICS ANALYSIS HERE
+\\
+\\{\color{red} Do you know how to normalize these values to be able to compare them to physiological values ? do we even have physiological values, as this is a rather unchartered research field ?}
 
-The figure \ref{fig:glom2_pressure} is the result of a DuMuX 1p-1p blood flow simulation computed on a Glomerulus network. The pressure field of the flow is visualized.\\
+\subsubsection*{Results of the Implemented Method}
 
-The figure \ref{fig:glom3_pressure} is the result of a DuMuX 1p-1p blood flow simulation computed on a Glomerulus network. The pressure field of the flow is visualized.\\
-
-The figure \ref{fig:glom4_pressure} is the result of a DuMuX 1p-1p blood flow simulation computed on a Glomerulus network. The pressure field of the flow is visualized.\\
+As I already briefly mentioned this when describing this method, the 1p-1p-tracer model cannot produce useful results yet. This new model in which I coupled the 1p-1p model with a new tracer model is basically still in the build-up phase, and with more time, the reasons for the wrong outputs can surely be resolver so that it can produce physically accurate results.
+\\After spending a lot of time on debugging the errors I had in the code {\color{red} (can I say this or better not ?)}, the code finally worked and the tracer could finally compute the oxygen distribution in my network. However, the results are not satisfying as the oxygen concentration is computed to be zero at every time step in every node of the grid. The reasons for this are still not quite clear and some more investigation has to be made in order to understand why the tracer always has null values as outputs. Moreover, the initial and boundary conditions for the oxygen concentrations were examined and this seems not to be the source of the error.
+\\
+\\WRITE SOME MORE ABOUT WHAT MIGHT BE WRONG AND OUTLOOK OF THIS METHOD
+\\
+\\
 
 \newpage
-\subsection{Comparison of the Results}
+\subsection{Comparison of the Methods and Results}
 %Compare the produced results
-In this section the main differences in the produced results by Green's Function Method and $DuMu^x$ for the same input files/same networks will be discussed.
-\\General differences in terms of computational cost and implementation issues can be discussed here as well when explaining the differences in the results.
-\\I might include the whole next section here, as this might be more compact.
+In this section the main differences in the produced results by the Green's function method and $DuMu^x$ for networks of similar complexity will be discussed.
+%\\General differences in terms of computational cost and implementation issues can be discussed here as well when explaining the differences in the results.
+\\Foremost, I have to say that oxygen fields computed on the same networks cannot directly be compared, as the $DuMu^x$ method (1p-1p-tracer-tracer) couldn't produce useful results yet, and thus no oxygen field in the tissue was computed.
+\\
+\\EXPLAIN WHAT WAS COMPUTED WITH WHAT METHOD (PRESSURE VS. OXYGEN FIELD)
+\\EXPLAIN IF RESULTS RATHER GOOD OR BAD FOR EACH (DUMUX VS. GREENS)
+\\EXPLAIN THAT METHODS ARE VERY DIFFERENT, PRINCIPLES ARE COMPLETELY DIFFERENT, DUMUX MORE FLEXIBILITY AND THUS HAS MORE POTENTIAL FOR THE FUTURE, STILL HASN'T PRODUCED ANY OXYGEN COMPUTATION YET
+\\
+\\
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %\newpage
