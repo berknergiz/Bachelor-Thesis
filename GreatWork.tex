@@ -599,7 +599,7 @@ Using $DuMu^x$ \ref{$DuMu^x$} some blood flow simulations were run to evaluate t
 
 \subsubsection*{Some Glomerulus Network Simulations}
 %I will hopefully put 1p_1p_tracer results here later
-%Discuss the pressure drop from afferent to efferent vessel/artery
+%Discuss the pressure drop from afferent to efferent vessel/arteriol
 %Explain some physical things behind it and be creative
 
 In order to analyze the pressure differences and the pressure drop through a glomerulus network, the 1p-1p model was run on several different glomeruli. Coming from an engineering background, pressure variations and drops in simple pipes was a topic I had worked with. However complex networks like these were nothing I had seen until now, and the explanation behind the pressure distribution inside the glomerulus is quite an unknown field.\\
@@ -627,9 +627,13 @@ In order to analyze the pressure differences and the pressure drop through a glo
 \caption{Pressure Field in a Glomerulus 4}
 \label{fig:glom4_pressure}
 \end{figure}\\
-The figures \ref{fig:glom_pressure},  \ref{fig:glom2_pressure},  \ref{fig:glom3_pressure} and  \ref{fig:glom4_pressure} are results of $DuMu^x$ blood flow simulations using the 1p-1p model in order to compute the pressure field inside the vessels of different a glomeruli networks. The pressure field of the flow is visualized, where red is a relatively high pressure, and blue a relatively low pressure.\\
+The figures \ref{fig:glom_pressure},  \ref{fig:glom2_pressure},  \ref{fig:glom3_pressure} and  \ref{fig:glom4_pressure} are results of $DuMu^x$ blood flow simulations using the 1p-1p model in order to compute the pressure field inside the vessels of different glomeruli networks. The pressure field of the flow is visualized, where red is a relatively high pressure, and blue a relatively low pressure.\\
+\\The figure \ref{fig:glom_pressure} shows a clear pressure drop for Glomerulus 1. The pressure drop takes place rather constantly over the glomerular network, and pressures fall from around $70$ mmHg down to less than $10$ mmHg. This pressure drop can be observed with a slightly different range of pressures for the glomeruli 2, 3 and 4.\\
+\\{\color{red} What is the actual pressure unit here and how can I normalize it ?}
 \\
-\\ WRITE SOME FLUIDDYNAMICS/PHYSICS ANALYSIS HERE
+\\Physiologically, this pressure drop can be explained by the fact that the afferent arteriol, which is the vessel for the incoming blood, has a lower diameter than the efferent arteriol, which is the vessel carrying the blood away from the glomerulus. From a simple engineering point of view, a bigger diameter for the outgoing flow results in a \emph{relaxation} of the fluid, and thus results in a pressure drop. By that we can say that the computational results of the 1p-1p model are physiologically correct.
+\\Even though it is possible to observe the same pressure drop when analyzing the pressure field in Glomerulus 2, the rather constant fall in pressure is physically hard to explain. For this glomerulus, I would like to point out the fact that the network data of the afferent and efferent arteriols was corrupted, and thus these parts look rather short, but can still be seen on the figure. Also the fact that some vessels inside the glomerulus and the glomerular network have lower pressures than the pressure computed for the efferent arteriol is an interesting observation. This can also be seen for Glomerulus 3 (figure \ref{fig:glom3_pressure}) and Glomerulus 4 (figure \ref{fig:glom4_pressure}).
+\\Generally, it is possible to observe that the pressure constantly drops over the afferent and the efferent arteriols. For this to happen, we physically need a constantly growing vessel diameter. As previously mentioned, the efferent arteriol has a bigger diameter than the efferent arteriol in average, which causes the overall pressure difference. It is hard to find an explanation for the pressure drop inside segments of both afferent or efferent arteriols, which must be due to diameter changes.
 \\
 \\{\color{red} Do you know how to normalize these values to be able to compare them to physiological values ? do we even have physiological values, as this is a rather unchartered research field ?}
 
@@ -637,10 +641,8 @@ The figures \ref{fig:glom_pressure},  \ref{fig:glom2_pressure},  \ref{fig:glom3_
 
 As I already briefly mentioned this when describing this method, the 1p-1p-tracer model cannot produce useful results yet. This new model in which I coupled the 1p-1p model with a new tracer model is basically still in the build-up phase, and with more time, the reasons for the wrong outputs can surely be resolver so that it can produce physically accurate results.
 \\After spending a lot of time on debugging the errors I had in the code {\color{red} (can I say this or better not ?)}, the code finally worked and the tracer could finally compute the oxygen distribution in my network. However, the results are not satisfying as the oxygen concentration is computed to be zero at every time step in every node of the grid. The reasons for this are still not quite clear and some more investigation has to be made in order to understand why the tracer always has null values as outputs. Moreover, the initial and boundary conditions for the oxygen concentrations were examined and this seems not to be the source of the error.
-\\
-\\WRITE SOME MORE ABOUT WHAT MIGHT BE WRONG AND OUTLOOK OF THIS METHOD
-\\
-\\
+\\As $DuMu^x$ is generally a complex software, many errors can occur, and it will surely take some time to understand the underlying problems in order to produce results using this model.
+\\However, I am persuaded that this approach can and will produce good results once the coupling of the models works well.
 
 \newpage
 \subsection{Comparison of the Methods and Results}
