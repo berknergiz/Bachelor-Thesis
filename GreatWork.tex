@@ -7,7 +7,7 @@
 \subsection{Motivation}
 %Why do we do this at all ?
 
-This thesis aims to understand and specify how blood flow and oxygen transport has been simulated until today. The goal is to see how far existing methods, especially the Green's Function Method applied to this field by Secomb et al. \cite{Secomb2004} can produce accurate results for new and especially complex networks. A new model using an open source software called $DuMu^x$ \cite{flemischdumux} was implemented to offer a different approach for oxygen transport and diffusion simulations.\\
+This thesis aims to understand and specify how blood flow and oxygen transport has been simulated until today. The goal is to see how far existing methods, especially the Green's function method applied to this field by Secomb et al. \cite{Secomb2004} can produce accurate results for new and especially complex networks. A new model using an open source software called $DuMu^x$ \cite{flemischdumux} was implemented to offer a different approach for oxygen transport and diffusion simulations.\\
 \\Oxygen from blood is carried on to the tissue of living organs through a
 complex network of vessels, in particular by capillaries that provide oxygen to
 the tissue, which is attached to the red blood cells. 
@@ -15,7 +15,7 @@ The complex biochemistry involved in the release of oxygen from hemoglobin and
 its transport to the surrounding tissue is a complex process that cannot be
 fully understood by experimental methods.
 With the advent of mathematical models and advanced computing architectures,
-the process of Oxygen delivery to the tissue can be simulated to understand
+the process of oxygen delivery to the tissue can be simulated to understand
 various physiological and pathophysiological processes.\\
 \\This thesis aims to simulate transport of oxygen through capillary networks of
 various organs using mathematical models.
@@ -137,7 +137,7 @@ In order to simulate flows, Computational Fluid Dynamics (CFD) is a tool that ca
 Here I would like to mention the fact that the networks that were used for the simulations were previously extracted from real ex vivo mice organs. This fact personally fascinated me, and for this I wanted to give a short insight to how simulations can be made on real organ networks.\\
 \\This process is done in collaboration by scientists from different areas of expertise. In the first step, a multidomain 3-D image of a tissue has to be taken. This can be done using a micro-computer-tomography (micro-CT) machine, and for especially high resolution imaging, it is performed at the European Synchrotron Radiation Facility.
 \\In order to extract the vessel-networks from those images, a second scientist has to recognize the different tissues surrounding the vessels, and differentiate between arteries and veins. For this task, pattern recognition algorithms and specifically machine learning algorithms are used. The incoming data from the micro-CT machine is in the form of many two dimensional captions. This can be seen as many virtual cuts into the tissue. The algorithms then have to detect the vessels on each of this captions and mark them. This data can then be discretized and transformed in order to get a three dimensional network of vessels. The three dimensional network of vessels is our main input for the $DuMu^x$ simulations, and can basically also be used for Green's method simulations.
-\\The previously described tasks can be all be done by Interface Group members, which makes the working environment very special in terms of independent research capabilities in this partially unchartered and unexplored field.
+\\The previously described tasks can be all be done by Interface Group members, which makes the working environment very special in terms of independent research capabilities in this partially uncharted and unexplored field.
 \\{\color{red}Can I say something like this or is it unnecessary/kind of bragging ?}
 \\{\color{red} As we discussed, I moved this subsection to the physiology part to explain how imaging is being done and to get the transition to modeling and computing. Is this the right place ?}
 
@@ -630,7 +630,7 @@ The figures \ref{fig:glom_pressure},  \ref{fig:glom2_pressure},  \ref{fig:glom3_
 \\It is possible to observe the same pressure drop when analyzing the pressure field in Glomerulus 2, and the rather constant fall in pressure is physically correct. A constant fall in the pressure is also what we would expect in a straight pipe. For this glomerulus, I would like to point out the fact that the network data of the afferent and efferent arteriols was corrupted, and thus these parts look rather short, but can still be seen on the figure. An especially interesting point is the fact that some vessels inside the glomerulus and the glomerular network have lower pressures than the pressure computed for the efferent arteriol. This can also be seen for Glomerulus 3 (figure \ref{fig:glom3_pressure}) and Glomerulus 4 (figure \ref{fig:glom4_pressure}).
 \\Generally, it is possible to observe that the pressure constantly drops over the afferent and the efferent arteriols, before and after the glomerular network respectively. This pressure drop happens due to viscous effects and is proportional to the length, which explains the constant pressure drop. As previously mentioned, the efferent arteriol has a bigger diameter than the afferent arteriol in average, which causes an overall pressure difference from a physiological point of view. It is hard to understand the local pressure gradients inside segments of the glomerular network between the afferent and efferent arteriols, which might be due to diameter changes and in particular due to the complexity of glomerular networks in general.
 \\
-\\{\color{red} Do you know how to normalize these values to be able to compare them to physiological values ? do we even have physiological values, as this is a rather unchartered research field ?}
+\\{\color{red} Do you know how to normalize these values to be able to compare them to physiological values ? do we even have physiological values, as this is a rather uncharted research field ?}
 
 \subsubsection*{Results of the Implemented Method}
 
@@ -684,14 +684,34 @@ While the Green's function method is presenting a specifically created C++ based
 %thoughts on the whole story and where the promising directions lie
 %and which ones you see with scepticism.
 
-As seen previously, the ideas behind the Green's function method and the implemented $DuMu^x$-based method can offer very interesting options. While the Green's function method has proved its capabilities concerning oxygen field computations, the $DuMu^x$ based model couldn't produce results yet. I personally still believe that in the future this model can be optimized in order to compute oxygen fields in vascular networks and for the tissue surrounding it.\\
+This thesis aimed to understand and specify how computationally blood flow and oxygen transport can be simulated using different methods. For this, two approaches have been presented and the results or outlooks have been discussed.\\
+\\While oxygen transport is a crucial topic in the fields of medicine and physiology, many processes in microvascular networks are not understood yet. Especially the measurements of microvascular and tissue oxygen concentrations is an uncharted research field. For this reason, a lot of research is being done in oxygen distribution computations. In view of the challenges that are faced when simulating oxygen fields in tissue surrounding vessel networks, I would like to split this last section into three parts: a technical discussion, a physical discussion, and finally a physiologic discussion.
+
+\subsection{Technical Dicussion}
+%- All the challenges one has to face when simulating in general
+%- Computational problems in general
+%- Flexible options given through simulating and computing thing we couldn't calculate otherwise (pressure in a kidney for example)
+%- Things that are good about computational models
+
+As the main tools used for the previously presented simulation results are computational solvers, I would like to focus on the technical aspects behind these tools in general.\\
+\\The share computational simulations are taking in physiologic research is growing everyday. This is also due to the fact that some data is very hard to extract from measurements, and thus researchers try to understand certain processes through running computational simulations on physical models. However, the challenges behind using these technical tools are not to be underestimated. As I experienced myself when running simulations with the Green's method code and $DuMu^x$, many errors and bugs {\color{red} (can I say something like this ?)} can stop the code from running and can be very hard to fix. Also, once a model is implemented, one has to take great care to examine if the produced results physically make sense. As for example for the $DuMu^x$ model I implemented, the zero outputs are clearly wrong and the model has to be improved in order to produce realistic results.
+\\The reason computational models are used so frequently is also due to the fact that some calculations, like the pressure gradients in the previously presented glomeruli, can not be obtained without computational methods. This is especially due to the particular vasculature of these networks. Thus, these tools can give us very interesting insights, even though their complexity is certainly challenging, and will demand a good understanding of the methods underlying, depending on the used software.
+
+\newpage
+\subsection{Physical Discussion}
+
+- Resume the physics behind the problem
+\\- Explain what outputs were generally produced and physically discuss things like pressure drops
+\\- Say why engineers are also interested in this field and that the fluiddynamics in the body are very interesting in general
+
+\subsection{Physiological Discussion}
+
+- Again what is going in the body exactly
+\\- Why do we want to know this
+\\- Give some examples from the results and explain what is physiologically happening in blood flow and oxygen transport\\
+\\As seen previously, the ideas behind the Green's function method and the implemented $DuMu^x$-based method can offer very interesting options. While the Green's function method has proved its capabilities concerning oxygen field computations, the $DuMu^x$ based model couldn't produce results yet. I personally still believe that in the future this model can be optimized in order to compute oxygen fields in vascular networks and for the tissue surrounding it.\\
 \\As mentioned previously, one of the huge advantages of $DuMu^x$ is the flexibility it provides in terms of solvers, and thus in terms of the numerical methods used for the computations. This means that it is often possible to pick a solver which is stable for the specific problem and the chosen discretization.
 \\
 \\This is different for the Green's Method code, as there is no option of choosing a different solver than the one provided in the code. As discussed previously, this code is specifically implemented to solve and compute oxygen (or other Solute) concentrations in the blood and the surrounding tissue, and the implemented method strongly relies on the stability of the Green's Method and the numerical methods behind the solver.
 \\
 \\Main conclusions and final remarks.
-\\
-\\Split the Discussion these parts:
-\\- Technical/Numerical Stuff/Code
-\\- Physical/Engineering/Fluiddynamics
-\\- Physiological
