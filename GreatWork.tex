@@ -650,6 +650,11 @@ While the Green's function method is presenting a specifically created C++ based
 \\
 \\ {\color{red} I am not quite sure about this subsection as there is actually not much to compare. For this reason I shortly discussed the methods in general, do you think this part is good this way ?}
 
+%\\As seen previously, the ideas behind the Green's function method and the implemented $DuMu^x$-based method can offer very interesting options. While the Green's function method has proved its capabilities concerning oxygen field computations, the $DuMu^x$ based model couldn't produce results yet. I personally still believe that in the future this model can be optimized in order to compute oxygen fields in vascular networks and for the tissue surrounding it.\\
+%\\As mentioned previously, one of the huge advantages of $DuMu^x$ is the flexibility it provides in terms of solvers, and thus in terms of the numerical methods used for the computations. This means that it is often possible to pick a solver which is stable for the specific problem and the chosen discretization.
+%\\
+%\\This is different for the Green's Method code, as there is no option of choosing a different solver than the one provided in the code. As discussed previously, this code is specifically implemented to solve and compute oxygen concentrations in the blood and the surrounding tissue, and the implemented method strongly relies on the stability of the Green's Method and the numerical methods behind the solver.
+
 %\\EXPLAIN WHAT WAS COMPUTED WITH WHAT METHOD (PRESSURE VS. OXYGEN FIELD)
 %\\EXPLAIN IF RESULTS RATHER GOOD OR BAD FOR EACH (DUMUX VS. GREENS)
 %\\EXPLAIN THAT METHODS ARE VERY DIFFERENT, PRINCIPLES ARE COMPLETELY DIFFERENT, DUMUX MORE FLEXIBILITY AND THUS HAS MORE POTENTIAL FOR THE FUTURE, STILL HASN'T PRODUCED ANY OXYGEN COMPUTATION YET
@@ -699,19 +704,21 @@ As the main tools used for the previously presented simulation results are compu
 
 \newpage
 \subsection{Physical Discussion}
+%- Resume the physics behind the problem
+%- Explain what outputs were generally produced and physically discuss things like pressure drops
+%- Say why engineers are also interested in this field and that the fluiddynamics in the body are very interesting in general
 
-- Resume the physics behind the problem
-\\- Explain what outputs were generally produced and physically discuss things like pressure drops
-\\- Say why engineers are also interested in this field and that the fluiddynamics in the body are very interesting in general
+As the exact physical equations and mathematics behind the different simulation methods was explained in the first sections, it was obvious that the success of computational simulations is strongly linked to the correctness of the physical assumptions.\\
+\\When building a computational model like the models used in this thesis, one has to start by studying the physical equations describing the given problem. In our case, the physical equations describing the blood flow, and accordingly the oxygen transport from the vessel to the tissue have been used in general. Solving these equations will then yield the results that the user wanted to compute. This basic procedure is an engineering procedure, and is the same for a flow and heat exchange computation in a pipe or a blood flow and oxygen diffusion computation in a tissue. Due to this fact, engineers are strongly engaged in this research field, as they have a good knowledge about the technical tools and have a good understanding for physical quantities. Also, the used networks and fluiddynamic challenges can be very interesting in this physiologic field, as for example the complex vascular network found in the glomerulus, where pressure differences and gradients were very interesting to observe and required deeper understanding of the Navier-Stokes equations, as the pressure drop was nothing compared to the one in a straight pipe.\\
+\\Due to these reasons, engineers, mathematicians and physicists are and will be used more and more often in these research domains in the future, as some physical problems can not be solved without computational methods to this day.
 
 \subsection{Physiological Discussion}
+%- Again what is going on in the body exactly
+%- Why do we want to know this
+%- Give some examples from the results and explain what is physiologically happening in blood flow and oxygen transport\\
 
-- Again what is going in the body exactly
-\\- Why do we want to know this
-\\- Give some examples from the results and explain what is physiologically happening in blood flow and oxygen transport\\
-\\As seen previously, the ideas behind the Green's function method and the implemented $DuMu^x$-based method can offer very interesting options. While the Green's function method has proved its capabilities concerning oxygen field computations, the $DuMu^x$ based model couldn't produce results yet. I personally still believe that in the future this model can be optimized in order to compute oxygen fields in vascular networks and for the tissue surrounding it.\\
-\\As mentioned previously, one of the huge advantages of $DuMu^x$ is the flexibility it provides in terms of solvers, and thus in terms of the numerical methods used for the computations. This means that it is often possible to pick a solver which is stable for the specific problem and the chosen discretization.
+Finally, I would like to give a short outlook to the research done in this thesis from a physiological point of view.\\
+\\As the methods and the produced outputs were presented in the previous sections, one could clearly see that the computed results were physiologically very interesting. With computed oxygen concentrations ranging from $0$ mmHg to around $87$ mmHg in the tissue, the values seemed realistic and the distributions inside the tissue seemed to be qualitatively correct. The pressure gradients computed by the $DuMu^x$ model were also analyzed and the general pressure field could physiologically be explained. Again, we do not really have experimental values to compare the computed values with, so most of the results can only be analyzed qualitatively.
+\\Especially the oxygen fields computed by the Green's method in some complex networks produced very interesting and physiologically useful results. Even though we don't have experimental data to compare the computational values with, it is possible to see that the results were all in the physiologic range and the general oxygen distribution showed that the results were according to the physics describing our problem. Extrapolating from the examples presented for oxygen distribution computations, I would like to underline the fact that computational models are very useful in this specific field and will very likely take an even more important share in the future.
 \\
-\\This is different for the Green's Method code, as there is no option of choosing a different solver than the one provided in the code. As discussed previously, this code is specifically implemented to solve and compute oxygen (or other Solute) concentrations in the blood and the surrounding tissue, and the implemented method strongly relies on the stability of the Green's Method and the numerical methods behind the solver.
-\\
-\\Main conclusions and final remarks.
+%\\Main conclusions and final remarks.
