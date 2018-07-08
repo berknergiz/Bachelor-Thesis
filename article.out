@@ -6,17 +6,21 @@
 \BOOKMARK [2][-]{subsection.2.1}{Blood Flow}{section.2}% 6
 \BOOKMARK [2][-]{subsection.2.2}{Oxygen Transport and Delivery}{section.2}% 7
 \BOOKMARK [2][-]{subsection.2.3}{Current Trends in Modeling}{section.2}% 8
-\BOOKMARK [1][-]{section.3}{Simulation Methods}{}% 9
-\BOOKMARK [2][-]{subsection.3.1}{Green's Function Method}{section.3}% 10
-\BOOKMARK [2][-]{subsection.3.2}{DuMux}{section.3}% 11
-\BOOKMARK [1][-]{section.4}{Simulation Results and Analysis}{}% 12
-\BOOKMARK [2][-]{subsection.4.1}{Results of the Green's Function Method}{section.4}% 13
-\BOOKMARK [2][-]{subsection.4.2}{Discussion of the Green's Method and the Produced Results}{section.4}% 14
-\BOOKMARK [2][-]{subsection.4.3}{Results of DuMux}{section.4}% 15
-\BOOKMARK [2][-]{subsection.4.4}{Comparison of the Results}{section.4}% 16
-\BOOKMARK [1][-]{section.5}{Discussion}{}% 17
-\BOOKMARK [1][-]{section.5}{References}{}% 18
-\BOOKMARK [1][-]{appendix.A}{Acknowledgements}{}% 19
-\BOOKMARK [1][-]{appendix.B}{Appendix}{}% 20
-\BOOKMARK [2][-]{subsection.B.1}{Additional Material for the Green's Function Method}{appendix.B}% 21
-\BOOKMARK [2][-]{subsection.B.2}{Additional Material for DuMuX}{appendix.B}% 22
+\BOOKMARK [2][-]{subsection.2.4}{Input Data for the Simulations}{section.2}% 9
+\BOOKMARK [1][-]{section.3}{Simulation Methods}{}% 10
+\BOOKMARK [2][-]{subsection.3.1}{Green's Function Method}{section.3}% 11
+\BOOKMARK [2][-]{subsection.3.2}{DuMux}{section.3}% 12
+\BOOKMARK [1][-]{section.4}{Simulation Results and Analysis}{}% 13
+\BOOKMARK [2][-]{subsection.4.1}{Results of the Green's Function Method}{section.4}% 14
+\BOOKMARK [2][-]{subsection.4.2}{Discussion of the Green's Method and the Produced Results}{section.4}% 15
+\BOOKMARK [2][-]{subsection.4.3}{Results of DuMux}{section.4}% 16
+\BOOKMARK [2][-]{subsection.4.4}{Comparison of the Methods and Results}{section.4}% 17
+\BOOKMARK [1][-]{section.5}{Discussion}{}% 18
+\BOOKMARK [2][-]{subsection.5.1}{Technical Dicussion}{section.5}% 19
+\BOOKMARK [2][-]{subsection.5.2}{Physical Discussion}{section.5}% 20
+\BOOKMARK [2][-]{subsection.5.3}{Physiological Discussion}{section.5}% 21
+\BOOKMARK [1][-]{subsection.5.3}{References}{}% 22
+\BOOKMARK [1][-]{appendix.A}{Acknowledgements}{}% 23
+\BOOKMARK [1][-]{appendix.B}{Appendix}{}% 24
+\BOOKMARK [2][-]{subsection.B.1}{Additional Material for the Green's Function Method}{appendix.B}% 25
+\BOOKMARK [2][-]{subsection.B.2}{Additional Material for DuMuX}{appendix.B}% 26
