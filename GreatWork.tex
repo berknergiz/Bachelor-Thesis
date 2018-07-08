@@ -159,6 +159,7 @@ Here I would like to mention the fact that the networks that were used for the s
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \newpage
 \section{Simulation Methods}
+\label{Methods}
 %Everything about the computations behind the simulations and all I did.
 
 As noted before, this thesis focuses on the evaluation of existing
@@ -167,6 +168,7 @@ and applies them to several vasculature morphologies from various organs. In thi
 \\The methods will be explained in this section and the results will be discussed separately in the following section.
 
 \subsection{Green's Function Method}
+\label{Greens}
 %Here I will talk about everything concerning the Green's Method Code.
 %General explanation about Green's Method code and how it works, especially mathematics behind the Green's Function Method (many mathematical formulas) and why it makes sense to use this. Also especially why is this interesting in physiological applications and oxygen delivery/consumption simulations ?
 %Goals:
@@ -418,6 +420,7 @@ To achieve the goal of tracing oxygen in the given vessel-networks, I coupled th
 In this section, the produced results using the two introduced methods will be presented and analyzed for a few different networks. Finally the results will be discussed and the methods will be compared. The accuracy of produced results as well as the physiological meaning behind these results will be the main subject in this chapter.
 
 \subsection{Results of the Green's Function Method}
+\label{ResultsGreens}
 %Main part of the Thesis
 %Results part of Green's
 %-Present some results on different networks
@@ -584,6 +587,7 @@ As the presented examples show, the Green's method and its implementation can pr
 
 \newpage
 \subsection{Results of $DuMu^x$} 
+\label{ResultsDum}
 %Interesting but shorter part, due to the fact that DuMuX is not really producing anything yet
 %Results part of DuMuX
 %-Pros/Cons
@@ -633,6 +637,7 @@ The figures \ref{fig:glom_pressure},  \ref{fig:glom2_pressure},  \ref{fig:glom3_
 \\{\color{red} Do you know how to normalize these values to be able to compare them to physiological values ? do we even have physiological values, as this is a rather uncharted research field ?}
 
 \subsubsection*{Results of the Implemented Method}
+\label{ResultsImplMeth}
 
 As I already briefly mentioned this when describing this method, the 1p-1p-tracer model cannot produce useful results yet. This new model in which I coupled the 1p-1p model with a new tracer model is basically still in the build-up phase, and with more time, the reasons for the wrong outputs can eventually be resolved so that the model can produce physically accurate results.
 \\After spending a lot of time on debugging the errors I had in the code {\color{red} (can I say this or better not ?)}, the code finally worked and the tracer could finally compute the oxygen distribution in my network. However, the results are not satisfying as the oxygen concentration is computed to be zero at every time step in every node of the grid. The reasons for this are still not quite clear and some more investigation has to be made in order to understand why the tracer always has null values as outputs. Moreover, the initial and boundary conditions for the oxygen concentrations were examined and this seems not to be the source of the error.
@@ -689,8 +694,8 @@ While the Green's function method is presenting a specifically created C++ based
 %thoughts on the whole story and where the promising directions lie
 %and which ones you see with scepticism.
 
-This thesis aimed to understand and specify how computationally blood flow and oxygen transport can be simulated using different methods. For this, two approaches have been presented and the results or outlooks have been discussed.\\
-\\While oxygen transport is a crucial topic in the fields of medicine and physiology, many processes in microvascular networks are not understood yet. Especially the measurements of microvascular and tissue oxygen concentrations is an uncharted research field. For this reason, a lot of research is being done in oxygen distribution computations. In view of the challenges that are faced when simulating oxygen fields in tissue surrounding vessel networks, I would like to split this last section into three parts: a technical discussion, a physical discussion, and finally a physiologic discussion.
+This thesis aimed to understand and specify how, using computational methods, blood flow and oxygen transport can be simulated using different methods. For this, two approaches have been presented \ref{Greens}, \ref{$DuMu^x$} and the results or outlooks have been discussed \ref{Results}.\\
+\\While oxygen transport is a crucial topic in the fields of medicine and physiology, many processes in microvascular networks are not understood yet. Especially the measurements of microvascular and tissue oxygen concentrations is an uncharted research field. For this reason, a lot of research is being done in oxygen distribution computations \cite{goldman2001computational, lee2017accounting, kreuzer1982oxygen, secomb1993analysis} . In view of the challenges that are faced when simulating oxygen fields in tissue surrounding vessel networks, I would like to split this last section into three parts: a technical discussion, a physical discussion, and finally a physiologic discussion.
 
 \subsection{Technical Dicussion}
 %- All the challenges one has to face when simulating in general
@@ -699,8 +704,8 @@ This thesis aimed to understand and specify how computationally blood flow and o
 %- Things that are good about computational models
 
 As the main tools used for the previously presented simulation results are computational solvers, I would like to focus on the technical aspects behind these tools in general.\\
-\\The share computational simulations are taking in physiologic research is growing everyday. This is also due to the fact that some data is very hard to extract from measurements, and thus researchers try to understand certain processes through running computational simulations on physical models. However, the challenges behind using these technical tools are not to be underestimated. As I experienced myself when running simulations with the Green's method code and $DuMu^x$, many errors and bugs {\color{red} (can I say something like this ?)} can stop the code from running and can be very hard to fix. Also, once a model is implemented, one has to take great care to examine if the produced results physically make sense. As for example for the $DuMu^x$ model I implemented, the zero outputs are clearly wrong and the model has to be improved in order to produce realistic results.
-\\The reason computational models are used so frequently is also due to the fact that some calculations, like the pressure gradients in the previously presented glomeruli, can not be obtained without computational methods. This is especially due to the particular vasculature of these networks. Thus, these tools can give us very interesting insights, even though their complexity is certainly challenging, and will demand a good understanding of the methods underlying, depending on the used software.
+\\The share computational simulations are taking in physiologic research is growing everyday. This is also due to the fact that some data is very hard to extract from measurements, and thus researchers try to understand certain processes through running computational simulations on physical models. However, the challenges behind using these technical tools are not to be underestimated. As I experienced myself when running simulations with the Green's method code \ref{Greens} and $DuMu^x$ \ref{$DuMu^x$}, many errors and bugs {\color{red} (can I say something like this ?)} can stop the code from running and can be very hard to fix. Also, once a model is implemented, one has to take great care to examine if the produced results physically make sense. As for example for the $DuMu^x$ model I implemented, the zero outputs are clearly wrong and the model has to be improved in order to produce realistic results \ref{ResultsImplMeth}.
+\\The reason computational models are used so frequently is also due to the fact that some calculations, like the pressure gradients in the previously presented glomeruli \ref{ResultsDum}, can not be obtained without computational methods. This is especially due to the particular vasculature of these networks. Thus, these tools can give us very interesting insights, even though their complexity is certainly challenging, and will demand a good understanding of the methods underlying, depending on the used software.
 
 \newpage
 \subsection{Physical Discussion}
@@ -709,7 +714,7 @@ As the main tools used for the previously presented simulation results are compu
 %- Say why engineers are also interested in this field and that the fluiddynamics in the body are very interesting in general
 
 As the exact physical equations and mathematics behind the different simulation methods was explained in the first sections, it was obvious that the success of computational simulations is strongly linked to the correctness of the physical assumptions.\\
-\\When building a computational model like the models used in this thesis, one has to start by studying the physical equations describing the given problem. In our case, the physical equations describing the blood flow, and accordingly the oxygen transport from the vessel to the tissue have been used in general. Solving these equations will then yield the results that the user wanted to compute. This basic procedure is an engineering procedure, and is the same for a flow and heat exchange computation in a pipe or a blood flow and oxygen diffusion computation in a tissue. Due to this fact, engineers are strongly engaged in this research field, as they have a good knowledge about the technical tools and have a good understanding for physical quantities. Also, the used networks and fluiddynamic challenges can be very interesting in this physiologic field, as for example the complex vascular network found in the glomerulus, where pressure differences and gradients were very interesting to observe and required deeper understanding of the Navier-Stokes equations, as the pressure drop was nothing compared to the one in a straight pipe.\\
+\\When building a computational model like the models used in this thesis, one has to start by studying the physical equations describing the given problem \ref{CompMod}. In our case, the physical equations describing the blood flow, and accordingly the oxygen transport from the vessel to the tissue have been used in general. Solving these equations will then yield the results that the user wanted to compute \ref{Results}. This basic procedure is an engineering procedure, and is the same for a flow and heat exchange computation in a pipe or a blood flow and oxygen diffusion computation in a tissue. Due to this fact, engineers are strongly engaged in this research field, as they have a good knowledge about the technical tools and have a good understanding for physical quantities. Also, the used networks and fluiddynamic challenges can be very interesting in the physiology field, as for example the flow in a complex vascular network like the one found in glomeruli \ref{ResultsDum}, where particularly interesting pressure differences and gradients could be observed. To understand and analyze these results physically, a deeper understanding of the Navier-Stokes equations is required, as the pressure drop was not comparable to the one in a straight pipe.\\
 \\Due to these reasons, engineers, mathematicians and physicists are and will be used more and more often in these research domains in the future, as some physical problems can not be solved without computational methods to this day.
 
 \subsection{Physiological Discussion}
@@ -718,7 +723,7 @@ As the exact physical equations and mathematics behind the different simulation 
 %- Give some examples from the results and explain what is physiologically happening in blood flow and oxygen transport\\
 
 Finally, I would like to give a short outlook to the research done in this thesis from a physiological point of view.\\
-\\As the methods and the produced outputs were presented in the previous sections, one could clearly see that the computed results were physiologically very interesting. With computed oxygen concentrations ranging from $0$ mmHg to around $87$ mmHg in the tissue, the values seemed realistic and the distributions inside the tissue seemed to be qualitatively correct. The pressure gradients computed by the $DuMu^x$ model were also analyzed and the general pressure field could physiologically be explained. Again, we do not really have experimental values to compare the computed values with, so most of the results can only be analyzed qualitatively.
-\\Especially the oxygen fields computed by the Green's method in some complex networks produced very interesting and physiologically useful results. Even though we don't have experimental data to compare the computational values with, it is possible to see that the results were all in the physiologic range and the general oxygen distribution showed that the results were according to the physics describing our problem. Extrapolating from the examples presented for oxygen distribution computations, I would like to underline the fact that computational models are very useful in this specific field and will very likely take an even more important share in the future.
+\\As the methods and the produced outputs were presented in the previous sections \ref{Methods}, \ref{Results}, one could clearly see that the computed results were physiologically very interesting. With computed oxygen concentrations ranging from $0$ mmHg to around $87$ mmHg in the tissue, the values seemed realistic and the distributions inside the tissue seemed to be qualitatively correct. The pressure gradients computed by the $DuMu^x$ model \ref{$DuMu^x$} were also analyzed and the general pressure field could physiologically be explained. Again, we do not really have experimental values to compare the computed values with, so most of the results can only be analyzed qualitatively.
+\\Especially the oxygen fields computed by the Green's method \ref{Greens} in some complex networks produced very interesting and physiologically useful results \ref{ResultsGreens}. Even though we don't have experimental data to compare the computational values with, it is possible to see that the results were all in the physiologic range and the general oxygen distribution showed that the outputs were in accord with the physics describing our problem \ref{CompMod}. Extrapolating from the examples presented for oxygen distribution computations, I would like to underline the fact that computational models are very useful in this specific field and will very likely take an even more important share in the future.
 \\
 %\\Main conclusions and final remarks.
