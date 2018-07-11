@@ -12,52 +12,47 @@ Additional material such as extra figures.
 \label{GreensCode}
 %Explain everything about the code
 
-In this section, an insight to the code provided by Secomb et al. \cite{Secomb2004} will be given. Especially some explanations about what data this code uses and what data it computes will be given. 
-The main goal is to understand what the results are, how correct their accuracy is. For this, a general explanation of the structure and organization of the code and the methods behind the computations will given.
+In this section, an insight to the code provided by Secomb et al. \cite{Secomb2004} will be given. Especially a description about what data this code uses and what data it computes will follow.. 
+The main goal is to understand what the results are and where they really come from. For this, a general explanation of the structure and organization of the code and the methods behind the computations will given.
 
 \subsubsection*{Inputs}
 \label{Inputs}
 %What data this code actually needs and what this data is
+%What are the inputs for this code ? Where do they come from ?
 
-What are the inputs for this code ? Where do they come from ?
+In general, the Green's function method code takes .dat-files as inputs, which basically contain the network files and the parameters for the diffusion and oxygen transport inside the vessels.
 \\
-\\The Green's Function Method takes .dat-files as inputs, which basically contain the network files.
+\\The input data in form of .dat-files consists of four files:\\
+\\- The SoluteParams.dat-file: This file contains all the information about the solutes we are looking at. In our case, this is simply oxygen. The specific informations are things like the tissue solubility, the Michaelis constant of consumption, etc.\\
+\\- The Network.dat-file: This file contains all the information about the network we are looking at. This information is basically in form of an array. This array defines for each segment the type of vessel, the start point, the end point, the diameter (in microns), the relativ flow and the hematocrit level of the blood inside the given vessel.\\
+\\- The IntravascRes.dat-file: This file contains all the information about the diameter on which the sources are computed around the vessel centerline. The second important information given here is the intravascular resistance to radial oxygen transport $K$ for each diameter and vessel.\\
+\\- The ContourParams.dat-file: This file contains all the information necessary to create the contour-plots. This means that we create a plot, where the oxygen concentration inside a three dimensional domain can be visualized on a two dimensional projection. In this file, the projection plane can be specified, and the focus geometry inside the three dimensional space can be selected.
 \\
-The input data in form of .dat-files is basically build out of four files:
-\\- SoluteParams.dat: This file contains all the information about the solutes we are looking at. This information can be things like tissue solubility, Michaelis constant of consumption, etc.
-\\- Network.dat: This file contains all the information about the network we are looking at. This information is basically in form of an array. This array defines for each segment the type, the start point, the end point, the diameter (in microns), the relativ flow (?) and the hematocrit (?).
-\\- IntravascRes.dat: This file contains all the information about a diameter (which one?) and the intravascular resistance to radial oxygen transport K for each diameter/vessel.
-\\- ContourParams.dat: This file contains all the information necessary to create the contour-plots. This means that we create a plot, where the oxygen concentration can be visualized on a 2-dimensional slice. (not sure how plot is created from this data?)
+\\The part of the code where the read-in of the network data and the specific transport parameters through the input files is being done is the input.cpp code.
 \\
-\\The part of the code where the read-in of the network data and the sources (not sure about this) through the input files is being done is the input.cpp code.
-\\
-\\The analyzenet.cpp-part of the code analyzes the input-files...
+\\The analyzenet.cpp-part of the code analyzes the input-files and gives each vessel and node a number. Through this, the oxygen concentration can be computed for each node of the three dimensional space. The output after this step can be seen in Figure \ref{fig:NetNodesSegs_Glom}, but it is important to note that usually in the next step, the oxygen gradients are computed, and the segmentation numbers are replaced by the specific oxygen levels for each node and vessel.
 
 \subsubsection*{Outputs}
 \label{Outputs}
 %What this code actually produces
+%What are the outputs for this code ? How are they produced ? Where do they come from ?
 
-What are the outputs for this code ? How are they produced ? Where do they come from ?
+The Green's function method code gives .dat-files and images (contour.ps-files) as outputs, which basically contain the results that have been discussed previously in the Results \ref{Results} chapter.
 \\
-\\The Green's Function Method gives .dat-files and images (contour.ps-files) as outputs, which basically contain the results that will be discussed later in the next chapters.
+\\The contour.ps-files are produced by the contour.cpp-part of the code, which basically generates and writes the data for the contour-plots. This data is a plot of the vessel from bottom to top according to the z-coordinate. In other words, this is a two dimensional projection of the computed oxygen fields in a three dimensional space. One could see this plot as a 2D picture of a 3D network, giving some information about the general oxygen fields everywhere in the segment. There is an option of computing the transport of different solutes in the network, in which case a new pages is generated for each solute, and the computed solute concentration for each area is shown in colors. In our case, the only used solute is oxygen and thus only one contour-plot is shown for each network.
 \\
-\\The contour.ps-files are produced by the contour.cpp-part of the code, which basically generates and writes the data for the contour-plots. This data is a plot of the vessel from bottom to top according to the z-coordinate. One could see this plot as a 2D picture of a 3D network when looking from the bottom. A new pages is generated for each solute, and the computed solute concentration for each area is shown in colors.
+\\The code responsible for the creation of the NetNodesSegs.ps and the NedNodesOxygen.ps-files is picturenetwork.cpp. Here, the network and the computed oxygen fields of the network are projected on a z = 0 plane. For this, the parameters from the CountourParams.dat file are used. Finally, a postscript file called NetNodesSegs is produced, in which nodes are labeled with nodvar and segments with segvar. A second file called NetNodesOxygen is produced, in which the computed oxygen level for each node is pictured.
 \\
-\\picturenetwork.cpp: picturenetwork.cpp - project network on z = 0 plane.
-Uses parameters from CountourParams.dat
-Labels nodes with nodvar and segments with segvar (must be float).
-Generates a postscript file.
-\\
-The general outputs of the code can be classified into two categories:
-\\- The first category is in the form of PostScript-files that can be visualized similar to pictures.
-\\- The second category is in the form Text-files, containing the computed data.
+\\The general outputs of the code can be classified into two categories:\\
+\\- The first category is in the form of PostScript-files that can be visualized. These outputs are basically pictures showing the computed oxygen concentrations. The three files are the ones that were previously mentioned: the Contour.ps-file, the NedNodesSegs.ps-file and finally the NedNodesOxygen.ps-file.\\
+\\- The second category is in the form text-files, containing the computed data in arrays. These values are the computed oxygen partial pressures for each node in the tissue, and represent the oxygen field output for a three-dimensional segment.
 \\
 
 \subsubsection*{Organization of the Code}
 %Briefly talk about each part of the code and explain how it all works together
 %Might keep this part more general and mention each of the parts of the code like a puzzle in the Appendix
 
-The code provided by Secomb et al. \cite{Secomb2004} consists of a few .cpp-files, so that tasks like input read-ins, calculations and output-file generations are separated. Each file has a specific role, which will be explained in detail in this section. As one can think, the most important part of this code is the implementation of the Green's Function Method and its application to the given data.
+The code provided by Secomb et al. \cite{Secomb2004} consists of a few .cpp-files, so that tasks like input read-ins, calculations and output-file generations are separated. Each file has a specific role, which will be explained in detail in this section. As one can think, the most important part of this code is the implementation of the Green's function method and its application to the given data.
 \\
 %Solver bicgstab
 \\The bicgstab.cpp-part of the code is the implementation of a solver based on the Parameter-free iterative linear solver by R. Weiss \cite{weiss1996parameter}.
@@ -128,14 +123,6 @@ nbou > 1 if inside region, value gives tissue point index
 
 \subsubsection{Some More Green's Results}
 
-Figure \ref{fig:Contour_Cardiac}  is the result of a Green's Method blood flow simulation computed on a Cardiac network. The Solute Concentration in the network is visualized.\\
-\begin{figure}[h]
-\centering
-\includegraphics[width=170mm]{Contour_Cardiac}
-\caption{Green's Contour Output for Cardiac Network}
-\label{fig:Contour_Cardiac}
-\end{figure}
-\\
 \begin{figure}[h]
 \centering
 \includegraphics[width=100mm]{NetNodesSegs_Glom}

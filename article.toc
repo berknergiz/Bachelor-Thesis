@@ -31,5 +31,5 @@
 \contentsline {section}{\numberline {B}Appendix}{43}{appendix.B}
 \contentsline {subsection}{\numberline {B.1}Additional Material for the Green's Function Method}{43}{subsection.B.1}
 \contentsline {subsubsection}{\numberline {B.1.1}General Structure of the Used Code}{43}{subsubsection.B.1.1}
-\contentsline {subsubsection}{\numberline {B.1.2}Some More Green's Results}{46}{subsubsection.B.1.2}
-\contentsline {subsection}{\numberline {B.2}Additional Material for DuMuX}{46}{subsection.B.2}
+\contentsline {subsubsection}{\numberline {B.1.2}Some More Green's Results}{47}{subsubsection.B.1.2}
+\contentsline {subsection}{\numberline {B.2}Additional Material for DuMuX}{47}{subsection.B.2}
