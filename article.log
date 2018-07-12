@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=pdflatex 2018.6.13)  11 JUL 2018 14:44
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=pdflatex 2018.6.13)  12 JUL 2018 16:16
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1140,55 +1140,55 @@ Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 <glom_pressure.png, id=461, 698.61pt x 575.14874pt>
 File: glom_pressure.png Graphic file (type png)
 <use glom_pressure.png>
-Package pdftex.def Info: glom_pressure.png  used on input line 586.
+Package pdftex.def Info: glom_pressure.png  used on input line 587.
 (pdftex.def)             Requested size: 460.93463pt x 379.47647pt.
 
-Overfull \hbox (5.69055pt too wide) in paragraph at lines 586--587
+Overfull \hbox (5.69055pt too wide) in paragraph at lines 587--588
  [][] 
  []
 
 <glom2_pressure.png, id=462, 839.135pt x 514.92375pt>
 File: glom2_pressure.png Graphic file (type png)
 <use glom2_pressure.png>
-Package pdftex.def Info: glom2_pressure.png  used on input line 592.
+Package pdftex.def Info: glom2_pressure.png  used on input line 600.
 (pdftex.def)             Requested size: 460.93463pt x 282.8475pt.
 
-Overfull \hbox (5.69055pt too wide) in paragraph at lines 592--593
+Overfull \hbox (5.69055pt too wide) in paragraph at lines 600--601
  [][] 
  []
 
-<glom3_pressure.png, id=463, 703.62875pt x 565.11125pt>
-File: glom3_pressure.png Graphic file (type png)
-<use glom3_pressure.png>
-Package pdftex.def Info: glom3_pressure.png  used on input line 598.
-(pdftex.def)             Requested size: 460.93463pt x 370.18938pt.
+<glom3_pressure2.png, id=463, 582.175pt x 605.26125pt>
+File: glom3_pressure2.png Graphic file (type png)
+<use glom3_pressure2.png>
+Package pdftex.def Info: glom3_pressure2.png  used on input line 619.
+(pdftex.def)             Requested size: 460.93463pt x 479.22246pt.
 
-Overfull \hbox (5.69055pt too wide) in paragraph at lines 598--599
+Overfull \hbox (5.69055pt too wide) in paragraph at lines 619--620
  [][] 
  []
 
-<glom4_pressure.png, id=464, 690.58pt x 588.1975pt>
-File: glom4_pressure.png Graphic file (type png)
-<use glom4_pressure.png>
-Package pdftex.def Info: glom4_pressure.png  used on input line 604.
-(pdftex.def)             Requested size: 460.93463pt x 392.6004pt.
+<glom4_pressure2.png, id=464, 584.1825pt x 546.04pt>
+File: glom4_pressure2.png Graphic file (type png)
+<use glom4_pressure2.png>
+Package pdftex.def Info: glom4_pressure2.png  used on input line 632.
+(pdftex.def)             Requested size: 460.93463pt x 430.8503pt.
 
-Overfull \hbox (5.69055pt too wide) in paragraph at lines 604--605
+Overfull \hbox (5.69055pt too wide) in paragraph at lines 632--633
  [][] 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 583--618
+Underfull \hbox (badness 10000) in paragraph at lines 583--646
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 583--618
+Underfull \hbox (badness 10000) in paragraph at lines 583--646
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 583--618
+Underfull \hbox (badness 10000) in paragraph at lines 583--646
 
  []
 
@@ -1209,80 +1209,92 @@ e.7}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.625 
-       <./glom_pressure.png>] [33pdfTeX warning (ext4): destination with the sa
-me identifier (name{figure.8}) has been already used, duplicate ignored
-
-\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
-                                                  \fi \fi 
-l.626 \newpage
-               <./glom2_pressure.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 629--635
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 629--635
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 629--635
-
- []
-
-[34pdfTeX warning (ext4): destination with the same identifier (name{figure.9})
+l.647 \subsubsection
+                    *{Results of the Implemented Method} <./glom_pressure.png>]
+[33pdfTeX warning (ext4): destination with the same identifier (name{figure.8})
  has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.635 
-       <./glom3_pressure.png>] [35pdfTeX warning (ext4): destination with the s
-ame identifier (name{figure.10}) has been already used, duplicate ignored
-
-\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
-                                                  \fi \fi 
-l.635 
-       <./glom4_pressure.png>] [36]
-Underfull \hbox (badness 10000) in paragraph at lines 675--677
+l.654 \newpage
+               <./glom2_pressure.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 657--663
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 684--687
-
- []
-
-[37]
-Underfull \hbox (badness 10000) in paragraph at lines 694--697
+Underfull \hbox (badness 10000) in paragraph at lines 657--663
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 694--697
+Underfull \hbox (badness 10000) in paragraph at lines 657--663
+
+ []
+
+[34]
+Underfull \hbox (badness 10000) in paragraph at lines 703--705
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 712--715
+
+ []
+
+[35]
+Underfull \hbox (badness 10000) in paragraph at lines 722--725
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 722--725
 
  []
 
 )
-Underfull \hbox (badness 10000) in paragraph at lines 703--111
+Underfull \hbox (badness 10000) in paragraph at lines 731--111
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 703--111
+Underfull \hbox (badness 10000) in paragraph at lines 731--111
 
  []
 
-[38] [39] (./article.bbl [40]) [41]
+[36] [37] (./article.bbl [38]) [39] [40pdfTeX warning (ext4): destination with 
+the same identifier (name{figure.9}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.124 \include{Acknowledgements}
+                                 <./glom3_pressure2.png>] [41pdfTeX warning (ex
+t4): destination with the same identifier (name{figure.10}) has been already us
+ed, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.124 \include{Acknowledgements}
+                                 <./glom4_pressure2.png>]
 \openout2 = `Acknowledgements.aux'.
 
- (./Acknowledgements.tex) [42
+
+(./Acknowledgements.tex)
+Underfull \hbox (badness 10000) in paragraph at lines 6--124
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 6--124
+
+ []
+
+[42
 
 ]
 \openout2 = `Appendix.aux'.
 
-
-(./Appendix.tex
+ (./Appendix.tex
 Underfull \hbox (badness 10000) in paragraph at lines 23--34
 
  []
@@ -1321,261 +1333,255 @@ Underfull \hbox (badness 10000) in paragraph at lines 23--34
 
 
 ]
-Underfull \hbox (badness 10000) in paragraph at lines 40--50
+Underfull \hbox (badness 10000) in paragraph at lines 40--49
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 40--50
+Underfull \hbox (badness 10000) in paragraph at lines 40--49
 
  []
 
 
-Overfull \hbox (2.1359pt too wide) in paragraph at lines 40--50
+Underfull \hbox (badness 10000) in paragraph at lines 40--49
+
+ []
+
+
+Overfull \hbox (2.1359pt too wide) in paragraph at lines 40--49
 \OT1/cmr/m/n/12 The code re-spon-si-ble for the cre-ation of the NetN-odesSegs.
 ps and the NedNodesOxygen.ps-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 40--50
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 40--50
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 40--50
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 40--50
+Underfull \hbox (badness 10000) in paragraph at lines 40--49
 
  []
 
 [44]
-Underfull \hbox (badness 10000) in paragraph at lines 55--123
+Underfull \hbox (badness 10000) in paragraph at lines 50--54
 
  []
 
 
-Overfull \hbox (3.74977pt too wide) in paragraph at lines 55--123
-\OT1/cmr/m/n/12 The bicgstab.cpp-part of the code is the im-ple-men-ta-tion of 
-a solver based on the Parameter-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 55--123
+Underfull \hbox (badness 10000) in paragraph at lines 50--54
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 55--123
+Underfull \hbox (badness 10000) in paragraph at lines 50--54
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 55--123
+Underfull \hbox (badness 10000) in paragraph at lines 59--61
+
+ []
+
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 63.
+(/usr/local/texlive/2018/texmf-dist/tex/latex/base/omscmr.fd
+File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
+)
+LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <12> not available
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 63.
+
+Underfull \hbox (badness 10000) in paragraph at lines 63--66
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 55--123
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 55--123
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 55--123
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 55--123
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 55--123
-
- []
-
-
-Overfull \hbox (9.98164pt too wide) in paragraph at lines 55--123
-\OT1/cmr/m/n/12 Initial tis-sue source strengths (given uni-form so-lute field)
- are com-puted in the initgreens.cpp-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 55--123
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 55--123
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 55--123
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 55--123
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 55--123
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 55--123
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 55--123
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 55--123
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 55--123
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 55--123
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 55--123
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 55--123
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 55--123
+Underfull \hbox (badness 10000) in paragraph at lines 66--69
 
  []
 
 [45]
-<NetNodesSegs_Glom.png, id=578, 645.41125pt x 944.52875pt>
-File: NetNodesSegs_Glom.png Graphic file (type png)
-<use NetNodesSegs_Glom.png>
-Package pdftex.def Info: NetNodesSegs_Glom.png  used on input line 128.
-(pdftex.def)             Requested size: 284.52756pt x 416.38661pt.
+Underfull \hbox (badness 10000) in paragraph at lines 73--76
+
+ []
 
 
-LaTeX Warning: `h' float specifier changed to `ht'.
+Underfull \hbox (badness 10000) in paragraph at lines 76--79
 
-<1p_1p_tracer_tracer_1.png, id=579, 1686.3pt x 1053.9375pt>
-File: 1p_1p_tracer_tracer_1.png Graphic file (type png)
-<use 1p_1p_tracer_tracer_1.png>
-Package pdftex.def Info: 1p_1p_tracer_tracer_1.png  used on input line 159.
-(pdftex.def)             Requested size: 995.84645pt x 622.41277pt.
+ []
 
-Overfull \hbox (540.60237pt too wide) in paragraph at lines 159--160
- [][] 
+
+Underfull \hbox (badness 10000) in paragraph at lines 79--82
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 82--85
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 85--102
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 102--109
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 109--117
+
  []
 
 [46]
+Underfull \hbox (badness 10000) in paragraph at lines 117--120
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 120--124
+
+ []
+
+<NetNodesSegs_Glom.png, id=593, 645.41125pt x 944.52875pt>
+File: NetNodesSegs_Glom.png Graphic file (type png)
+<use NetNodesSegs_Glom.png>
+Package pdftex.def Info: NetNodesSegs_Glom.png  used on input line 130.
+(pdftex.def)             Requested size: 284.52756pt x 416.38661pt.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<1p_1p_tracer_tracer_2.png, id=584, 1686.3pt x 1053.9375pt>
+<1p_1p_tracer_tracer_1.png, id=599, 1686.3pt x 1053.9375pt>
+File: 1p_1p_tracer_tracer_1.png Graphic file (type png)
+<use 1p_1p_tracer_tracer_1.png>
+Package pdftex.def Info: 1p_1p_tracer_tracer_1.png  used on input line 164.
+(pdftex.def)             Requested size: 995.84645pt x 622.41277pt.
+
+Overfull \hbox (540.60237pt too wide) in paragraph at lines 164--165
+ [][] 
+ []
+
+<1p_1p_tracer_tracer_2.png, id=600, 1686.3pt x 1053.9375pt>
 File: 1p_1p_tracer_tracer_2.png Graphic file (type png)
 <use 1p_1p_tracer_tracer_2.png>
-Package pdftex.def Info: 1p_1p_tracer_tracer_2.png  used on input line 165.
+Package pdftex.def Info: 1p_1p_tracer_tracer_2.png  used on input line 170.
 (pdftex.def)             Requested size: 995.84645pt x 622.41277pt.
 
-Overfull \hbox (540.60237pt too wide) in paragraph at lines 165--166
+Overfull \hbox (540.60237pt too wide) in paragraph at lines 170--171
  [][] 
  []
 
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-<1p_1p_tracer_tracer_3.png, id=585, 1686.3pt x 1053.9375pt>
+<1p_1p_tracer_tracer_3.png, id=601, 1686.3pt x 1053.9375pt>
 File: 1p_1p_tracer_tracer_3.png Graphic file (type png)
 <use 1p_1p_tracer_tracer_3.png>
-Package pdftex.def Info: 1p_1p_tracer_tracer_3.png  used on input line 171.
+Package pdftex.def Info: 1p_1p_tracer_tracer_3.png  used on input line 176.
 (pdftex.def)             Requested size: 995.84645pt x 622.41277pt.
 
-Overfull \hbox (540.60237pt too wide) in paragraph at lines 171--172
+Overfull \hbox (540.60237pt too wide) in paragraph at lines 176--177
  [][] 
  []
 
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-<1p_1p_tracer_tracer_4.png, id=586, 1686.3pt x 1053.9375pt>
+<1p_1p_tracer_tracer_4.png, id=602, 1686.3pt x 1053.9375pt>
 File: 1p_1p_tracer_tracer_4.png Graphic file (type png)
 <use 1p_1p_tracer_tracer_4.png>
-Package pdftex.def Info: 1p_1p_tracer_tracer_4.png  used on input line 177.
+Package pdftex.def Info: 1p_1p_tracer_tracer_4.png  used on input line 182.
 (pdftex.def)             Requested size: 995.84645pt x 622.41277pt.
 
-Overfull \hbox (540.60237pt too wide) in paragraph at lines 177--178
+Overfull \hbox (540.60237pt too wide) in paragraph at lines 182--183
  [][] 
  []
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<tracer_1.png, id=587, 722.7pt x 515.9275pt>
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+<glom_pressure2.png, id=607, 550.055pt x 595.22375pt>
+File: glom_pressure2.png Graphic file (type png)
+<use glom_pressure2.png>
+Package pdftex.def Info: glom_pressure2.png  used on input line 195.
+(pdftex.def)             Requested size: 460.93463pt x 498.80385pt.
+
+Overfull \hbox (5.69055pt too wide) in paragraph at lines 195--196
+ [][] 
+ []
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+<glom2_pressure2.png, id=608, 554.07pt x 426.59375pt>
+File: glom2_pressure2.png Graphic file (type png)
+<use glom2_pressure2.png>
+Package pdftex.def Info: glom2_pressure2.png  used on input line 202.
+(pdftex.def)             Requested size: 460.93463pt x 354.88637pt.
+
+Overfull \hbox (5.69055pt too wide) in paragraph at lines 202--203
+ [][] 
+ []
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+<glom3_pressure.png, id=609, 703.62875pt x 565.11125pt>
+File: glom3_pressure.png Graphic file (type png)
+<use glom3_pressure.png>
+Package pdftex.def Info: glom3_pressure.png  used on input line 209.
+(pdftex.def)             Requested size: 460.93463pt x 370.18938pt.
+
+Overfull \hbox (5.69055pt too wide) in paragraph at lines 209--210
+ [][] 
+ []
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+<glom4_pressure.png, id=610, 690.58pt x 588.1975pt>
+File: glom4_pressure.png Graphic file (type png)
+<use glom4_pressure.png>
+Package pdftex.def Info: glom4_pressure.png  used on input line 216.
+(pdftex.def)             Requested size: 460.93463pt x 392.6004pt.
+
+Overfull \hbox (5.69055pt too wide) in paragraph at lines 216--217
+ [][] 
+ []
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+<tracer_1.png, id=614, 722.7pt x 515.9275pt>
 File: tracer_1.png Graphic file (type png)
 <use tracer_1.png>
-Package pdftex.def Info: tracer_1.png  used on input line 189.
+Package pdftex.def Info: tracer_1.png  used on input line 230.
 (pdftex.def)             Requested size: 460.93463pt x 329.05884pt.
 
-Overfull \hbox (5.69055pt too wide) in paragraph at lines 189--190
+Overfull \hbox (5.69055pt too wide) in paragraph at lines 230--231
  [][] 
  []
 
-<tracer_2.png, id=589, 773.89125pt x 540.0175pt>
+<tracer_2.png, id=615, 773.89125pt x 540.0175pt>
 File: tracer_2.png Graphic file (type png)
 <use tracer_2.png>
-Package pdftex.def Info: tracer_2.png  used on input line 196.
+Package pdftex.def Info: tracer_2.png  used on input line 236.
 (pdftex.def)             Requested size: 460.93463pt x 321.63988pt.
 
-Overfull \hbox (5.69055pt too wide) in paragraph at lines 196--197
+Overfull \hbox (5.69055pt too wide) in paragraph at lines 236--237
  [][] 
  []
 
-<tracer_velocity.png, id=591, 785.93625pt x 522.95375pt>
+<tracer_velocity.png, id=616, 785.93625pt x 522.95375pt>
 File: tracer_velocity.png Graphic file (type png)
 <use tracer_velocity.png>
-Package pdftex.def Info: tracer_velocity.png  used on input line 203.
+Package pdftex.def Info: tracer_velocity.png  used on input line 242.
 (pdftex.def)             Requested size: 460.93463pt x 306.70473pt.
 
-Overfull \hbox (5.69055pt too wide) in paragraph at lines 203--204
+Overfull \hbox (5.69055pt too wide) in paragraph at lines 242--243
  [][] 
  []
 
-)
-Underfull \hbox (badness 10000) in paragraph at lines 186--125
-
- []
-
+) [47]
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
@@ -1585,56 +1591,84 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[47pdfTeX warning (ext4): destination with the same identifier (name{figure.11}
+[48pdfTeX warning (ext4): destination with the same identifier (name{figure.11}
 ) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
 l.125 \include{Appendix}
-                         <./NetNodesSegs_Glom.png>] [48pdfTeX warning (ext4): d
+                         <./NetNodesSegs_Glom.png>] [49pdfTeX warning (ext4): d
 estination with the same identifier (name{figure.12}) has been already used, du
 plicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
 l.125 \include{Appendix}
-                         <./1p_1p_tracer_tracer_1.png>] [49pdfTeX warning (ext4
+                         <./1p_1p_tracer_tracer_1.png>] [50pdfTeX warning (ext4
 ): destination with the same identifier (name{figure.13}) has been already used
 , duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
 l.125 \include{Appendix}
-                         <./1p_1p_tracer_tracer_2.png>] [50pdfTeX warning (ext4
+                         <./1p_1p_tracer_tracer_2.png>] [51pdfTeX warning (ext4
 ): destination with the same identifier (name{figure.14}) has been already used
 , duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
 l.125 \include{Appendix}
-                         <./1p_1p_tracer_tracer_3.png>] [51pdfTeX warning (ext4
+                         <./1p_1p_tracer_tracer_3.png>] [52pdfTeX warning (ext4
 ): destination with the same identifier (name{figure.15}) has been already used
 , duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
 l.125 \include{Appendix}
-                         <./1p_1p_tracer_tracer_4.png>] [52pdfTeX warning (ext4
+                         <./1p_1p_tracer_tracer_4.png>] [53pdfTeX warning (ext4
 ): destination with the same identifier (name{figure.16}) has been already used
 , duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
 l.125 \include{Appendix}
-                         <./tracer_1.png>] [53pdfTeX warning (ext4): destinatio
-n with the same identifier (name{figure.17}) has been already used, duplicate i
+                         <./glom_pressure2.png>] [54pdfTeX warning (ext4): dest
+ination with the same identifier (name{figure.17}) has been already used, dupli
+cate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.125 \include{Appendix}
+                         <./glom2_pressure2.png>] [55pdfTeX warning (ext4): des
+tination with the same identifier (name{figure.18}) has been already used, dupl
+icate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.125 \include{Appendix}
+                         <./glom3_pressure.png>] [56pdfTeX warning (ext4): dest
+ination with the same identifier (name{figure.19}) has been already used, dupli
+cate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.125 \include{Appendix}
+                         <./glom4_pressure.png>] [57pdfTeX warning (ext4): dest
+ination with the same identifier (name{figure.20}) has been already used, dupli
+cate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.125 \include{Appendix}
+                         <./tracer_1.png>] [58pdfTeX warning (ext4): destinatio
+n with the same identifier (name{figure.21}) has been already used, duplicate i
 gnored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
 l.125 \include{Appendix}
-                         <./tracer_2.png>] [54pdfTeX warning (ext4): destinatio
-n with the same identifier (name{figure.18}) has been already used, duplicate i
+                         <./tracer_2.png>] [59pdfTeX warning (ext4): destinatio
+n with the same identifier (name{figure.22}) has been already used, duplicate i
 gnored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
@@ -1656,10 +1690,10 @@ LaTeX Warning: There were multiply-defined labels.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 129.
  ) 
 Here is how much of TeX's memory you used:
- 17922 strings out of 492649
- 331470 string characters out of 6129622
- 405560 words of memory out of 5000000
- 21273 multiletter control sequences out of 15000+600000
+ 17974 strings out of 492649
+ 332407 string characters out of 6129622
+ 406827 words of memory out of 5000000
+ 21308 multiletter control sequences out of 15000+600000
  13416 words of font info for 48 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  62i,14n,56p,1322b,447s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -1678,10 +1712,10 @@ ive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive
 2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/local/texlive/20
 18/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2018
 /texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb>
-Output written on article.pdf (56 pages, 8806232 bytes).
+Output written on article.pdf (61 pages, 10828797 bytes).
 PDF statistics:
- 731 PDF objects out of 1000 (max. 8388607)
- 611 compressed objects within 7 object streams
- 165 named destinations out of 1000 (max. 500000)
- 326 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 782 PDF objects out of 1000 (max. 8388607)
+ 649 compressed objects within 7 object streams
+ 175 named destinations out of 1000 (max. 500000)
+ 346 words of extra memory for PDF output out of 10000 (max. 10000000)
 

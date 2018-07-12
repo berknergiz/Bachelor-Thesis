@@ -172,7 +172,7 @@ The Green's function method was first used for numerical computations of oxygen 
 %Very useful to use Governing Equations section of Secomb here
 
 In this subsection, the used physical quantities, the assumptions and governing equations for the Green's method and for the given problem will briefly be explained. The equations cited here are in my opinion, the most important ones to describe the physical background for the treated problem. This part strongly relies on the description by Secomb et al. \cite{Secomb2004}.
-\\When looking at the code of the Green's function method, and especially at the inputs \ref{Inputs}, one can see that the tissue is modeled as a homogeneous medium. This results in constant oxygen diffusivity and solubility coefficients D and $\alpha$ respectively. These quantities usually have to be specified in the SoluteParams.dat-file. A more detailed explanation to the Inputs can be found in the Inputs section \ref{Inputs}.
+\\When looking at the code of the Green's function method, and especially at the inputs \ref{Inputs}, one can see that the tissue is modeled as a homogeneous medium. This results in constant oxygen diffusivity and solubility coefficients D and $\alpha$ respectively. These quantities usually have to be specified in the SoluteParams.dat-file. A more detailed explanation to the inputs can be found in the Inputs section \ref{Inputs}.
 \\The governing equations are listed here, with a short explanation for each of them.
 \\As previously described, diffusion will play an important role in oxygen transport in the body, as oxygen is reaching the tissue by diffusing out of the vessels. This physical phenomenon is described by Fick's Law of Diffusion \ref{Fick}.
 %
@@ -188,7 +188,7 @@ Using Fick's Law, these two fundamental equations can be combined to finally get
 \label{eq:DiffusionEq}
 \end{equation}
 %
-Equation \ref{eq:DiffusionEq} describes the dependency between the oxygen partial pressure $P$ and the consumption rate $M(P)$. Here I would like to mention the fact that partial pressure is physically nothing else than the concentration used in \ref{Fick}.\\
+Equation \ref{eq:DiffusionEq} describes the dependency between the oxygen partial pressure $P$ and the consumption rate $M(P)$. Here I would like to mention the fact that partial pressure is physically nothing else than the concentration used in equation \ref{Fick}.\\
 \\For the consumption, a Michaelis-Menten relation applied to the problem is used:
 \begin{equation}
 \\M(P) = \frac{M_0P}{(P_0 + P)}
@@ -216,7 +216,7 @@ In Hill's equation \ref{eq:Hill}, $P_b$ is the previously mentioned partial pres
 \\ \frac{df(P_b)}{ds} = -q_v(s)
 \label{eq:ConsOxygen}
 \end{equation}
-\ref{eq:ConsOxygen} is obtained by using the conservation of oxygen along a vessel segment.
+Equation \ref{eq:ConsOxygen} is obtained by using the conservation of oxygen along a vessel segment.
 %
 \\The continuity condition for the partial pressure of oxygen on the vessel-tissue interface gives a second equation for the diffusive oxygen flux:
 \begin{equation}
@@ -224,21 +224,21 @@ In Hill's equation \ref{eq:Hill}, $P_b$ is the previously mentioned partial pres
 \frac{\delta P}{\delta r}r_v d \Theta
 \label{eq:DiffFlux}
 \end{equation}
-\ref{eq:DiffFlux} is an integral form of the diffusive flux $q_v(s)$.
+Equation \ref{eq:DiffFlux} is an integral form of the diffusive flux $q_v(s)$.
 %
 \\The relation between the partial pressure of oxygen in the tissue and the partial pressure of oxygen in the blood can be approximated with the following  Hellums relation \cite{hellums1977resistance}:
 \begin{equation}
 \\P_v(s) = P_b(s) - Kq_v(s)
 \label{eq:Hellums}
 \end{equation}
-\\Here $P_v(s)$ represents the partial pressure of oxygen averaged around the circumference of the vessel, K is the intravascular resistance to radial oxygen transport, which is assumed to be constant but depends on the vessel diameter. The value for K for each vessel can be found in the input file IntravascRes.dat \ref{Inputs} which has to be given to the code.
+\\Here $P_v(s)$ represents the partial pressure of oxygen averaged around the circumference of the vessel, K is the intravascular resistance to radial oxygen transport, which is assumed to be constant but depends on the vessel diameter. The value for K for each vessel can be found in the input file IntravascRes.dat (for more information, please see the section Inputs \ref{Inputs}), which has to be given to the code.
 %
 \\As discussed in the first part, myoglobin is a protein that supports the diffusion of oxygen in the tissue. The effects of myoglobin-facilitated diffusion can sometimes be neglected, when the myoglobin concentration is very low. For the case where the effects of myoglobin are relevant, one can simply replace the partial pressure P with the partial pressure $P^*$, given in the following equation \ref{eq:Myoglob}.
 \begin{equation}
 \\P^* = P + \frac{D_{Mb}C_{Mb}V_mS_{Mb}(P)}{D \alpha}
 \label{eq:Myoglob}
 \end{equation}
-In \ref{eq:Myoglob}, $D_{Mb}$, $C_{Mb}$, $V_m$ and $S_{Mb}$ are the diffusion coefficient, the concentration, the molar volume and the oxygen saturation of Myoglobin respectively. D and $\alpha$ are the same constants mentioned previously, which were the diffusivity and the solubility coefficients of oxygen. As I mentioned this in the Oxygen Diffusion section \ref{Diffusion}, effects of myoglobin can simply be taken into account by adding a term representing the myoglobin-facilitated-transport of oxygen.
+In equation \ref{eq:Myoglob}, $D_{Mb}$, $C_{Mb}$, $V_m$ and $S_{Mb}$ are the diffusion coefficient, the concentration, the molar volume and the oxygen saturation of Myoglobin respectively. D and $\alpha$ are the same constants mentioned previously, which were the diffusivity and the solubility coefficients of oxygen. As I mentioned this in the Oxygen Diffusion section \ref{Diffusion}, effects of myoglobin can simply be taken into account by adding a term representing the myoglobin-facilitated-transport of oxygen.
 
 \newpage
 \subsubsection{Mathematical Details of the Green's Function Method}
@@ -248,7 +248,7 @@ In \ref{eq:Myoglob}, $D_{Mb}$, $C_{Mb}$, $V_m$ and $S_{Mb}$ are the diffusion co
 In this subsection, the Green's function method, its equations and the application to the given field will be explained \cite{secomb1993analysis}.
 \\In this section, I will focus on giving a good and understandable insight to the Green's function method and its specific application, instead of getting lost in details. More specific low-level informations about the code and its implementation can be found in the Appendix \ref{GreensCode}.
 \\The main idea of the Green's function method approach is to model blood vessels as discrete oxygen sources. The oxygen consumption is then modeled by a set of discrete oxygen sinks. As previously described, our goal is to simulate the oxygen transport to finally obtain the oxygen concentration for every node in our tissue and vessel network. In general terms, the oxygen field is computed by a superposition of the fields resulting from each of the sources and sinks.
-\\The strengths of the sources are unknowns in this problem. The sinks are unknowns as well, due to the fact that the oxygen consumption depends on the local partial pressure of oxygen, as one can see in \ref{eq:MichaelisMenten}.
+\\The strengths of the sources are unknowns in this problem. The sinks are unknowns as well, due to the fact that the oxygen consumption depends on the local partial pressure of oxygen, as one can see in equation \ref{eq:MichaelisMenten}.
 %
 \\When defining the Green's Function $G$ as the potential at a point $\textbf{x}$ and putting this potential equal to the local oxygen concentration, or equivalently to the partial pressure of oxygen $P$, we get:
 \begin{equation}
@@ -581,38 +581,66 @@ Some blood flow simulations were run to evaluate the quality of results that can
 %Explain some physical things behind it and be creative
 
 In order to analyze the pressure differences and the pressure drop through a glomerulus network, the 1p-1p model was run on several different glomeruli. Coming from an engineering background, pressure variations and drops in simple pipes was a topic I had worked with. However complex networks like the ones that can be found in glomeruli were nothing I had seen until now, and the explanation behind the pressure distribution inside the glomerulus is quite an unknown field.\\
+%Glomerulus1
 \begin{figure}[h]
 \centering
 \includegraphics[width=162mm]{glom_pressure}
 \caption{Pressure Field in Glomerulus 1}
 \label{fig:glom_pressure}
 \end{figure}
+%\begin{figure}[h]
+%\centering
+%\includegraphics[width=162mm]{glom_pressure2}
+%\caption{Pressure Field in Glomerulus 1}
+%\label{fig:glom_pressure2}
+%\end{figure}
+%Glomerulus2
 \begin{figure}[h]
 \centering
 \includegraphics[width=162mm]{glom2_pressure}
 \caption{Pressure Field in Glomerulus 2}
 \label{fig:glom2_pressure}
 \end{figure}
+%\begin{figure}[h]
+%\centering
+%\includegraphics[width=162mm]{glom2_pressure2}
+%\caption{Pressure Field in Glomerulus 2}
+%\label{fig:glom2_pressure2}
+%\end{figure}
+%Glomerulus3
+%\begin{figure}[h]
+%\centering
+%\includegraphics[width=162mm]{glom3_pressure}
+%\caption{Pressure Field in Glomerulus 3}
+%\label{fig:glom3_pressure}
+%\end{figure}
 \begin{figure}[h]
 \centering
-\includegraphics[width=162mm]{glom3_pressure}
+\includegraphics[width=162mm]{glom3_pressure2}
 \caption{Pressure Field in Glomerulus 3}
-\label{fig:glom3_pressure}
+\label{fig:glom3_pressure2}
 \end{figure}
+%Glomerulus4
+%\begin{figure}[h]
+%\centering
+%\includegraphics[width=162mm]{glom4_pressure}
+%\caption{Pressure Field in a Glomerulus 4}
+%\label{fig:glom4_pressure}
+%\end{figure}
 \begin{figure}[h]
 \centering
-\includegraphics[width=162mm]{glom4_pressure}
-\caption{Pressure Field in a Glomerulus 4}
-\label{fig:glom4_pressure}
+\includegraphics[width=162mm]{glom4_pressure2}
+\caption{Pressure Field in Glomerulus 4}
+\label{fig:glom4_pressure2}
 \end{figure}\\
-The figures \ref{fig:glom_pressure},  \ref{fig:glom2_pressure},  \ref{fig:glom3_pressure} and  \ref{fig:glom4_pressure} are results of $DuMu^x$ blood flow simulations using the 1p-1p model in order to compute the pressure field inside the vessels of different glomeruli networks. The pressure field of the flow is visualized, where red is a relatively high pressure, and blue a relatively low pressure.\\
+The figures \ref{fig:glom_pressure} (Glomerulus 1),  \ref{fig:glom2_pressure} (Glomerulus 2), \ref{fig:glom3_pressure2} (Glomerulus 3) and \ref{fig:glom4_pressure2} (Glomerulus 4) are results of $DuMu^x$ blood flow simulations using the 1p-1p model in order to compute the pressure field inside the vessels of different glomeruli networks. The pressure field of the flow is visualized, where red is a relatively high pressure, and blue a relatively low pressure. Each glomerulus is pictured from two different angles. The second perspective for each glomerulus (Figures \ref{fig:glom_pressure2}, \ref{fig:glom2_pressure2}, \ref{fig:glom3_pressure} and \ref{fig:glom4_pressure}) can be seen in the Appendix \ref{SomeMoreGlomeruli}.\\
 \\The figure \ref{fig:glom_pressure} shows a clear pressure drop in the flow direction for Glomerulus 1. The pressure drop takes place rather constantly over the glomerular network, and pressures fall from around $70$ mmHg down to less than $10$ mmHg. This pressure drop can be observed with a slightly different range of pressures for the glomeruli 2, 3 and 4. \footnote{The
 pressure drop is qualitative as initial conditions were heuristically chosen.
 Future work should apply a pressure profile at the afferent arteriole and then
 compute the pressure gradient between efferent and afferent arteriole.}
 \\
 \\Physiologically, this pressure drop can be explained by the fact that the afferent arteriol, which is the vessel for the incoming blood, has a bigger diameter than the efferent arteriol, which is the vessel carrying the blood away from the glomerulus. From a simple engineering point of view, a bigger diameter for the outgoing flow results in a \emph{relaxation} of the fluid, and thus results in a pressure drop. By that we can say that the computational results of the 1p-1p model are physiologically correct.
-\\It is possible to observe the same pressure drop when analyzing the pressure field in Glomerulus 2, and the rather constant fall in pressure is physically correct. A constant fall in the pressure is also what we would expect in a straight pipe. For this glomerulus, I would like to point out the fact that due to imaging artifacts and post-processing of the data, arterioles of this particular glomerulus seem to be missing, and thus these parts look rather short, but can still be seen on the figure. An especially interesting point is the fact that some vessels inside the glomerulus and the glomerular network have lower pressures than the pressure computed for the efferent arteriol. This can also be seen for Glomerulus 3 (figure \ref{fig:glom3_pressure}) and Glomerulus 4 (figure \ref{fig:glom4_pressure}).
+\\It is possible to observe the same pressure drop when analyzing the pressure field in Glomerulus 2, and the rather constant fall in pressure is physically correct. A constant fall in the pressure is also what we would expect in a straight pipe. For this glomerulus, I would like to point out the fact that due to imaging artifacts and post-processing of the data, arterioles of this particular glomerulus seem to be missing, and thus these parts look rather short, but can still be seen on the figure. An especially interesting point is the fact that some vessels inside the glomerulus and the glomerular network have lower pressures than the pressure computed for the efferent arteriol. This can also be seen for Glomerulus 3 (figure \ref{fig:glom3_pressure2}) and Glomerulus 4 (figure \ref{fig:glom4_pressure2}).
 \\Generally, it is possible to observe that the pressure constantly drops over the afferent and the efferent arteriols, before and after the glomerular network respectively. This pressure drop happens due to viscous effects and is proportional to the length, which explains the constant pressure drop. As previously mentioned, the afferent arteriol has a bigger diameter than the efferent arteriol in average, which causes an overall pressure difference from a physiological point of view. It is hard to understand the local pressure gradients inside segments of the glomerular network between the afferent and efferent arteriols, which might be due to diameter changes and in particular due to the complexity of glomerular networks in general.
 \\
 
@@ -620,7 +648,7 @@ compute the pressure gradient between efferent and afferent arteriole.}
 \label{ResultsImplMeth}
 
 As I already briefly mentioned this when describing this method, the 1p-1p-tracer model cannot produce useful results yet. This new model in which I coupled the 1p-1p model with a new tracer model is basically still in the build-up phase, and with more time, the reasons for the wrong outputs can eventually be resolved so that the model can produce physically accurate results.
-\\After spending a lot of time on debugging the errors I was having, the code finally compiled and the tracer could compute the oxygen distribution in my network (see \ref{fig:1p-1p-tracer-tracer-1} for a specific insight into the code that was used). However, the results are not satisfying as the oxygen concentration is computed to be zero at every time step in every node of the grid. The reasons for this are still not quite clear and some more investigation has to be made in order to understand why the tracer always has null values as outputs. Moreover, the initial and boundary conditions for the oxygen concentrations were examined and this seems not to be the source of the error.
+\\After spending a lot of time on debugging the errors I was having, the code finally compiled and the tracer could compute the oxygen distribution in my network (for a specific insight into the code, please see the Appendix \ref{fig:1p-1p-tracer-tracer-1}). However, the results are not satisfying as the oxygen concentration is computed to be zero at every time step in every node of the grid. The reasons for this are still not quite clear and some more investigation has to be made in order to understand why the tracer always has null values as outputs. Moreover, the initial and boundary conditions for the oxygen concentrations were examined and this seems not to be the source of the error.
 \\As $DuMu^x$ is generally a complex software, many errors can occur, and it will surely take some time to understand the underlying problems in order to produce results using this model. However, I am persuaded that this approach can and will produce good results once the coupling of the models works well.
 
 \newpage
