@@ -647,8 +647,10 @@ compute the pressure gradient between efferent and afferent arteriole.}
 \subsubsection*{Results of the Implemented Method}
 \label{ResultsImplMeth}
 
-As I already briefly mentioned this when describing this method, the 1p-1p-tracer model cannot produce useful results yet. This new model in which I coupled the 1p-1p model with a new tracer model is basically still in the build-up phase, and with more time, the reasons for the wrong outputs can eventually be resolved so that the model can produce physically accurate results.
+As I already briefly mentioned this when describing this method, the 1p-1p-tracer model cannot produce useful results yet. This new model in which I coupled the 1p-1p model with a new tracer model is basically still in the build-up phase, and with more time, the reasons for the wrong outputs can eventually be resolved so that the model can produce physically accurate results.\\
 \\After spending a lot of time on debugging the errors I was having, the code finally compiled and the tracer could compute the oxygen distribution in my network (for a specific insight into the code, please see the Appendix \ref{fig:1p-1p-tracer-tracer-1}). However, the results are not satisfying as the oxygen concentration is computed to be zero at every time step in every node of the grid. The reasons for this are still not quite clear and some more investigation has to be made in order to understand why the tracer always has null values as outputs. Moreover, the initial and boundary conditions for the oxygen concentrations were examined and this seems not to be the source of the error.
+\newpage
+As previously mentioned, the input for the tracer model is the velocity vector computed by the 1p-1p model. The correctness of the velocity field computed by the 1p-1p model was not evaluated in detail, and might be an error-source for the solute field computed by the tracer. Due to time issues, this couldn't be examined in detail and has to be further investigated in the future.
 \\As $DuMu^x$ is generally a complex software, many errors can occur, and it will surely take some time to understand the underlying problems in order to produce results using this model. However, I am persuaded that this approach can and will produce good results once the coupling of the models works well.
 
 \newpage
