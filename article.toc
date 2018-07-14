@@ -2,7 +2,7 @@
 \contentsline {section}{\numberline {}{Abstract}}{1}{section*.1}
 \contentsline {section}{\numberline {1}Introduction}{1}{section.1}
 \contentsline {subsection}{\numberline {1.1}Motivation}{1}{subsection.1.1}
-\contentsline {subsection}{\numberline {1.2}Structure of the Thesis}{2}{subsection.1.2}
+\contentsline {subsection}{\numberline {1.2}Structure of the Thesis}{1}{subsection.1.2}
 \contentsline {section}{\numberline {2}Blood Flow and Oxygen Delivery}{3}{section.2}
 \contentsline {subsection}{\numberline {2.1}Blood Flow}{3}{subsection.2.1}
 \contentsline {subsection}{\numberline {2.2}Oxygen Transport and Delivery}{5}{subsection.2.2}
@@ -18,18 +18,18 @@
 \contentsline {section}{\numberline {4}Simulation Results and Analysis}{20}{section.4}
 \contentsline {subsection}{\numberline {4.1}Results of the Green's Function Method}{20}{subsection.4.1}
 \contentsline {subsection}{\numberline {4.2}Discussion of the Green's Method and the Produced Results}{30}{subsection.4.2}
-\contentsline {subsection}{\numberline {4.3}Results of $DuMu^x$}{31}{subsection.4.3}
-\contentsline {subsection}{\numberline {4.4}Comparison of the Methods and Results}{34}{subsection.4.4}
-\contentsline {section}{\numberline {5}Discussion}{35}{section.5}
-\contentsline {subsection}{\numberline {5.1}Technical Aspects}{35}{subsection.5.1}
-\contentsline {subsection}{\numberline {5.2}Physical Aspects}{36}{subsection.5.2}
-\contentsline {subsection}{\numberline {5.3}Physiological Aspects}{36}{subsection.5.3}
+\contentsline {subsection}{\numberline {4.3}Results of $DuMu^x$}{32}{subsection.4.3}
+\contentsline {subsection}{\numberline {4.4}Comparison of the Methods and Results}{36}{subsection.4.4}
+\contentsline {section}{\numberline {5}Discussion}{37}{section.5}
+\contentsline {subsection}{\numberline {5.1}Technical Aspects}{37}{subsection.5.1}
+\contentsline {subsection}{\numberline {5.2}Physical Aspects}{38}{subsection.5.2}
+\contentsline {subsection}{\numberline {5.3}Physiological Aspects}{38}{subsection.5.3}
 \vspace {.5\baselineskip }
-\contentsline {section}{\numberline {}{References}}{38}{subsection.5.3}
+\contentsline {section}{\numberline {}{References}}{40}{subsection.5.3}
 \vspace {.5\baselineskip }
-\contentsline {section}{\numberline {A}Acknowledgements}{42}{appendix.A}
-\contentsline {section}{\numberline {B}Appendix}{43}{appendix.B}
-\contentsline {subsection}{\numberline {B.1}Additional Material for the Green's Function Method}{43}{subsection.B.1}
-\contentsline {subsubsection}{\numberline {B.1.1}General Structure of the Used Code}{43}{subsubsection.B.1.1}
-\contentsline {subsubsection}{\numberline {B.1.2}Some More Green's Results}{47}{subsubsection.B.1.2}
-\contentsline {subsection}{\numberline {B.2}Additional Material for DuMuX}{47}{subsection.B.2}
+\contentsline {section}{\numberline {A}Acknowledgements}{44}{appendix.A}
+\contentsline {section}{\numberline {B}Appendix}{45}{appendix.B}
+\contentsline {subsection}{\numberline {B.1}Additional Material for the Green's Function Method}{45}{subsection.B.1}
+\contentsline {subsubsection}{\numberline {B.1.1}General Structure of the Used Code}{45}{subsubsection.B.1.1}
+\contentsline {subsubsection}{\numberline {B.1.2}Some More Green's Results}{49}{subsubsection.B.1.2}
+\contentsline {subsection}{\numberline {B.2}Additional Material for DuMuX}{49}{subsection.B.2}
