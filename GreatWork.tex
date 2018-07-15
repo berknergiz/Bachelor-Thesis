@@ -35,7 +35,7 @@ In this section the physiological aspects of $O_2$ transport through vessels int
 %Also mention that blood is usually modeled as a homogeneous fluid using Navier Stokes equations despite that it is a mixture of plasma and cells etc.
 %Also mention that why it is extremely inappropriate for us to model it like that.
 
-Blood is basically a mixture of two components: liquid and cells. The liquid phase is called plasma, and the cells that play the most important role for our concern are the red blood cells. This will later be important when considering the oxygen transport in the blood. For computational models, blood is generally modeled as an incompressible Newtonian fluid \cite{mathmodeling}. This basically means that the viscous stress is linearly proportional to the strain rate. Modeling blood as a Newtonian fluid is basically a wrong assumption, due to the fact that only the plasma is a Newtonian fluid. Nevertheless, this model of blood is used a lot as it can produce fairly good results and for the fact that taking irrelevant details into account wouldn't be very interesting. However, for oxygen transport simulations, modeling blood as a Newtonian fluid is problematic, due to the fact that the red blood cells are carrying around $99\%$ of the oxygen in the blood. It is also important to mention that the cells, making up to $40-45\%$ of the blood volume, are basically not incompressible. They can be compressed and might even shrink in order to facilitate the blood flow in small vessels.
+Blood is basically a mixture of two components: liquid and cells. The liquid phase is called plasma, and the cells that play the most important role for our concern are the red blood cells. This will later be important when considering the oxygen transport in the blood. For computational models, blood is generally modeled as an incompressible Newtonian fluid \cite{mathmodeling}. This essentially means that the viscous stress is linearly proportional to the strain rate. Modeling blood as a Newtonian fluid is basically a wrong assumption, due to the fact that only the plasma is a Newtonian fluid. Nevertheless, this model of blood is used a lot as it can produce fairly good results and for the fact that taking irrelevant details into account wouldn't be very interesting. However, for oxygen transport simulations, modeling blood as a Newtonian fluid is problematic, due to the fact that the red blood cells are carrying around $99\%$ of the oxygen in the blood. It is also important to mention that the cells, making up to $40-45\%$ of the blood volume, are in essence compressible. They can be compressed and might even shrink in order to facilitate the blood flow in small vessels.
 \\While this model of blood uses big assumptions and turns a two component medium into an incompressible Newtonian fluid, this immensely facilitates computations from an engineering point of view and can produce fairly good results.\\
 \\One of our goals was to understand the influence of ignoring the fact that not blood in general, but only red blood cells are carrying the oxygen. The Green’s function method code takes everything into account, namely the discharge of oxygen from hemoglobin and the presence of red blood cells, which are the main oxygen carriers. To compare the results with a model for which the red blood cells are not taken into account, we searched for a way to model oxygen transport and account for these differences by other modeling techniques, in particular using the $DuMu^x$ based model I will explain in detail in the next sections.\\
 \\However, modeling blood as a Newtonian fluid leads to the Navier-Stokes equations \ref{eq:NavierStokes1}, \ref{eq:NavierStokes2}, which basically describe the flow dynamics of an incompressible Newtonian fluid:
@@ -109,9 +109,9 @@ Where J is the diffusive flux, D is the previously mentioned diffusion coefficie
 
 In order to simulate flows, Computational Fluid Dynamics (CFD) is a tool that can be used to produce results which cannot be obtained through in vitro or in vivo experiments  \cite{mathmodeling}. For this reason, and because the computational capabilities available are growing everyday, modeling and simulating processes in the body is taking an increasingly important role in biological and medical sciences. In our case, the focus will lie on oxygen transport simulations and their computational implementation.\\
 \\As already mentioned in the section \ref{Blood Flow}, blood flow in the body can be approximated by the Navier-Stokes equations \ref{eq:NavierStokes1}, \ref{eq:NavierStokes2}. Many solvers have already been implemented to solve the Navier-Stokes equations, and thus an appropriate solver can be chosen to compute the blood flow in the body. The transport of oxygen in the blood can then be linked to this by the transport equations \cite{kuzmin2010guide}. These physical equations are quite straightforward to implement and solve numerically. The next task remains the biggest problem in actual research: to link the blood flow induced transport of oxygen, described by the Navier-Stokes equations, to the diffusion process out of the vessels and into the tissue. The toughest challenge here seems to be in choosing and especially finding physiologically appropriate boundary conditions to get exact results.
-\\This is due to the fact that often samples of vessel networks are considered, that are embedded in virtual tissue. To compute the oxygen field in the vessels and in the tissue, initial and boundary conditions have to be found for the borders of the sample. The incoming oxygen flux through the vessels will have the form of a Neumann Boundary condition, where specifically no-flux boundary conditions may be used on the boundary of the given control volume, which will be the border of the used tissue sample. When using these boundary conditions, the assumption is made that the incoming oxygen is either consumed inside the sample, or leaves it through outgoing vessels. This often leads to exaggerated estimates of hypoxic region, and thus might be physically problematic.
+\\This is due to the fact that often samples of vessel networks are considered, which are embedded in virtual tissue. To compute the oxygen field in the vessels and in the tissue, initial and boundary conditions have to be found for the borders of the sample. The incoming oxygen flux through the vessels will have the form of a Neumann Boundary condition, where specifically no-flux boundary conditions may be used on the boundary of the given control volume, which will be the border of the used tissue sample. When using these boundary conditions, the assumption is made that the incoming oxygen is either consumed inside the sample, or leaves it through outgoing vessels. This often leads to exaggerated estimates of hypoxic region, and thus might be physically problematic.
 \\Secomb et. al \cite{Secomb2004} offered some alternatives in terms of boundary conditions to solve this problem, as the estimation of hypoxic region is considered to be an essential output many researchers aim to understand.\\
-\\In general, an other important challenge is to develop methods that are stable for many different shapes of networks, and thus can compute physically accurate oxygen fields for different types of network inputs. Many numerical methods fail or more specifically become unstable when the vessel network becomes complicated and heterogeneous. There are already approaches which produce physically accurate results for the Krogh model, but in order to compute oxygen fields in very complex networks like in the kidney, these models might not provide the desired results.\\\\
+\\In general, another important challenge is to develop methods that are stable for many different shapes of networks, and thus can compute physically accurate oxygen fields for different types of network inputs. Many numerical methods fail or more specifically become unstable when the vessel network becomes complicated and heterogeneous. There are already approaches which produce physically accurate results for the Krogh model, but in order to compute oxygen fields in very complex networks like in the kidney, these models might not provide the desired results.\\\\
 \\Similar to other methods used in this field by Goldman and Popel \cite{goldman2001computational} or by Beard and Bassingthwaighte \cite{beard2001modeling}, the methods used for this thesis will treat the problem of steady-state oxygen delivery and accordingly will compute oxygen fields for steady-state conditions. This approximation is anyways needed in order to apply the Michaelis-Menten kinetics to get a relation between the oxygen consumption rate and the local oxygen concentration. The equations behind this will be explained in the Computational Methods \ref{CompMod} section.
 
 \subsection{Input Data for the Simulations}
@@ -146,7 +146,7 @@ In this subsection, a short overview about the background of the used networks w
 
 As noted before, this thesis focuses on the evaluation of existing
 methods that simulate flow and oxygen transport in micro-vascular networks
-and applies them to several vasculature morphologies from various organs. In this section I will try to give an overall understanding to the theoretical background to the Green's Function Method and accordingly the code developed by Secomb et al. \cite{Secomb2004}. Later on I will present a new model that I implemented myself using $DuMu^x$ \cite{flemisch2007dumux}.\\
+and applies them to several vasculature morphologies from various organs. In this section I will try to give an overall understanding of the theoretical background of the Green's function method and accordingly the code developed by Secomb et al. \cite{Secomb2004}. Later on I will present a new model that I implemented myself using $DuMu^x$ \cite{flemisch2007dumux}.\\
 \\The methods will be explained in this section and the results will be discussed separately in the following section.
 
 \subsection{Green's Function Method}
@@ -171,10 +171,10 @@ The Green's function method was first used for numerical computations of oxygen 
 %Methods and physiological assumptions used in this model.
 %Very useful to use Governing Equations section of Secomb here
 
-In this subsection, the used physical quantities, the assumptions and governing equations for the Green's method and for the given problem will briefly be explained. The equations cited here are in my opinion, the most important ones to describe the physical background for the treated problem. This part strongly relies on the description by Secomb et al. \cite{Secomb2004}.
+In this subsection, the used physical quantities, the assumptions and governing equations for the Green's method and for the given problem will briefly be explained. The equations cited here are, in my opinion, the most important ones to describe the physical background for the treated problem. This part strongly relies on the description by Secomb et al. \cite{Secomb2004}.
 \\When looking at the code of the Green's function method, and especially at the inputs \ref{Inputs}, one can see that the tissue is modeled as a homogeneous medium. This results in constant oxygen diffusion and solubility coefficients D and $\alpha$ respectively. These quantities usually have to be specified in the SoluteParams.dat-file. A more detailed explanation to the inputs can be found in the Inputs section \ref{Inputs}.
 \\The governing equations are listed here, with a short explanation for each of them.
-\\As previously described, diffusion will play an important role in oxygen transport in the body, as oxygen is reaching the tissue by diffusing out of the vessels. This physical phenomenon is described by Fick's Law of Diffusion \ref{Fick}.
+\\As previously described, diffusion will play an important role in oxygen transport in the body, as oxygen reaches the tissue by diffusing out of the vessels. This physical phenomenon is described by Fick's Law of Diffusion \ref{Fick}.
 %
 As a reminder, I want to mention that Fick's first Law gives the diffusive flux, which we are interested in, as a function of the diffusivity and the concentration gradient in the tissue.
 \\In addition to this, the principle of conservation of mass applies to oxygen, and we have:
@@ -211,12 +211,12 @@ In equation \ref{eq:ConvTrans}, the flow rate of blood is $Q$, the discharge hem
 \end{equation}
 In Hill's equation \ref{eq:Hill}, $P_b$ is the previously mentioned partial pressure of oxygen in the blood, $P_{50}$ is the partial pressure of oxygen at 50\% saturation and $n$ is a constant.
 %
-\\Another important equation that we need in order to describe the given problem is the relationship describing the rate of of diffusive oxygen efflux per unit vessel length:
+\\Another important equation that we need in order to describe the given problem is the relationship describing the rate of diffusive oxygen efflux per unit vessel length:
 \begin{equation}
 \\ \frac{df(P_b)}{ds} = -q_v(s)
 \label{eq:ConsOxygen}
 \end{equation}
-Equation \ref{eq:ConsOxygen} is obtained by using the conservation of oxygen along a vessel segment.
+Equation \ref{eq:ConsOxygen} is obtained by using the conservation of oxygen along a vessel segment, and states that the change of oxygen partial pressure in the blood per unit vessel length is equal to the rate of diffusive oxygen flux out of the vessel $q_v(s)$.
 %
 \\The continuity condition for the partial pressure of oxygen on the vessel-tissue interface gives a second equation for the diffusive oxygen flux:
 \begin{equation}
@@ -224,7 +224,7 @@ Equation \ref{eq:ConsOxygen} is obtained by using the conservation of oxygen alo
 \frac{\delta P}{\delta r}r_v d \Theta
 \label{eq:DiffFlux}
 \end{equation}
-Equation \ref{eq:DiffFlux} is an integral form of the diffusive flux $q_v(s)$.
+Equation \ref{eq:DiffFlux} is an integral form of the diffusive flux $q_v(s)$, and is obtained by the continuity condition for the diffusive flux across the blood-tissue interface. Here, $D$ is again the diffusion coefficient, $\alpha$ is the solubility coefficient, $r_v$ the vessel radius, and $r$ is generally the radial distance from the centerline of the vessel.
 %
 \\The relation between the partial pressure of oxygen in the tissue and the partial pressure of oxygen in the blood can be approximated with the following  Hellums relation \cite{hellums1977resistance}:
 \begin{equation}
@@ -240,7 +240,6 @@ Equation \ref{eq:DiffFlux} is an integral form of the diffusive flux $q_v(s)$.
 \end{equation}
 In equation \ref{eq:Myoglob}, $D_{Mb}$, $C_{Mb}$, $V_m$ and $S_{Mb}$ are the diffusion coefficient, the concentration, the molar volume and the oxygen saturation of Myoglobin respectively. D and $\alpha$ are the same constants mentioned previously, which were the diffusion and the solubility coefficients of oxygen. As I mentioned this in the Oxygen Diffusion section \ref{Diffusion}, effects of myoglobin can simply be taken into account by adding a term representing the myoglobin-facilitated-transport of oxygen.
 
-\newpage
 \subsubsection{Mathematical Details of the Green's Function Method}
 %Mathematical Background to this Method. What's so special about it ? Is there any advantage at first sight ?
 %Very useful to use Green's Function Formulation section of Secomb here
@@ -280,7 +279,7 @@ In this subsection, the Green's function method, its equations and the applicati
 \end{equation}
 %
 \\In equation \ref{eq:DiffFlux}, the distribution of radial flux across the cylindrical surface is obtained by the function $F(s)$, and $q_0(s)$ represents the distribution of source strength per unit length, $s$ being the distance along the vessel.
-\\The main case is a uniform distribution of sources around the circumference, where we get the following formula for $F(s)$:
+\\The main case is a uniform distribution of sources around the circumference, in which case we get the following distribution of radial flux $F(s)$:
 %
 \begin{equation}
 \\F(s) = \frac{1}{2} \delta_1 (s) + \frac{k (K(k) - E(k)}{4 \Pi r_0}
@@ -297,6 +296,7 @@ In this subsection, the Green's function method, its equations and the applicati
 \\E(k) = \int_{0}^{\frac{\Pi}{2}} (1 - k^2 sin^2 \Theta)^ \frac{1}{2} d \Theta
 \label{eq:EllipInt2}
 \end{equation}
+The variable $k$ is given by $\frac{1}{\sqrt{1+s^2/4r_0^2}}$, and thus depends on the distance along the vessel $s$ and the vessel radius $r_0$. The distribution given by $F(s)$ \ref{eq:DiffFluxUni} represents the distribution of the flux in radial direction through the cylindrical surface for a unit source.
 
 \newpage
 \subsection{$DuMu^x$}
@@ -337,7 +337,7 @@ Figure \ref{fig:dumux_structure} is the Structure of $DuMu^x$ given from the $Du
 %List all the models here and explain briefly what can be done, and for what kind of problems this can be used.
 
 As I mentioned, $DuMu^x$ offers a large variety of models that can be used to solve a specific problem. This provides large flexibility in terms of computational cost and stability questions as explained by $DuMu^x$ developers Flemisch et al. \cite{flemischdumux}, \cite{flemisch2007dumux}.
-\\One has to take care to choose a solver that is compatible with the given problem. To develop a better feeling for this, the test cases can be studied in detail. A good overview to the user will be given when checking which solver, grid-creator or discretization is used for each type of problem.
+\\One has to take care to choose a solver that is compatible with the given problem. To develop a better feeling for this, the test cases can be studied in detail. A good overview will be given to the user when checking which solver, grid-creator or discretization is used for each type of problem.
 \\Nevertheless, using my personal experience, I can say that some information is hard extract, and the incompatibility of some modular pieces inside the $DUNE$ modules, like for example grid creators, can be the cause for some serious errors which were hard to understand and debug without a deep understanding of $DuMu^x$, which again takes time to aquire.
 \\I will briefly present some of the numerical models that can be used with $DuMu^x$, so that the reader can later get a better understanding of the model I worked on.\\
 \\In $DuMu^x$ there are two types of numerical models: \emph{coupled fully-implicit} and \emph{decoupled semi-implicit}. The difference lies simply in the fact that the so called \emph{coupled fully-implicit} models are strongly modularized, and the user can build a model only prescribing physical quantities like fluxes and source terms. For the \emph{decoupled semi-implicit} models, the user has to work with the actual physical equations, as for example the implementation of the transport equation. As I mainly used the 1p-model to build by oxygen transport model, I will shortly explain what this means and give a few other examples.\\
@@ -381,7 +381,7 @@ My main idea was to use the computed velocities from the 1p-1p model, and feed t
 %Maybe put some results of the Tracer Model here
 
 The second model I used to build my oxygen tracking model is the tracer. The tracer model can literally \emph{trace} the path of a solute when fluxes or velocities are given as input data. My main idea was to use the computed velocities from the 1p-1p model, and feed the tracer with this as an input in order to obtain the oxygen transport and diffusion into the tissue and finally get the oxygen field in the tissue for steady-state conditions.
-\\Generally, the tracer model is computing the distribution of a solute inside a control volume for every time step.
+\\Generally, the tracer model computes the distribution of a solute inside a control volume for every time step.
 \\As it can \emph{trace} substances in networks of different geometries, and accordingly compute concentrations and concentration fields of solutes in dynamic systems, it seemed like a very interesting option in order to compute the oxygen field in the tissue surrounding a given network.
 \\Even though it is hard to show the outputs of the tracer model, a visualization for the first and last time of a tracing simulation is pictured in the Appendix \ref{Tracer}.\\
 
@@ -392,7 +392,7 @@ The second model I used to build my oxygen tracking model is the tracer. The tra
 
 To achieve the goal of tracing oxygen in the given vessel-networks, I coupled the previously described models to obtain a 1p-1p-tracer model.\\
 \\I would like to repeat that the velocity output of my previous 1p-1p model is the input for the tracer model. This is important, as I will later explain the problems I had when trying to produce results with this model. Generally I wanted to get the concentration of my solute of interest, which is oxygen, for every time step.
-\\As my goal was to compute oxygen fields not only in the network, but also in the tissue surrounding it, I had to create a 1p-1p-tracer-tracer model. The second tracer is coupled in order to compute the oxygen concentration not only in the vessels (this is what a 1p-1p-tracer model would do) but also for the tissue. Due to time limitations, the implementation of this model did not complete fully and is left for future efforts. Further explanations concerning this will follow in the Results \ref{Results} section.
+\\As my goal was to compute oxygen fields not only in the network, but also in the tissue surrounding it, I had to create a 1p-1p-tracer-tracer model. The second tracer is coupled in order to compute the oxygen concentration not only in the vessels (this is what a 1p-1p-tracer model would do), but also in the tissue. Due to time limitations, the implementation of this model did not complete fully and is left for future efforts. Further explanations concerning this will follow in the Results \ref{Results} section.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \newpage
@@ -432,16 +432,16 @@ Figure \ref{fig:Contour_Krogh} is the result of a Green's Method blood flow simu
 \\It is further remarked that analytical solutions of the Krogh cylinder model have been derived before and the results shown in this figure correspond well to the  analytical results. This validates that the Green's function method and the corresponding implementation can produce physically accurate results, and suggests that it is a suitable method to conduct further studies.
 
 \newpage
-\subsubsection*{A First Tumor Network}
+\subsubsection*{A Low Density Tumor Network}
 %Explain relevance of this model and the produced results (many plots here)
 
 %Present Network
-The Green's function code provided by Prof. Secomb contains a few microvascular networks as examples, which can be studied and extended. In this thesis, I executed many of those models to get a good understanding of physiological phenomena concerning $O_2$ transport in various organs and different networks.
-\\Two of these example networks provided by Prof. Secomb are the tumor networks. I will first present the results obtained for the first network, and later get to the more complex and relevant second example.
-\\The Tumor 1 network is more complicated than the previously presented Krogh model but generally gives a way better insight to the results than the Cardiac Network simulation, due to the much lower vessel density. The result is visualized on Figure \ref{fig:Contour_Tumor1998}. One can see the result of a Green's method blood flow simulation computed on a simple tumor network. As for the previous network, the oxygen concentration in the network and in the tissue is visualized in the form of a two dimensional slice (see output section \ref{Outputs} for more information). Again the illustration shows an impression of oxygen levels in the tissue and the vessel segments, and generally gives the local oxygen concentrations in mmHg.\\\\
+The Green's function code provided by Prof. Secomb contains a few microvascular networks as examples, which can be studied and extended. For more information about the networks, please see \cite{secombonline}. In this thesis, I executed many of those models to get a good understanding of physiological phenomena concerning $O_2$ transport in various organs and different networks.
+\\Two of these example networks provided by Prof. Secomb \cite{secombonline} are the tumor networks. I will first present the results obtained for the first network, which has a low density of microvessels, and later get to the more complex, dense and thus more relevant second example. However, both tumors are from rats and were obtained by microscopic observations.
+\\The Tumor 1 network is more complicated than the previously presented Krogh model but generally gives a much better insight to the results than the Cardiac Network simulation, due to the much lower vessel density. The result is visualized on Figure \ref{fig:Contour_Tumor1998}. One can see the result of a Green's method blood flow simulation computed on a simple tumor network. As for the previous network, the oxygen concentration in the network and in the tissue is visualized in the form of a two dimensional slice (see output section \ref{Outputs} for more information). Again the illustration shows an impression of oxygen levels in the tissue and the vessel segments, and generally gives the local oxygen concentrations in mmHg.\\\\
 %Explain Plot
 The Tumor network provided by Secomb was used for further simulations and to validate the produced data.
-Figure \ref{fig:Contour_Tumor1998}  is the result of a Green's method blood flow simulation computed on a tumor network. The solute concentration in the network is visualized.\\
+Figure \ref{fig:Contour_Tumor1998} is the result of a Green's method blood flow simulation computed on a tumor network. The solute concentration in the network is visualized.\\
 \begin{figure}[h]
 \centering
 \includegraphics[width=120mm]{Contour_Tumor1998}
@@ -449,7 +449,7 @@ Figure \ref{fig:Contour_Tumor1998}  is the result of a Green's method blood flow
 \label{fig:Contour_Tumor1998}
 \end{figure}\\
 %Explain Results
-\\As contour-plots generally show a \emph{compressed} picture of a three dimensional network, many vessels that are \emph{above} each other are shown as if they were intersecting. This can be hard to differentiate for the output files of some complex networks. In this case, this tumor network doesn't have many vessels, but is rather supplied by a few thicker vessels. The red color corresponds to oxygen enriched blood, and clearly oxygen in tissue regions proximal to these vessels is higher. We do not have any information about the exact origin of this particular image segmentation, but it can be observed that the length of segments within vessels is quite large. This is a limitation in order to obtain a precise resolution of the computed oxygen field, as $PO_2$ is always computed for each node and segment. Eventually a $PO_2$ value is assigned to each segment. This means that a lower resolution for the oxygen field is obtained.
+\\As contour-plots generally show a \emph{compressed} picture of a three dimensional network, many vessels that are \emph{above} each other are shown as if they were intersecting. This can be hard to differentiate for the output files of some complex networks. In this case, this tumor network doesn't have many vessels, but is rather supplied by a few thicker vessels. The red color corresponds to oxygen enriched blood, and clearly oxygen in tissue regions proximal to these vessels is higher. Generally, it can be observed that the length of segments within vessels is quite large. This is a limitation in order to obtain a precise resolution of the computed oxygen field, as $PO_2$ is always computed for each node and segment. Eventually a $PO_2$ value is assigned to each segment. This means that a lower resolution for the oxygen field is obtained.
 \\In this case, $PO_2$ levels reach up to about $40$ mmHg which lies within the physiological range.
 
 %\subsubsection*{Brain Model}
@@ -488,7 +488,7 @@ But still the oxygen in tissue regions proximal to the bigger oxygen-supplying v
 
 %Present Network
 Another example network provided by Prof. Secomb is the mesenteric artery network.
-\\Like for the previously presented networks, we don't have specific information concerning the network. In the absence of information, this network is used as a sample network to study the computational results. Knowing that it is supposed to represent a mesenteric artery network, which is an artery supplying the large intestine, one can clearly see the very small vessels surrounding the main arterial tree. These vessels are embedded in the intestine itself and supply oxygen to the surrounding cells.
+\\From the information provided online \cite{secombonline}, we know that this network was obtained from a rat mesentery, based on a montage of micrographs. Generally, this network is used as a sample network to study the computational results. Knowing that it is supposed to represent a mesenteric artery network, which is an artery supplying the large intestine, one can clearly see the very small vessels surrounding the main arterial tree. These vessels are embedded in the intestine itself and supply oxygen to the surrounding cells.
 \\Generally the vessels are very fine and the vessel resolution is high, which entails a good oxygen field resolution for the tissue surrounding the vessels.
 \\The result is visualized on Figure \ref{fig:Contour_Mesent1}. The output shows the result of a Green's method blood flow simulation computed on a mesenteric artery network. As for the previous networks, the oxygen concentration in the network and in the tissue is visualized in the form of a slice (see output section \ref{Outputs} for more information). Again the illustration shows an impression of oxygen levels in the tissue and the vessel segments, and generally gives the local oxygen concentrations in mmHg.
 %Explain Plot
@@ -510,17 +510,17 @@ Another example network provided by Prof. Secomb is the mesenteric artery networ
 %Explain Results
 \\This network is more complicated than the previously presented networks but generally gives a better insight to the results than the cardiac network simulation, due to the much lower vessel density. Especially the tissue concentrations and the changing oxygen concentrations in longitudinal direction of the vessels can be seen very well.
 \\Due to the low density of capillaries for this network, this figure can give a good insight to the values computed by the Green's model code. One can clearly see that the partial pressure of $O_2$ goes down in radial direction with growing distance from the vessels. At hotspots where the capillary density is higher due to branching and ramification, the diffusion comes from two vessels and the superposition of two close source elements leads to peaks in $PO_2$ values.\\
-\\From a physiological point of view, the computational result is correct when assuming that the oxygen consumption through the whole intestine is constant. The oxygen supply to the intestinal vessels surrounding the main arterial tree is constant, and the oxygen concentrations in the intestinal ares are slightly above 50 mmHg, which is in the physiological range.
+\\From a physical point of view, the computational result is correct when assuming that the oxygen consumption through the whole intestine is constant. The oxygen supply to the intestinal vessels surrounding the main arterial tree is constant, and the oxygen concentrations in the intestinal ares are slightly above 50 mmHg, which is in the physiological range.
 \\The general oxygen field clearly shows that some hypoxic regions can be found at spots without vessels or where the vessels themselves have a very low $PO_2$ concentration. With $PO_2$ values ranging from $0$ mmHg (hypoxic region) to 87 mmHg, the results for the whole sample lie once more in the physiological range.
 
 \newpage
-\subsubsection*{A Second Tumor Network}
+\subsubsection*{A High Density Tumor Network}
 \label{Tumor}
 %Explain relevance of this model and the produced results (many plots here)
 
 %Present Network
 Another interesting tumor example network provided by Prof. Secomb is the Tumor 2 network.
-\\Even though there is no information given about how this particular image segmentation was obtained, knowing that it is a tumor network, one might expect a random ramification and distribution of vessels. In fact, this network is build by vessels of different sizes and the oxygen concentrations within the vessels is largely varying.
+\\Similar to the previously presented Tumor 1 network, this network is a rat tumor obtained by microscopic observations \cite{secombonline}. Knowing that it is a tumor network, one might expect a random ramification and distribution of vessels. This network is in fact built by vessels of different sizes and the oxygen concentrations within the vessels largely varies.
 \\The Tumor 2 network is more complicated than the previously presented Tumor 1 network and the computational simulation produces a very interesting output. The result is visualized on Figure \ref{fig:Contour_TumorDuke}. Here one can see the result of a Green's Method blood flow simulation computed on a simple Tumor network. As for the previous models, the Oxygen Concentration in the network and in the tissue is visualized in the form of a slice (see output section \ref{Outputs} for more information). Again the illustration shows a virtual cut into the tissue and gives local oxygen concentrations in mmHg.\\\\
 %Explain Plot
 Figure \ref{fig:Contour_TumorDuke}  is the result of a Green's method blood flow simulation computed on a tumor network. The oxygen concentration in the network and the tissue is visualized.\\
@@ -532,8 +532,8 @@ Figure \ref{fig:Contour_TumorDuke}  is the result of a Green's method blood flow
 \end{figure}\\
 %Explain Results
 \\The overlapping of the vessels with different oxygen concentrations is due to the fact that the three dimensional space of vessels is projected on a two dimensional plane, as for the previous examples. The red color corresponds to oxygen enriched blood which is in this case carried by the thicker vessels supplying this sample of tissue. The oxygen partial pressure in the tissue regions proximal to these bigger vessels is higher with peaks around $40$ mmHg. The segmentation resolution depends on the vessel, but is overall rather high, which entails a high resolution for the oxygen field in the tissue.
-\\Generally the highest $PO_2$ levels can be found surrounding the big vessels and especially in regions where many sources are overlapping. This is due to the fact that the source terms are superpositioned when calculating the oxygen field during the computational iterations, and makes sense from a physiological point of view, as a lot of oxygen is supplied to these areas.
-\\The $PO_2$ levels range between around $3$ and $40$ mmHg within a physiological range. Generally the average $PO_2$ in this sample is quite high, due to the equally distributed and well oxygenated big vessels.
+\\Generally the highest $PO_2$ levels can be found surrounding the big vessels and especially in regions where many sources overlap. This is due to the fact that the source terms are superpositioned when calculating the oxygen field during the computational iterations, and makes sense from a physiological point of view, as a lot of oxygen is supplied to these areas.
+\\The $PO_2$ levels range between around $3$ to $40$ mmHg within a physiological range. Generally the average $PO_2$ in this sample is quite high, due to the equally distributed and well oxygenated big vessels.
 
 \newpage
 \subsubsection*{Further Outlook for New Networks}
@@ -650,7 +650,7 @@ As I already briefly mentioned this when describing this method, the 1p-1p-trace
 \\After spending a lot of time on debugging the errors I was having, the code finally compiled and the tracer could compute the oxygen distribution in my network (for a specific insight into the code, please see the Appendix \ref{fig:1p-1p-tracer-tracer-1}). However, the results are not satisfying as the oxygen concentration is computed to be zero at every time step in every node of the grid. The reasons for this are still not quite clear and some more investigation has to be made in order to understand why the tracer always has null values as outputs. Moreover, the initial and boundary conditions for the oxygen concentrations were examined and this seems not to be the source of the error.
 \newpage
 As previously mentioned, the input for the tracer model is the velocity vector computed by the 1p-1p model. The correctness of the velocity field computed by the 1p-1p model was not evaluated in detail, and might be an error-source for the solute field computed by the tracer. Due to time issues, this couldn't be examined in detail and has to be further investigated in the future.
-\\As $DuMu^x$ is generally a complex software, many errors can occur, and it will surely take some time to understand the underlying problems in order to produce results using this model. However, I am persuaded that this approach can and will produce good results once the coupling of the models works well.
+\\As $DuMu^x$ is generally a complex software, many errors can occur, and it will surely take some time to understand the underlying problems in order to produce results using this model. However, I am convinced that this approach can and will produce good results once the coupling of the models works well.
 
 \newpage
 \subsection{Comparison of the Methods and Results}
@@ -702,7 +702,7 @@ While the Green's function method is presenting a specifically created C++ based
 %and which ones you see with scepticism.
 
 This thesis aimed to understand how computational methods can be used to simulate blood flow and oxygen transport in microvascular networks. For this, two approaches have been presented \ref{Greens}, \ref{$DuMu^x$} and the results or outlooks have been discussed \ref{Results}.\\
-\\While oxygen transport is a crucial topic in the fields of medicine and physiology, many processes in microvascular networks are not understood yet. Especially the measurements of microvascular and tissue oxygen concentrations is an uncharted research field. For this reason, a lot of research is being done in oxygen distribution computations \cite{goldman2001computational, lee2017accounting, kreuzer1982oxygen, secomb1993analysis} . In view of the challenges that are faced when simulating oxygen fields in tissue surrounding vessel networks, I would like to split this last section into three parts: a technical discussion, a physical discussion, and finally a physiologic discussion.
+\\While oxygen transport is a crucial topic in the fields of medicine and physiology, many processes in microvascular networks are not yet understood. Especially the measurements of microvascular and tissue oxygen concentrations is an uncharted research field. For this reason, a lot of research is being done in oxygen distribution computations \cite{goldman2001computational, lee2017accounting, kreuzer1982oxygen, secomb1993analysis} . In view of the challenges that are faced when simulating oxygen fields in tissue surrounding vessel networks, I would like to split this last section into three parts: a technical discussion, a physical discussion, and finally a physiologic discussion.
 
 \subsection{Technical Aspects}
 %- All the challenges one has to face when simulating in general
@@ -720,9 +720,9 @@ As the main tools used for the previously presented simulation results are compu
 %- Explain what outputs were generally produced and physically discuss things like pressure drops
 %- Say why engineers are also interested in this field and that the fluiddynamics in the body are very interesting in general
 
-As the exact physical equations and mathematics behind the different simulation methods was explained in the first sections, it was obvious that the success of computational simulations is strongly linked to the correctness of the physical assumptions.\\
+As the exact physical equations and mathematics behind the different simulation methods were explained in the first sections, it was obvious that the success of computational simulations is strongly linked to the correctness of the physical assumptions.\\
 \\When building a computational model like the models used in this thesis, one has to start by studying the physical equations describing the given problem \ref{CompMod}. In our case, the physical equations describing the blood flow, and accordingly the oxygen transport from the vessel to the tissue have been used in general. Solving these equations will then yield the results that the user wanted to compute \ref{Results}. This basic procedure is an engineering procedure, and is the same for a flow and heat exchange computation in a pipe or a blood flow and oxygen diffusion computation in a tissue. Due to this fact, engineers are strongly engaged in this research field, as they have a good knowledge about the technical tools and have a good understanding for physical quantities. Also, the used networks and fluiddynamic challenges can be very interesting in the physiology field, as for example the flow in a complex vascular network like the one found in glomeruli \ref{ResultsDum}, where particularly interesting pressure differences and gradients could be observed. To understand and analyze these results physically, a deeper understanding of the Navier-Stokes equations is required, as the pressure drop was not comparable to the one in a straight pipe.\\
-\\Due to these reasons, engineers, mathematicians and physicists are and will be used more and more often in these research domains in the future, as some physical problems can not be solved without computational methods to this day.
+\\Due to these reasons, engineers, mathematicians and physicists are and will be used more and more often in these research domains in the future, as some physical problems cannot be solved without computational methods to this day.
 
 \subsection{Physiological Aspects}
 %- Again what is going on in the body exactly

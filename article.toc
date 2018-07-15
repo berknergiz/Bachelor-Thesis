@@ -12,24 +12,24 @@
 \contentsline {subsection}{\numberline {3.1}Green's Function Method}{9}{subsection.3.1}
 \contentsline {subsubsection}{\numberline {3.1.1}The Computational Model}{9}{subsubsection.3.1.1}
 \contentsline {subsubsection}{\numberline {3.1.2}Mathematical Details of the Green's Function Method}{12}{subsubsection.3.1.2}
-\contentsline {subsection}{\numberline {3.2}$DuMu^x$}{14}{subsection.3.2}
-\contentsline {subsubsection}{\numberline {3.2.1}General Structure of $DuMu^x$}{15}{subsubsection.3.2.1}
-\contentsline {subsubsection}{\numberline {3.2.2}Implemented Model}{18}{subsubsection.3.2.2}
-\contentsline {section}{\numberline {4}Simulation Results and Analysis}{20}{section.4}
-\contentsline {subsection}{\numberline {4.1}Results of the Green's Function Method}{20}{subsection.4.1}
-\contentsline {subsection}{\numberline {4.2}Discussion of the Green's Method and the Produced Results}{30}{subsection.4.2}
-\contentsline {subsection}{\numberline {4.3}Results of $DuMu^x$}{32}{subsection.4.3}
-\contentsline {subsection}{\numberline {4.4}Comparison of the Methods and Results}{36}{subsection.4.4}
-\contentsline {section}{\numberline {5}Discussion}{37}{section.5}
-\contentsline {subsection}{\numberline {5.1}Technical Aspects}{37}{subsection.5.1}
-\contentsline {subsection}{\numberline {5.2}Physical Aspects}{38}{subsection.5.2}
-\contentsline {subsection}{\numberline {5.3}Physiological Aspects}{38}{subsection.5.3}
+\contentsline {subsection}{\numberline {3.2}$DuMu^x$}{15}{subsection.3.2}
+\contentsline {subsubsection}{\numberline {3.2.1}General Structure of $DuMu^x$}{16}{subsubsection.3.2.1}
+\contentsline {subsubsection}{\numberline {3.2.2}Implemented Model}{19}{subsubsection.3.2.2}
+\contentsline {section}{\numberline {4}Simulation Results and Analysis}{21}{section.4}
+\contentsline {subsection}{\numberline {4.1}Results of the Green's Function Method}{21}{subsection.4.1}
+\contentsline {subsection}{\numberline {4.2}Discussion of the Green's Method and the Produced Results}{31}{subsection.4.2}
+\contentsline {subsection}{\numberline {4.3}Results of $DuMu^x$}{33}{subsection.4.3}
+\contentsline {subsection}{\numberline {4.4}Comparison of the Methods and Results}{37}{subsection.4.4}
+\contentsline {section}{\numberline {5}Discussion}{38}{section.5}
+\contentsline {subsection}{\numberline {5.1}Technical Aspects}{38}{subsection.5.1}
+\contentsline {subsection}{\numberline {5.2}Physical Aspects}{39}{subsection.5.2}
+\contentsline {subsection}{\numberline {5.3}Physiological Aspects}{39}{subsection.5.3}
 \vspace {.5\baselineskip }
-\contentsline {section}{\numberline {}{References}}{40}{subsection.5.3}
+\contentsline {section}{\numberline {}{References}}{41}{subsection.5.3}
 \vspace {.5\baselineskip }
-\contentsline {section}{\numberline {A}Acknowledgements}{44}{appendix.A}
-\contentsline {section}{\numberline {B}Appendix}{45}{appendix.B}
-\contentsline {subsection}{\numberline {B.1}Additional Material for the Green's Function Method}{45}{subsection.B.1}
-\contentsline {subsubsection}{\numberline {B.1.1}General Structure of the Used Code}{45}{subsubsection.B.1.1}
-\contentsline {subsubsection}{\numberline {B.1.2}Some More Green's Results}{49}{subsubsection.B.1.2}
-\contentsline {subsection}{\numberline {B.2}Additional Material for DuMuX}{49}{subsection.B.2}
+\contentsline {section}{\numberline {A}Acknowledgements}{45}{appendix.A}
+\contentsline {section}{\numberline {B}Appendix}{46}{appendix.B}
+\contentsline {subsection}{\numberline {B.1}Additional Material for the Green's Function Method}{46}{subsection.B.1}
+\contentsline {subsubsection}{\numberline {B.1.1}General Structure of the Used Code}{46}{subsubsection.B.1.1}
+\contentsline {subsubsection}{\numberline {B.1.2}Some More Green's Results}{50}{subsubsection.B.1.2}
+\contentsline {subsection}{\numberline {B.2}Additional Material for DuMuX}{50}{subsection.B.2}
